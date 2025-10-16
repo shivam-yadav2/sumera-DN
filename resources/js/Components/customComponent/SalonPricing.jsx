@@ -58,18 +58,18 @@ const SalonPricing = () => {
   ];
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="min-h-screen grid grid-cols-4 relative overflow-hidden">
       {/* Left Side - Makeup Brush Image */}
-      <div className="absolute left-0 top-0 bottom-0 w-1/4 hidden lg:block">
+      <div className="col-span-1 hidden lg:block">
         <img 
-          src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=600&h=1200&fit=crop"
+          src="/assets/logo/image.png"
           alt="Makeup brush"
           className="w-full h-full object-cover"
         />
       </div>
 
       {/* Main Content */}
-      <div className="relative bg-gradient-to-br from-pink-50 via-white to-pink-50 py-20 px-4 lg:ml-[25%]">
+      <div className="relative col-span-4 lg:col-span-3 bg-gradient-to-br from-pink-50 via-white to-pink-50 py-20 px-4 ">
         {/* Large background text "Pricing" */}
         <div className="absolute top-20 left-1/2 transform -translate-x-1/2 pointer-events-none overflow-hidden">
           <h1 className="text-[10rem] lg:text-[14rem] font-bold text-gray-200 opacity-15 select-none whitespace-nowrap">
@@ -77,7 +77,7 @@ const SalonPricing = () => {
           </h1>
         </div>
 
-        <div className="max-w-6xl mx-auto relative z-10">
+        <div className="lg:px-[50px] px-[20px] lg:w-auto w-full mx-auto relative z-10">
           {/* Header Section */}
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-3 mb-4">

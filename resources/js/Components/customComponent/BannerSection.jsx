@@ -1,7 +1,7 @@
 // components/BannerSection.tsx
 import { Link } from "@inertiajs/react";
 
-export function BannerSection() {
+export function BannerSection({ title }) {
   return (
     <section
       className="relative w-full h-96 bg-cover bg-center text-[#006A4E] "
@@ -13,7 +13,7 @@ export function BannerSection() {
       <div className="relative z-20 flex flex-col items-center justify-center h-full text-center px-4">
         {/* Title */}
         <h1 className="text-4xl head md:text-5xl font-bold text-olive-green-200 mb-2">
-          Sumeera Makeover and Unisex Salon
+          {title}
         </h1>
 
         {/* Breadcrumb Navigation */}

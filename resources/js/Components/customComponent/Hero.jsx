@@ -11,21 +11,21 @@ const Hero = () => {
             title: "THE NEW STYLE",
             description:
                 "You dream about sleek, healthy looking hair that looks picture perfect, ready to rock on any occasion?",
-            image: "https://images.unsplash.com/photo-1560869713-7d0a29430803?w=1920&h=1080&fit=crop",
+            image: "/assets/images/1.JPG",
         },
         {
             subtitle: "Perfect Beauty",
             title: "LUXURY SALON",
             description:
                 "Experience the ultimate in hair care and styling with our professional team of experts.",
-            image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1920&h=1080&fit=crop",
+            image: "/assets/images/2.JPG",
         },
         {
             subtitle: "Modern Style",
             title: "HAIR ARTISTRY",
             description:
                 "Transform your look with our cutting-edge techniques and premium products.",
-            image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1920&h=1080&fit=crop",
+            image: "/assets/images/3.JPG",
         },
     ];
 
@@ -52,7 +52,7 @@ const Hero = () => {
     return (
         <div className="relative h-screen overflow-hidden">
             {/* Decorative flower elements */}
-            <div className="absolute top-20 left-10 w-48 h-48 opacity-20 pointer-events-none z-10">
+            {/* <div className="absolute top-20 left-10 w-48 h-48 opacity-20 pointer-events-none z-10">
                 <svg viewBox="0 0 200 200" className="text-[#006A4E]">
                     <circle cx="100" cy="100" r="30" fill="currentColor" />
                     <circle
@@ -159,7 +159,7 @@ const Hero = () => {
                         opacity="0.8"
                     />
                 </svg>
-            </div>
+            </div> */}
 
             {/* Left Social Media Bar */}
             <div className="absolute left-6 top-1/2 transform -translate-y-1/2 z-30 flex flex-col gap-4 bg-white/80 backdrop-blur-sm p-3 rounded-lg shadow-lg">
@@ -249,11 +249,11 @@ const Hero = () => {
                                 className="w-full h-full object-cover"
                             />
                             {/* Gradient Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-pink-50/95 via-pink-50/70 to-transparent"></div>
+                            {/* <div className="absolute inset-0 bg-gradient-to-r from-pink-50/95 via-pink-50/70 to-transparent"></div> */}
                         </div>
 
                         {/* Content */}
-                        <div className="relative h-full flex items-center justify-center px-8 lg:px-20 max-w-3xl">
+                        {/* <div className="relative h-full flex items-center justify-center px-8 lg:px-20 max-w-3xl">
                             <div className="space-y-6 z-20 flex flex-col justify-center items-center">
                                 <p className="text-xl italic text-gray-700 head">
                                     {slide.subtitle}
@@ -268,7 +268,7 @@ const Hero = () => {
                                     BOOK NOW
                                 </Button>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 ))}
             </div>

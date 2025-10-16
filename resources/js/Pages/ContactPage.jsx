@@ -29,7 +29,7 @@ export default function ContactPage() {
 
     return (
         <Layout>
-            <BannerSection />
+            <BannerSection title="Contact Us" />
             <div className=" bg-white">
                 {/* Main Content */}
                 <div className="container mx-auto px-4 py-20">

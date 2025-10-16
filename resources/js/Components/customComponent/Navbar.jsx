@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-lg py-3' : 'bg-white/95 backdrop-blur-sm py-4'
+      isScrolled ? 'bg-white shadow-lg py-2' : 'bg-white/95 backdrop-blur-sm py-2'
     }`}>
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between">
@@ -28,7 +28,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <a href="/" className="flex items-center">
               <div className="text-3xl font-bold text-[#006A4E] head">
-                Sumeera
+                <img src="/assets/logo/black.png" alt="" className='w-24' />
               </div>
             </a>
           </div>

@@ -6,7 +6,7 @@ import React from 'react'
 const Gallery = () => {
   return (
     <Layout>
-        <BannerSection/>
+        <BannerSection title="Gallery"/>
         <SalonGallery/>
     </Layout>
   )

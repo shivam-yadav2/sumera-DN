@@ -26,6 +26,20 @@ Route::get('/contact', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+Route::get('/about', function () {
+    return Inertia::render('About', [
+        
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
+Route::get('/service', function () {
+    return Inertia::render('Service', [
+        
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

@@ -43,8 +43,8 @@ const ServicesSection = () => {
             <div className="absolute bottom-32 left-20 w-96 h-96 bg-purple-200 rounded-full opacity-25 blur-3xl"></div>
 
             {/* Large background text "Services" */}
-            <div className="absolute top-10 left-0 right-0 flex items-center justify-center pointer-events-none overflow-hidden">
-                <h1 className="text-[6rem] lg:text-[8rem] font-bold text-[#006A4E] head  opacity-10 select-none tracking-wider">
+            <div className="absolute bottom-5 left-0 right-0 flex items-center justify-center pointer-events-none overflow-hidden">
+                <h1 className="text-[6rem] lg:text-[12rem] font-bold text-[#006A4E] head  opacity-10 select-none tracking-wider">
                     Services
                 </h1>
             </div>
