@@ -1,0 +1,31 @@
+* text=auto eol=lf
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> d31cf9c (ererr)
+=======
+>>>>>>> 32c46bf (fsdfd)
+*.blade.php diff=html
+*.css diff=css
+*.html diff=html
+*.md diff=markdown
+*.php diff=php
+<<<<<<< HEAD
+<<<<<<< HEAD
+/.github export-ignore
+CHANGELOG.md export-ignore
+.styleci.yml export-ignore
+Sumeera.zip filter=lfs diff=lfs merge=lfs -text
+=======
+
+/.github export-ignore
+CHANGELOG.md export-ignore
+.styleci.yml export-ignore
+>>>>>>> d31cf9c (ererr)
+=======
+/.github export-ignore
+CHANGELOG.md export-ignore
+.styleci.yml export-ignore
+Sumeera.zip filter=lfs diff=lfs merge=lfs -text
+>>>>>>> 32c46bf (fsdfd)
