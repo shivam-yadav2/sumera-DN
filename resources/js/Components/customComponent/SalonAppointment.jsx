@@ -12,7 +12,7 @@ const SalonAppointment = () => {
     ];
 
     return (
-        <div className="bg-gradient-to-br from-gray-50 to-white py-20 px-4 relative overflow-hidden">
+        <div className="bg-[#3c4c24] py-20 px-4 relative overflow-hidden">
             
 
             <div className="max-w-7xl mx-auto relative z-10">
@@ -29,7 +29,7 @@ const SalonAppointment = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 shadow-2xl rounded-lg overflow-hidden">
                         {/* Left Side - Light Background with Content */}
                         <div
-                            className="bg-gradient-to-br from-white via-pink-50 to-orange-50 p-12 lg:p-16 relative overflow-hidden"
+                            className="bg-white p-12 lg:p-16 relative overflow-hidden"
                             style={{
                                 backgroundImage:
                                     "url('/assets/images/nake.png')",
@@ -61,7 +61,7 @@ const SalonAppointment = () => {
                                     </svg>
                                 </div>
 
-                                <h2 className="text-4xl lg:text-5xl font-bold text-[#006A4E] leading-tight head">
+                                <h2 className="text-4xl lg:text-5xl font-bold text-[#3c4c24] leading-tight head">
                                     & get{" "}
                                     <span className="text-[#004d3a] head font-bold">
                                         25% discount!
@@ -72,7 +72,7 @@ const SalonAppointment = () => {
                                     Glowing, dewy skin is our thing.
                                 </p>
 
-                                <Button className="bg-black rounded-none hover:bg-[#006A4E] text-white px-8 py-6 text-base font-medium transition-all duration-300">
+                                <Button className="bg-black rounded-none hover:bg-[#3c4c24] text-white px-8 py-6 text-base font-medium transition-all duration-300">
                                     More Detail
                                 </Button>
                             </div>
@@ -99,33 +99,33 @@ const SalonAppointment = () => {
                             >
                                 {partner.style === "circle" ? (
                                     <div className="flex flex-col items-center">
-                                        <div className="w-20 h-20 rounded-full border-2 border-[#006A4E] flex items-center justify-center mb-2">
-                                            <span className="text-3xl font-bold text-[#006A4E] head">
+                                        <div className="w-20 h-20 rounded-full border-2 border-white flex items-center justify-center mb-2">
+                                            <span className="text-3xl font-bold text-white head">
                                                 {partner.name}
                                             </span>
                                         </div>
-                                        <p className="text-xs text-[#006A4E] tracking-widest">
+                                        <p className="text-xs text-white tracking-widest">
                                             {partner.subtitle}
                                         </p>
                                     </div>
                                 ) : partner.style === "script" ? (
                                     <div className="flex flex-col items-center">
-                                        <h3 className="text-3xl italic text-[#006A4E] mb-1 head">
+                                        <h3 className="text-3xl italic text-white mb-1 head">
                                             {partner.name}
                                         </h3>
-                                        <p className="text-xs text-[#006A4E] tracking-widest uppercase">
+                                        <p className="text-xs text-white tracking-widest uppercase">
                                             {partner.subtitle}
                                         </p>
                                     </div>
                                 ) : partner.style === "minimal" ? (
-                                    <div className="flex flex-col items-center border-2 border-[#006A4E] px-4 py-3">
-                                        <h3 className="text-2xl font-bold text-[#006A4E] mb-1 head">
+                                    <div className="flex flex-col items-center border-2 border-white px-4 py-3">
+                                        <h3 className="text-2xl font-bold text-white mb-1 head">
                                             {partner.name}
                                         </h3>
                                         <div className="w-8 h-8">
                                             <svg
                                                 viewBox="0 0 40 40"
-                                                className="text-[#006A4E]"
+                                                className="text-white"
                                             >
                                                 <polygon
                                                     points="20,5 25,15 35,15 27,22 30,32 20,26 10,32 13,22 5,15 15,15"
@@ -133,16 +133,16 @@ const SalonAppointment = () => {
                                                 />
                                             </svg>
                                         </div>
-                                        <p className="text-xs text-[#006A4E] tracking-widest mt-1">
+                                        <p className="text-xs text-white tracking-widest mt-1">
                                             {partner.subtitle}
                                         </p>
                                     </div>
                                 ) : (
                                     <div className="flex flex-col items-center">
-                                        <h3 className="text-xl font-bold text-[#006A4E] mb-1 tracking-wide head">
+                                        <h3 className="text-xl font-bold text-white mb-1 tracking-wide head">
                                             {partner.name}
                                         </h3>
-                                        <p className="text-xs text-[#006A4E] tracking-widest">
+                                        <p className="text-xs text-white tracking-widest">
                                             {partner.subtitle}
                                         </p>
                                     </div>

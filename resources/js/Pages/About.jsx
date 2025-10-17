@@ -3,13 +3,16 @@ import React from "react";
 import { BannerSection } from "@/Components/customComponent/BannerSection";
 import { AboutSection } from "@/Components/customComponent/AboutSection";
 import { ServicesSection } from "@/Components/customComponent/ServicesSection";
+import Faq from "@/Components/customComponent/Faq";
 
 const About = () => {
     return (
         <Layout>
             <BannerSection title="About Us" />
             <AboutSection />
-            <section className="bg-[#006A4E] text-white text-center py-20 px-4 relative">
+            <ServicesSection />
+
+            <section className="bg-[#3c4c24] text-white text-center py-20 px-4 relative">
                 <div
                     className="absolute inset-0  bg-cover bg-center opacity-30"
                     style={{ backgroundImage: "url('/assets/images/1.JPG')" }}
@@ -29,9 +32,8 @@ const About = () => {
                     </button>
                 </div>
             </section>
-
-            <ServicesSection />
-
+            <Faq />
+            
         </Layout>
     );
 };

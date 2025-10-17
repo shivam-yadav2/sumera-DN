@@ -2,19 +2,19 @@ import React from "react";
 import Layout from "@/Layouts/Layout";
 import { BannerSection } from "@/Components/customComponent/BannerSection";
 import { ServicesSection } from "@/Components/customComponent/ServicesSection";
-import  SalonPricing  from "@/Components/customComponent/SalonPricing";
-
+import SalonPricing from "@/Components/customComponent/SalonPricing";
+import SalonContact from "@/Components/customComponent/ContactSection";
 const Service = () => {
     return (
         <Layout>
             <BannerSection title="Services" />
-            <section className="max-w-6xl mx-auto py-20 md:py-32">
+            <section className="max-w-4xl mx-auto py-20 md:py-32">
                 <div className="px-4">
-                    <div className="flex flex-col gap-6 mb-12 items-center justify-between">
-                        <h2 className="text-4xl font-bold head">
-                            Our Services
+                    <div className="flex flex-col gap-6 mb-12 items-start justify-between">
+                        <h2 className="text-4xl lg:text-6xl text-[#3c4c24] font-bold head">
+                            Hair cut with Blow dry
                         </h2>
-                        <p className="text-lg p-m text-gray-600 head max-w-2xl text-center">
+                        <p className="text-lg p-m text-gray-600   text-start">
                             Maximus accumsan nunc, sit amet tempor lectus
                             facilisis eu. Cras vel elit felis. Vestibulum
                             convallis ipsum id aliquam varius. Etiam nec laoreet
@@ -42,9 +42,12 @@ const Service = () => {
                     </div>
                 </div>
             </section>
-            <SalonPricing/>
+            <SalonPricing />
 
-            <ServicesSection />
+            {/* <ServicesSection /> */}
+
+            <SalonContact />
+
         </Layout>
     );
 };

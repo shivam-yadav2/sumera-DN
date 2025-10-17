@@ -20,7 +20,7 @@ const AboutSection = () => {
     }, [direction]);
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-50 py-20 px-4 relative overflow-hidden">
+        <div className="min-h-screen bg-[#3c4c24] py-20 px-4 relative overflow-hidden">
             {/* Decorative background elements */}
             <div className="absolute top-20 left-10 w-64 h-64 bg-pink-100 rounded-full opacity-40 blur-3xl"></div>
             <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-100 rounded-full opacity-30 blur-3xl"></div>
@@ -61,7 +61,7 @@ const AboutSection = () => {
                                 </svg>
                             </div>
 
-                            <h2 className="text-4xl lg:text-5xl font-bold text-[#006A4E] leading-tight head">
+                            <h2 className="text-4xl lg:text-5xl font-bold text-[#3c4c24] leading-tight head">
                                 Our Salon is Most Popular, Clean and Recommended
                                 Hair Salon
                             </h2>
@@ -82,7 +82,7 @@ const AboutSection = () => {
 
                             {/* Signature */}
                             <div className=" flex items-center justify-center pointer-events-none overflow-hidden">
-                                    <h1 className="text-[4rem] lg:text-[8rem] head font-bold text-[#006A4E] opacity-15 select-none tracking-wider">
+                                    <h1 className="text-[4rem] lg:text-[8rem] head font-bold text-[#3c4c24] opacity-15 select-none tracking-wider">
                                         Welcome
                                     </h1>
                                 </div>

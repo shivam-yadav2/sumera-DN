@@ -119,14 +119,14 @@ const SalonGallery = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-pink-50 via-white to-purple-50 py-16 px-4">
+        <div className="min-h-screen bg-[#3c4c24] py-16 px-4">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h1 className="text-5xl md:text-6xl head font-bold text-[#006A4E] mb-4">
+                    <h1 className="text-5xl md:text-6xl head font-bold text-white mb-4">
                         Our Gallery
                     </h1>
-                    <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                    <p className="text-gray-100 text-lg max-w-2xl mx-auto">
                         Explore our stunning collection of transformations and
                         creative artistry
                     </p>
@@ -140,8 +140,8 @@ const SalonGallery = () => {
                             onClick={() => setSelectedCategory(category.id)}
                             className={`px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 ${
                                 selectedCategory === category.id
-                                    ? "bg-gradient-to-r from-[#006A4E] to-[#0c1f1a] text-white shadow-lg"
-                                    : "bg-white text-gray-700 hover:bg-gray-50 shadow-md"
+                                    ? "bg-gradient-to-r from-[#3c4c24] to-[#0c1f1a] text-white shadow-lg"
+                                    : "bg-white text-[#3c4c24] hover:bg-gray-50 shadow-md"
                             }`}
                         >
                             {category.name}

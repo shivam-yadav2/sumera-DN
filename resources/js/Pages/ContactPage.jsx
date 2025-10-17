@@ -42,7 +42,7 @@ export default function ContactPage() {
 
                             <div className="space-y-6">
                                 <div className="flex items-start gap-4">
-                                    <div className="bg-[#006A4E] p-3 rounded">
+                                    <div className="bg-[#3c4c24] p-3 rounded">
                                         <Phone className="w-5 h-5 text-white" />
                                     </div>
                                     <div>
@@ -59,7 +59,7 @@ export default function ContactPage() {
                                 </div>
 
                                 <div className="flex items-start gap-4">
-                                    <div className="bg-[#006A4E] p-3 rounded">
+                                    <div className="bg-[#3c4c24] p-3 rounded">
                                         <Mail className="w-5 h-5 text-white" />
                                     </div>
                                     <div>
@@ -76,7 +76,7 @@ export default function ContactPage() {
                                 </div>
 
                                 <div className="flex items-start gap-4">
-                                    <div className="bg-[#006A4E] p-3 rounded">
+                                    <div className="bg-[#3c4c24] p-3 rounded">
                                         <MapPin className="w-5 h-5 text-white" />
                                     </div>
                                     <div>
@@ -93,7 +93,7 @@ export default function ContactPage() {
                                 </div>
 
                                 <div className="flex items-start gap-4">
-                                    <div className="bg-[#006A4E] p-3 rounded">
+                                    <div className="bg-[#3c4c24] p-3 rounded">
                                         <Clock className="w-5 h-5 text-white" />
                                     </div>
                                     <div>
@@ -177,7 +177,7 @@ export default function ContactPage() {
 
                                 <Button
                                     onClick={handleSubmit}
-                                    className="w-full h-12 bg-[#006A4E] hover:bg-[#005840] text-white"
+                                    className="w-full h-12 bg-[#3c4c24] hover:bg-[#005840] text-white"
                                 >
                                     Submit Now
                                 </Button>

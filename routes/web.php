@@ -19,8 +19,22 @@ Route::get('/gallery/photos', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+Route::get('/gallery/videos', function () {
+    return Inertia::render('SalonVideoGallery', [
+        
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
 Route::get('/contact', function () {
     return Inertia::render('ContactPage', [
+        
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
+Route::get('/academy', function () {
+    return Inertia::render('AcademyPage', [
         
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
@@ -33,7 +47,7 @@ Route::get('/about', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
-Route::get('/service', function () {
+Route::get('/services/{service}', function () {
     return Inertia::render('Service', [
         
         'laravelVersion' => Application::VERSION,

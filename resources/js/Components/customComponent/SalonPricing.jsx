@@ -92,7 +92,7 @@ const SalonPricing = () => {
               </svg>
             </div>
 
-            <h2 className="text-5xl lg:text-6xl font-bold text-[#006A4E] head">
+            <h2 className="text-5xl lg:text-6xl font-bold text-[#3c4c24] head">
               Our Pricing
             </h2>
           </div>
@@ -113,7 +113,7 @@ const SalonPricing = () => {
               {pricingItems.map((item, index) => (
                 <div key={index} className="border-b border-dotted border-gray-300 pb-6 last:border-0">
                   <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-3xl font-bold text-[#006A4E] head flex-1">
+                    <h3 className="text-3xl font-bold text-[#3c4c24] head flex-1">
                       {item.title}
                     </h3>
                     <span className="text-2xl font-bold text-gray-800 ml-4">
@@ -141,7 +141,7 @@ const SalonPricing = () => {
               {pricingItemsRight.map((item, index) => (
                 <div key={index} className="border-b border-dotted border-gray-300 pb-6 last:border-0">
                   <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-3xl font-bold text-[#006A4E] head flex-1">
+                    <h3 className="text-3xl font-bold text-[#3c4c24] head flex-1">
                       {item.title}
                     </h3>
                     <span className="text-2xl font-bold text-gray-800 ml-4">

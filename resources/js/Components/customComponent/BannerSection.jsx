@@ -4,7 +4,7 @@ import { Link } from "@inertiajs/react";
 export function BannerSection({ title }) {
   return (
     <section
-      className="relative w-full h-96 bg-cover bg-center text-[#006A4E] "
+      className="relative w-full h-96 bg-cover bg-center text-[#3c4c24] "
       style={{ backgroundImage: "url('/assets/images/banner.jpg')" }}
     >
       {/* Overlay for text readability */}

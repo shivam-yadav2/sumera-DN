@@ -24,7 +24,7 @@ const SalonContact = () => {
   };
 
   return (
-    <div className=" bg-gradient-to-br from-[#006A4E]/30 via-orange-50 to-[#006A4E]/80 py-20 px-4 relative overflow-hidden">
+    <div className=" bg-gradient-to-br from-[#3c4c24]/30 via-orange-50 to-[#3c4c24]/80 py-20 px-4 relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-pink-200 rounded-full opacity-20 blur-3xl"></div>
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-orange-200 rounded-full opacity-25 blur-3xl"></div>
@@ -37,13 +37,13 @@ const SalonContact = () => {
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <p className="text-lg italic text-gray-700 poppins-regular-italic">Have Questions?</p>
-                <svg width="50" height="30" viewBox="0 0 50 30" className="text-[#006A4E]">
+                <svg width="50" height="30" viewBox="0 0 50 30" className="text-[#3c4c24]">
                   <path d="M 5 15 Q 15 5, 25 15 T 45 15" stroke="currentColor" fill="none" strokeWidth="2"/>
                   <polygon points="45,15 40,12 40,18" fill="currentColor"/>
                 </svg>
               </div>
 
-              <h2 className="text-4xl lg:text-5xl font-bold text-[#006A4E] leading-tight head">
+              <h2 className="text-4xl lg:text-5xl font-bold text-[#3c4c24] leading-tight head">
                 Feel free to get in touch!<br />contact now
               </h2>
             </div>
@@ -124,7 +124,7 @@ const SalonContact = () => {
           <div className="relative">
             <div className="relative">
               {/* Purple border frame */}
-              <div className="absolute inset-0 border-[12px] border-[#006A4E]  pointer-events-none transform translate-x-8 translate-y-8"></div>
+              <div className="absolute inset-0 border-[12px] border-[#3c4c24]  pointer-events-none transform translate-x-8 translate-y-8"></div>
               
               {/* Image */}
               <div className="relative bg-white shadow-2xl overflow-hidden">

@@ -53,7 +53,7 @@ const Hero = () => {
         <div className="relative h-screen overflow-hidden">
             {/* Decorative flower elements */}
             {/* <div className="absolute top-20 left-10 w-48 h-48 opacity-20 pointer-events-none z-10">
-                <svg viewBox="0 0 200 200" className="text-[#006A4E]">
+                <svg viewBox="0 0 200 200" className="text-[#3c4c24]">
                     <circle cx="100" cy="100" r="30" fill="currentColor" />
                     <circle
                         cx="70"
@@ -87,7 +87,7 @@ const Hero = () => {
             </div>
 
             <div className="absolute bottom-20 left-20 w-64 h-64 opacity-15 pointer-events-none z-10">
-                <svg viewBox="0 0 200 200" className="text-[#006A4E]">
+                <svg viewBox="0 0 200 200" className="text-[#3c4c24]">
                     <circle cx="100" cy="100" r="40" fill="currentColor" />
                     <circle
                         cx="60"
@@ -128,7 +128,7 @@ const Hero = () => {
             </div>
 
             <div className="absolute top-10 right-20 w-56 h-56 opacity-20 pointer-events-none z-10">
-                <svg viewBox="0 0 200 200" className="text-[#006A4E]">
+                <svg viewBox="0 0 200 200" className="text-[#3c4c24]">
                     <circle cx="100" cy="100" r="35" fill="currentColor" />
                     <circle
                         cx="65"
@@ -165,7 +165,7 @@ const Hero = () => {
             <div className="absolute left-6 top-1/2 transform -translate-y-1/2 z-30 flex flex-col gap-4 bg-white/80 backdrop-blur-sm p-3 rounded-lg shadow-lg">
                 <a
                     href="#"
-                    className="text-gray-700 hover:text-[#006A4E] transition-colors"
+                    className="text-gray-700 hover:text-[#3c4c24] transition-colors"
                 >
                     <svg
                         className="w-5 h-5"
@@ -177,7 +177,7 @@ const Hero = () => {
                 </a>
                 <a
                     href="#"
-                    className="text-gray-700 hover:text-[#006A4E] transition-colors"
+                    className="text-gray-700 hover:text-[#3c4c24] transition-colors"
                 >
                     <svg
                         className="w-5 h-5"
@@ -189,7 +189,7 @@ const Hero = () => {
                 </a>
                 <a
                     href="#"
-                    className="text-gray-700 hover:text-[#006A4E] transition-colors"
+                    className="text-gray-700 hover:text-[#3c4c24] transition-colors"
                 >
                     <svg
                         className="w-5 h-5"
@@ -201,7 +201,7 @@ const Hero = () => {
                 </a>
                 <a
                     href="#"
-                    className="text-gray-700 hover:text-[#006A4E] transition-colors"
+                    className="text-gray-700 hover:text-[#3c4c24] transition-colors"
                 >
                     <svg
                         className="w-5 h-5"
@@ -213,7 +213,7 @@ const Hero = () => {
                 </a>
                 <a
                     href="#"
-                    className="text-gray-700 hover:text-[#006A4E] transition-colors"
+                    className="text-gray-700 hover:text-[#3c4c24] transition-colors"
                 >
                     <svg
                         className="w-5 h-5"
@@ -227,7 +227,7 @@ const Hero = () => {
 
             {/* Right Appointment Button */}
             <div className="absolute right-0 top-1/2 transform -translate-y-1/2 z-30">
-                <button className="bg-black text-white px-4 py-8 text-sm font-medium tracking-widest hover:bg-[#006A4E] transition-all duration-300 rounded-l-lg shadow-lg writing-mode-vertical">
+                <button className="bg-black text-white px-4 py-8 text-sm font-medium tracking-widest hover:bg-[#3c4c24] transition-all duration-300 rounded-l-lg shadow-lg writing-mode-vertical">
                     MAKE AN APPOINTMENT
                 </button>
             </div>
@@ -258,13 +258,13 @@ const Hero = () => {
                                 <p className="text-xl italic text-gray-700 head">
                                     {slide.subtitle}
                                 </p>
-                                <h1 className="text-5xl lg:text-7xl font-bold text-[#006A4E] leading-tight head">
+                                <h1 className="text-5xl lg:text-7xl font-bold text-[#3c4c24] leading-tight head">
                                     {slide.title}
                                 </h1>
                                 <p className="text-lg text-gray-700 text-center max-w-xl">
                                     {slide.description}
                                 </p>
-                                <Button className="bg-black hover:bg-[#006A4E] text-white px-8 py-6 text-base font-medium transition-all duration-300">
+                                <Button className="bg-black hover:bg-[#3c4c24] text-white px-8 py-6 text-base font-medium transition-all duration-300">
                                     BOOK NOW
                                 </Button>
                             </div>
@@ -296,7 +296,7 @@ const Hero = () => {
                         onClick={() => goToSlide(index)}
                         className={`w-3 h-3 rounded-full transition-all duration-300 ${
                             index === currentSlide
-                                ? "bg-[#006A4E] w-8"
+                                ? "bg-[#3c4c24] w-8"
                                 : "bg-gray-400 hover:bg-gray-600"
                         }`}
                     />
