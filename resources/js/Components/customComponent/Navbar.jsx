@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, ChevronDown, Phone } from "lucide-react";
+import { Button } from "../ui/button";
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -142,13 +143,16 @@ const Navbar = () => {
 
                     {/* Phone Number */}
                     <div className="hidden lg:flex items-center gap-3">
-                        <Phone className="w-5 h-5 text-[#3c4c24]" />
-                        <a
+                        {/* <a
                             href="tel:+41435426591"
                             className="text-xl font-extrabold text-[#3c4c24] head"
-                        >
+                            >
                             +41 43 542 65 91
-                        </a>
+                            </a> */}
+                        <Button className="bg-black rounded-none hover:bg-[#3c4c24] text-white px-8 py-6 text-base font-medium transition-all duration-300">
+                            <Phone className="w-5 h-5 text-[#fff]" />
+                            Book Now
+                        </Button>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -288,13 +292,10 @@ const Navbar = () => {
                             </a>
 
                             <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
-                                <Phone className="w-5 h-5 text-[#3c4c24]" />
-                                <a
-                                    href="tel:+41435426591"
-                                    className="text-lg font-extrabold text-[#3c4c24] head"
-                                >
-                                    +41 43 542 65 91
-                                </a>
+                                <Button className="bg-black rounded-none hover:bg-[#3c4c24] text-white px-8 py-6 text-base font-medium transition-all duration-300">
+                                    <Phone className="w-5 h-5 text-[#fff]" />
+                                    Book Now
+                                </Button>
                             </div>
                         </div>
                     </div>

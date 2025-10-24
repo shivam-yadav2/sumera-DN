@@ -127,11 +127,11 @@ const SalonContact = () => {
               <div className="absolute inset-0 border-[12px] border-[#3c4c24]  pointer-events-none transform translate-x-8 translate-y-8"></div>
               
               {/* Image */}
-              <div className="relative bg-white shadow-2xl overflow-hidden">
+              <div className="relative aspect-square bg-white shadow-2xl overflow-hidden">
                 <img 
-                  src="/assets/images/contact.jpg"
+                  src="/assets/images/new/47.webp"
                   alt="Salon service"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
             </div>

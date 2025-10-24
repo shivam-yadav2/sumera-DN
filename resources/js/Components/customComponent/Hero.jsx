@@ -50,7 +50,7 @@ const Hero = () => {
     }, []);
 
     return (
-        <div className="relative h-screen overflow-hidden">
+        <div className="relative h-[50vh] lg:h-screen overflow-hidden">
             {/* Decorative flower elements */}
             {/* <div className="absolute top-20 left-10 w-48 h-48 opacity-20 pointer-events-none z-10">
                 <svg viewBox="0 0 200 200" className="text-[#3c4c24]">
@@ -162,7 +162,7 @@ const Hero = () => {
             </div> */}
 
             {/* Left Social Media Bar */}
-            <div className="absolute left-6 top-1/2 transform -translate-y-1/2 z-30 flex flex-col gap-4 bg-white/80 backdrop-blur-sm p-3 rounded-lg shadow-lg">
+            <div className="absolute  lg:left-6 top-1/2 transform -translate-y-1/2 z-30 flex flex-col gap-4 bg-white/80 backdrop-blur-sm p-3 rounded-lg shadow-lg">
                 <a
                     href="#"
                     className="text-gray-700 hover:text-[#3c4c24] transition-colors"
@@ -227,7 +227,7 @@ const Hero = () => {
 
             {/* Right Appointment Button */}
             <div className="absolute right-0 top-1/2 transform -translate-y-1/2 z-30">
-                <button className="bg-black text-white px-4 py-8 text-sm font-medium tracking-widest hover:bg-[#3c4c24] transition-all duration-300 rounded-l-lg shadow-lg writing-mode-vertical">
+                <button className="bg-black text-white px-3 lg:px-4 py-4 lg:py-8 text-sm font-medium tracking-widest hover:bg-[#3c4c24] transition-all duration-300 rounded-l-lg shadow-lg writing-mode-vertical">
                     MAKE AN APPOINTMENT
                 </button>
             </div>
@@ -276,14 +276,14 @@ const Hero = () => {
             {/* Navigation Arrows */}
             <button
                 onClick={prevSlide}
-                className="absolute left-20 top-1/2 transform -translate-y-1/2 z-30 bg-white/30 backdrop-blur-sm p-4 rounded-lg hover:bg-white transition-all shadow-lg"
+                className="absolute lg:block hidden left-20 top-1/2 transform -translate-y-1/2 z-30 bg-white/30 backdrop-blur-sm p-4 rounded-lg hover:bg-white transition-all shadow-lg"
             >
                 <ChevronLeft className="w-8 h-8 text-gray-700" />
             </button>
 
             <button
                 onClick={nextSlide}
-                className="absolute right-20 top-1/2 transform -translate-y-1/2 z-30 bg-white/30 backdrop-blur-sm p-4 rounded-lg hover:bg-white transition-all shadow-lg"
+                className="absolute lg:block hidden right-20 top-1/2 transform -translate-y-1/2 z-30 bg-white/30 backdrop-blur-sm p-4 rounded-lg hover:bg-white transition-all shadow-lg"
             >
                 <ChevronRight className="w-8 h-8 text-gray-700" />
             </button>

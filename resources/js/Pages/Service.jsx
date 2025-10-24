@@ -4,11 +4,15 @@ import { BannerSection } from "@/Components/customComponent/BannerSection";
 import { ServicesSection } from "@/Components/customComponent/ServicesSection";
 import SalonPricing from "@/Components/customComponent/SalonPricing";
 import SalonContact from "@/Components/customComponent/ContactSection";
+import ServiceDetailSection1 from "@/Components/customComponent/ServiceDetailSection1";
+import ServiceDetailSection2 from "@/Components/customComponent/ServiceDetailSection2";
 const Service = () => {
     return (
         <Layout>
             <BannerSection title="Services" />
-            <section className="max-w-4xl mx-auto py-20 md:py-32">
+            <ServiceDetailSection1 />
+
+            <section className="max-w-7xl mx-auto py-20 md:py-32">
                 <div className="px-4">
                     <div className="flex flex-col gap-6 mb-12 items-start justify-between">
                         <h2 className="text-4xl lg:text-6xl text-[#3c4c24] font-bold head">
@@ -26,28 +30,36 @@ const Service = () => {
                             fermentum non nisi.
                         </p>
                     </div>
-                    <div className="grid lg:grid-cols-2 gap-8">
+                    <div className="grid lg:grid-cols-3 gap-8">
                         <div>
-                            <img src="/assets/images/1.JPG" alt="" />
+                            <img src="/assets/images/new/49.webp" alt="" />
                         </div>
                         <div>
-                            <img src="/assets/images/2.JPG" alt="" />
+                            <img src="/assets/images/new/45.webp" alt="" />
                         </div>
                         <div>
-                            <img src="/assets/images/1.JPG" alt="" />
+                            <img src="/assets/images/new/37.webp" alt="" />
                         </div>
                         <div>
-                            <img src="/assets/images/2.JPG" alt="" />
+                            <img src="/assets/images/new/51.webp" alt="" />
+                        </div>
+                        <div>
+                            <img src="/assets/images/new/41.webp" alt="" />
+                        </div>
+                        <div>
+                            <img src="/assets/images/new/33.webp" alt="" />
                         </div>
                     </div>
                 </div>
             </section>
+
+            <ServiceDetailSection2 />
+
             <SalonPricing />
 
             {/* <ServicesSection /> */}
 
             <SalonContact />
-
         </Layout>
     );
 };

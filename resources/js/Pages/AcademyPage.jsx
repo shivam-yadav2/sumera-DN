@@ -7,6 +7,9 @@ import { BannerSection } from "@/Components/customComponent/BannerSection";
 import { ArrowRight } from "lucide-react";
 import Faq from "@/Components/customComponent/Faq";
 import CourseSlider from "@/Components/customComponent/CourseSlider";
+import AcademyWhyChoose from "@/Components/customComponent/AcademyWhyChoose";
+import AcademyFacilities from "@/Components/customComponent/AcademyFacilities";
+import AcademyTestimonials from "@/Components/customComponent/AcademyTestimonials";
 
 const services = [
     {
@@ -17,7 +20,7 @@ const services = [
             "Our make-up artists will make your appearance memorable and bright, and take care of your skin's",
     },
     {
-        image: "/assets/images/2.JPG",
+        image: "/assets/images/new/47.webp",
         pretitle: "Change",
         title: "Coloring",
         description:
@@ -54,8 +57,11 @@ const handleSubmit = () => {
 };
     return (
         <Layout>
-            <BannerSection title="Academy Cources" />
+            <BannerSection title="Academy Courses" />
             <CourseSlider />
+            <AcademyWhyChoose />
+            <AcademyFacilities />
+            <AcademyTestimonials />
             <div className="bg-white py-20 px-4 md:px-8">
                 <div className="max-w-7xl mx-auto">
                     {/* Services Grid */}
@@ -68,7 +74,7 @@ const handleSubmit = () => {
                                 {service.highlight ? (
                                     // Center card with overlay
                                     <div className="relative w-full h-full group cursor-pointer ">
-                                        <div className="relative overflow-hidden w-full h-full  h-80">
+                                        <div className="relative overflow-hidden w-full h-full">
                                             <img
                                                 src={service.image}
                                                 alt={service.title}

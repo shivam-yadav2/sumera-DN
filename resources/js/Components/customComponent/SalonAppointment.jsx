@@ -13,23 +13,21 @@ const SalonAppointment = () => {
 
     return (
         <div className="bg-[#3c4c24] py-20 px-4 relative overflow-hidden">
-            
-
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Main Appointment Card */}
                 <div className="relative mb-20">
                     {/* Vertical Text on Left */}
-                    <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 hidden lg:block">
+                    <div className="absolute left-[-12rem] top-1/2 -translate-y-1/2 -translate-x-12 hidden lg:block">
                         <h3 className="text-8xl font-bold text-gray-200 transform -rotate-90 origin-center whitespace-nowrap head">
                             Offer
                         </h3>
                     </div>
 
                     {/* Card with half background */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 shadow-2xl rounded-lg overflow-hidden">
+                    <div className="grid grid-cols-1 lg:grid-cols-5 shadow-2xl rounded-lg overflow-hidden">
                         {/* Left Side - Light Background with Content */}
                         <div
-                            className="bg-white p-12 lg:p-16 relative overflow-hidden"
+                            className="bg-white p-12 col-span-3 lg:p-16 relative overflow-hidden"
                             style={{
                                 backgroundImage:
                                     "url('/assets/images/nake.png')",
@@ -38,10 +36,11 @@ const SalonAppointment = () => {
                             {/* Subtle pattern overlay */}
 
                             <div className="relative z-10 space-y-6">
-                                <div className="flex items-center  gap-3">
+                                <div className="flex items-center gap-3">
                                     <p className="text-xl italic text-gray-700 poppins-regular-italic">
-                                        Make an Appointment!
+                                        Master the Art of Makeup
                                     </p>
+                                    {/* SVG remains the same */}
                                     <svg
                                         width="50"
                                         height="30"
@@ -62,28 +61,39 @@ const SalonAppointment = () => {
                                 </div>
 
                                 <h2 className="text-4xl lg:text-5xl font-bold text-[#3c4c24] leading-tight head">
-                                    & get{" "}
+                                    Become a{" "}
                                     <span className="text-[#004d3a] head font-bold">
-                                        25% discount!
-                                    </span>
+                                        Certified Pro
+                                    </span>{" "}
+                                    at the SUMIERA Academy.
                                 </h2>
 
-                                <p className="text-gray-700 text-base font-medium">
-                                    Glowing, dewy skin is our thing.
+                                <p className="text-gray-700 text-base leading-8 font-medium max-w-md">
+                                    Join our specialized courses taught by
+                                    industry veterans. Learn techniques for
+                                    flawless **glowing skin**, intricate bridal
+                                    looks, and high-fashion editorial styles.
+                                    Your career starts here! Lorem ipsum dolor
+                                    sit amet consectetur adipisicing elit.
+                                    Expedita unde cupiditate eveniet aliquid!
+                                    Distinctio, suscipit quo iusto sed quaerat,
+                                    debitis earum officia, doloribus ipsum
+                                    corrupti dolorum nihil aperiam cumque
+                                    molestiae.
                                 </p>
 
                                 <Button className="bg-black rounded-none hover:bg-[#3c4c24] text-white px-8 py-6 text-base font-medium transition-all duration-300">
-                                    More Detail
+                                    Explore Academy Courses
                                 </Button>
                             </div>
                         </div>
 
                         {/* Right Side - Image */}
-                        <div className="relative h-96 lg:h-auto">
+                        <div className="relative col-span-2  ">
                             <img
-                                src="/assets/images/image.png"
+                                src="/assets/images/new/49.webp"
                                 alt="Beautiful model"
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-cover object-top"
                             />
                         </div>
                     </div>

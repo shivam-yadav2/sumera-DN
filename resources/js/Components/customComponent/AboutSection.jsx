@@ -27,7 +27,7 @@ const AboutSection = () => {
 
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Main Content Card with Shadow */}
-                <div className="bg-white rounded-lg shadow-2xl p-12 lg:p-16 relative overflow-visible">
+                <div className="bg-white rounded-lg shadow-2xl p-6 lg:p-16 relative overflow-visible">
                     {/* Large background text "Welcome" */}
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none overflow-hidden">
                         <h1 className="text-[10rem] lg:text-[14rem] font-bold text-gray-200 opacity-15 select-none whitespace-nowrap">
@@ -35,7 +35,7 @@ const AboutSection = () => {
                         </h1>
                     </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-center relative z-10">
                         {/* Left Content */}
                         <div className="space-y-6">
                             <div className="flex items-center gap-3">
@@ -92,45 +92,43 @@ const AboutSection = () => {
                         <div className="relative h-[550px] lg:h-[600px]">
                             <div
                                 className="relative w-full h-full transition-all duration-300 ease-in-out"
-                                style={{
-                                    transform: `translateX(${imagePosition}px)`,
-                                }}
+                                
                             >
                                 {/* Top Left - Small horizontal image */}
-                                <div className="absolute top-0 left-0 w-48 h-40 border-[10px] border-[#D4B5A0] bg-white shadow-xl overflow-hidden z-30">
+                                <div className="absolute top-0 left-0 h-80  lg:w-96 lg:h-96 border-[10px] border-[#D4B5A0] bg-white shadow-xl overflow-hidden z-10">
                                     <img
-                                        src="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=300&h=250&fit=crop"
+                                        src="/assets/images/new/25.webp"
                                         alt="Hair styling"
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
 
                                 {/* Top Right - Medium vertical image */}
-                                <div className="absolute top-16 right-12 w-56 h-64 border-[10px] border-[#D4B5A0] bg-white shadow-xl overflow-hidden z-20">
+                                <div className="absolute top-40 right-0  lg:w-auto h-64 lg:h-80 border-[10px] border-[#D4B5A0] bg-white shadow-xl overflow-hidden z-20">
                                     <img
-                                        src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=350&h=400&fit=crop"
+                                        src="/assets/images/new/44.webp"
                                         alt="Hair coloring"
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
 
                                 {/* Bottom Left - Large vertical image */}
-                                <div className="absolute bottom-0 left-8 w-52 h-72 border-[10px] border-[#D4B5A0] bg-white shadow-xl overflow-hidden z-40">
+                                <div className="absolute bottom-0 left-0 lg:left-8 w- h-64 lg:h-72  border-[10px] border-[#D4B5A0] bg-white shadow-xl overflow-hidden z-40">
                                     <img
-                                        src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=320&h=450&fit=crop"
+                                        src="/assets/images/new/39.webp"
                                         alt="Salon service"
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
 
                                 {/* Bottom Right - Tall vertical image */}
-                                <div className="absolute bottom-12 right-0 w-44 h-80 border-[10px] border-[#D4B5A0] bg-white shadow-xl overflow-hidden z-10">
+                                {/* <div className="absolute bottom-12 right-0 w-80 border-[10px] border-[#D4B5A0] bg-white shadow-xl overflow-hidden z-10">
                                     <img
-                                        src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=280&h=500&fit=crop"
+                                        src="/assets/images/new/9.webp"
                                         alt="Beauty treatment"
                                         className="w-full h-full object-cover"
                                     />
-                                </div>
+                                </div> */}
                                 
                             </div>
                         </div>
