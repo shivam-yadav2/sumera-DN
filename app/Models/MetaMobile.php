@@ -1,0 +1,11 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class MetaMobile extends Model
+{
+    //
+    protected  $fillable = ['url', 'mobile', 'whatsapp', 'is_active'];
+}
