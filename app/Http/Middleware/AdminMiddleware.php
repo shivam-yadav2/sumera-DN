@@ -23,9 +23,9 @@ class AdminMiddleware
         // Check if user has admin role (you can customize this logic)
         // For now, we'll assume all authenticated users can access admin
         // You can add role-based logic here later
-        if (!auth()->user()->is_admin ?? true) {
-            abort(403, 'Unauthorized access to admin area.');
-        }
+        // if (!auth()->user()->is_admin ?? true) {
+        //     abort(403, 'Unauthorized access to admin area.');
+        // }
 
         return $next($request);
     }

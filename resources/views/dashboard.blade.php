@@ -90,7 +90,7 @@
                                                 <h4 class="fs-22 fw-semibold ff-secondary mb-4"><span class="counter-value"
                                                         data-target="{{ count($appointments) }}">0</span>
                                                 </h4>
-                                                <a href="{!! url('appointment-list') !!}" class="text-decoration-underline">View all appointments</a>
+                                                <a href="{{ route('admin.appointments.index') }}" class="text-decoration-underline">View all appointments</a>
                                             </div>
                                             <div class="avatar-sm flex-shrink-0">
                                                 <span class="avatar-title bg-soft-success rounded fs-3">
@@ -123,7 +123,7 @@
                                                 <h4 class="fs-22 fw-semibold ff-secondary mb-4"><span class="counter-value"
                                                         data-target="{{ count($contacts) }}">0</span>
                                                 </h4>
-                                                <a href="{!! url('contact-list') !!}" class="text-decoration-underline">View all
+                                                <a href="{{ route('admin.contacts.index') }}" class="text-decoration-underline">View all
                                                     Contact Enquiry</a>
                                             </div>
                                             <div class="avatar-sm flex-shrink-0">
@@ -157,7 +157,7 @@
                                                 <h4 class="fs-22 fw-semibold ff-secondary mb-4"><span class="counter-value"
                                                         data-target="{!! count($offer) !!}">0</span>
                                                 </h4>
-                                                <a href="{!! url('add-offer') !!}" class="text-decoration-underline">See
+                                                <a href="{{ route('admin.offers.index') }}" class="text-decoration-underline">See
                                                     details</a>
                                             </div>
                                             <div class="avatar-sm flex-shrink-0">
@@ -190,7 +190,7 @@
                                                 <h4 class="fs-22 fw-semibold ff-secondary mb-4"><span
                                                         class="counter-value" data-target="{!! count($service) !!}">0</span>
                                                 </h4>
-                                                <a href="{!! url('all-service') !!}" class="text-decoration-underline">View  All Services</a>
+                                                <a href="{{ route('admin.services.index') }}" class="text-decoration-underline">View  All Services</a>
                                             </div>
                                             <div class="avatar-sm flex-shrink-0">
                                                 <span class="avatar-title bg-soft-primary rounded fs-3">
@@ -208,7 +208,7 @@
                                     <div class="card-header align-items-center d-flex">
                                         <h4 class="card-title mb-0 flex-grow-1">Today Booking Enquiry</h4>
                                         <div class="flex-shrink-0">
-                                            <a href="{!! url('appointment-list') !!}" class="btn btn-primary">View All Booking Enquiry</a>
+                                            <a href="{{ route('admin.appointments.index') }}" class="btn btn-primary">View All Booking Enquiry</a>
                                            {{-- <div class="dropdown card-header-dropdown">
                                                 <a class="text-reset dropdown-btn" href="#"
                                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -238,7 +238,7 @@
                                                         <th>Service</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody >
+                                                <tbody > 
 
                                                 @foreach($todayappointments as $key=>$row)
                                                     <tr>
@@ -271,7 +271,7 @@
                                     <div class="card-header align-items-center d-flex">
                                         <h4 class="card-title mb-0 flex-grow-1">Today Booking Enquiry</h4>
                                         <div class="flex-shrink-0">
-                                            <a href="{!! url('appointment-list') !!}" class="btn btn-primary">View All Contact Enquiry</a>
+                                            <a href="{{ route('admin.contacts.index') }}" class="btn btn-primary">View All Contact Enquiry</a>
                                             {{-- <div class="dropdown card-header-dropdown">
                                                  <a class="text-reset dropdown-btn" href="#"
                                                      data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

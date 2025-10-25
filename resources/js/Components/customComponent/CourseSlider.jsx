@@ -66,7 +66,7 @@ const CourseSlider = () => {
           <p className="text-lg italic mb-2" style={{ color: '#5c7650' }}>
             Explore Our Courses
           </p>
-          <h2 className="text-5xl head font-bold mb-4" style={{ color: '#5c7650' }}>
+          <h2 className="text-5xl head font-semibold mb-4" style={{ color: '#5c7650' }}>
             Academy Courses
           </h2>
           <p className="text-gray-600 mt-6 max-w-2xl mx-auto text-lg">

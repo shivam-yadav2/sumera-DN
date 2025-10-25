@@ -69,7 +69,7 @@
                                     </div>
                                 @endif
                             </div>
-                            <form method="post" action="{{ url('/slider') }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ url('/admin/sliders') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row ">
                                     <div class="col-md-12">

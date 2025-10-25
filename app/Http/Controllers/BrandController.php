@@ -17,6 +17,15 @@ class BrandController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function index()
+    {
+        $brands = Brand::get();
+        return view('brand.index', compact('brands'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
     public function create(Request $request, $id = null)
     {
         // Initialize variables

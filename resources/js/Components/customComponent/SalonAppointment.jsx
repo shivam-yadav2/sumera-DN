@@ -62,7 +62,7 @@ const SalonAppointment = () => {
 
                                 <h2 className="text-4xl lg:text-5xl font-bold text-[#3c4c24] leading-tight head">
                                     Become a{" "}
-                                    <span className="text-[#004d3a] head font-bold">
+                                    <span className="text-[#004d3a] head font-semibold">
                                         Certified Pro
                                     </span>{" "}
                                     at the SUMIERA Academy.

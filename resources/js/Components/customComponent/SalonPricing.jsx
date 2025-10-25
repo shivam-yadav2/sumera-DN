@@ -117,7 +117,7 @@ const SalonPricing = () => {
                       {item.title}
                     </h3>
                     <span className="text-2xl font-bold text-gray-800 ml-4">
-                      {item.price}
+                      {/* {item.price} */}
                     </span>
                   </div>
                   <p className="text-gray-600 text-sm">
@@ -145,7 +145,7 @@ const SalonPricing = () => {
                       {item.title}
                     </h3>
                     <span className="text-2xl font-bold text-gray-800 ml-4">
-                      {item.price}
+                      {/* {item.price} */}
                     </span>
                   </div>
                   <p className="text-gray-600 text-sm">

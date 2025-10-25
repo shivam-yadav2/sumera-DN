@@ -19,12 +19,12 @@ const SalonGallery = () => {
             category: "hair",
             alt: "Hair Styling",
         },
-        {
-            id: 3,
-            url: "/assets/images/new/13.webp",
-            category: "makeup",
-            alt: "Makeup Artist",
-        },
+        // {
+        //     id: 3,
+        //     url: "/assets/images/new/13.webp",
+        //     category: "makeup",
+        //     alt: "Makeup Artist",
+        // },
         {
             id: 4,
             url: "/assets/images/new/44.webp",
@@ -33,7 +33,7 @@ const SalonGallery = () => {
         },
         {
             id: 5,
-            url: "/assets/images/new/4.webp",
+            url: "/assets/images/new/41.webp",
             category: "hair",
             alt: "Hair Color",
         },
@@ -45,22 +45,22 @@ const SalonGallery = () => {
         },
         {
             id: 7,
-            url: "/assets/images/new/9.webp",
+            url: "/assets/images/new/29.webp",
             category: "bridal",
             alt: "Bride Portrait",
         },
-        {
-            id: 8,
-            url: "/assets/images/new/11.webp",
-            category: "hair",
-            alt: "Hair Treatment",
-        },
-        {
-            id: 9,
-            url: "/assets/images/new/12.webp",
-            category: "makeup",
-            alt: "Lipstick Application",
-        },
+        // {
+        //     id: 8,
+        //     url: "/assets/images/new/11.webp",
+        //     category: "hair",
+        //     alt: "Hair Treatment",
+        // },
+        // {
+        //     id: 9,
+        //     url: "/assets/images/new/51.webp",
+        //     category: "makeup",
+        //     alt: "Lipstick Application",
+        // },
         {
             id: 10,
             url: "/assets/images/new/47.webp",
@@ -69,13 +69,13 @@ const SalonGallery = () => {
         },
         {
             id: 11,
-            url: "/assets/images/new/14.webp",
+            url: "/assets/images/new/39.webp",
             category: "hair",
             alt: "Salon Interior",
         },
         {
             id: 12,
-            url: "/assets/images/new/51.webp",
+            url: "/assets/images/new/37.webp",
             category: "makeup",
             alt: "Glamour Makeup",
         },
@@ -123,7 +123,7 @@ const SalonGallery = () => {
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h1 className="text-5xl md:text-6xl head font-bold text-white mb-4">
+                    <h1 className="text-5xl md:text-6xl head font-semibold text-white mb-4">
                         Our Gallery
                     </h1>
                     <p className="text-gray-100 text-lg max-w-2xl mx-auto">

@@ -551,120 +551,217 @@
             </div>
             <ul class="navbar-nav" id="navbar-nav">
                 <li class="menu-title"><span data-key="t-menu">Menu</span></li>
-                <li>
-                    <a class="nav-link" href="{{url('/dashboard')}}" role="button"
-                        aria-expanded="false" aria-controls="sidebarDashboards">
-                        <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Dashboard</span>
+                <!-- Dashboard -->
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}" href="{{ route('admin.dashboard') }}">
+                        <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboard">Dashboard</span>
                     </a>
                 </li>
 
-                <li>
-                    <a class="nav-link menu-link" href="#sidebarAuth" data-bs-toggle="collapse" role="button"
-                       aria-expanded="true" aria-controls="sidebarAuth">
-                        <i class="ri-google-line"></i> <span data-key="t-authentication">Seo Analytics</span>
+                <!-- Services -->
+                <li class="nav-item">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.services.*') ? 'active' : '' }}" href="#sidebarServices" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarServices">
+                        <i class="ri-store-2-line"></i> <span data-key="t-services">Services</span>
                     </a>
-
-                    <div class="collapse menu-dropdown" id="sidebarAuth">
+                    <div class="collapse menu-dropdown" id="sidebarServices">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="{{url('/add-meta-tag')}}" class="nav-link"> Meta Tags</a>
+                                <a href="{{ route('admin.services.index') }}" class="nav-link {{ request()->routeIs('admin.services.index') ? 'active' : '' }}">All Services</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{url('/add-meta-script')}}" class="nav-link"> Meta Script</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{url('/add-meta-mobile')}}" class="nav-link"> Whatapp/Mobile</a>
+                                <a href="{{ route('admin.services.create') }}" class="nav-link {{ request()->routeIs('admin.services.create') ? 'active' : '' }}">Add Service</a>
                             </li>
                         </ul>
                     </div>
                 </li>
-                <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Enquirys</span></li>
 
-
+                <!-- Gallery -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('/appointment-list')}}" role="button"
-                        aria-expanded="false" aria-controls="sidebarApps">
-                        <i class="ri-calendar-2-line"></i> <span data-key="t-apps">Booking</span>
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.gallery.*') ? 'active' : '' }}" href="#sidebarGallery" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarGallery">
+                        <i class="ri-gallery-line"></i> <span data-key="t-gallery">Gallery</span>
                     </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('/contact-list')}}" role="button"
-                        aria-expanded="false" aria-controls="sidebarApps">
-                        <i class="ri-mail-unread-line"></i> <span data-key="t-apps">Contact Us</span>
-                    </a>
-                </li>
-                <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Offers and Combo </span></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('/add-offer')}}" role="button"
-                       aria-expanded="false" aria-controls="sidebarApps">
-                        <i class="ri-coupon-2-line"></i> <span data-key="t-apps">Offers</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('/add-package')}}" role="button"
-                       aria-expanded="false" aria-controls="sidebarApps">
-                        <i class="ri-vip-line"></i> <span data-key="t-apps">Combo Package</span>
-                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarGallery">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.gallery.index') }}" class="nav-link {{ request()->routeIs('admin.gallery.index') ? 'active' : '' }}">All Gallery</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.gallery.create') }}" class="nav-link {{ request()->routeIs('admin.gallery.create') ? 'active' : '' }}">Add Gallery</a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
 
-                <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">ADD CONTENT WEBSITE</span></li>
+                <!-- Academy -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('/slider')}}" role="button"
-                        aria-expanded="false" aria-controls="sidebarApps">
-                        <i class="ri-mac-line"></i> <span data-key="t-apps">Home Slider</span>
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.academy.*') ? 'active' : '' }}" href="#sidebarAcademy" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAcademy">
+                        <i class="ri-school-line"></i> <span data-key="t-academy">Academy</span>
                     </a>
+                    <div class="collapse menu-dropdown" id="sidebarAcademy">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.academy.index') }}" class="nav-link {{ request()->routeIs('admin.academy.index') ? 'active' : '' }}">All Academy</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.academy.create') }}" class="nav-link {{ request()->routeIs('admin.academy.create') ? 'active' : '' }}">Add Academy</a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
+
+                <!-- Courses -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('/all-about')}}" role="button"
-                        aria-expanded="false" aria-controls="sidebarApps">
-                        <i class="ri-apps-2-line"></i> <span data-key="t-apps">Abouts</span>
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.courses.*') ? 'active' : '' }}" href="#sidebarCourses" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCourses">
+                        <i class="ri-book-open-line"></i> <span data-key="t-courses">Courses</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarCourses">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.courses.create') }}" class="nav-link {{ request()->routeIs('admin.courses.create') ? 'active' : '' }}">Add Course</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Enquiries -->
+                <li class="nav-item">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.contacts.*') || request()->routeIs('admin.appointments.*') ? 'active' : '' }}" href="#sidebarEnquiries" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarEnquiries">
+                        <i class="ri-mail-line"></i> <span data-key="t-enquiries">Enquiries</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarEnquiries">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.contacts.index') }}" class="nav-link {{ request()->routeIs('admin.contacts.*') ? 'active' : '' }}">Contact Enquiries</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.appointments.index') }}" class="nav-link {{ request()->routeIs('admin.appointments.*') ? 'active' : '' }}">Appointment Enquiries</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Brands -->
+                <li class="nav-item">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.brands.*') ? 'active' : '' }}" href="#sidebarBrands" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarBrands">
+                        <i class="ri-flag-2-line"></i> <span data-key="t-brands">Brands</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarBrands">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.brands.index') }}" class="nav-link {{ request()->routeIs('admin.brands.index') ? 'active' : '' }}">All Brands</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.brands.create') }}" class="nav-link {{ request()->routeIs('admin.brands.create') ? 'active' : '' }}">Add Brand</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Packages -->
+                <li class="nav-item">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.packages.*') ? 'active' : '' }}" href="#sidebarPackages" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPackages">
+                        <i class="ri-vip-line"></i> <span data-key="t-packages">Packages</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarPackages">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.packages.index') }}" class="nav-link {{ request()->routeIs('admin.packages.index') ? 'active' : '' }}">All Packages</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.packages.create') }}" class="nav-link {{ request()->routeIs('admin.packages.create') ? 'active' : '' }}">Add Package</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- YouTube -->
+                <li class="nav-item">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.youtube.*') ? 'active' : '' }}" href="#sidebarYoutube" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarYoutube">
+                        <i class="ri-youtube-line"></i> <span data-key="t-youtube">YouTube</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarYoutube">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.youtube.index') }}" class="nav-link {{ request()->routeIs('admin.youtube.index') ? 'active' : '' }}">All Videos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.youtube.create') }}" class="nav-link {{ request()->routeIs('admin.youtube.create') ? 'active' : '' }}">Add Video</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Offers -->
+                <li class="nav-item">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.offers.*') ? 'active' : '' }}" href="#sidebarOffers" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarOffers">
+                        <i class="ri-coupon-2-line"></i> <span data-key="t-offers">Offers</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarOffers">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.offers.index') }}" class="nav-link {{ request()->routeIs('admin.offers.index') ? 'active' : '' }}">All Offers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.offers.create') }}" class="nav-link {{ request()->routeIs('admin.offers.create') ? 'active' : '' }}">Add Offer</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Features/Celebrities -->
+                <li class="nav-item">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.features.*') ? 'active' : '' }}" href="#sidebarFeatures" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarFeatures">
+                        <i class="ri-star-line"></i> <span data-key="t-features">Features</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarFeatures">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.features.index') }}" class="nav-link {{ request()->routeIs('admin.features.index') ? 'active' : '' }}">All Features</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.features.create') }}" class="nav-link {{ request()->routeIs('admin.features.create') ? 'active' : '' }}">Add Feature</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Sliders -->
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('admin.sliders.*') ? 'active' : '' }}" href="{{ route('admin.sliders.create') }}">
+                        <i class="ri-mac-line"></i> <span data-key="t-sliders">Home Slider</span>
                     </a>
                 </li>
 
-
-
+                <!-- Settings -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('/all-service')}}">
-                        <i class="ri-store-2-line"></i> <span data-key="t-layouts">Services</span>
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.about.*') || request()->routeIs('admin.banners.*') || request()->routeIs('admin.meta-*') ? 'active' : '' }}" href="#sidebarSettings" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarSettings">
+                        <i class="ri-settings-3-line"></i> <span data-key="t-settings">Settings</span>
                     </a>
+                    <div class="collapse menu-dropdown" id="sidebarSettings">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.about.index') }}" class="nav-link {{ request()->routeIs('admin.about.*') ? 'active' : '' }}">About Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.banners.index') }}" class="nav-link {{ request()->routeIs('admin.banners.*') ? 'active' : '' }}">Banners</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.meta-tags.index') }}" class="nav-link {{ request()->routeIs('admin.meta-tags.*') ? 'active' : '' }}">Meta Tags</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.meta-scripts.index') }}" class="nav-link {{ request()->routeIs('admin.meta-scripts.*') ? 'active' : '' }}">Meta Scripts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.meta-mobile.index') }}" class="nav-link {{ request()->routeIs('admin.meta-mobile.*') ? 'active' : '' }}">WhatsApp/Mobile</a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
 
+                <!-- Frontend Link -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('/add-banner')}}">
-                        <i class="ri-image-line"></i> <span data-key="t-layouts">Banner</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('/add-gallery')}}">
-                        <i class="ri-gallery-line"></i> <span data-key="t-layouts">Gallery</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('/add-brand')}}" role="button"
-                       aria-expanded="false" aria-controls="sidebarApps">
-                        <i class="ri-flag-2-line"></i> <span data-key="t-apps">Brand</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('/add-youtube')}}" role="button"
-                       aria-expanded="false" aria-controls="sidebarApps">
-                        <i class="ri-youtube-line"></i> <span data-key="t-apps">You Tube</span>
-                    </a>
-                </li>
-                <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Academy</span></li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('/all-academy')}}" role="button"
-                       aria-expanded="false" aria-controls="sidebarApps">
-                        <i class="ri-slideshow-line"></i> <span data-key="t-apps">Academy</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('/add-course')}}" role="button"
-                       aria-expanded="false" aria-controls="sidebarApps">
-                        <i class="ri-medal-2-line"></i> <span data-key="t-apps">Courses</span>
+                    <a class="nav-link" href="{{ url('/') }}" target="_blank">
+                        <i class="ri-eye-line"></i> <span data-key="t-frontend">View Website</span>
                     </a>
                 </li>
                {{-- <li class="nav-item">

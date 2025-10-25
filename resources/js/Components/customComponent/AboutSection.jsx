@@ -82,7 +82,7 @@ const AboutSection = () => {
 
                             {/* Signature */}
                             <div className=" flex items-center justify-center pointer-events-none overflow-hidden">
-                                    <h1 className="text-[4rem] lg:text-[8rem] head font-bold text-[#3c4c24] opacity-15 select-none tracking-wider">
+                                    <h1 className="text-[4rem] lg:text-[8rem] head font-semibold text-[#3c4c24] opacity-15 select-none tracking-wider">
                                         Welcome
                                     </h1>
                                 </div>

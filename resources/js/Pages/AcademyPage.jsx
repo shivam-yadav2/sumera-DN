@@ -87,7 +87,7 @@ const handleSubmit = () => {
                                                 >
                                                     {service.pretitle}
                                                 </p>
-                                                <h2 className="text-5xl head font-bold mb-6 text-center">
+                                                <h2 className="text-5xl head font-semibold mb-6 text-center">
                                                     {service.title}
                                                 </h2>
                                                 <p className="text-center text-gray-200 max-w-xs mb-8 leading-relaxed">
@@ -117,7 +117,7 @@ const handleSubmit = () => {
                                             {service.pretitle}
                                         </p>
                                         <h3
-                                            className="text-4xl head font-bold text-center mb-4"
+                                            className="text-4xl head font-semibold text-center mb-4"
                                             style={{ color: "#5c7650" }}
                                         >
                                             {service.title}

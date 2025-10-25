@@ -64,6 +64,9 @@
                     <div class="collapse menu-dropdown" id="sidebarGallery">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
+                                <a href="{{ route('admin.gallery.index') }}" class="nav-link {{ request()->routeIs('admin.gallery.index') ? 'active' : '' }}">All Gallery</a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="{{ route('admin.gallery.create') }}" class="nav-link {{ request()->routeIs('admin.gallery.create') ? 'active' : '' }}">Add Gallery</a>
                             </li>
                         </ul>
@@ -118,9 +121,101 @@
                     </div>
                 </li>
 
+                <!-- Brands -->
+                <li class="nav-item">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.brands.*') ? 'active' : '' }}" href="#sidebarBrands" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarBrands">
+                        <i class="mdi mdi-tag"></i> <span data-key="t-brands">Brands</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarBrands">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.brands.index') }}" class="nav-link {{ request()->routeIs('admin.brands.index') ? 'active' : '' }}">All Brands</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.brands.create') }}" class="nav-link {{ request()->routeIs('admin.brands.create') ? 'active' : '' }}">Add Brand</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Packages -->
+                <li class="nav-item">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.packages.*') ? 'active' : '' }}" href="#sidebarPackages" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPackages">
+                        <i class="mdi mdi-package-variant"></i> <span data-key="t-packages">Packages</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarPackages">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.packages.index') }}" class="nav-link {{ request()->routeIs('admin.packages.index') ? 'active' : '' }}">All Packages</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.packages.create') }}" class="nav-link {{ request()->routeIs('admin.packages.create') ? 'active' : '' }}">Add Package</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- YouTube -->
+                <li class="nav-item">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.youtube.*') ? 'active' : '' }}" href="#sidebarYoutube" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarYoutube">
+                        <i class="mdi mdi-youtube"></i> <span data-key="t-youtube">YouTube</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarYoutube">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.youtube.index') }}" class="nav-link {{ request()->routeIs('admin.youtube.index') ? 'active' : '' }}">All Videos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.youtube.create') }}" class="nav-link {{ request()->routeIs('admin.youtube.create') ? 'active' : '' }}">Add Video</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Offers -->
+                <li class="nav-item">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.offers.*') ? 'active' : '' }}" href="#sidebarOffers" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarOffers">
+                        <i class="mdi mdi-percent"></i> <span data-key="t-offers">Offers</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarOffers">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.offers.index') }}" class="nav-link {{ request()->routeIs('admin.offers.index') ? 'active' : '' }}">All Offers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.offers.create') }}" class="nav-link {{ request()->routeIs('admin.offers.create') ? 'active' : '' }}">Add Offer</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Features/Celebrities -->
+                <li class="nav-item">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.features.*') ? 'active' : '' }}" href="#sidebarFeatures" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarFeatures">
+                        <i class="mdi mdi-star"></i> <span data-key="t-features">Features</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarFeatures">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.features.index') }}" class="nav-link {{ request()->routeIs('admin.features.index') ? 'active' : '' }}">All Features</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.features.create') }}" class="nav-link {{ request()->routeIs('admin.features.create') ? 'active' : '' }}">Add Feature</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- Sliders -->
+                <li class="nav-item">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.sliders.*') ? 'active' : '' }}" href="{{ route('admin.sliders.create') }}">
+                        <i class="mdi mdi-view-carousel"></i> <span data-key="t-sliders">Sliders</span>
+                    </a>
+                </li>
+
                 <!-- Settings -->
                 <li class="nav-item">
-                    <a class="nav-link menu-link {{ request()->routeIs('admin.about.*') || request()->routeIs('admin.banners.*') ? 'active' : '' }}" href="#sidebarSettings" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarSettings">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.about.*') || request()->routeIs('admin.banners.*') || request()->routeIs('admin.meta-*') ? 'active' : '' }}" href="#sidebarSettings" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarSettings">
                         <i class="mdi mdi-cog"></i> <span data-key="t-settings">Settings</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarSettings">
@@ -129,7 +224,16 @@
                                 <a href="{{ route('admin.about.index') }}" class="nav-link {{ request()->routeIs('admin.about.*') ? 'active' : '' }}">About Page</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('admin.banners.create') }}" class="nav-link {{ request()->routeIs('admin.banners.*') ? 'active' : '' }}">Banners</a>
+                                <a href="{{ route('admin.banners.index') }}" class="nav-link {{ request()->routeIs('admin.banners.*') ? 'active' : '' }}">Banners</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.meta-tags.index') }}" class="nav-link {{ request()->routeIs('admin.meta-tags.*') ? 'active' : '' }}">Meta Tags</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.meta-scripts.index') }}" class="nav-link {{ request()->routeIs('admin.meta-scripts.*') ? 'active' : '' }}">Meta Scripts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.meta-mobile.index') }}" class="nav-link {{ request()->routeIs('admin.meta-mobile.*') ? 'active' : '' }}">Meta Mobile</a>
                             </li>
                         </ul>
                     </div>

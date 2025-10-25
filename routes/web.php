@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -15,23 +15,23 @@ Route::get('/', [HomeController::class, 'index2'])->name('home');
 Route::get('/gallery/photos', function () {
     return Inertia::render('Gallery');
 })->name('gallery.photos');
-        
+
 Route::get('/gallery/videos', function () {
     return Inertia::render('SalonVideoGallery');
 })->name('gallery.videos');
-        
+
 Route::get('/contact', function () {
     return Inertia::render('ContactPage');
 })->name('contact');
-        
+
 Route::get('/academy', function () {
     return Inertia::render('AcademyPage');
 })->name('academy');
-        
+
 Route::get('/about', function () {
     return Inertia::render('About');
 })->name('about');
-        
+
 Route::get('/services/{service}', function () {
     return Inertia::render('Service');
 })->name('services.show');
@@ -53,12 +53,11 @@ Route::middleware('auth')->group(function () {
 
 // Admin middleware group
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
-    
     // Admin Dashboard
     Route::get('/', function () {
         return redirect()->route('admin.dashboard');
     });
-    
+
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
@@ -75,11 +74,13 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/about/{id}/delete', [App\Http\Controllers\AboutController::class, 'destroy'])->name('about.destroy');
 
     // Banner Management
+    Route::get('/banners', [App\Http\Controllers\BannerController::class, 'create'])->name('banners.index');
     Route::match(['get', 'post'], '/banners/{id?}', [App\Http\Controllers\BannerController::class, 'create'])->name('banners.create');
     Route::get('/banners/{id}/update', [App\Http\Controllers\BannerController::class, 'update'])->name('banners.update');
     Route::get('/banners/{id}/delete', [App\Http\Controllers\BannerController::class, 'destroy'])->name('banners.destroy');
 
     // Brand Management
+    Route::get('/brands', [App\Http\Controllers\BrandController::class, 'index'])->name('brands.index');
     Route::match(['get', 'post'], '/brands/{id?}', [App\Http\Controllers\BrandController::class, 'create'])->name('brands.create');
     Route::get('/brands/{id}/delete', [App\Http\Controllers\BrandController::class, 'destroy'])->name('brands.destroy');
 
@@ -88,41 +89,49 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/service-brands/{id}/delete', [App\Http\Controllers\ServiceBrandController::class, 'destroy'])->name('service-brands.destroy');
 
     // Package Management
+    Route::get('/packages', [App\Http\Controllers\PackageController::class, 'index'])->name('packages.index');
     Route::match(['get', 'post'], '/packages/{id?}', [App\Http\Controllers\PackageController::class, 'index'])->name('packages.create');
     Route::get('/packages/{id}/update', [App\Http\Controllers\PackageController::class, 'update'])->name('packages.update');
     Route::get('/packages/{id}/delete', [App\Http\Controllers\PackageController::class, 'destroy'])->name('packages.destroy');
 
     // YouTube Management
+    Route::get('/youtube', [App\Http\Controllers\YoutubeController::class, 'index'])->name('youtube.index');
     Route::match(['get', 'post'], '/youtube/{id?}', [App\Http\Controllers\YoutubeController::class, 'index'])->name('youtube.create');
     Route::get('/youtube/{id}/update', [App\Http\Controllers\YoutubeController::class, 'update'])->name('youtube.update');
     Route::get('/youtube/{id}/delete', [App\Http\Controllers\YoutubeController::class, 'destroy'])->name('youtube.destroy');
 
     // Meta Script Management
+    Route::get('/meta-scripts', [App\Http\Controllers\MetaScriptController::class, 'index'])->name('meta-scripts.index');
     Route::match(['get', 'post'], '/meta-scripts/{id?}', [App\Http\Controllers\MetaScriptController::class, 'index'])->name('meta-scripts.create');
     Route::get('/meta-scripts/{id}/update', [App\Http\Controllers\MetaScriptController::class, 'update'])->name('meta-scripts.update');
     Route::get('/meta-scripts/{id}/delete', [App\Http\Controllers\MetaScriptController::class, 'destroy'])->name('meta-scripts.destroy');
 
     // Meta Tag Management
+    Route::get('/meta-tags', [App\Http\Controllers\MetatagSeoController::class, 'index'])->name('meta-tags.index');
     Route::match(['get', 'post'], '/meta-tags/{id?}', [App\Http\Controllers\MetatagSeoController::class, 'index'])->name('meta-tags.create');
     Route::get('/meta-tags/{id}/update', [App\Http\Controllers\MetatagSeoController::class, 'update'])->name('meta-tags.update');
     Route::get('/meta-tags/{id}/delete', [App\Http\Controllers\MetatagSeoController::class, 'destroy'])->name('meta-tags.destroy');
 
     // Meta Mobile Management
+    Route::get('/meta-mobile', [App\Http\Controllers\MetaMobileController::class, 'index'])->name('meta-mobile.index');
     Route::match(['get', 'post'], '/meta-mobile/{id?}', [App\Http\Controllers\MetaMobileController::class, 'index'])->name('meta-mobile.create');
     Route::get('/meta-mobile/{id}/update', [App\Http\Controllers\MetaMobileController::class, 'update'])->name('meta-mobile.update');
     Route::get('/meta-mobile/{id}/delete', [App\Http\Controllers\MetaMobileController::class, 'destroy'])->name('meta-mobile.destroy');
 
     // Gallery Management
+    Route::get('/gallery', [App\Http\Controllers\GalleryController::class, 'index'])->name('gallery.index');
     Route::match(['get', 'post'], '/gallery/{id?}', [App\Http\Controllers\GalleryController::class, 'create'])->name('gallery.create');
     Route::get('/gallery/{id}/update', [App\Http\Controllers\GalleryController::class, 'update'])->name('gallery.update');
     Route::get('/gallery/{id}/delete', [App\Http\Controllers\GalleryController::class, 'destroy'])->name('gallery.destroy');
 
     // Offer Management
+    Route::get('/offers', [App\Http\Controllers\OfferController::class, 'index'])->name('offers.index');
     Route::match(['get', 'post'], '/offers/{id?}', [App\Http\Controllers\OfferController::class, 'index'])->name('offers.create');
     Route::get('/offers/{id}/update', [App\Http\Controllers\OfferController::class, 'update'])->name('offers.update');
     Route::get('/offers/{id}/delete', [App\Http\Controllers\OfferController::class, 'destroy'])->name('offers.destroy');
 
     // Feature Celebrity Management
+    Route::get('/features', [App\Http\Controllers\FeatureCelebrityController::class, 'index'])->name('features.index');
     Route::match(['get', 'post'], '/features/{id?}', [App\Http\Controllers\FeatureCelebrityController::class, 'index'])->name('features.create');
     Route::get('/features/{id}/delete', [App\Http\Controllers\FeatureCelebrityController::class, 'destroy'])->name('features.destroy');
 
@@ -174,24 +183,25 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 // UTILITY ROUTES
 // ===========================================
 
-Route::get('/clear-cache', function() {
-   Artisan::call('cache:clear');
-   Artisan::call('config:clear');
-   Artisan::call('config:cache');
-   Artisan::call('view:clear');
-   return "Cache cleared successfully!";
+Route::get('/clear-cache', function () {
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+    return 'Cache cleared successfully!';
 })->name('clear-cache');
 
 Route::get('/send-test-email', function () {
-   try {
-       Mail::raw('This is a test email from Laravel!', function ($message) {
-           $message->to('satyalaravel2023@gmail.com')
-               ->subject('Test Email');
-       });
-       return 'Test email sent successfully!';
-   } catch (\Exception $e) {
-       return 'Error: ' . $e->getMessage();
-   }
+    try {
+        Mail::raw('This is a test email from Laravel!', function ($message) {
+            $message
+                ->to('satyalaravel2023@gmail.com')
+                ->subject('Test Email');
+        });
+        return 'Test email sent successfully!';
+    } catch (\Exception $e) {
+        return 'Error: ' . $e->getMessage();
+    }
 })->name('test-email');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
