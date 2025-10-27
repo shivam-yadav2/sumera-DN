@@ -92,7 +92,7 @@
                                                             <input type="file" class="form-control" id="category_image"
                                                                    name="slider_image"
                                                                    onchange="previewImage(event, 'category_image_preview')">
-                                                            <img id="category_image_preview" src=""
+                                                            <img loading="lazy" id="category_image_preview" src=""
                                                                  alt="Slider Image Preview"
                                                                  style="max-width: 100%; margin-top: 10px;" />
                                                         </div>
@@ -105,7 +105,7 @@
                                                             <input type="file" class="form-control" id="category_banner"
                                                                    name="mobile_image"
                                                                    onchange="previewImage(event, 'category_banner_preview')">
-                                                            <img id="category_banner_preview" src=""
+                                                            <img loading="lazy" id="category_banner_preview" src=""
                                                                  alt="Mobile Image Preview"
                                                                  style="max-width: 100%; margin-top: 10px;" />
                                                         </div>
@@ -131,7 +131,7 @@
                     <div class="col-sm-6 col-xl-3">
                         <!-- Simple card -->
                         <div class="card">
-                            <img class="card-img-top img-fluid" src="{{ asset($row->slider_image) }}"
+                            <img loading="lazy" class="card-img-top img-fluid" src="{{ asset($row->slider_image) }}"
                                  alt="{{ $row->alt_text }}">
                             <!-- Delete icon overlay -->
                             {{-- <a href="javascript:void(0)" class="confirmDelete delete-icon position-absolute top-50 start-50 translate-middle"

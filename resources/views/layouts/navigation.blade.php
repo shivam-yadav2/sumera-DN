@@ -6,19 +6,19 @@
                 <div class="navbar-brand-box horizontal-logo">
                     <a href="{!! url('/admin/dashboard') !!}" class="logo logo-dark">
                         <span class="logo-sm">
-                            <img src="assets/images/logo-sm.png" alt="" height="22">
+                            <img loading="lazy" src="assets/images/logo-sm.png" alt="" height="22">
                         </span>
                         <span class="logo-lg">
-                            <img src="assets/images/logo-dark.png" alt="" height="17">
+                            <img loading="lazy" src="assets/images/logo-dark.png" alt="" height="17">
                         </span>
                     </a>
 
                     <a href="{!! url('/admin/dashboard') !!}" class="logo logo-light">
                         <span class="logo-sm">
-                            <img src="assets/images/logo-sm.png" alt="" height="22">
+                            <img loading="lazy" src="assets/images/logo-sm.png" alt="" height="22">
                         </span>
                         <span class="logo-lg">
-                            <img src="assets/images/logo-light.png" alt="" height="17">
+                            <img loading="lazy" src="assets/images/logo-light.png" alt="" height="17">
                         </span>
                     </a>
                 </div>
@@ -49,9 +49,11 @@
                             </div>
 
                             <div class="dropdown-item bg-transparent text-wrap">
-                                <a href="{!! url('/') !!}" class="btn btn-soft-secondary btn-sm btn-rounded">how to
+                                <a href="{!! url('/') !!}" class="btn btn-soft-secondary btn-sm btn-rounded">how
+                                    to
                                     setup <i class="mdi mdi-magnify ms-1"></i></a>
-                                <a href="{!! url('/') !!}" class="btn btn-soft-secondary btn-sm btn-rounded">buttons
+                                <a href="{!! url('/') !!}"
+                                    class="btn btn-soft-secondary btn-sm btn-rounded">buttons
                                     <i class="mdi mdi-magnify ms-1"></i></a>
                             </div>
                             <!-- item-->
@@ -86,7 +88,7 @@
                                 <!-- item -->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
                                     <div class="d-flex">
-                                        <img src="assets/images/users/avatar-2.jpg"
+                                        <img loading="lazy" src="assets/images/users/avatar-2.jpg"
                                             class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                         <div class="flex-1">
                                             <h6 class="m-0">Angela Bernier</h6>
@@ -97,7 +99,7 @@
                                 <!-- item -->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
                                     <div class="d-flex">
-                                        <img src="assets/images/users/avatar-3.jpg"
+                                        <img loading="lazy" src="assets/images/users/avatar-3.jpg"
                                             class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                         <div class="flex-1">
                                             <h6 class="m-0">David Grasso</h6>
@@ -108,7 +110,7 @@
                                 <!-- item -->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
                                     <div class="d-flex">
-                                        <img src="assets/images/users/avatar-5.jpg"
+                                        <img loading="lazy" src="assets/images/users/avatar-5.jpg"
                                             class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                         <div class="flex-1">
                                             <h6 class="m-0">Mike Bunch</h6>
@@ -251,7 +253,7 @@
                                     <div
                                         class="text-reset notification-item d-block dropdown-item position-relative active">
                                         <div class="d-flex">
-                                            <img src="assets/images/users/avatar-2.jpg"
+                                            <img loading="lazy" src="assets/images/users/avatar-2.jpg"
                                                 class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                             <div class="flex-1">
                                                 <a href="#!" class="stretched-link">
@@ -311,7 +313,7 @@
 
                                     <div class="text-reset notification-item d-block dropdown-item position-relative">
                                         <div class="d-flex">
-                                            <img src="assets/images/users/avatar-8.jpg"
+                                            <img loading="lazy" src="assets/images/users/avatar-8.jpg"
                                                 class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                             <div class="flex-1">
                                                 <a href="#!" class="stretched-link">
@@ -351,7 +353,7 @@
                                 <div data-simplebar style="max-height: 300px;" class="pe-2">
                                     <div class="text-reset notification-item d-block dropdown-item">
                                         <div class="d-flex">
-                                            <img src="assets/images/users/avatar-3.jpg"
+                                            <img loading="lazy" src="assets/images/users/avatar-3.jpg"
                                                 class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                             <div class="flex-1">
                                                 <a href="#!" class="stretched-link">
@@ -379,7 +381,7 @@
 
                                     <div class="text-reset notification-item d-block dropdown-item">
                                         <div class="d-flex">
-                                            <img src="assets/images/users/avatar-2.jpg"
+                                            <img loading="lazy" src="assets/images/users/avatar-2.jpg"
                                                 class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                             <div class="flex-1">
                                                 <a href="#!" class="stretched-link">
@@ -408,7 +410,7 @@
 
                                     <div class="text-reset notification-item d-block dropdown-item">
                                         <div class="d-flex">
-                                            <img src="assets/images/users/avatar-6.jpg"
+                                            <img loading="lazy" src="assets/images/users/avatar-6.jpg"
                                                 class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                             <div class="flex-1">
                                                 <a href="#!" class="stretched-link">
@@ -437,7 +439,7 @@
 
                                     <div class="text-reset notification-item d-block dropdown-item">
                                         <div class="d-flex">
-                                            <img src="assets/images/users/avatar-8.jpg"
+                                            <img loading="lazy" src="assets/images/users/avatar-8.jpg"
                                                 class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                             <div class="flex-1">
                                                 <a href="#!" class="stretched-link">
@@ -473,7 +475,8 @@
                             <div class="tab-pane fade p-4" id="alerts-tab" role="tabpanel"
                                 aria-labelledby="alerts-tab">
                                 <div class="w-25 w-sm-50 pt-3 mx-auto">
-                                    <img src="assets/images/svg/bell.svg" class="img-fluid" alt="user-pic">
+                                    <img loading="lazy" src="assets/images/svg/bell.svg" class="img-fluid"
+                                        alt="user-pic">
                                 </div>
                                 <div class="text-center pb-5 mt-2">
                                     <h6 class="fs-18 fw-semibold lh-base">Hey! You have no any notifications
@@ -488,8 +491,9 @@
                     <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         <span class="d-flex align-items-center">
-{{--                            <img class="rounded-circle header-profile-user" src="{!! asset('assets/images/users/avatar-1.jpg') !!}" alt="Header Avatar">--}}
-                            <img class="rounded-circle header-profile-user" src="{!! asset('assets/images/logo.png') !!}" alt="Header Avatar">
+                            {{--                            <img loading="lazy" class="rounded-circle header-profile-user" src="{!! asset('assets/images/users/avatar-1.jpg') !!}" alt="Header Avatar"> --}}
+                            <img loading="lazy" class="rounded-circle header-profile-user"
+                                src="{!! asset('assets/logo/white.png') !!}" alt="Header Avatar">
                             <span class="text-start ms-xl-2">
                                 <span
                                     class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">{{ Auth::user()->name }}</span>
@@ -499,10 +503,10 @@
                     <div class="dropdown-menu dropdown-menu-end">
                         <!-- item-->
                         <h6 class="dropdown-header">Welcome Posh & Polished!</h6>
-                        {{--<a class="dropdown-item" href="{{ route('profile.edit') }}"><i
+                        {{-- <a class="dropdown-item" href="{{ route('profile.edit') }}"><i
                                 class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span
                                 class="align-middle">Profile</span>
-                        </a>--}}
+                        </a> --}}
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <button class="dropdown-item" type="submit"><i
@@ -523,19 +527,19 @@
         <!-- Dark Logo-->
         <a href="{!! url('/') !!}" class="logo logo-dark">
             <span class="logo-sm">
-                <img src="{{asset('assets')}}/images/logo.png" alt="" width="120">
+                <img loading="lazy" src="{{ asset('assets/logo/white.png') }}" alt="" width="120">
             </span>
             <span class="logo-lg">
-                <img src="{{asset('assets')}}/images/logo.png" alt="" width="150">
+                <img loading="lazy" src="{{ asset('assets/logo/white.png') }}" alt="" width="150">
             </span>
         </a>
         <!-- Light Logo-->
         <a href="{!! url('/') !!}" class="logo logo-light">
             <span class="logo-sm">
-                <img src="{{asset('assets')}}/images/logo.png" alt="" width="120">
+                <img loading="lazy" src="{{ asset('assets/logo/white.png') }}" alt="" width="120">
             </span>
             <span class="logo-lg">
-                <img src="{{asset('assets')}}/images/logo.png" alt="" width="150">
+                <img loading="lazy" src="{{ asset('assets/logo/white.png') }}" alt="" width="150">
             </span>
         </a>
         <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
@@ -553,23 +557,30 @@
                 <li class="menu-title"><span data-key="t-menu">Menu</span></li>
                 <!-- Dashboard -->
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}" href="{{ route('admin.dashboard') }}">
+                    <a class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}"
+                        href="{{ route('admin.dashboard') }}">
                         <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboard">Dashboard</span>
                     </a>
                 </li>
 
                 <!-- Services -->
                 <li class="nav-item">
-                    <a class="nav-link menu-link {{ request()->routeIs('admin.services.*') ? 'active' : '' }}" href="#sidebarServices" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarServices">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.services.*') ? 'active' : '' }}"
+                        href="#sidebarServices" data-bs-toggle="collapse" role="button" aria-expanded="false"
+                        aria-controls="sidebarServices">
                         <i class="ri-store-2-line"></i> <span data-key="t-services">Services</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarServices">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="{{ route('admin.services.index') }}" class="nav-link {{ request()->routeIs('admin.services.index') ? 'active' : '' }}">All Services</a>
+                                <a href="{{ route('admin.services.index') }}"
+                                    class="nav-link {{ request()->routeIs('admin.services.index') ? 'active' : '' }}">All
+                                    Services</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('admin.services.create') }}" class="nav-link {{ request()->routeIs('admin.services.create') ? 'active' : '' }}">Add Service</a>
+                                <a href="{{ route('admin.services.create') }}"
+                                    class="nav-link {{ request()->routeIs('admin.services.create') ? 'active' : '' }}">Add
+                                    Service</a>
                             </li>
                         </ul>
                     </div>
@@ -577,16 +588,22 @@
 
                 <!-- Gallery -->
                 <li class="nav-item">
-                    <a class="nav-link menu-link {{ request()->routeIs('admin.gallery.*') ? 'active' : '' }}" href="#sidebarGallery" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarGallery">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.gallery.*') ? 'active' : '' }}"
+                        href="#sidebarGallery" data-bs-toggle="collapse" role="button" aria-expanded="false"
+                        aria-controls="sidebarGallery">
                         <i class="ri-gallery-line"></i> <span data-key="t-gallery">Gallery</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarGallery">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="{{ route('admin.gallery.index') }}" class="nav-link {{ request()->routeIs('admin.gallery.index') ? 'active' : '' }}">All Gallery</a>
+                                <a href="{{ route('admin.gallery.index') }}"
+                                    class="nav-link {{ request()->routeIs('admin.gallery.index') ? 'active' : '' }}">All
+                                    Gallery</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('admin.gallery.create') }}" class="nav-link {{ request()->routeIs('admin.gallery.create') ? 'active' : '' }}">Add Gallery</a>
+                                <a href="{{ route('admin.gallery.create') }}"
+                                    class="nav-link {{ request()->routeIs('admin.gallery.create') ? 'active' : '' }}">Add
+                                    Gallery</a>
                             </li>
                         </ul>
                     </div>
@@ -594,16 +611,22 @@
 
                 <!-- Academy -->
                 <li class="nav-item">
-                    <a class="nav-link menu-link {{ request()->routeIs('admin.academy.*') ? 'active' : '' }}" href="#sidebarAcademy" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAcademy">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.academy.*') ? 'active' : '' }}"
+                        href="#sidebarAcademy" data-bs-toggle="collapse" role="button" aria-expanded="false"
+                        aria-controls="sidebarAcademy">
                         <i class="ri-school-line"></i> <span data-key="t-academy">Academy</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarAcademy">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="{{ route('admin.academy.index') }}" class="nav-link {{ request()->routeIs('admin.academy.index') ? 'active' : '' }}">All Academy</a>
+                                <a href="{{ route('admin.academy.index') }}"
+                                    class="nav-link {{ request()->routeIs('admin.academy.index') ? 'active' : '' }}">All
+                                    Academy</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('admin.academy.create') }}" class="nav-link {{ request()->routeIs('admin.academy.create') ? 'active' : '' }}">Add Academy</a>
+                                <a href="{{ route('admin.academy.create') }}"
+                                    class="nav-link {{ request()->routeIs('admin.academy.create') ? 'active' : '' }}">Add
+                                    Academy</a>
                             </li>
                         </ul>
                     </div>
@@ -611,13 +634,17 @@
 
                 <!-- Courses -->
                 <li class="nav-item">
-                    <a class="nav-link menu-link {{ request()->routeIs('admin.courses.*') ? 'active' : '' }}" href="#sidebarCourses" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCourses">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.courses.*') ? 'active' : '' }}"
+                        href="#sidebarCourses" data-bs-toggle="collapse" role="button" aria-expanded="false"
+                        aria-controls="sidebarCourses">
                         <i class="ri-book-open-line"></i> <span data-key="t-courses">Courses</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarCourses">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="{{ route('admin.courses.create') }}" class="nav-link {{ request()->routeIs('admin.courses.create') ? 'active' : '' }}">Add Course</a>
+                                <a href="{{ route('admin.courses.create') }}"
+                                    class="nav-link {{ request()->routeIs('admin.courses.create') ? 'active' : '' }}">Add
+                                    Course</a>
                             </li>
                         </ul>
                     </div>
@@ -625,16 +652,22 @@
 
                 <!-- Enquiries -->
                 <li class="nav-item">
-                    <a class="nav-link menu-link {{ request()->routeIs('admin.contacts.*') || request()->routeIs('admin.appointments.*') ? 'active' : '' }}" href="#sidebarEnquiries" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarEnquiries">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.contacts.*') || request()->routeIs('admin.appointments.*') ? 'active' : '' }}"
+                        href="#sidebarEnquiries" data-bs-toggle="collapse" role="button" aria-expanded="false"
+                        aria-controls="sidebarEnquiries">
                         <i class="ri-mail-line"></i> <span data-key="t-enquiries">Enquiries</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarEnquiries">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="{{ route('admin.contacts.index') }}" class="nav-link {{ request()->routeIs('admin.contacts.*') ? 'active' : '' }}">Contact Enquiries</a>
+                                <a href="{{ route('admin.contacts.index') }}"
+                                    class="nav-link {{ request()->routeIs('admin.contacts.*') ? 'active' : '' }}">Contact
+                                    Enquiries</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('admin.appointments.index') }}" class="nav-link {{ request()->routeIs('admin.appointments.*') ? 'active' : '' }}">Appointment Enquiries</a>
+                                <a href="{{ route('admin.appointments.index') }}"
+                                    class="nav-link {{ request()->routeIs('admin.appointments.*') ? 'active' : '' }}">Appointment
+                                    Enquiries</a>
                             </li>
                         </ul>
                     </div>
@@ -642,16 +675,22 @@
 
                 <!-- Brands -->
                 <li class="nav-item">
-                    <a class="nav-link menu-link {{ request()->routeIs('admin.brands.*') ? 'active' : '' }}" href="#sidebarBrands" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarBrands">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.brands.*') ? 'active' : '' }}"
+                        href="#sidebarBrands" data-bs-toggle="collapse" role="button" aria-expanded="false"
+                        aria-controls="sidebarBrands">
                         <i class="ri-flag-2-line"></i> <span data-key="t-brands">Brands</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarBrands">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="{{ route('admin.brands.index') }}" class="nav-link {{ request()->routeIs('admin.brands.index') ? 'active' : '' }}">All Brands</a>
+                                <a href="{{ route('admin.brands.index') }}"
+                                    class="nav-link {{ request()->routeIs('admin.brands.index') ? 'active' : '' }}">All
+                                    Brands</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('admin.brands.create') }}" class="nav-link {{ request()->routeIs('admin.brands.create') ? 'active' : '' }}">Add Brand</a>
+                                <a href="{{ route('admin.brands.create') }}"
+                                    class="nav-link {{ request()->routeIs('admin.brands.create') ? 'active' : '' }}">Add
+                                    Brand</a>
                             </li>
                         </ul>
                     </div>
@@ -659,16 +698,22 @@
 
                 <!-- Packages -->
                 <li class="nav-item">
-                    <a class="nav-link menu-link {{ request()->routeIs('admin.packages.*') ? 'active' : '' }}" href="#sidebarPackages" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPackages">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.packages.*') ? 'active' : '' }}"
+                        href="#sidebarPackages" data-bs-toggle="collapse" role="button" aria-expanded="false"
+                        aria-controls="sidebarPackages">
                         <i class="ri-vip-line"></i> <span data-key="t-packages">Packages</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarPackages">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="{{ route('admin.packages.index') }}" class="nav-link {{ request()->routeIs('admin.packages.index') ? 'active' : '' }}">All Packages</a>
+                                <a href="{{ route('admin.packages.index') }}"
+                                    class="nav-link {{ request()->routeIs('admin.packages.index') ? 'active' : '' }}">All
+                                    Packages</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('admin.packages.create') }}" class="nav-link {{ request()->routeIs('admin.packages.create') ? 'active' : '' }}">Add Package</a>
+                                <a href="{{ route('admin.packages.create') }}"
+                                    class="nav-link {{ request()->routeIs('admin.packages.create') ? 'active' : '' }}">Add
+                                    Package</a>
                             </li>
                         </ul>
                     </div>
@@ -676,16 +721,22 @@
 
                 <!-- YouTube -->
                 <li class="nav-item">
-                    <a class="nav-link menu-link {{ request()->routeIs('admin.youtube.*') ? 'active' : '' }}" href="#sidebarYoutube" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarYoutube">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.youtube.*') ? 'active' : '' }}"
+                        href="#sidebarYoutube" data-bs-toggle="collapse" role="button" aria-expanded="false"
+                        aria-controls="sidebarYoutube">
                         <i class="ri-youtube-line"></i> <span data-key="t-youtube">YouTube</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarYoutube">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="{{ route('admin.youtube.index') }}" class="nav-link {{ request()->routeIs('admin.youtube.index') ? 'active' : '' }}">All Videos</a>
+                                <a href="{{ route('admin.youtube.index') }}"
+                                    class="nav-link {{ request()->routeIs('admin.youtube.index') ? 'active' : '' }}">All
+                                    Videos</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('admin.youtube.create') }}" class="nav-link {{ request()->routeIs('admin.youtube.create') ? 'active' : '' }}">Add Video</a>
+                                <a href="{{ route('admin.youtube.create') }}"
+                                    class="nav-link {{ request()->routeIs('admin.youtube.create') ? 'active' : '' }}">Add
+                                    Video</a>
                             </li>
                         </ul>
                     </div>
@@ -693,16 +744,22 @@
 
                 <!-- Offers -->
                 <li class="nav-item">
-                    <a class="nav-link menu-link {{ request()->routeIs('admin.offers.*') ? 'active' : '' }}" href="#sidebarOffers" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarOffers">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.offers.*') ? 'active' : '' }}"
+                        href="#sidebarOffers" data-bs-toggle="collapse" role="button" aria-expanded="false"
+                        aria-controls="sidebarOffers">
                         <i class="ri-coupon-2-line"></i> <span data-key="t-offers">Offers</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarOffers">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="{{ route('admin.offers.index') }}" class="nav-link {{ request()->routeIs('admin.offers.index') ? 'active' : '' }}">All Offers</a>
+                                <a href="{{ route('admin.offers.index') }}"
+                                    class="nav-link {{ request()->routeIs('admin.offers.index') ? 'active' : '' }}">All
+                                    Offers</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('admin.offers.create') }}" class="nav-link {{ request()->routeIs('admin.offers.create') ? 'active' : '' }}">Add Offer</a>
+                                <a href="{{ route('admin.offers.create') }}"
+                                    class="nav-link {{ request()->routeIs('admin.offers.create') ? 'active' : '' }}">Add
+                                    Offer</a>
                             </li>
                         </ul>
                     </div>
@@ -710,16 +767,22 @@
 
                 <!-- Features/Celebrities -->
                 <li class="nav-item">
-                    <a class="nav-link menu-link {{ request()->routeIs('admin.features.*') ? 'active' : '' }}" href="#sidebarFeatures" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarFeatures">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.features.*') ? 'active' : '' }}"
+                        href="#sidebarFeatures" data-bs-toggle="collapse" role="button" aria-expanded="false"
+                        aria-controls="sidebarFeatures">
                         <i class="ri-star-line"></i> <span data-key="t-features">Features</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarFeatures">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="{{ route('admin.features.index') }}" class="nav-link {{ request()->routeIs('admin.features.index') ? 'active' : '' }}">All Features</a>
+                                <a href="{{ route('admin.features.index') }}"
+                                    class="nav-link {{ request()->routeIs('admin.features.index') ? 'active' : '' }}">All
+                                    Features</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('admin.features.create') }}" class="nav-link {{ request()->routeIs('admin.features.create') ? 'active' : '' }}">Add Feature</a>
+                                <a href="{{ route('admin.features.create') }}"
+                                    class="nav-link {{ request()->routeIs('admin.features.create') ? 'active' : '' }}">Add
+                                    Feature</a>
                             </li>
                         </ul>
                     </div>
@@ -727,32 +790,43 @@
 
                 <!-- Sliders -->
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('admin.sliders.*') ? 'active' : '' }}" href="{{ route('admin.sliders.create') }}">
+                    <a class="nav-link {{ request()->routeIs('admin.sliders.*') ? 'active' : '' }}"
+                        href="{{ route('admin.sliders.create') }}">
                         <i class="ri-mac-line"></i> <span data-key="t-sliders">Home Slider</span>
                     </a>
                 </li>
 
                 <!-- Settings -->
                 <li class="nav-item">
-                    <a class="nav-link menu-link {{ request()->routeIs('admin.about.*') || request()->routeIs('admin.banners.*') || request()->routeIs('admin.meta-*') ? 'active' : '' }}" href="#sidebarSettings" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarSettings">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.about.*') || request()->routeIs('admin.banners.*') || request()->routeIs('admin.meta-*') ? 'active' : '' }}"
+                        href="#sidebarSettings" data-bs-toggle="collapse" role="button" aria-expanded="false"
+                        aria-controls="sidebarSettings">
                         <i class="ri-settings-3-line"></i> <span data-key="t-settings">Settings</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarSettings">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="{{ route('admin.about.index') }}" class="nav-link {{ request()->routeIs('admin.about.*') ? 'active' : '' }}">About Page</a>
+                                <a href="{{ route('admin.about.index') }}"
+                                    class="nav-link {{ request()->routeIs('admin.about.*') ? 'active' : '' }}">About
+                                    Page</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('admin.banners.index') }}" class="nav-link {{ request()->routeIs('admin.banners.*') ? 'active' : '' }}">Banners</a>
+                                <a href="{{ route('admin.banners.index') }}"
+                                    class="nav-link {{ request()->routeIs('admin.banners.*') ? 'active' : '' }}">Banners</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('admin.meta-tags.index') }}" class="nav-link {{ request()->routeIs('admin.meta-tags.*') ? 'active' : '' }}">Meta Tags</a>
+                                <a href="{{ route('admin.meta-tags.index') }}"
+                                    class="nav-link {{ request()->routeIs('admin.meta-tags.*') ? 'active' : '' }}">Meta
+                                    Tags</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('admin.meta-scripts.index') }}" class="nav-link {{ request()->routeIs('admin.meta-scripts.*') ? 'active' : '' }}">Meta Scripts</a>
+                                <a href="{{ route('admin.meta-scripts.index') }}"
+                                    class="nav-link {{ request()->routeIs('admin.meta-scripts.*') ? 'active' : '' }}">Meta
+                                    Scripts</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('admin.meta-mobile.index') }}" class="nav-link {{ request()->routeIs('admin.meta-mobile.*') ? 'active' : '' }}">WhatsApp/Mobile</a>
+                                <a href="{{ route('admin.meta-mobile.index') }}"
+                                    class="nav-link {{ request()->routeIs('admin.meta-mobile.*') ? 'active' : '' }}">WhatsApp/Mobile</a>
                             </li>
                         </ul>
                     </div>
@@ -764,7 +838,7 @@
                         <i class="ri-eye-line"></i> <span data-key="t-frontend">View Website</span>
                     </a>
                 </li>
-               {{-- <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarAuth" data-bs-toggle="collapse" role="button"
                        aria-expanded="true" aria-controls="sidebarAuth">
                         <i class="ri-shopping-cart-line"></i> <span data-key="t-authentication">Orders</span>
@@ -791,7 +865,7 @@
                             </li>
                         </ul>
                     </div>
-                </li>--}}
+                </li> --}}
 
             </ul>
         </div>

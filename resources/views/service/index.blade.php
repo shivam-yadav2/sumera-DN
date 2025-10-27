@@ -50,10 +50,10 @@
                                     </div>
                                     <div class="col-sm-auto">
                                         <div>
-                                            <a href="{{ url('/add-service') }}" class="btn btn-success add-btn"><i
+                                            <a href="{{ url('/admin/services/create') }}" class="btn btn-success add-btn"><i
                                                     class="ri-add-line align-bottom me-1"></i> Add Services</a>
-                                           {{-- <button class="btn btn-soft-danger" onclick="deleteMultiple()"><i
-                                                    class="ri-delete-bin-2-line"></i></button>--}}
+                                            <a href="{{ url('/admin/gallery') }}" class="btn btn-info add-btn"><i
+                                                    class="ri-image-line align-bottom me-1"></i> View Gallery</a>
                                         </div>
                                     </div>
                                 </div>
@@ -88,7 +88,7 @@
                                                     </th>
                                                     <td>{{ $key + 1 }}</td>
                                                     <td>
-                                                        <img src="{{ asset($row->image) }}" class="img-circle"
+                                                        <img loading="lazy" src="{{ asset($row->image) }}" class="img-circle"
                                                             style="height: 50px; width: 50px;border-radius:50%;object-fit: cover;object-position: 100%;"
                                                             alt="">
                                                     </td>
@@ -103,32 +103,31 @@
                                                         @endif
                                                     </td>
                                                     <td>
-                                                        <div class="d-flex gap-2">
+                                                        <div class="d-flex gap-2 flex-wrap">
                                                             <div class="edit">
-                                                                <a href="{{ url('/add-service-about/' . base64_encode($row->id)) }}"
-                                                                   class="btn btn-sm btn-success ">
-                                                                    Add Service Abouts
+                                                                <a href="{{ route('admin.service-about.create', base64_encode($row->id)) }}"
+                                                                   class="btn btn-sm btn-success">
+                                                                    Service About
                                                                 </a>
                                                             </div>
                                                             <div class="edit">
-                                                                <a href="{{ url('/add-sub-service/' . base64_encode($row->id)) }}"
+                                                                <a href="{{ route('admin.sub-services.create', base64_encode($row->id)) }}"
                                                                     class="btn btn-sm btn-primary edit-item-btn">
-                                                                    ADD SUB SERVICE
+                                                                    Sub Services
                                                                 </a>
                                                             </div>
                                                             <div class="edit">
-                                                                <a href="{{ url('/add-service/' . $row->id) }}"
+                                                                <a href="{{ route('admin.service-brands.create', base64_encode($row->id)) }}"
+                                                                   class="btn btn-sm btn-secondary edit-item-btn">
+                                                                    Service Brands
+                                                                </a>
+                                                            </div>
+                                                            <div class="edit">
+                                                                <a href="{{ route('admin.services.create', $row->id) }}"
                                                                     class="btn btn-sm btn-warning edit-item-btn">
-                                                                    EDIT/UPDATE
+                                                                    EDIT
                                                                 </a>
                                                             </div>
-                                                            <div class="edit">
-                                                                <a href="{{ url('/service-brand/' .base64_encode($row->id)) }}"
-                                                                   class="btn btn-sm btn-info edit-item-btn">
-                                                                    Add Service Brand
-                                                                </a>
-                                                            </div>
-
                                                             <div class="remove">
                                                                 @if($row->is_active == 2)
                                                                     <a class="UpdateStatus btn btn-sm btn-success remove-item-btn" data-id="{{ $row->id }}">ACTIVE</a>
@@ -138,7 +137,7 @@
                                                             </div>
                                                             <div class="remove">
                                                                 <a class="confirmDelete btn btn-sm btn-dark remove-item-btn"
-                                                                data-id="{{ $row->id }}">PERMANENT DELETE</a>
+                                                                data-id="{{ $row->id }}">DELETE</a>
                                                             </div>
                                                         </div>
                                                     </td>
@@ -205,7 +204,7 @@
                         text: "Your file has been deleted.",
                         icon: "success"
                     });
-                    window.location.href = "/status-update-service/" + id;
+                    window.location.href = "/admin/services/" + id + "/status";
                 }
             });
         });
@@ -228,7 +227,7 @@
                         text: "Your file has been deleted.",
                         icon: "success"
                     });
-                    window.location.href = "/delete-service/" + id;
+                    window.location.href = "/admin/services/" + id + "/delete";
                 }
             });
         });

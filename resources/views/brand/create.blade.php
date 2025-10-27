@@ -93,7 +93,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-12">
-                                                        <img id="image_preview" width="100%" height="65px" src="https://icons.iconarchive.com/icons/ccard3dev/dynamic-yosemite/256/Preview-icon.png" alt="Offer Image Preview" style="max-width: 100%; margin-top: 10px;" />
+                                                        <img loading="lazy" id="image_preview" width="100%" height="65px" src="https://icons.iconarchive.com/icons/ccard3dev/dynamic-yosemite/256/Preview-icon.png" alt="Offer Image Preview" style="max-width: 100%; margin-top: 10px;" />
                                                     </div>
 
 
@@ -126,7 +126,7 @@
                                     <div class="col-sm-2 col-xl-1">
                                         <!-- Simple card -->
                                         <div class="card bg-light border shadow-lg">
-                                            <img class="w-100" src="{{ asset($row->image) }}" alt="{{ $row->title }}">
+                                            <img loading="lazy" class="w-100" src="{{ asset($row->image) }}" alt="{{ $row->title }}">
                                             <!-- Delete icon overlay -->
                                             <div class="remove">
                                                 <a class="confirmDelete w-100 btn btn-sm btn-danger remove-item-btn"

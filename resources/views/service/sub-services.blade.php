@@ -50,7 +50,7 @@
                                     </td>
                                     <td>
 
-                                        <img width="80px" src="{!! asset($row->image) !!}" alt="{!! $row->title !!}">
+                                        <img loading="lazy" width="80px" src="{!! asset($row->image) !!}" alt="{!! $row->title !!}">
                                     </td>
 
                                     <td>
@@ -149,7 +149,7 @@
                                                         <div class="form-group mb-2">
                                                             <label for="fullName">500*500 <span
                                                                     class="text-danger">*</span></label>
-                                                            <img id="image_preview"
+                                                            <img loading="lazy" id="image_preview"
                                                                  src="{{ old('image', asset($about->image ?? '')) }}"
                                                                  alt=" Image Preview"
                                                                  style="max-width: 100%; margin-top: 10px;"/>
@@ -206,7 +206,7 @@
                                     <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
                                         <div class="form-group mb-2">
                                             <label for="fullName">500*500 <span class="text-danger">*</span></label>
-                                            <img id="image_preview" src="{{ old('image', asset($about->image ?? '')) }}"
+                                            <img loading="lazy" id="image_preview" src="{{ old('image', asset($about->image ?? '')) }}"
                                                  alt=" Image Preview" style="max-width: 100%; margin-top: 10px;"/>
                                         </div>
                                     </div>

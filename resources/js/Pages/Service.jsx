@@ -32,22 +32,22 @@ const Service = () => {
                     </div>
                     <div className="grid lg:grid-cols-3 gap-8">
                         <div>
-                            <img src="/assets/images/new/49.webp" alt="" />
+                            <img loading="lazy" src="/assets/images/new/49.webp" alt="" />
                         </div>
                         <div>
-                            <img src="/assets/images/new/45.webp" alt="" />
+                            <img loading="lazy" src="/assets/images/new/45.webp" alt="" />
                         </div>
                         <div>
-                            <img src="/assets/images/new/37.webp" alt="" />
+                            <img loading="lazy" src="/assets/images/new/37.webp" alt="" />
                         </div>
                         <div>
-                            <img src="/assets/images/new/51.webp" alt="" />
+                            <img loading="lazy" src="/assets/images/new/51.webp" alt="" />
                         </div>
                         <div>
-                            <img src="/assets/images/new/41.webp" alt="" />
+                            <img loading="lazy" src="/assets/images/new/41.webp" alt="" />
                         </div>
                         <div>
-                            <img src="/assets/images/new/33.webp" alt="" />
+                            <img loading="lazy" src="/assets/images/new/33.webp" alt="" />
                         </div>
                     </div>
                 </div>

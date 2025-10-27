@@ -62,7 +62,7 @@
                                         <div class="col-md-2">
                                             <div class="card text-center">
                                                 <label for="image_{{ $row->id }}" class="form-check-label">
-                                                    <img src="{{ asset($row->image) }}" width="100%" alt="Image"/>
+                                                    <img loading="lazy" src="{{ asset($row->image) }}" width="100%" alt="Image"/>
                                                     <input type="checkbox" name="brand_id[]" value="{{ $row->id }}" id="image_{{ $row->id }}" class="form-check-input"
                                                            @if(in_array($row->id, $service_brand->pluck('brand_id')->toArray())) checked @endif>
                                                 </label>
@@ -85,7 +85,7 @@
                 @foreach($service_brand as $row)
                     <div class="col-md-2">
                         <div class="card text-center">
-                            <img src="{{ asset($row->brand->image) }}" width="100%" alt="Image"/>
+                            <img loading="lazy" src="{{ asset($row->brand->image) }}" width="100%" alt="Image"/>
                         </div>
                     </div>
                 @endforeach

@@ -72,7 +72,7 @@
 
                                                     <td>{{ $key + 1 }}</td>
                                                     <td>
-                                                        <img src="{{ asset($row->image) }}" class="img-circle"
+                                                        <img loading="lazy" src="{{ asset($row->image) }}" class="img-circle"
                                                             style="height: 50px; width: 50px;border-radius:50%;object-fit: cover;object-position: 100%;"
                                                             alt="">
                                                     </td>

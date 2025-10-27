@@ -30,172 +30,118 @@
             <div class="row gutters">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">{{ $title }}</h4>
+                        <h4 class="mb-sm-0">Gallery</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Home</a></li>
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                <li class="breadcrumb-item active">{{ $title }}</li>
+                                <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                                <li class="breadcrumb-item active">Gallery</li>
                             </ol>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Page header end -->
-            <div class="row gutters">
-                <div class="col-12">
-                    <!-- Wizard start -->
-                    <div id="example-form">
-                        <section>
-                            <div id="message-container">
-                                @if ($errors->any())
-                                    <div class="alert alert-danger">
-                                        <ul>
-                                            @foreach ($errors->all() as $error)
-                                                <li>{{ $error }}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                @endif
-                                @if (Session::has('success_msg'))
-                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                        <strong>{{ Session('success_msg') }}</strong>
-                                    </div>
-                                @endif
-                                @if (Session::has('error_msg'))
-                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                        <strong>{{ Session('error_msg') }}</strong>
-                                    </div>
-                                @endif
-                            </div>
-                            <form method="post" action="{{ url('/slider') }}" enctype="multipart/form-data">
-                                @csrf
-                                <div class="row ">
-                                    <div class="col-md-12">
-                                        <div class="row gutters">
-                                            <div class="card">
-                                                <div class="card-header">
-                                                    <h5 class="card-title mb-0">Slider </h5>
-                                                </div>
-                                                <div class="card-body row">
-                                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
-                                                        <div class="form-group mb-2">
-                                                            <label for="fullName">Alt Text</label>
-                                                            <input type="text" class="form-control" name="alt_text" placeholder="Alt Text" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
-                                                        <div class="form-group mb-2">
-                                                            <label for="Slider_image">Slider Image 1920*650px
-                                                                Max=500KB</label><br>
-                                                            <input type="file" class="form-control" id="category_image"
-                                                                   name="slider_image"
-                                                                   onchange="previewImage(event, 'category_image_preview')">
-                                                            <img id="category_image_preview" src=""
-                                                                 alt="Slider Image Preview"
-                                                                 style="max-width: 100%; margin-top: 10px;" />
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
-                                                        <div class="form-group mb-2">
-                                                            <label for="Mobile Slider">Mobile Slider 1080*1080px
-                                                                Max=1MB</label><br>
-                                                            <input type="file" class="form-control" id="category_banner"
-                                                                   name="mobile_image"
-                                                                   onchange="previewImage(event, 'category_banner_preview')">
-                                                            <img id="category_banner_preview" src=""
-                                                                 alt="Mobile Image Preview"
-                                                                 style="max-width: 100%; margin-top: 10px;" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 text-center">
-                                        <button type="submit" class="btn btn-md btn-primary">Submit </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </section>
+            
+            <div class="row">
+                <div class="col-sm-auto">
+                    <div>
+                        <a href="{{ route('admin.gallery.create') }}" class="btn btn-success add-btn">
+                            <i class="ri-add-line align-bottom me-1"></i> Add Gallery Images
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <div class="row mt-5">
-                @foreach ($data as $row)
-                    <div class="col-sm-6 col-xl-3">
-                        <!-- Simple card -->
-                        <div class="card">
-                            <img class="card-img-top img-fluid" src="{{ asset($row->slider_image) }}"
-                                 alt="{{ $row->alt_text }}">
-                            <!-- Delete icon overlay -->
-                            {{-- <a href="javascript:void(0)" class="confirmDelete delete-icon position-absolute top-50 start-50 translate-middle"
-                                data-id="{{ $row->id }}">
-                                <i class="ri-delete-bin-line fs-4 text-danger"></i>
-                            </a> --}}
-                            <div class="remove">
-                                <a class="confirmDelete btn btn-sm btn-danger remove-item-btn"
-                                   data-id="{{ $row->id }}">Remove</a>
-                            </div>
+            <div class="row mt-4">
+                <div class="col-xxl-12">
+                    <h5 class="mb-3">All Gallery Images By Services</h5>
+                    <div class="card">
+                        <div class="card-body">
+                            @if ($gallery->isEmpty())
+                                <div class="text-center py-5">
+                                    <p class="text-muted">No gallery images found. Please add some images.</p>
+                                </div>
+                            @else
+                                <div class="row">
+                                    @foreach ($gallery as $row)
+                                        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+                                            <div class="card border">
+                                                <p class="text-center mt-2 mb-1"><strong>{{ ucwords($row->title ?? 'Untitled') }}</strong></p>
+                                                @if($row->service)
+                                                    <p class="text-center text-muted mb-1" style="font-size: 12px;">{{ $row->service->title }}</p>
+                                                @endif
+                                                <img loading="lazy" class="card-img-top img-fluid" src="{{ asset($row->image) }}" alt="{{ $row->title }}">
+                                                <div class="p-2">
+                                                    <div class="form-check form-switch form-switch-md mb-2">
+                                                        <label for="front{{ $row->id }}" class="form-label text-muted">Front View</label>
+                                                        <input class="form-check-input UpdateStatus" type="checkbox" id="front{{ $row->id }}"
+                                                               data-id="{{ $row->id }}"
+                                                                {{ $row->is_front == 'yes' ? 'checked' : '' }}>
+                                                    </div>
+                                                    <a class="confirmDelete w-100 btn btn-sm btn-danger remove-item-btn"
+                                                       data-id="{{ $row->id }}">Remove</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            @endif
                         </div>
                     </div>
-                @endforeach
+                </div>
             </div>
         </div>
-        @endsection
-        @section('scripts')
-        
-            <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-            <script>
-                $(document).on('click', ".confirmDelete", function() {
-                    var id = $(this).attr('data-id');
-                    console.log(id);
+    </div>
+@endsection
+@section('scripts')
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(document).on('click', ".confirmDelete", function() {
+            var id = $(this).attr('data-id');
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                if (result.isConfirmed) {
                     Swal.fire({
-                        title: "Are you sure?",
-                        text: "You won't be able to revert this!",
-                        icon: "warning",
-                        showCancelButton: true,
-                        confirmButtonColor: "#3085d6",
-                        cancelButtonColor: "#d33",
-                        confirmButtonText: "Yes, delete it!"
-                    }).then((result) => {
-                        console.log(result);
-                        if (result.isConfirmed) {
-                            Swal.fire({
-                                title: "Deleted!",
-                                text: "Your file has been deleted.",
-                                icon: "success"
-                            });
-                            window.location.href = "/delete-slider/" + id;
-                        }
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        icon: "success"
                     });
-                });
-            </script>
-            <script type="text/javascript">
-                document.addEventListener("DOMContentLoaded", function() {
-                    const categoryNameInput = document.getElementById("category_name");
-                    const categoryUrlInput = document.getElementById("category_url");
-                    categoryNameInput.addEventListener("input", function() {
-                        var title = this.value.toLowerCase();
-                        var res = title.replace(/ /g, "-");
-                        categoryUrlInput.value = res;
-                    });
-                });
-            </script>
-            <script>
-                function previewImage(event, previewId) {
-                    var reader = new FileReader();
-                    reader.onload = function() {
-                        var output = document.getElementById(previewId);
-                        output.src = reader.result;
-                    };
-                    reader.readAsDataURL(event.target.files[0]);
+                    window.location.href = "/admin/gallery/" + id + "/delete";
                 }
-            </script>
+            });
+        });
+    </script>
+    <script>
+        $(document).on('click', ".UpdateStatus", function() {
+            var id = $(this).attr('data-id');
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You want to update the front view status!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, Update it!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: "Updated!",
+                        text: "Gallery Front View has been Updated.",
+                        icon: "success"
+                    });
+                    window.location.href = "/admin/gallery/" + id + "/update";
+                }
+            });
+        });
+    </script>
 @stop

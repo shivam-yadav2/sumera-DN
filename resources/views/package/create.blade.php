@@ -94,7 +94,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-12">
-                                                        <img id="image_preview" src="" class="" width="65px" height="65px" alt="Offer Image Preview" style="max-width: 100%; margin-top: 10px;" />
+                                                        <img loading="lazy" id="image_preview" src="" class="" width="65px" height="65px" alt="Offer Image Preview" style="max-width: 100%; margin-top: 10px;" />
                                                     </div>
                                                     <div class="col-md-2 text-left mt-3">
                                                         <button type="submit" class="btn btn-md btn-primary">Submit Packages</button>
@@ -116,7 +116,7 @@
                         <!-- Simple card -->
                         <div class="card">
                             <p class="text-center">{!! ucwords($row->title) !!}</p>
-                            <img class="card-img-top img-fluid" src="{{ asset($row->image) }}" alt="{{ $row->title }}">
+                            <img loading="lazy" class="card-img-top img-fluid" src="{{ asset($row->image) }}" alt="{{ $row->title }}">
                             <!-- Delete icon overlay -->
                             {{-- <a href="javascript:void(0)" class="confirmDelete delete-icon position-absolute top-50 start-50 translate-middle"
                                 data-id="{{ $row->id }}">

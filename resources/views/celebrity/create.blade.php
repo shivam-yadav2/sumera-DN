@@ -110,7 +110,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-12">
-                                                        <img id="image_preview" src="" alt="Offer Image Preview" style="max-width: 100%; margin-top: 10px;" />
+                                                        <img loading="lazy" id="image_preview" src="" alt="Offer Image Preview" style="max-width: 100%; margin-top: 10px;" />
                                                     </div>
                                                     <div class="col-md-12 text-center mt-3">
                                                         <button type="submit" class="btn btn-md btn-primary">Submit Celebrity/Features</button>
@@ -139,7 +139,7 @@
                                         <!-- Simple card -->
                                         <div class="card">
                                             <p class="text-center">{{ ucwords($row->title) }}</p>
-                                            <img class="card-img-top img-fluid" src="{{ asset($row->image) }}" alt="{{ $row->title }}">
+                                            <img loading="lazy" class="card-img-top img-fluid" src="{{ asset($row->image) }}" alt="{{ $row->title }}">
                                             <!-- Delete icon overlay -->
                                             <div class="remove">
                                                 <a class="float-start p-2"
@@ -171,7 +171,7 @@
                                         <!-- Simple card -->
                                         <div class="card">
                                             <p class="text-center">{{ ucwords($row->title) }}</p>
-                                            <img class="card-img-top img-fluid" src="{{ asset($row->image) }}" alt="{{ $row->title }}">
+                                            <img loading="lazy" class="card-img-top img-fluid" src="{{ asset($row->image) }}" alt="{{ $row->title }}">
                                             <!-- Delete icon overlay -->
                                             <div class="remove">
                                                 <a class="float-start p-2"

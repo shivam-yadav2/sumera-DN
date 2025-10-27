@@ -12,7 +12,7 @@
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Home</a></li>
-                                <li class="breadcrumb-item"><a href="{!! url('/all-service') !!}">Service</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('admin.services.index') }}">Service</a></li>
                                 <li class="breadcrumb-item active">{{$title}}</li>
                             </ol>
                         </div>
@@ -46,7 +46,7 @@
                                     </div>
                                 @endif
                             </div>
-                            <form method="post" action="{{ url('/add-service/' . ($service->id ?? '')) }}"
+                            <form method="post" action="{{ route('admin.services.create', $service->id ?? '') }}"
                                   enctype="multipart/form-data">
                                 @csrf
                                 <div class="row ">
@@ -86,7 +86,7 @@
                                                         <div class="form-group mb-2">
                                                             <label for="category_image">Service Image 360*252px Max=500KB</label><br>
                                                             <input type="file" class="form-control" id="category_image" name="image" onchange="previewImage(event, 'category_image_preview')">
-                                                            <img id="category_image_preview" src="{{ old('image', asset($service->image ?? '')) }}" alt="Category Image Preview" style="max-width: 100%; margin-top: 10px;" />
+                                                            <img loading="lazy" id="category_image_preview" src="{{ old('image', asset($service->image ?? '')) }}" alt="Category Image Preview" style="max-width: 100%; margin-top: 10px;" />
                                                         </div>
                                                     </div>
 
@@ -94,7 +94,7 @@
                                                         <div class="form-group mb-2">
                                                             <label for="category_banner">Banner Image 1920*300px Max=500KB</label><br>
                                                             <input type="file" class="form-control" id="category_banner" name="banner" onchange="previewImage(event, 'category_banner_preview')">
-                                                            <img id="category_banner_preview" src="{{ old('banner', asset($service->banner ?? '')) }}" alt="Banner Image Preview" style="max-width: 100%; margin-top: 10px;" />
+                                                            <img loading="lazy" id="category_banner_preview" src="{{ old('banner', asset($service->banner ?? '')) }}" alt="Banner Image Preview" style="max-width: 100%; margin-top: 10px;" />
                                                         </div>
                                                     </div>
 
@@ -102,7 +102,7 @@
                                                         <div class="form-group mb-2">
                                                             <label for="mobile_banner">Mobile Banner Image 390*230px Max=500KB</label><br>
                                                             <input type="file" class="form-control" id="mobile_banner" name="mobile_banner" onchange="previewImage(event, 'mobile_banner_preview')">
-                                                            <img id="mobile_banner_preview" src="{{ old('mobile_banner', asset($service->mobile_banner ?? '')) }}" alt="Mobile Banner Image Preview" style="max-width: 100%; margin-top: 10px;" />
+                                                            <img loading="lazy" id="mobile_banner_preview" src="{{ old('mobile_banner', asset($service->mobile_banner ?? '')) }}" alt="Mobile Banner Image Preview" style="max-width: 100%; margin-top: 10px;" />
                                                         </div>
                                                     </div>
                                                 </div>

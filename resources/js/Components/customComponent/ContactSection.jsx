@@ -128,7 +128,7 @@ const SalonContact = () => {
               
               {/* Image */}
               <div className="relative aspect-square bg-white shadow-2xl overflow-hidden">
-                <img 
+                <img loading="lazy" 
                   src="/assets/images/new/47.webp"
                   alt="Salon service"
                   className="w-full h-full object-cover object-top"

@@ -114,7 +114,7 @@
                                                 </div>
                                                 <div class="card-body row">
                                                     <div class="col-12">
-                                                        <img id="image_preview" src="{{ old('image', asset($about->image ?? '')) }}" alt=" Image Preview" style="max-width: 100%; margin-top: 10px;" />
+                                                        <img loading="lazy" id="image_preview" src="{{ old('image', asset($about->image ?? '')) }}" alt=" Image Preview" style="max-width: 100%; margin-top: 10px;" />
                                                     </div>
                                                 </div>
                                             </div>

@@ -93,7 +93,7 @@
                                                             <input type="file" class="form-control" id="category_image"
                                                                 name="slider_image"
                                                                 onchange="previewImage(event, 'category_image_preview')">
-                                                            <img id="category_image_preview" src=""
+                                                            <img loading="lazy" id="category_image_preview" src=""
                                                                 alt="Slider Image Preview"
                                                                 style="max-width: 100%; margin-top: 10px;" />
                                                         </div>
@@ -106,7 +106,7 @@
                                                             <input type="file" class="form-control" id="category_banner"
                                                                 name="mobile_image"
                                                                 onchange="previewImage(event, 'category_banner_preview')">
-                                                            <img id="category_banner_preview" src=""
+                                                            <img loading="lazy" id="category_banner_preview" src=""
                                                                 alt="Mobile Image Preview"
                                                                 style="max-width: 100%; margin-top: 10px;" />
                                                         </div>
@@ -135,12 +135,12 @@
                             <div class="row">
                                 <div class="col-8 p-0">
 
-                                        <img class="img-fluid w-100" src="{{ asset($row->slider_image) }}" alt="{!! $row->alt_text !!}">
+                                        <img loading="lazy" class="img-fluid w-100" src="{{ asset($row->slider_image) }}" alt="{!! $row->alt_text !!}">
 
                                 </div>
                                 <div class="col-4 p-0">
 
-                                        <img class="img-fluid w-100 " src="{{ asset($row->mobile_image) }}" alt="{!! $row->alt_text !!}">
+                                        <img loading="lazy" class="img-fluid w-100 " src="{{ asset($row->mobile_image) }}" alt="{!! $row->alt_text !!}">
                                    
                                 </div>
                             </div>
@@ -178,7 +178,7 @@
                         text: "Your file has been deleted.",
                         icon: "success"
                     });
-                    window.location.href = "/delete-slider/" + id;
+                    window.location.href = "/admin/sliders/" + id;
                 }
             });
         });

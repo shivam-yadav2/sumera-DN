@@ -136,7 +136,7 @@
 
         <!-- MOBILE HEADER -->
         <div class="wsmobileheader clearfix">
-            <span class="smllogo"><img src="{!! asset('assets-web') !!}/images/logo-01.png" width="170" height="" alt="mobile-logo"/></span>
+            <span class="smllogo"><img loading="lazy" src="{!! asset('assets-web') !!}/images/logo-01.png" width="170" height="" alt="mobile-logo"/></span>
             <a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>
         </div>
 
@@ -146,8 +146,8 @@
             <div class="wsmainwp clearfix">
                 <!-- LOGO IMAGE -->
                 <!-- For Retina Ready displays take a image with double the amount of pixels that your image will be displayed (e.g 340 x 100 pixels) -->
-                <div class="desktoplogo"><a href="#hero-5" class="logo-black"><img src="{!! asset('assets-web') !!}/images/logo-01.png" width="170" height="" alt="header-logo"></a></div>
-                <div class="desktoplogo"><a href="#hero-5" class="logo-white"><img src="{!! asset('assets-web') !!}/images/logo-01.png" width="170" height="" alt="header-logo"></a></div>
+                <div class="desktoplogo"><a href="#hero-5" class="logo-black"><img loading="lazy" src="{!! asset('assets-web') !!}/images/logo-01.png" width="170" height="" alt="header-logo"></a></div>
+                <div class="desktoplogo"><a href="#hero-5" class="logo-white"><img loading="lazy" src="{!! asset('assets-web') !!}/images/logo-01.png" width="170" height="" alt="header-logo"></a></div>
                 <!-- MAIN MENU -->
                 <nav class="wsmenu clearfix">
                     <ul class="wsmenu-list">
@@ -234,7 +234,7 @@
 {{--                         HEADER BUTTON--}}
                             <li class="nl-simple" aria-haspopup="true">
                                 <a href="#">
-                                    <img class="rise-shake" width="64" style="position: relative;top: -8px;" height="64" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-gift-card-black-friday-cyber-monday-flaticons-flat-flat-icons-2.png" alt="external-gift-card-black-friday-cyber-monday-flaticons-flat-flat-icons-2"/>
+                                    <img loading="lazy" class="rise-shake" width="64" style="position: relative;top: -8px;" height="64" src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/external-gift-card-black-friday-cyber-monday-flaticons-flat-flat-icons-2.png" alt="external-gift-card-black-friday-cyber-monday-flaticons-flat-flat-icons-2"/>
                                 </a>
                             </li>
 
@@ -301,7 +301,7 @@
                 <div class="footer-info mb-40">
                     <!-- For Retina Ready displays take a image with double the amount of pixels that your image will be
                     displayed (e.g 408 x 120  pixels) -->
-                    <img src="{!! asset('assets-web') !!}/images/logo-01.png" width="204" height="" alt="footer-logo">
+                    <img loading="lazy" src="{!! asset('assets-web') !!}/images/logo-01.png" width="204" height="" alt="footer-logo">
                     <!-- Text -->
                     <p class="txt-color-05 mt-20">Aliquam nullam tempor sapien at gravida donec congue ipsum a porta magna and
                         justo velna auctor sapien and augue

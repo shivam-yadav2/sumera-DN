@@ -168,7 +168,7 @@
                 @foreach ($orderItems as $key=>$item)
                     <tr>
                         <td>{{ $key + 1 }}</td>
-                        <td><img src="{{ asset($item->product_image)}}" width="50px" alt="{{ $item->product_name }}"></td>
+                        <td><img loading="lazy" src="{{ asset($item->product_image)}}" width="50px" alt="{{ $item->product_name }}"></td>
                         <td>{{ $item->product_name }}</td>
                         <td>{{ $item->qty }}</td>
                         <td>₹{{ number_format($item->price, 2) }}</td>

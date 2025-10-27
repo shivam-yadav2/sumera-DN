@@ -36,4 +36,9 @@ class Service extends Model
     {
         return $this->hasMany(ServiceBrand::class, 'service_id');
     }
+
+    public function galleries()
+    {
+        return $this->hasMany(Gallery::class, 'service_id', 'id')->where('is_active', 1);
+    }
 }

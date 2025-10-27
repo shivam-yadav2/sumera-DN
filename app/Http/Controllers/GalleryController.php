@@ -28,15 +28,14 @@ class GalleryController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Request $request, $id = null)
-
+    public function create(Request $request)
     {
-
         // Initialize variables
-        $title = $id ? 'Edit Gallery' : 'Add Gallery';
-        $gallery = $id ? Gallery::findOrFail($id) : new Gallery;
+        $title = 'Add Gallery';
+        $gallery = new Gallery;
         $services = Service::where('is_active', 1)->get();
-        $data = Gallery::all();
+        $data = Gallery::where('is_active', 1)->get();
+        
         if ($request->isMethod('post')) {
             $rules = [
                 'service_id' => 'required',

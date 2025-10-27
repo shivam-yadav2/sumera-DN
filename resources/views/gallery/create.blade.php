@@ -69,7 +69,7 @@
                                     </div>
                                 @endif
                             </div>
-                            <form method="post" action="{{ url('/add-gallery') }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('admin.gallery.create') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row ">
                                     <div class="col-md-12">
@@ -112,7 +112,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-12">
-                                                        <img id="image_preview" src="" alt="Offer Image Preview" style="max-width: 100%; margin-top: 10px;" />
+                                                        <img loading="lazy" id="image_preview" src="" alt="Offer Image Preview" style="max-width: 100%; margin-top: 10px;" />
                                                     </div>
                                                         <div class="col-md-12 text-center mt-3">
                                                             <button type="submit" class="btn btn-md btn-primary">Submit Gallery</button>
@@ -158,7 +158,7 @@
                                                         <!-- Simple card -->
                                                         <div class="card border">
                                                             <p class="text-center">{{ ucwords($gallery->title) }}</p>
-                                                            <img class="card-img-top img-fluid" src="{{ asset($gallery->image) }}" alt="{{ $gallery->title }}">
+                                                            <img loading="lazy" class="card-img-top img-fluid" src="{{ asset($gallery->image) }}" alt="{{ $gallery->title }}">
                                                             <!-- Delete icon overlay -->
                                                             <div class="remove p-2">
 
@@ -211,7 +211,7 @@
                                     text: "Your file has been deleted.",
                                     icon: "success"
                                 });
-                                window.location.href = "/delete-gallery/" + id;
+                                window.location.href = "/admin/gallery/" + id + "/delete";
                             }
                         });
                     });
@@ -236,7 +236,7 @@
                                     text: "Your Gallery Front View has been Updated.",
                                     icon: "success"
                                 });
-                                window.location.href = "/update-gallery/" + id;
+                                window.location.href = "/admin/gallery/" + id + "/update";
                             }
                         });
                     });

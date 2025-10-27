@@ -57,13 +57,13 @@
                                 @foreach ($data as $key => $row)
                                     <tr class="">
 
-{{--                                        <td>{{ $key + 1 }} <img width="60px" src="{!! asset($row->image) !!}" alt=""></td>--}}
+{{--                                        <td>{{ $key + 1 }} <img loading="lazy" width="60px" src="{!! asset($row->image) !!}" alt=""></td>--}}
 
                                         <td class="email">
                                             <div class="email-container">
                                                 @if (!empty($row->image) && file_exists(public_path($row->image)))
                                                     <div class="email-image">
-                                                        <img width="60px" src="{!! asset($row->image) !!}" alt="">
+                                                        <img loading="lazy" width="60px" src="{!! asset($row->image) !!}" alt="">
                                                     </div>
                                                 @endif
                                                 <div class="email-content">
@@ -174,7 +174,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
-                                                        <img id="image_preview" src="{!! old('image') !!}" alt="Offer Image Preview" style="max-width: 100%; margin-top: 10px;" />
+                                                        <img loading="lazy" id="image_preview" src="{!! old('image') !!}" alt="Offer Image Preview" style="max-width: 100%; margin-top: 10px;" />
                                                     </div>
 
 

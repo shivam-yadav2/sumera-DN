@@ -74,7 +74,7 @@
                                     <td>
                                         <button
                                             class="btn btn-sm btn-primary edit-btn" data-id="{{ base64_encode($row->id) }}" data-title="{{ $row->title }}" data-description="{{ $row->description }}">Edit / Update</button>
-                                        <a href="{!! url('/add-course-details/' . base64_encode($row->id)) !!}" class="btn btn-sm btn-success remove-item-btn mr-2">Add Course Details</a>
+                                        <a href="{{ route('admin.course-details.create', base64_encode($row->id)) }}" class="btn btn-sm btn-success remove-item-btn mr-2">Add Course Details</a>
                                         <a class="confirmDelete btn btn-sm btn-danger remove-item-btn mr-2" data-id="{{ $row->id }}">Delete</a>
                                     </td>
 
@@ -119,7 +119,7 @@
                                     </div>
                                 @endif
                             </div>
-                            <form method="post" action="{{ url('/add-course') }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('admin.courses.create') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row ">
                                     <div class="col-md-12">
@@ -146,7 +146,7 @@
                                                     </div>--}}
 
                                                     <div class="col-md-12 text-center mt-3">
-                                                        <button type="submit" class="btn btn-md btn-primary">Submit Brand</button>
+                                                        <button type="submit" class="btn btn-md btn-primary">Submit Course</button>
                                                     </div>
 
 
@@ -174,7 +174,7 @@
                             <h5 class="modal-title" id="staticBackdropLabel">Update Course Name</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <form id="editForm" action="{{ url('/update-course') }}" method="POST">
+                        <form id="editForm" action="{{ route('admin.courses.update', 'placeholder') }}" method="POST">
                             @csrf
                             <div class="modal-body">
                                 <input type="hidden" name="id" id="courseId">
@@ -237,7 +237,7 @@
                                 text: "Your file has been deleted.",
                                 icon: "success"
                             });
-                            window.location.href = "/delete-course/" + id;
+                            window.location.href = "/admin/courses/" + id + "/delete";
                         }
                     });
                 });

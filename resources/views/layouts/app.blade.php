@@ -8,7 +8,7 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{asset('assets')}}/images/logo.png">
+    <link rel="shortcut icon" href="{{asset('assets/logo/black.png')}}">
     <!-- jsvectormap css -->
     <link href="{{asset('assets')}}/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
     <!--Swiper slider css-->
@@ -33,7 +33,6 @@
             display: none;
         }
     </style>
-
 </head>
 
 <body>

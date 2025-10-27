@@ -63,10 +63,10 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     })->name('dashboard');
 
     // Service Management
-    Route::match(['get', 'post'], '/services/{id?}', [App\Http\Controllers\ServiceController::class, 'create'])->name('services.create');
     Route::get('/services', [App\Http\Controllers\ServiceController::class, 'index'])->name('services.index');
-    Route::get('/services/{id}/delete', [App\Http\Controllers\ServiceController::class, 'destroy'])->name('services.destroy');
+    Route::match(['get', 'post'], '/services/{id?}', [App\Http\Controllers\ServiceController::class, 'create'])->name('services.create');
     Route::get('/services/{id}/status', [App\Http\Controllers\ServiceController::class, 'update'])->name('services.status');
+    Route::get('/services/{id}/delete', [App\Http\Controllers\ServiceController::class, 'destroy'])->name('services.destroy');
 
     // About Management
     Route::match(['get', 'post'], '/about/{id?}', [App\Http\Controllers\AboutController::class, 'create'])->name('about.create');
@@ -84,8 +84,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::match(['get', 'post'], '/brands/{id?}', [App\Http\Controllers\BrandController::class, 'create'])->name('brands.create');
     Route::get('/brands/{id}/delete', [App\Http\Controllers\BrandController::class, 'destroy'])->name('brands.destroy');
 
-    // Service Brand Management
-    Route::match(['get', 'post'], '/service-brands/{id?}', [App\Http\Controllers\ServiceBrandController::class, 'create'])->name('service-brands.create');
+    // Service Brand Management (Admin panel)
+    Route::get('/service-brands/{id}', [App\Http\Controllers\ServiceBrandController::class, 'create'])->name('service-brands.create');
+    Route::post('/service-brands', [App\Http\Controllers\ServiceBrandController::class, 'store'])->name('service-brands.store');
     Route::get('/service-brands/{id}/delete', [App\Http\Controllers\ServiceBrandController::class, 'destroy'])->name('service-brands.destroy');
 
     // Package Management
@@ -120,7 +121,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
     // Gallery Management
     Route::get('/gallery', [App\Http\Controllers\GalleryController::class, 'index'])->name('gallery.index');
-    Route::match(['get', 'post'], '/gallery/{id?}', [App\Http\Controllers\GalleryController::class, 'create'])->name('gallery.create');
+    Route::match(['get', 'post'], '/gallery/create', [App\Http\Controllers\GalleryController::class, 'create'])->name('gallery.create');
     Route::get('/gallery/{id}/update', [App\Http\Controllers\GalleryController::class, 'update'])->name('gallery.update');
     Route::get('/gallery/{id}/delete', [App\Http\Controllers\GalleryController::class, 'destroy'])->name('gallery.destroy');
 
@@ -137,7 +138,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
     // Slider Management
     Route::match(['get', 'post'], '/sliders', [App\Http\Controllers\SliderController::class, 'AddSlider'])->name('sliders.create');
-    Route::get('/sliders/{id}/delete', [App\Http\Controllers\SliderController::class, 'DeleteSlider'])->name('sliders.destroy');
+    Route::get('/sliders/{id}', [App\Http\Controllers\SliderController::class, 'DeleteSlider'])->name('sliders.destroy');
 
     // Contact Management
     Route::get('/contacts', [App\Http\Controllers\ContactController::class, 'index'])->name('contacts.index');
@@ -149,8 +150,8 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::post('/appointments/bulk-delete', [App\Http\Controllers\AppointmentController::class, 'bulkDelete'])->name('appointments.bulk-delete');
 
     // Course Management
-    Route::match(['get', 'post'], '/courses/{id?}', [App\Http\Controllers\CoursesController::class, 'index'])->name('courses.create');
-    Route::post('/courses/{id}/update', [App\Http\Controllers\CoursesController::class, 'update'])->name('courses.update');
+    Route::match(['get', 'post'], '/courses', [App\Http\Controllers\CoursesController::class, 'index'])->name('courses.create');
+    Route::post('/courses/update', [App\Http\Controllers\CoursesController::class, 'update'])->name('courses.update');
     Route::get('/courses/{id}/delete', [App\Http\Controllers\CoursesController::class, 'destroy'])->name('courses.destroy');
 
     // Course Details Management
@@ -171,12 +172,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     // Service About Management
     Route::get('/service-about/{id}', [App\Http\Controllers\ServiceAboutController::class, 'create'])->name('service-about.create');
     Route::post('/service-about', [App\Http\Controllers\ServiceAboutController::class, 'store'])->name('service-about.store');
-    Route::get('/service-about', [App\Http\Controllers\ServiceAboutController::class, 'index'])->name('service-about.index');
     Route::get('/service-about/{id}/delete', [App\Http\Controllers\ServiceAboutController::class, 'destroy'])->name('service-about.destroy');
-
-    // Service Brand Management
-    Route::get('/service-brands/{id}', [App\Http\Controllers\ServiceBrandController::class, 'create'])->name('service-brands.create');
-    Route::post('/service-brands', [App\Http\Controllers\ServiceBrandController::class, 'store'])->name('service-brands.store');
 });
 
 // ===========================================

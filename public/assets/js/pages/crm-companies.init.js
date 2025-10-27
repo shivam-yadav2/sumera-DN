@@ -3,7 +3,7 @@ var checkAll=document.getElementById("checkAll");checkAll&&(checkAll.onclick=fun
                             <div class="position-relative d-inline-block">
                                 <div class="avatar-md">
                                     <div class="avatar-title bg-light rounded-circle">
-                                        <img src="${e._values.image_src}" alt="" class="avatar-sm rounded-circle object-cover">
+                                        <img loading="lazy" src="${e._values.image_src}" alt="" class="avatar-sm rounded-circle object-cover">
                                     </div>
                                 </div>
                             </div>
