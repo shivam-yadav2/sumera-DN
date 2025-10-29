@@ -36,7 +36,7 @@ const services = [
     },
 ];
 
-const AcademyPage = () => {
+const AcademyPage = ({ courses = [] }) => {
     const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -58,7 +58,7 @@ const handleSubmit = () => {
     return (
         <Layout>
             <BannerSection title="Academy Courses" />
-            <CourseSlider />
+            <CourseSlider courses={courses} />
             <AcademyWhyChoose />
             <AcademyFacilities />
             <AcademyTestimonials />

@@ -25,7 +25,8 @@ Route::get('/contact', function () {
 })->name('contact');
 
 Route::get('/academy', function () {
-    return Inertia::render('AcademyPage');
+    $courses = \App\Models\Courses::where('is_active', 1)->get();
+    return Inertia::render('AcademyPage', ['courses' => $courses]);
 })->name('academy');
 
 Route::get('/about', function () {

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Courses;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\Encoders\WebpEncoder;
 
 class CoursesController extends Controller
 {
@@ -14,19 +17,42 @@ class CoursesController extends Controller
             $data = $request->all();
             $rules = [
                 'title'     => 'required|string|max:255',
+                'image'     => 'nullable|image|mimes:jpeg,jpg,png,webp|max:2048',
+                'duration'  => 'nullable|string|max:255',
+                'fees'      => 'nullable|string|max:255',
             ];
             $customMessages = [
-                'title.max' => 'The Meta title text may not be greater than 255 characters.',
-                'title.required' => 'The Meta title  is required.',
+                'title.max' => 'The Course title text may not be greater than 255 characters.',
+                'title.required' => 'The Course title is required.',
+                'image.image' => 'The file must be an image.',
+                'image.mimes' => 'The image must be a file of type: jpeg, jpg, png, webp.',
+                'image.max' => 'The image size must not exceed 2MB.',
             ];
             $validator = Validator::make($data, $rules, $customMessages);
             if($validator->fails()){
                 return redirect()->back()->withErrors($validator)->withInput();
             }
+
+            // Handle image upload
+            if($request->hasFile('image')) {
+                $manager = new ImageManager(new Driver());
+                $path = 'assets/images/courses/';
+                if (!is_dir($path)) {
+                    mkdir($path, 0755, true);
+                }
+                $uploadedImage = $request->file('image');
+                $image = $manager->read($uploadedImage);
+                $image->resize(800, 600);
+                $image->encode(new WebpEncoder(quality: 65));
+                $filename = uniqid() . '.webp';
+                $image->save($path.$filename);
+                $data['image'] = $path.$filename;
+            }
+
             Courses::create($data);
             return redirect()->back()->with('success_msg', 'Course created successfully');
         }
-        $title= 'Add Meta Tags Seo';
+        $title= 'Add Course';
         $data = Courses::where('is_active', 1)->get();
         return view('academy.course', compact('title', 'data'));
 
@@ -49,19 +75,48 @@ class CoursesController extends Controller
             }
             $rules = [
                 'title'     => 'required|string|max:255',
+                'image'     => 'nullable|image|mimes:jpeg,jpg,png,webp|max:2048',
+                'duration'  => 'nullable|string|max:255',
+                'fees'      => 'nullable|string|max:255',
             ];
             $customMessages = [
-                'title.max' => 'The Meta title text may not be greater than 255 characters.',
-                'title.required' => 'The Meta title  is required.',
+                'title.max' => 'The Course title text may not be greater than 255 characters.',
+                'title.required' => 'The Course title is required.',
+                'image.image' => 'The file must be an image.',
+                'image.mimes' => 'The image must be a file of type: jpeg, jpg, png, webp.',
+                'image.max' => 'The image size must not exceed 2MB.',
             ];
             $validator = Validator::make($data, $rules, $customMessages);
             if($validator->fails()){
                 return redirect()->back()->withErrors($validator)->withInput();
             }
+
             $course = Courses::find($id);
             if (!$course) {
                 return redirect()->back()->with('error_msg', 'Course not found.');
             }
+
+            // Handle image upload
+            if($request->hasFile('image')) {
+                // Delete old image if exists
+                if(!empty($course->image) && file_exists(public_path($course->image))){
+                    unlink(public_path($course->image));
+                }
+                
+                $manager = new ImageManager(new Driver());
+                $path = 'assets/images/courses/';
+                if (!is_dir($path)) {
+                    mkdir($path, 0755, true);
+                }
+                $uploadedImage = $request->file('image');
+                $image = $manager->read($uploadedImage);
+                $image->resize(800, 600);
+                $image->encode(new WebpEncoder(quality: 65));
+                $filename = uniqid() . '.webp';
+                $image->save($path.$filename);
+                $data['image'] = $path.$filename;
+            }
+
             $course->update($data);
             return redirect()->back()->with('success_msg', 'Course Update successfully');
         }

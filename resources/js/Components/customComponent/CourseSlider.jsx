@@ -6,8 +6,19 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 
-const CourseSlider = () => {
-  const courses = [
+const CourseSlider = ({ courses = [] }) => {
+  // Transform database courses to match the expected format
+  const transformedCourses = courses.map(course => ({
+    title: course.title || 'Course Title',
+    duration: course.duration || 'Duration TBD',
+    level: 'Professional', // Default level
+    image: course.image ? `/${course.image}` : '/assets/images/1.JPG', // Default fallback image
+    price: course.fees || 'Contact for Pricing',
+    description: course.description || 'Professional course designed to enhance your skills.'
+  }));
+
+  // Fallback courses if no data from database
+  const fallbackCourses = [
     {
       title: 'Professional Hair Styling',
       duration: '8 Weeks',
@@ -31,32 +42,11 @@ const CourseSlider = () => {
       image: '/assets/images/3.JPG',
       price: '₹45,000',
       description: 'Master advanced color theory and correction for all hair types.'
-    },
-    {
-      title: 'Bridal & Event Styling',
-      duration: '5 Weeks',
-      level: 'Advanced',
-      image: '/assets/images/4.JPG',
-      price: '₹55,000',
-      description: 'Create stunning looks for weddings and special occasions.'
-    },
-    {
-      title: 'Foundation to Basics',
-      duration: '3 Weeks',
-      level: 'Beginner',
-      image: '/assets/images/3.JPG',
-      price: '₹20,000',
-      description: 'Learn the fundamentals of makeup artistry and skincare.'
-    },
-    {
-      title: 'Special Effects Makeup',
-      duration: '6 Weeks',
-      level: 'Advanced',
-      image: '/assets/images/2.JPG',
-      price: '₹60,000',
-      description: 'Master SFX techniques for film, theater, and fashion industries.'
-    },
+    }
   ];
+
+  // Use database courses if available, otherwise use fallback
+  const displayCourses = transformedCourses.length > 0 ? transformedCourses : fallbackCourses;
 
   return (
     <div className="bg-white py-20 px-4 md:px-8 ">
@@ -122,7 +112,7 @@ const CourseSlider = () => {
               paddingBottom: '80px',
             }}
           >
-            {courses.map((course, index) => (
+            {displayCourses.map((course, index) => (
               <SwiperSlide
                 key={index}
                 style={{
