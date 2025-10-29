@@ -54,6 +54,10 @@ class OfferController extends Controller
                 $safeName = preg_replace('/[^A-Za-z0-9_\-]/', '_', $originalName);
                 $timestamp = time();
                 $image = $manager->read($uploadedImage);
+                
+                // Resize image to 900x1600 (portrait dimension)
+                $image->resize(900, 1600);
+                
                 $image->encode(new WebpEncoder(quality: 65));
                 $filename = $timestamp . '_' . $safeName . '.webp';
                 $image->save($path.$filename);

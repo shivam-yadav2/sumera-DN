@@ -42,7 +42,7 @@ class CoursesController extends Controller
                 }
                 $uploadedImage = $request->file('image');
                 $image = $manager->read($uploadedImage);
-                $image->resize(800, 600);
+                $image->resize(900, 1600);
                 $image->encode(new WebpEncoder(quality: 65));
                 $filename = uniqid() . '.webp';
                 $image->save($path.$filename);

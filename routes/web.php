@@ -177,8 +177,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/gallery/{id}/delete', [App\Http\Controllers\GalleryController::class, 'destroy'])->name('gallery.destroy');
 
     // Offer Management
-    Route::get('/offers', [App\Http\Controllers\OfferController::class, 'index'])->name('offers.index');
-    Route::match(['get', 'post'], '/offers/{id?}', [App\Http\Controllers\OfferController::class, 'index'])->name('offers.create');
+    Route::match(['get', 'post'], '/offers', [App\Http\Controllers\OfferController::class, 'index'])->name('offers.index');
     Route::get('/offers/{id}/update', [App\Http\Controllers\OfferController::class, 'update'])->name('offers.update');
     Route::get('/offers/{id}/delete', [App\Http\Controllers\OfferController::class, 'destroy'])->name('offers.destroy');
 

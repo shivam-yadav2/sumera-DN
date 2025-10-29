@@ -69,7 +69,7 @@
                                     </div>
                                 @endif
                             </div>
-                            <form method="post" action="{{ url('/add-offer') }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('admin.offers.index') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row ">
                                     <div class="col-md-12">
@@ -232,7 +232,7 @@
                                 text: "Your file has been deleted.",
                                 icon: "success"
                             });
-                            window.location.href = "/delete-offer/" + id;
+                            window.location.href = "{{ route('admin.offers.destroy', ':id') }}".replace(':id', id);
                         }
                     });
                 });
@@ -257,7 +257,7 @@
                                 text: "Your Offer Front View has been Updated.",
                                 icon: "success"
                             });
-                            window.location.href = "/update-offer/" + id;
+                            window.location.href = "{{ route('admin.offers.update', ':id') }}".replace(':id', id);
                         }
                     });
                 });

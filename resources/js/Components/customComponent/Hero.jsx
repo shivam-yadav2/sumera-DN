@@ -56,7 +56,7 @@ const Hero = () => {
     }, []);
 
     return (
-        <div className="relative h-[50vh] lg:h-[75vh] mt-[70px] lg:mt-[100px] overflow-hidden">
+        <div className="relative h-[50vh] lg:h-[75vh] mt-[80px] lg:mt-[90px] overflow-hidden">
             {/* Decorative flower elements */}
             {/* <div className="absolute top-20 left-10 w-48 h-48 opacity-20 pointer-events-none z-10">
                 <svg viewBox="0 0 200 200" className="text-[#3c4c24]">

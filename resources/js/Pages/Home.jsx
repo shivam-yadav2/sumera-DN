@@ -1,5 +1,5 @@
 import React from "react";
-import { Head } from "@inertiajs/react";
+import { Head, usePage } from "@inertiajs/react";
 import Layout from "../Layouts/Layout";
 import  Hero  from "../Components/customComponent/Hero";
 import { AboutSection } from "../Components/customComponent/AboutSection";
@@ -9,19 +9,25 @@ import { WhyChooseUsSection } from "../Components/customComponent/WhyChooseUsSec
 import  SalonContact  from "../Components/customComponent/ContactSection";
 import  SalonAppointment  from "../Components/customComponent/SalonAppointment";
 import  SalonPricing  from "../Components/customComponent/SalonPricing";
+import AcademyCoursesSection from "../Components/customComponent/AcademyCoursesSection";
+import OffersDealsSection from "../Components/customComponent/OffersDealsSection";
 
 const Home = () => {
+    const { gallery = [] } = usePage().props;
+    
     return (
         <Layout>
             <Head title="Home Sumeera Salon" />
             <Hero />
             <AboutSection />
             <ServicesSection />
+            {/* <AcademyCoursesSection /> */}
+            {/* <OffersDealsSection /> */}
             <SalonAppointment/>
-            <SalonPricing/>
-            <SalonGallery />
-            {/* <WhyChooseUsSection /> */}
+            {/* <SalonPricing/> */}
             <SalonContact />
+            <SalonGallery gallery={gallery} />
+            {/* <WhyChooseUsSection /> */}
         </Layout>
     );
 };

@@ -56,7 +56,21 @@ class HomeController extends Controller
 
     public function index2()
     {
-        $courses = \App\Models\Courses::where('is_active', 1)->get();
+        // Get active courses
+        $courses = \App\Models\Courses::where('is_active', 1)
+            ->orderBy('id', 'desc')
+            ->get()
+            ->map(function($course) {
+                return [
+                    'id' => $course->id,
+                    'title' => $course->title,
+                    'image' => $course->image ? $course->image : null,
+                    'duration' => $course->duration,
+                    'fees' => $course->fees,
+                    'description' => $course->description,
+                    'is_active' => $course->is_active,
+                ];
+            });
         
         // Get active sliders
         $sliders = \App\Models\Slider::where('is_active', 1)
@@ -71,9 +85,60 @@ class HomeController extends Controller
                 ];
             });
         
+        // Get active services
+        $services = \App\Models\Service::where('is_active', '1')
+            ->where('is_front', 'yes')
+            ->orderBy('id', 'asc')
+            ->get()
+            ->map(function($service) {
+                return [
+                    'id' => $service->id,
+                    'title' => $service->title,
+                    'image' => $service->image ? asset($service->image) : null,
+                    'slug_url' => $service->slug_url,
+                    'description' => $service->description,
+                ];
+            });
+        
+        // Get active gallery items
+        $gallery = \App\Models\Gallery::where('is_active', '1')
+            ->with('service')
+            ->orderBy('id', 'desc')
+            ->get()
+            ->map(function ($item) {
+                return [
+                    'id' => $item->id,
+                    'title' => $item->title,
+                    'image' => asset($item->image),
+                    'service_id' => $item->service_id,
+                    'service' => $item->service ? $item->service->title : null,
+                ];
+            });
+        
+        // Get active offers (for front page display)
+        $offers = \App\Models\Offer::where('is_active', '1')
+            ->where('is_front', 'yes')
+            ->with('service')
+            ->orderBy('id', 'desc')
+            ->get()
+            ->map(function($offer) {
+                return [
+                    'id' => $offer->id,
+                    'title' => $offer->title,
+                    'image' => $offer->image ? $offer->image : null,
+                    'service_id' => $offer->service_id,
+                    'service' => $offer->service ? $offer->service->title : null,
+                    'is_front' => $offer->is_front,
+                    'is_active' => $offer->is_active,
+                ];
+            });
+        
         return Inertia::render('Home', [
             'courses' => $courses,
-            'sliders' => $sliders
+            'sliders' => $sliders,
+            'services' => $services,
+            'gallery' => $gallery,
+            'offers' => $offers
         ]);
     }
 

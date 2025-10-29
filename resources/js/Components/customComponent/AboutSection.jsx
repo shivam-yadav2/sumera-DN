@@ -20,7 +20,7 @@ const AboutSection = () => {
     }, [direction]);
 
     return (
-        <div className="min-h-screen bg-[#3c4c24] py-20 px-4 relative overflow-hidden">
+        <div className="min-h-screen bg-[#3c4c24] py-10 px-4 relative overflow-hidden">
             {/* Decorative background elements */}
             <div className="absolute top-20 left-10 w-64 h-64 bg-pink-100 rounded-full opacity-40 blur-3xl"></div>
             <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-100 rounded-full opacity-30 blur-3xl"></div>
