@@ -1,92 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 
-const SalonGallery = () => {
+const SalonGallery = ({ gallery = [] }) => {
     const [selectedImage, setSelectedImage] = useState(null);
     const [selectedCategory, setSelectedCategory] = useState("all");
 
-    // Sample gallery images - replace with your actual images
-    const galleryImages = [
-        {
-            id: 1,
-            url: "/assets/images/new/25.webp",
-            category: "makeup",
-            alt: "Bridal Makeup",
-        },
-        {
-            id: 2,
-            url: "/assets/images/new/32.webp",
-            category: "hair",
-            alt: "Hair Styling",
-        },
-        // {
-        //     id: 3,
-        //     url: "/assets/images/new/13.webp",
-        //     category: "makeup",
-        //     alt: "Makeup Artist",
-        // },
-        {
-            id: 4,
-            url: "/assets/images/new/44.webp",
-            category: "bridal",
-            alt: "Bridal Look",
-        },
-        {
-            id: 5,
-            url: "/assets/images/new/41.webp",
-            category: "hair",
-            alt: "Hair Color",
-        },
-        {
-            id: 6,
-            url: "/assets/images/new/49.webp",
-            category: "makeup",
-            alt: "Eye Makeup",
-        },
-        {
-            id: 7,
-            url: "/assets/images/new/29.webp",
-            category: "bridal",
-            alt: "Bride Portrait",
-        },
-        // {
-        //     id: 8,
-        //     url: "/assets/images/new/11.webp",
-        //     category: "hair",
-        //     alt: "Hair Treatment",
-        // },
-        // {
-        //     id: 9,
-        //     url: "/assets/images/new/51.webp",
-        //     category: "makeup",
-        //     alt: "Lipstick Application",
-        // },
-        {
-            id: 10,
-            url: "/assets/images/new/47.webp",
-            category: "bridal",
-            alt: "Wedding Makeup",
-        },
-        {
-            id: 11,
-            url: "/assets/images/new/39.webp",
-            category: "hair",
-            alt: "Salon Interior",
-        },
-        {
-            id: 12,
-            url: "/assets/images/new/37.webp",
-            category: "makeup",
-            alt: "Glamour Makeup",
-        },
-    ];
+    // Get unique services/categories from gallery data
+    const categories = useMemo(() => {
+        const uniqueServices = [...new Set(gallery.map(item => item.service).filter(Boolean))];
+        const cats = [{ id: "all", name: "All Work" }];
+        uniqueServices.forEach((service, index) => {
+            cats.push({ id: `service-${index}`, name: service });
+        });
+        return cats;
+    }, [gallery]);
 
-    const categories = [
-        { id: "all", name: "All Work" },
-        { id: "bridal", name: "Bridal" },
-        { id: "makeup", name: "Makeup" },
-        { id: "hair", name: "Hair Styling" },
-    ];
+    // Transform gallery data to match component structure
+    const galleryImages = useMemo(() => {
+        return gallery.map((item, index) => {
+            const categoryId = item.service 
+                ? categories.find(c => c.name === item.service)?.id || 'all'
+                : 'all';
+            
+            return {
+                id: item.id || index,
+                url: item.image,
+                category: categoryId,
+                alt: item.title || 'Gallery Image',
+                service: item.service,
+            };
+        });
+    }, [gallery, categories]);
 
     const filteredImages =
         selectedCategory === "all"

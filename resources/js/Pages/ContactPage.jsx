@@ -5,26 +5,96 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Layout from "@/Layouts/Layout";
 import { BannerSection } from "@/Components/customComponent/BannerSection";
+import { router, usePage } from "@inertiajs/react";
+import { toast } from "sonner";
 
 export default function ContactPage() {
+    const { services = [] } = usePage().props;
     const [formData, setFormData] = useState({
         name: "",
         email: "",
-        phone: "",
-        subject: "",
+        mobile: "",
+        service: "",
         message: "",
     });
 
-    const handleSubmit = () => {
-        console.log("Form submitted:", formData);
-        alert("Thank you for contacting us!");
-    };
+    const [errors, setErrors] = useState({});
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = (e) => {
+        const { name, value } = e.target;
         setFormData({
             ...formData,
-            [e.target.name]: e.target.value,
+            [name]: value,
         });
+        // Clear error when user starts typing
+        if (errors[name]) {
+            setErrors((prev) => ({
+                ...prev,
+                [name]: "",
+            }));
+        }
+    };
+
+    const validateForm = () => {
+        const newErrors = {};
+
+        if (!formData.name.trim()) {
+            newErrors.name = "Name is required";
+        }
+
+        if (!formData.mobile.trim()) {
+            newErrors.mobile = "Phone number is required";
+        } else if (!/^\d{10}$/.test(formData.mobile.trim())) {
+            newErrors.mobile = "Please enter a valid 10-digit phone number";
+        }
+
+        if (!formData.service) {
+            newErrors.service = "Service is required";
+        }
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    const handleSubmit = () => {
+        if (!validateForm()) {
+            return;
+        }
+
+        setIsSubmitting(true);
+
+        router.post(
+            "/api/booking",
+            formData,
+            {
+                onSuccess: () => {
+                    // Reset form
+                    setFormData({
+                        name: "",
+                        email: "",
+                        mobile: "",
+                        service: "",
+                        message: "",
+                    });
+                    setErrors({});
+                    // Show success toast
+                    toast.success("Message sent successfully!", {
+                        description: "Thank you for contacting us! We will get back to you soon.",
+                        duration: 5000,
+                    });
+                },
+                onError: (errors) => {
+                    setErrors(errors);
+                    toast.error("Failed to send message", {
+                        description: "Please check the form and try again.",
+                    });
+                },
+                onFinish: () => {
+                    setIsSubmitting(false);
+                },
+            }
+        );
     };
 
     return (
@@ -125,11 +195,16 @@ export default function ContactPage() {
                                     <Input
                                         type="text"
                                         name="name"
-                                        placeholder="Your Name"
+                                        placeholder="Your Name *"
                                         value={formData.name}
                                         onChange={handleChange}
-                                        className="h-12"
+                                        className={`h-12 ${
+                                            errors.name ? 'border-red-500' : ''
+                                        }`}
                                     />
+                                    {errors.name && (
+                                        <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                                    )}
                                 </div>
 
                                 <div>
@@ -141,28 +216,46 @@ export default function ContactPage() {
                                         onChange={handleChange}
                                         className="h-12"
                                     />
+                                    {errors.email && (
+                                        <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                                    )}
                                 </div>
 
                                 <div>
                                     <Input
                                         type="tel"
-                                        name="phone"
-                                        placeholder="Phone Number"
-                                        value={formData.phone}
+                                        name="mobile"
+                                        placeholder="Phone Number *"
+                                        value={formData.mobile}
                                         onChange={handleChange}
-                                        className="h-12"
+                                        className={`h-12 ${
+                                            errors.mobile ? 'border-red-500' : ''
+                                        }`}
                                     />
+                                    {errors.mobile && (
+                                        <p className="text-red-500 text-sm mt-1">{errors.mobile}</p>
+                                    )}
                                 </div>
 
                                 <div>
-                                    <Input
-                                        type="text"
-                                        name="subject"
-                                        placeholder="Subject"
-                                        value={formData.subject}
+                                    <select
+                                        name="service"
+                                        value={formData.service}
                                         onChange={handleChange}
-                                        className="h-12"
-                                    />
+                                        className={`w-full h-12 px-3 border rounded-md focus:ring-2 focus:ring-[#3c4c24] focus:border-transparent ${
+                                            errors.service ? 'border-red-500' : 'border-gray-300'
+                                        } ${!formData.service ? 'text-gray-500' : 'text-gray-900'}`}
+                                    >
+                                        <option value="">Select Service *</option>
+                                        {services.map((service) => (
+                                            <option key={service.id} value={service.title}>
+                                                {service.title}
+                                            </option>
+                                        ))}
+                                    </select>
+                                    {errors.service && (
+                                        <p className="text-red-500 text-sm mt-1">{errors.service}</p>
+                                    )}
                                 </div>
 
                                 <div>
@@ -173,13 +266,17 @@ export default function ContactPage() {
                                         onChange={handleChange}
                                         className="min-h-32 resize-none"
                                     />
+                                    {errors.message && (
+                                        <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                                    )}
                                 </div>
 
                                 <Button
                                     onClick={handleSubmit}
+                                    disabled={isSubmitting}
                                     className="w-full h-12 bg-[#3c4c24] hover:bg-[#005840] text-white"
                                 >
-                                    Submit Now
+                                    {isSubmitting ? "Submitting..." : "Submit Now"}
                                 </Button>
                             </div>
                         </div>

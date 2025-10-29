@@ -4,24 +4,24 @@ namespace App\Http\Controllers;
 
 use App\Models\Slider;
 use Illuminate\Http\Request;
-use Intervention\Image\Drivers\Gd\Driver;
-use Intervention\Image\ImageManager;
-use Intervention\Image\Encoders\AutoEncoder;
-use Intervention\Image\Encoders\WebpEncoder;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\Encoders\AutoEncoder;
+use Intervention\Image\Encoders\WebpEncoder;
+use Intervention\Image\ImageManager;
 
 class SliderController extends Controller
 {
     public function AddSlider(Request $request)
     {
-        if($request->isMethod('POST')){
+        if ($request->isMethod('POST')) {
             $data = $request->all();
             $rules = [
-            'slider_image' => 'required|image|mimes:jpeg,png,jpg,webp|max:1024',
-            'mobile_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:1024',
-            'alt_text'     => 'nullable|string|max:255',
+                'slider_image' => 'required|image|mimes:jpeg,png,jpg,webp|max:1024',
+                'mobile_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+                'alt_text' => 'nullable|string|max:255',
             ];
 
             $customMessages = [
@@ -35,10 +35,10 @@ class SliderController extends Controller
                 'alt_text.max' => 'The alt text may not be greater than 255 characters.',
             ];
             $validator = Validator::make($data, $rules, $customMessages);
-            if($validator->fails()){
+            if ($validator->fails()) {
                 return redirect()->back()->withErrors($validator)->withInput();
             }
-            if($request->hasFile('slider_image')) {
+            if ($request->hasFile('slider_image')) {
                 $manager = new ImageManager(new Driver());
                 $path = 'assets/images/slider/';
                 if (!is_dir($path)) {
@@ -46,13 +46,13 @@ class SliderController extends Controller
                 }
                 $uploadedImage = $request->file('slider_image');
                 $image = $manager->read($uploadedImage);
-                $image->resize(1920, 600);
+                $image->resize(1750, 750);
                 $image->encode(new WebpEncoder(quality: 65));
-                $filename = uniqid() . '.' .'webp';
-                $image->save($path.$filename);
-                $data['slider_image'] = $path.$filename;
+                $filename = uniqid() . '.' . 'webp';
+                $image->save($path . $filename);
+                $data['slider_image'] = $path . $filename;
             }
-            if($request->hasFile('mobile_image')) {
+            if ($request->hasFile('mobile_image')) {
                 $manager = new ImageManager(new Driver());
                 $path = 'assets/images/slider/banner';
                 if (!is_dir($path)) {
@@ -60,29 +60,29 @@ class SliderController extends Controller
                 }
                 $uploadedImage = $request->file('mobile_image');
                 $image = $manager->read($uploadedImage);
-                $image->resize(1080, 1080);
+                $image->resize(500, 500);
                 $image->encode(new WebpEncoder(quality: 65));
-                $filename = uniqid() . '.' .'webp';
-                $image->save($path.$filename);
-                $data['mobile_image'] = $path.$filename;
+                $filename = uniqid() . '.' . 'webp';
+                $image->save($path . $filename);
+                $data['mobile_image'] = $path . $filename;
             }
             Slider::create($data);
             return redirect()->back()->with('success_msg', 'Slider created successfully');
         }
-        $title= 'Add Slider';
+        $title = 'Add Slider';
         $data = Slider::where('is_active', 1)->get();
-        //return $data;
+        // return $data;
         return view('slider', compact('title', 'data'));
     }
 
     public function DeleteSlider($id)
     {
         $slider = Slider::find($id);
-        if($slider){
-            if(!empty($slider->slider_image) && file_exists(public_path($slider->slider_image))){
+        if ($slider) {
+            if (!empty($slider->slider_image) && file_exists(public_path($slider->slider_image))) {
                 unlink(public_path($slider->slider_image));
             }
-            if(!empty($slider->mobile_image) && file_exists(public_path($slider->mobile_image))){
+            if (!empty($slider->mobile_image) && file_exists(public_path($slider->mobile_image))) {
                 unlink(public_path($slider->mobile_image));
             }
             $slider->delete();

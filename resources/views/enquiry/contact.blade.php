@@ -9,12 +9,12 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">Contact Enquiry</h4>
+                        <h4 class="mb-sm-0">Booking Requests & Contact Enquiries</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Contact List</li>
+                                <li class="breadcrumb-item active">Booking Requests</li>
                             </ol>
                         </div>
 
@@ -27,7 +27,10 @@
                 <div class="col-xl-12">
                     <div class="card">
                         <div class="card-header text-white bg-primary align-items-center d-flex">
-                            <h4 class="card-title text-white mb-0 flex-grow-1">Recent Contact Enquiry</h4>
+                            <h4 class="card-title text-white mb-0 flex-grow-1">Booking Requests & Contact Enquiries</h4>
+                            <div class="flex-shrink-0">
+                                <span class="badge bg-light text-dark">Total: {{ $data->total() }}</span>
+                            </div>
                         </div><!-- end card header -->
 
                         <div class="card-body">
@@ -35,35 +38,58 @@
                                 <table class="table table-borderless table-centered align-middle table-nowrap mb-0">
                                     <thead class="text-muted table-primary">
                                     <tr>
-                                        <th scope="col">Contact ID</th>
-                                        <th scope="col">Action</th>
-{{--                                        <th scope="col">Service</th>--}}
+                                        <th scope="col">Booking ID</th>
+                                        <th scope="col">Date</th>
                                         <th scope="col">Customer</th>
-                                        <th scope="col">Mobile</th>
+                                        <th scope="col">Contact</th>
+                                        <th scope="col">Service</th>
+                                        <th scope="col">Message</th>
+                                        <th scope="col">Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     @foreach($data as $key => $row)
                                         <tr>
                                             <td>
-                                                <a href="#!"
-                                                   class="fw-medium link-primary">#BA-000{!! $row->id !!} <br> {!! date('d M Y', strtotime($row->created_at)) !!}</a>
+                                                <a href="#!" class="fw-medium link-primary">#BK-{!! str_pad($row->id, 4, '0', STR_PAD_LEFT) !!}</a>
                                             </td>
                                             <td>
-                                                <a class="confirmDelete btn btn-sm btn-danger" data-id="{{ $row->id }}">Delete</a>
+                                                <span class="text-muted">{!! date('d M Y', strtotime($row->created_at)) !!}</span><br>
+                                                <small class="text-muted">{!! date('h:i A', strtotime($row->created_at)) !!}</small>
                                             </td>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    <div class="flex-grow-1">{!! ucwords($row->name) !!}</div>
+                                                    <div class="flex-grow-1">
+                                                        <strong>{!! ucwords($row->name) !!}</strong>
+                                                    </div>
                                                 </div>
                                             </td>
-                                           {{-- <td>
-                                                <span class="badge badge-soft-success">{!! ucwords($row->service) !!}</span>
-                                            </td>--}}
                                             <td>
-                                                <span class="text-success">{!! $row->mobile !!}</span> -
-                                                <span class="text-muted">{!! $row->email !!}</span>
-                                                <p>{!! $row->message !!}</p>
+                                                <span class="text-success"><i class="ri-phone-line"></i> {!! $row->mobile !!}</span><br>
+                                                @if($row->email)
+                                                    <span class="text-muted"><i class="ri-mail-line"></i> {!! $row->email !!}</span>
+                                                @else
+                                                    <span class="text-muted">No email provided</span>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if($row->service)
+                                                    <span class="badge bg-primary">{!! ucwords($row->service) !!}</span>
+                                                @else
+                                                    <span class="badge bg-secondary">Not specified</span>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if($row->message)
+                                                    <p class="mb-0 text-truncate" style="max-width: 200px;" title="{!! $row->message !!}">{!! $row->message !!}</p>
+                                                @else
+                                                    <span class="text-muted">No message</span>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <a class="confirmDelete btn btn-sm btn-danger" data-id="{{ $row->id }}">
+                                                    <i class="ri-delete-bin-line"></i> Delete
+                                                </a>
                                             </td>
                                         </tr><!-- end tr -->
                                     @endforeach
@@ -92,7 +118,7 @@
             var id = $(this).attr('data-id');
             Swal.fire({
                 title: "Are you sure?",
-                text: "you are sure you want to delete this contact?",
+                text: "Do you want to delete this booking request?",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#3085d6",
@@ -100,12 +126,7 @@
                 confirmButtonText: "Yes, delete it!"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    Swal.fire({
-                        title: "Deleted!",
-                        text: "Your file has been deleted.",
-                        icon: "success"
-                    });
-                    window.location.href = "/delete-contact/" + id;
+                    window.location.href = '/admin/contacts/' + id + '/delete';
                 }
             });
         });

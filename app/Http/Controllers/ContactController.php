@@ -102,4 +102,49 @@ class ContactController extends Controller
         return response()->json(['message' => 'Contact not found'], 404);
     }
 
+    /**
+     * Store booking from API request
+     */
+    public function storeBooking(Request $request)
+    {
+        $rules = [
+            'name'    => 'required|string|max:50',
+            'mobile'  => 'required|string|max:13|min:10',
+            'email'   => 'nullable|email|max:255',
+            'service' => 'required|string|max:255',
+            'message' => 'nullable|string|max:500',
+        ];
+
+        $customMessages = [
+            'name.required'    => 'The name is required.',
+            'name.string'      => 'The name must be a string.',
+            'name.max'         => 'The name must not exceed 50 characters.',
+            'mobile.required'  => 'The phone number is required.',
+            'mobile.string'    => 'The phone number must be a string.',
+            'mobile.max'       => 'The phone number must not exceed 13 characters.',
+            'mobile.min'       => 'The phone number must be at least 10 characters.',
+            'email.email'      => 'The email must be a valid email address.',
+            'email.max'        => 'The email must not exceed 255 characters.',
+            'service.required' => 'The service is required.',
+            'service.string'   => 'The service must be a string.',
+            'service.max'      => 'The service must not exceed 255 characters.',
+            'message.string'   => 'The message must be a string.',
+            'message.max'      => 'The message must not exceed 500 characters.',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $customMessages);
+        
+        if ($validator->fails()) {
+            return back()->withErrors($validator->errors());
+        }
+
+        $data = $request->all();
+        $data['is_active'] = 1;
+        
+        Contact::create($data);
+
+        // Return empty response for Inertia.js
+        return back();
+    }
+
 }

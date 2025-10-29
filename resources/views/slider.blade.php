@@ -88,7 +88,7 @@
                                                     </div>
                                                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
                                                         <div class="form-group mb-2">
-                                                            <label for="Slider_image">Slider Image 1920*650px
+                                                            <label for="Slider_image">Slider Image 1750*750px
                                                                 Max=500KB</label><br>
                                                             <input type="file" class="form-control" id="category_image"
                                                                 name="slider_image"
@@ -101,7 +101,7 @@
 
                                                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
                                                         <div class="form-group mb-2">
-                                                            <label for="Mobile Slider">Mobile Slider 1080*1080px
+                                                            <label for="Mobile Slider">Mobile Slider 500*500px
                                                                 Max=1MB</label><br>
                                                             <input type="file" class="form-control" id="category_banner"
                                                                 name="mobile_image"

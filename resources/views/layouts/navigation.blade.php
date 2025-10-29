@@ -610,7 +610,7 @@
                 </li>
 
                 <!-- Academy -->
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link menu-link {{ request()->routeIs('admin.academy.*') ? 'active' : '' }}"
                         href="#sidebarAcademy" data-bs-toggle="collapse" role="button" aria-expanded="false"
                         aria-controls="sidebarAcademy">
@@ -630,7 +630,7 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
                 <!-- Courses -->
                 <li class="nav-item">
@@ -674,7 +674,7 @@
                 </li>
 
                 <!-- Brands -->
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link menu-link {{ request()->routeIs('admin.brands.*') ? 'active' : '' }}"
                         href="#sidebarBrands" data-bs-toggle="collapse" role="button" aria-expanded="false"
                         aria-controls="sidebarBrands">
@@ -694,10 +694,10 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
                 <!-- Packages -->
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link menu-link {{ request()->routeIs('admin.packages.*') ? 'active' : '' }}"
                         href="#sidebarPackages" data-bs-toggle="collapse" role="button" aria-expanded="false"
                         aria-controls="sidebarPackages">
@@ -717,10 +717,10 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
                 <!-- YouTube -->
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link menu-link {{ request()->routeIs('admin.youtube.*') ? 'active' : '' }}"
                         href="#sidebarYoutube" data-bs-toggle="collapse" role="button" aria-expanded="false"
                         aria-controls="sidebarYoutube">
@@ -740,7 +740,7 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
                 <!-- Offers -->
                 <li class="nav-item">
@@ -766,7 +766,7 @@
                 </li>
 
                 <!-- Features/Celebrities -->
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link menu-link {{ request()->routeIs('admin.features.*') ? 'active' : '' }}"
                         href="#sidebarFeatures" data-bs-toggle="collapse" role="button" aria-expanded="false"
                         aria-controls="sidebarFeatures">
@@ -786,7 +786,7 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
                 <!-- Sliders -->
                 <li class="nav-item">
@@ -797,7 +797,7 @@
                 </li>
 
                 <!-- Settings -->
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link menu-link {{ request()->routeIs('admin.about.*') || request()->routeIs('admin.banners.*') || request()->routeIs('admin.meta-*') ? 'active' : '' }}"
                         href="#sidebarSettings" data-bs-toggle="collapse" role="button" aria-expanded="false"
                         aria-controls="sidebarSettings">
@@ -830,7 +830,7 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
 
                 <!-- Frontend Link -->
                 <li class="nav-item">

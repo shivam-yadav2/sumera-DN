@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Gallery;
+use App\Models\Service;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -12,8 +14,26 @@ use Inertia\Inertia;
 
 // Public frontend routes
 Route::get('/', [HomeController::class, 'index2'])->name('home');
+
+// Booking API endpoint
+Route::post('/api/booking', [App\Http\Controllers\ContactController::class, 'storeBooking'])->name('booking.store');
 Route::get('/gallery/photos', function () {
-    return Inertia::render('Gallery');
+    $gallery = Gallery::where('is_active', '1')
+        ->orderBy('id', 'desc')
+        ->get()
+        ->map(function ($item) {
+            return [
+                'id' => $item->id,
+                'title' => $item->title,
+                'image' => asset($item->image),
+                'service_id' => $item->service_id,
+                'service' => $item->service ? $item->service->title : null,
+            ];
+        });
+    
+    return Inertia::render('Gallery', [
+        'gallery' => $gallery,
+    ]);
 })->name('gallery.photos');
 
 Route::get('/gallery/videos', function () {
@@ -33,8 +53,38 @@ Route::get('/about', function () {
     return Inertia::render('About');
 })->name('about');
 
-Route::get('/services/{service}', function () {
-    return Inertia::render('Service');
+Route::get('/services/{service}', function ($service) {
+    // Find service by slug_url
+    $serviceData = Service::where('slug_url', $service)
+        ->where('is_active', '1')
+        ->firstOrFail();
+    
+    // Get 6 gallery images for this service
+    $galleryImages = Gallery::where('service_id', $serviceData->id)
+        ->where('is_active', '1')
+        ->orderBy('id', 'desc')
+        ->limit(6)
+        ->get()
+        ->map(function ($item) {
+            return [
+                'id' => $item->id,
+                'title' => $item->title,
+                'image' => asset($item->image),
+            ];
+        });
+    
+    return Inertia::render('Service', [
+        'service' => [
+            'id' => $serviceData->id,
+            'title' => $serviceData->title,
+            'slug_url' => $serviceData->slug_url,
+            'description' => $serviceData->description,
+            'image' => asset($serviceData->image),
+            'banner' => $serviceData->banner ? asset($serviceData->banner) : null,
+            'mobile_banner' => $serviceData->mobile_banner ? asset($serviceData->mobile_banner) : null,
+        ],
+        'galleryImages' => $galleryImages,
+    ]);
 })->name('services.show');
 
 // User authentication routes (Inertia)

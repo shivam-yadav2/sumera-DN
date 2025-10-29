@@ -2,25 +2,96 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { router, usePage } from '@inertiajs/react';
+import { toast } from 'sonner';
 
 const SalonContact = () => {
+  const { services = [] } = usePage().props;
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
-    subject: '',
+    mobile: '',
+    service: '',
     message: ''
   });
 
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleChange = (e) => {
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: value
     });
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: "",
+      }));
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
+
+    if (!formData.mobile.trim()) {
+      newErrors.mobile = "Phone number is required";
+    } else if (!/^\d{10}$/.test(formData.mobile.trim())) {
+      newErrors.mobile = "Please enter a valid 10-digit phone number";
+    }
+
+    if (!formData.service) {
+      newErrors.service = "Service is required";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = () => {
-    console.log('Form submitted:', formData);
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    router.post(
+      "/api/booking",
+      formData,
+      {
+        onSuccess: () => {
+          // Reset form
+          setFormData({
+            name: "",
+            email: "",
+            mobile: "",
+            service: "",
+            message: "",
+          });
+          setErrors({});
+          // Show success toast
+          toast.success("Message sent successfully!", {
+            description: "Thank you for contacting us! We will get back to you soon.",
+            duration: 5000,
+          });
+        },
+        onError: (errors) => {
+          setErrors(errors);
+          toast.error("Failed to send message", {
+            description: "Please check the form and try again.",
+          });
+        },
+        onFinish: () => {
+          setIsSubmitting(false);
+        },
+      }
+    );
   };
 
   return (
@@ -56,11 +127,16 @@ const SalonContact = () => {
                   <Input
                     type="text"
                     name="name"
-                    placeholder="Name"
+                    placeholder="Name *"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-6 py-6 bg-white border-0 shadow-md text-gray-700 placeholder:text-gray-500 focus:ring-2 focus:ring-purple-300 rounded-none"
+                    className={`w-full px-6 py-6 bg-white border-0 shadow-md text-gray-700 placeholder:text-gray-500 focus:ring-2 focus:ring-purple-300 rounded-none ${
+                      errors.name ? 'ring-2 ring-red-500' : ''
+                    }`}
                   />
+                  {errors.name && (
+                    <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                  )}
                 </div>
                 <div>
                   <Input
@@ -71,30 +147,48 @@ const SalonContact = () => {
                     onChange={handleChange}
                     className="w-full px-6 py-6 bg-white border-0 shadow-md text-gray-700 placeholder:text-gray-500 focus:ring-2 focus:ring-purple-300 rounded-none"
                   />
+                  {errors.email && (
+                    <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                  )}
                 </div>
               </div>
 
-              {/* Phone and Subject Row */}
+              {/* Phone and Service Row */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <Input
                     type="tel"
-                    name="phone"
-                    placeholder="Phone"
-                    value={formData.phone}
+                    name="mobile"
+                    placeholder="Phone Number *"
+                    value={formData.mobile}
                     onChange={handleChange}
-                    className="w-full px-6 py-6 bg-white border-0 shadow-md text-gray-700 placeholder:text-gray-500 focus:ring-2 focus:ring-purple-300 rounded-none"
+                    className={`w-full px-6 py-6 bg-white border-0 shadow-md text-gray-700 placeholder:text-gray-500 focus:ring-2 focus:ring-purple-300 rounded-none ${
+                      errors.mobile ? 'ring-2 ring-red-500' : ''
+                    }`}
                   />
+                  {errors.mobile && (
+                    <p className="text-red-500 text-sm mt-1">{errors.mobile}</p>
+                  )}
                 </div>
                 <div>
-                  <Input
-                    type="text"
-                    name="subject"
-                    placeholder="Subject"
-                    value={formData.subject}
+                  <select
+                    name="service"
+                    value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-6 py-6 bg-white border-0 shadow-md text-gray-700 placeholder:text-gray-500 focus:ring-2 focus:ring-purple-300 rounded-none"
-                  />
+                    className={`w-full px-6 h-full bg-white border-0 shadow-md text-gray-700 focus:ring-2 focus:ring-purple-300 rounded-none ${
+                      errors.service ? 'ring-2 ring-red-500' : ''
+                    } ${!formData.service ? 'text-gray-500' : 'text-gray-700'}`}
+                  >
+                    <option value="">Select Service *</option>
+                    {services.map((service) => (
+                      <option key={service.id} value={service.title}>
+                        {service.title}
+                      </option>
+                    ))}
+                  </select>
+                  {errors.service && (
+                    <p className="text-red-500 text-sm mt-1">{errors.service}</p>
+                  )}
                 </div>
               </div>
 
@@ -108,14 +202,18 @@ const SalonContact = () => {
                   rows={6}
                   className="w-full px-6 py-6 bg-white border-0 shadow-md text-gray-700 placeholder:text-gray-500 focus:ring-2 focus:ring-purple-300 rounded-none resize-none"
                 />
+                {errors.message && (
+                  <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                )}
               </div>
 
               {/* Submit Button */}
               <Button 
                 onClick={handleSubmit}
+                disabled={isSubmitting}
                 className="bg-black hover:bg-gray-800 text-white px-10 py-6 text-base font-medium transition-all duration-300 rounded-none"
               >
-                Send us a message
+                {isSubmitting ? "Sending..." : "Send us a message"}
               </Button>
             </div>
           </div>

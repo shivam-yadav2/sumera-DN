@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { Button } from "../ui/button";
+import { usePage } from "@inertiajs/react";
+import BookingPopup from "./BookingPopup";
 
 const Navbar = () => {
+    const { services = [] } = usePage().props;
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState(null);
+    const [isBookingPopupOpen, setIsBookingPopupOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -46,74 +50,58 @@ const Navbar = () => {
                     <div className="hidden text-[14px]  lg:flex items-center space-x-8">
                         <a
                             href="/"
-                            className="text-gray-700 hover:text-[#3c4c24] font-[600] text-[16px] transition-colors"
+                            className="text-gray-700 hover:text-[#3c4c24]  text-[16px] transition-colors"
                         >
                             Home
                         </a>
 
                         <a
                             href="/about"
-                            className="text-gray-700 hover:text-[#3c4c24] font-[600] text-[16px] transition-colors"
+                            className="text-gray-700 hover:text-[#3c4c24]  text-[16px] transition-colors"
                         >
                             About
                         </a>
 
                         {/* Services Dropdown */}
                         <div className="relative group">
-                            <button className="flex items-center gap-1 text-gray-700 hover:text-[#3c4c24] font-[600] text-[16px] transition-colors">
+                            <button className="flex items-center gap-1 text-gray-700 hover:text-[#3c4c24]  text-[16px] transition-colors">
                                 Services
                                 <ChevronDown className="w-4 h-4" />
                             </button>
-                            <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2">
-                                <a
-                                    href="/services/makeup"
-                                    className="block px-6 py-3 text-gray-700 hover:bg-[#3c4c24]/10 hover:text-[#3c4c24] transition-colors"
-                                >
-                                    Makeup Services
-                                </a>
-                                <a
-                                    href="/services/hair"
-                                    className="block px-6 py-3 text-gray-700 hover:bg-[#3c4c24]/10 hover:text-[#3c4c24] transition-colors"
-                                >
-                                    Hair Services
-                                </a>
-                                <a
-                                    href="/services/body"
-                                    className="block px-6 py-3 text-gray-700 hover:bg-[#3c4c24]/10 hover:text-[#3c4c24] transition-colors"
-                                >
-                                    Body Services
-                                </a>
-                                <a
-                                    href="/services/nails"
-                                    className="block px-6 py-3 text-gray-700 hover:bg-[#3c4c24]/10 hover:text-[#3c4c24] transition-colors"
-                                >
-                                    Nail Services
-                                </a>
-                                <a
-                                    href="/services/bridal"
-                                    className="block px-6 py-3 text-gray-700 hover:bg-[#3c4c24]/10 hover:text-[#3c4c24] transition-colors"
-                                >
-                                    Bridal Makeup
-                                </a>
-                                <a
-                                    href="/services/party"
-                                    className="block px-6 py-3 text-gray-700 hover:bg-[#3c4c24]/10 hover:text-[#3c4c24] transition-colors"
-                                >
-                                    Party Makeup
-                                </a>
-                            </div>
+                            {services && services.length > 0 ? (
+                                <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2">
+                                    {services.map((service) => (
+                                        <a
+                                            key={service.id}
+                                            href={`/services/${service.slug_url}`}
+                                            className="block px-6 py-3 text-gray-700 hover:bg-[#3c4c24]/10 hover:text-[#3c4c24] transition-colors"
+                                        >
+                                            {service.title}
+                                        </a>
+                                    ))}
+                                </div>
+                            ) : (
+                                <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2">
+                                    <a
+                                        href="#"
+                                        className="block px-6 py-3 text-gray-500"
+                                    >
+                                        No services available
+                                    </a>
+                                </div>
+                            )}
                         </div>
 
                         <a
                             href="/academy"
-                            className="text-gray-700 hover:text-[#3c4c24] font-[600] text-[16px] transition-colors"
+                            className="text-gray-700 hover:text-[#3c4c24]  text-[16px] transition-colors"
                         >
                             Academy
                         </a>
 
                         {/* Gallery Dropdown */}
                         <div className="relative group">
-                            <button className="flex items-center gap-1 text-gray-700 hover:text-[#3c4c24] font-[600] text-[16px] transition-colors">
+                            <button className="flex items-center gap-1 text-gray-700 hover:text-[#3c4c24]  text-[16px] transition-colors">
                                 Gallery
                                 <ChevronDown className="w-4 h-4" />
                             </button>
@@ -135,7 +123,7 @@ const Navbar = () => {
 
                         <a
                             href="/contact"
-                            className="text-gray-700 hover:text-[#3c4c24] font-[600] text-[16px] transition-colors"
+                            className="text-gray-700 hover:text-[#3c4c24]  text-[16px] transition-colors"
                         >
                             Contact
                         </a>
@@ -149,7 +137,10 @@ const Navbar = () => {
                             >
                             +41 43 542 65 91
                             </a> */}
-                        <Button className="bg-black rounded-none hover:bg-[#3c4c24] text-white px-8 py-6 text-base font-medium transition-all duration-300">
+                        <Button 
+                            onClick={() => setIsBookingPopupOpen(true)}
+                            className="bg-black rounded-none hover:bg-[#3c4c24] text-white px-8 py-6 text-base font-medium transition-all duration-300"
+                        >
                             <Phone className="w-5 h-5 text-[#fff]" />
                             Book Now
                         </Button>
@@ -174,13 +165,13 @@ const Navbar = () => {
                         <div className="flex flex-col space-y-4 mt-4">
                             <a
                                 href="/"
-                                className="text-gray-700 hover:text-[#3c4c24] font-[600] text-[16px] transition-colors"
+                                className="text-gray-700 hover:text-[#3c4c24]  text-[16px] transition-colors"
                             >
                                 Home
                             </a>
                             <a
                                 href="/about"
-                                className="text-gray-700 hover:text-[#3c4c24] font-[600] text-[16px] transition-colors"
+                                className="text-gray-700 hover:text-[#3c4c24]  text-[16px] transition-colors"
                             >
                                 About
                             </a>
@@ -189,7 +180,7 @@ const Navbar = () => {
                             <div>
                                 <button
                                     onClick={() => toggleDropdown("services")}
-                                    className="flex items-center justify-between w-full text-gray-700 hover:text-[#3c4c24] font-[600] text-[16px] transition-colors"
+                                    className="flex items-center justify-between w-full text-gray-700 hover:text-[#3c4c24]  text-[16px] transition-colors"
                                 >
                                     Services
                                     <ChevronDown
@@ -202,42 +193,21 @@ const Navbar = () => {
                                 </button>
                                 {openDropdown === "services" && (
                                     <div className="ml-4 mt-2 space-y-2">
-                                        <a
-                                            href="/services/makeup"
-                                            className="block text-gray-600 hover:text-[#3c4c24]"
-                                        >
-                                            Makeup Services
-                                        </a>
-                                        <a
-                                            href="/services/hair"
-                                            className="block text-gray-600 hover:text-[#3c4c24]"
-                                        >
-                                            Hair Services
-                                        </a>
-                                        <a
-                                            href="/services/body"
-                                            className="block text-gray-600 hover:text-[#3c4c24]"
-                                        >
-                                            Body Services
-                                        </a>
-                                        <a
-                                            href="/services/nails"
-                                            className="block text-gray-600 hover:text-[#3c4c24]"
-                                        >
-                                            Nail Services
-                                        </a>
-                                        <a
-                                            href="/services/bridal"
-                                            className="block text-gray-600 hover:text-[#3c4c24]"
-                                        >
-                                            Bridal Makeup
-                                        </a>
-                                        <a
-                                            href="/services/party"
-                                            className="block text-gray-600 hover:text-[#3c4c24]"
-                                        >
-                                            Party Makeup
-                                        </a>
+                                        {services && services.length > 0 ? (
+                                            services.map((service) => (
+                                                <a
+                                                    key={service.id}
+                                                    href={`/services/${service.slug_url}`}
+                                                    className="block text-gray-600 hover:text-[#3c4c24]"
+                                                >
+                                                    {service.title}
+                                                </a>
+                                            ))
+                                        ) : (
+                                            <span className="block text-gray-500">
+                                                No services available
+                                            </span>
+                                        )}
                                     </div>
                                 )}
                             </div>
@@ -246,7 +216,7 @@ const Navbar = () => {
 
                             <a
                                 href="/academy"
-                                className="text-gray-700 hover:text-[#3c4c24] font-[600] text-[16px] transition-colors"
+                                className="text-gray-700 hover:text-[#3c4c24]  text-[16px] transition-colors"
                             >
                                 Academy
                             </a>
@@ -255,7 +225,7 @@ const Navbar = () => {
                             <div>
                                 <button
                                     onClick={() => toggleDropdown("gallery")}
-                                    className="flex items-center justify-between w-full text-gray-700 hover:text-[#3c4c24] font-[600] text-[16px] transition-colors"
+                                    className="flex items-center justify-between w-full text-gray-700 hover:text-[#3c4c24]  text-[16px] transition-colors"
                                 >
                                     Gallery
                                     <ChevronDown
@@ -286,13 +256,16 @@ const Navbar = () => {
 
                             <a
                                 href="/contact"
-                                className="text-gray-700 hover:text-[#3c4c24] font-[600] text-[16px] transition-colors"
+                                className="text-gray-700 hover:text-[#3c4c24]  text-[16px] transition-colors"
                             >
                                 Contact
                             </a>
 
                             <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
-                                <Button className="bg-black rounded-none hover:bg-[#3c4c24] text-white px-8 py-6 text-base font-medium transition-all duration-300">
+                                <Button 
+                                    onClick={() => setIsBookingPopupOpen(true)}
+                                    className="bg-black rounded-none hover:bg-[#3c4c24] text-white px-8 py-6 text-base font-medium transition-all duration-300"
+                                >
                                     <Phone className="w-5 h-5 text-[#fff]" />
                                     Book Now
                                 </Button>
@@ -301,6 +274,13 @@ const Navbar = () => {
                     </div>
                 )}
             </div>
+
+            {/* Booking Popup */}
+            <BookingPopup
+                isOpen={isBookingPopupOpen}
+                onClose={() => setIsBookingPopupOpen(false)}
+                services={services}
+            />
         </nav>
     );
 };

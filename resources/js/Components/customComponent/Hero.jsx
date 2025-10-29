@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { usePage } from "@inertiajs/react";
 
 const Hero = () => {
+    const { sliders = [] } = usePage().props;
     const [currentSlide, setCurrentSlide] = useState(0);
 
-    const slides = [
+    // Fallback slides in case there are no sliders in database
+    const defaultSlides = [
         {
             subtitle: "Vivid Colors",
             title: "THE NEW STYLE",
@@ -28,6 +31,9 @@ const Hero = () => {
             image: "/assets/images/3.JPG",
         },
     ];
+    
+    // Use sliders from backend if available, otherwise use default slides
+    const slides = sliders.length > 0 ? sliders : defaultSlides;
 
     const nextSlide = () => {
         setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -50,7 +56,7 @@ const Hero = () => {
     }, []);
 
     return (
-        <div className="relative h-[50vh] lg:h-screen overflow-hidden">
+        <div className="relative h-[50vh] lg:h-[75vh] mt-[70px] lg:mt-[100px] overflow-hidden">
             {/* Decorative flower elements */}
             {/* <div className="absolute top-20 left-10 w-48 h-48 opacity-20 pointer-events-none z-10">
                 <svg viewBox="0 0 200 200" className="text-[#3c4c24]">
@@ -226,11 +232,11 @@ const Hero = () => {
             </div>
 
             {/* Right Appointment Button */}
-            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 z-30">
+            {/* <div className="absolute right-0 top-1/2 transform -translate-y-1/2 z-30">
                 <button className="bg-black text-white px-3 lg:px-4 py-4 lg:py-8 text-sm font-medium tracking-widest hover:bg-[#3c4c24] transition-all duration-300 rounded-l-lg shadow-lg writing-mode-vertical">
                     MAKE AN APPOINTMENT
                 </button>
-            </div>
+            </div> */}
 
             {/* Slider Content */}
             <div className="relative h-full">
@@ -245,7 +251,7 @@ const Hero = () => {
                         <div className="absolute inset-0">
                             <img
                                 src={slide.image}
-                                alt={slide.title}
+                                alt={slide.alt_text || slide.title || "Slider Image"}
                                 className="w-full h-full object-cover"
                             />
                             {/* Gradient Overlay */}

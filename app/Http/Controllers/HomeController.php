@@ -57,7 +57,24 @@ class HomeController extends Controller
     public function index2()
     {
         $courses = \App\Models\Courses::where('is_active', 1)->get();
-        return Inertia::render('Home', ['courses' => $courses]);
+        
+        // Get active sliders
+        $sliders = \App\Models\Slider::where('is_active', 1)
+            ->orderBy('id', 'desc')
+            ->get()
+            ->map(function($slider) {
+                return [
+                    'id' => $slider->id,
+                    'image' => asset($slider->slider_image),
+                    'mobile_image' => asset($slider->mobile_image),
+                    'alt_text' => $slider->alt_text,
+                ];
+            });
+        
+        return Inertia::render('Home', [
+            'courses' => $courses,
+            'sliders' => $sliders
+        ]);
     }
 
     /**
