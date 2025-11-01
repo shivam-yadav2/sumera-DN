@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { usePopup } from '../../contexts/PopupContext';
 
 export default function Faq() {
+  const { openBookingPopup } = usePopup();
   const [activeIndex, setActiveIndex] = useState(null);
 
   const faqs = [
@@ -44,20 +46,20 @@ export default function Faq() {
   };
 
   return (
-    <div className="bg-white py-20 px-4 md:px-8">
+    <div className="bg-white lg:py-20 py-10 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <p className="text-lg italic mb-2" style={{ color: '#5c7650' }}>
             Common Questions
           </p>
-          <h2 className="text-5xl head font-semibold mb-4" style={{ color: '#5c7650' }}>
+          <h2 className="lg:text-5xl text-3xl head font-semibold " style={{ color: '#5c7650' }}>
             Frequently Asked
           </h2>
-          <h3 className="text-5xl head font-semibold" style={{ color: '#5c7650' }}>
+          <h3 className="lg:text-5xl text-3xl head font-semibold" style={{ color: '#5c7650' }}>
             Questions
           </h3>
-          <p className="text-gray-600 mt-6 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-600 mt-4 lg:mt-6 max-w-2xl mx-auto lg:text-lg text-sm">
             Find answers to the most common questions about our academy programs, courses, and training opportunities.
           </p>
         </div>
@@ -108,12 +110,14 @@ export default function Faq() {
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <button
+              onClick={openBookingPopup}
               className="px-8 py-4 rounded-lg head font-semibold text-white transition-all duration-300 hover:shadow-lg"
               style={{ backgroundColor: '#5c7650' }}
             >
               Get In Touch
             </button>
             <button
+              onClick={openBookingPopup}
               className="px-8 py-4 rounded-lg head font-semibold transition-all duration-300 border-2"
               style={{ borderColor: '#5c7650', color: '#5c7650' }}
             >

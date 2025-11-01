@@ -4,6 +4,20 @@ import { BannerSection } from "@/Components/customComponent/BannerSection";
 import { AboutSection } from "@/Components/customComponent/AboutSection";
 import { ServicesSection } from "@/Components/customComponent/ServicesSection";
 import Faq from "@/Components/customComponent/Faq";
+import { usePopup } from "../contexts/PopupContext";
+
+// Component that uses the hook - must be inside Layout
+const AppointmentButton = () => {
+    const { openBookingPopup } = usePopup();
+    return (
+        <button 
+            onClick={openBookingPopup}
+            className="bg-black text-white py-3 px-6 text-xl head"
+        >
+            Make An Appointment
+        </button>
+    );
+};
 
 const About = () => {
     return (
@@ -12,7 +26,7 @@ const About = () => {
             <AboutSection />
             <ServicesSection />
 
-            <section className="bg-[#3c4c24] text-white text-center py-20 px-4 relative">
+            <section className="bg-[#3c4c24] text-white text-center lg:py-20 py-10 px-4 relative">
                 <div
                     className="absolute inset-0  bg-cover bg-center opacity-30"
                     style={{ backgroundImage: "url('/assets/images/1.JPG')" }}
@@ -27,9 +41,7 @@ const About = () => {
                         Aliquam erat volutpat. Pellentesque sit amet congue
                         tellus.
                     </p>
-                    <button className="bg-black text-white py-3 px-6 text-xl head">
-                        Make An Appointment
-                    </button>
+                    <AppointmentButton />
                 </div>
             </section>
             <Faq />

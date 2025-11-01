@@ -107,7 +107,13 @@
                                                             <div class="edit">
                                                                 <a href="{{ route('admin.service-about.create', base64_encode($row->id)) }}"
                                                                    class="btn btn-sm btn-success">
-                                                                    Service About
+                                                                    Add Service About
+                                                                </a>
+                                                            </div>
+                                                            <div class="edit">
+                                                                <a href="{{ route('admin.service-about.index') }}?service_id={{ $row->id }}"
+                                                                   class="btn btn-sm btn-info">
+                                                                    View Service About
                                                                 </a>
                                                             </div>
                                                             <div class="edit">

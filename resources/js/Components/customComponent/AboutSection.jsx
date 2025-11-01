@@ -61,19 +61,18 @@ const AboutSection = () => {
                                 </svg>
                             </div>
 
-                            <h2 className="text-4xl lg:text-5xl font-bold text-[#3c4c24] leading-tight head">
-                                Our Salon is Most Popular, Clean and Recommended
-                                Hair Salon
+                            <h2 className="text-3xl lg:text-4xl font-bold text-[#3c4c24] leading-tight head">
+                                Sumeera Salon -  Clean and Recommended
+                                Beauty Destination in Lucknow
                             </h2>
 
                             <p className="text-gray-600 leading-relaxed text-base">
-                                We have a passion for promoting healthy,
-                                balanced and beautiful living. Offering massage,
-                                Acupuncture, Laser Skincare, fitness classes and
-                                more, we emphasize preventive care, stress
-                                management, and personal growth. While you may
-                                find a visit with us to be a spa-like, relaxing
-                                and pampering experience,
+                                At Sumeera Salon in Lucknow, we have a passion for promoting healthy,
+                                balanced and beautiful living. Offering premium hair styling, beauty treatments,
+                                makeup services, skincare, and more, we emphasize personalized care and attention
+                                to detail. Experience a spa-like, relaxing and pampering experience at one of
+                                Lucknow's most trusted salons. Our expert team is dedicated to making you look
+                                and feel your absolute best.
                             </p>
 
                             <Button className="bg-black hover:bg-gray-800 text-white px-8 py-6 text-base font-medium">

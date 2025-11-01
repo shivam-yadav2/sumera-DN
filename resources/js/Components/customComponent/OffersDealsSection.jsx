@@ -3,16 +3,15 @@ import { usePage } from "@inertiajs/react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import BookingPopup from "./BookingPopup";
+import { usePopup } from "../../contexts/PopupContext";
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const OffersDealsSection = () => {
-    const { offers = [], services = [] } = usePage().props;
-    const [isBookingPopupOpen, setIsBookingPopupOpen] = useState(false);
-    const [selectedServices, setSelectedServices] = useState(services);
+    const { offers = [] } = usePage().props;
+    const { openBookingPopup } = usePopup();
     const [swiperInstance, setSwiperInstance] = useState(null);
 
     // Filter active offers that should be shown on front (is_front = 'yes')
@@ -27,14 +26,14 @@ const OffersDealsSection = () => {
 
     return (
         <>
-            <div className="bg-gradient-to-br from-[#3c4c24]/10 via-pink-50 to-[#3c4c24]/20 py-20 px-4 relative overflow-hidden">
+            <div className="bg-gradient-to-br from-[#3c4c24]/10 via-pink-50 to-[#3c4c24]/20 lg:py-20 py-10 px-4 relative overflow-hidden">
                 {/* Decorative elements */}
                 <div className="absolute top-20 left-10 w-64 h-64 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>
                 <div className="absolute bottom-20 right-10 w-80 h-80 bg-pink-200 rounded-full opacity-15 blur-3xl"></div>
 
                 <div className="max-w-7xl mx-auto relative z-10">
                     {/* Header */}
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-10 lg:mb-16">
                         <h2 className="text-5xl lg:text-6xl font-bold text-[#3c4c24] head mb-4">
                             Offers & Deals
                         </h2>
@@ -72,7 +71,7 @@ const OffersDealsSection = () => {
                                     spaceBetween: 24,
                                 },
                                 1280: {
-                                    slidesPerView: 4,
+                                    slidesPerView: 3,
                                     spaceBetween: 24,
                                 },
                             }}
@@ -83,37 +82,24 @@ const OffersDealsSection = () => {
                                 <SwiperSlide key={offer.id}>
                                     <div className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 bg-white h-full flex flex-col">
                                         {/* Image Container - 900x1600 dimension (portrait) */}
-                                        <div className="relative w-full" style={{ aspectRatio: '900 / 1600' }}>
+                                        <div className="relative w-full" >
                                             <img
-                                                src={offer.image ? `/${offer.image}` : 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=900&h=1600&fit=crop'}
+                                                src={offer.image }
                                                 alt={offer.title || 'Offer Image'}
                                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                             />
                                             {/* Badge for special offer */}
-                                            <div className="absolute top-4 right-4 bg-[#D4B5A0] text-[#3c4c24] px-4 py-2 rounded-full font-bold text-sm shadow-lg">
-                                                Special
-                                            </div>
+                                            
                                             {/* Gradient overlay */}
                                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                         </div>
 
                                         {/* Content Section */}
-                                        <div className="p-6 flex-grow flex flex-col bg-white">
-                                            <h3 className="font-bold text-xl text-[#3c4c24] mb-2 head group-hover:text-[#D4B5A0] transition-colors">
-                                                {offer.title || 'Special Offer'}
-                                            </h3>
-                                            
-                                            {offer.service && (
-                                                <p className="text-sm text-gray-600 mb-4">{offer.service}</p>
-                                            )}
-
+                                        <div className="p- flex-grow flex flex-col bg-white">
                                             {/* Individual Book Now Button */}
                                             <button
-                                                onClick={() => {
-                                                    setSelectedServices(services);
-                                                    setIsBookingPopupOpen(true);
-                                                }}
-                                                className="w-full py-3 bg-gradient-to-r from-[#3c4c24] to-[#2d3820] text-white font-semibold rounded-lg hover:from-[#2d3820] hover:to-[#1a2415] transition-all duration-300 transform hover:scale-[1.02] shadow-md hover:shadow-lg mt-auto"
+                                                onClick={openBookingPopup}
+                                                className="w-full py-3 bg-gradient-to-r from-[#3c4c24] to-[#2d3820] text-white font-semibold  hover:from-[#2d3820] hover:to-[#1a2415] transition-all duration-300 transform hover:scale-[1.02] shadow-md hover:shadow-lg mt-auto"
                                             >
                                                 Book Now
                                             </button>
@@ -156,13 +142,6 @@ const OffersDealsSection = () => {
                     `}</style>
                 </div>
             </div>
-
-            {/* Booking Popup */}
-            <BookingPopup
-                isOpen={isBookingPopupOpen}
-                onClose={() => setIsBookingPopupOpen(false)}
-                services={selectedServices}
-            />
         </>
     );
 };

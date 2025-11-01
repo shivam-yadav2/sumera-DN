@@ -69,7 +69,7 @@ const SalonPricing = () => {
             </div>
 
             {/* Main Content */}
-            <div className="relative col-span-4 lg:col-span-3 bg-gradient-to-br from-pink-50 via-white to-pink-50 py-20 px-4 ">
+            <div className="relative col-span-4 lg:col-span-3 bg-gradient-to-br from-pink-50 via-white to-pink-50 lg:py-20 py-10 px-4 ">
                 {/* Large background text "Pricing" */}
                 <div className="absolute top-20 left-1/2 transform -translate-x-1/2 pointer-events-none overflow-hidden">
                     <h1 className="text-[10rem] lg:text-[14rem] font-bold text-gray-200 opacity-15 select-none whitespace-nowrap">

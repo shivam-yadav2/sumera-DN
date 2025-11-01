@@ -23,7 +23,7 @@ class OfferController extends Controller
         if($request->isMethod('POST')){
             $data = $request->all();
             $rules = [
-                'image' => 'required|image|mimes:jpeg,png,jpg,webp|max:1024',
+                'image' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
                 'title'     => 'required|string|max:255',
                 'is_front' => 'required',
                 'service_id' => 'required',
@@ -56,7 +56,7 @@ class OfferController extends Controller
                 $image = $manager->read($uploadedImage);
                 
                 // Resize image to 900x1600 (portrait dimension)
-                $image->resize(900, 1600);
+                $image->resize(1080, 1080);
                 
                 $image->encode(new WebpEncoder(quality: 65));
                 $filename = $timestamp . '_' . $safeName . '.webp';

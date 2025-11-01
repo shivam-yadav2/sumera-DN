@@ -46,9 +46,9 @@
                                     </div>
                                 @endif
                             </div>
-                            <form method="post" action="{{ url('/insert-service-about')}}"
+                            <form method="post" action="{{ isset($about) && $about->id ? route('admin.service-about.update', $about->id) : route('admin.service-about.store') }}"
                                   enctype="multipart/form-data">
-                                <input type="hidden" name="service_id" value="{!! base64_decode($id) !!}">
+                                <input type="hidden" name="service_id" value="{!! isset($about) && $about ? $about->service_id : base64_decode($id ?? '') !!}">
                                 @csrf
                                 <div class="row ">
                                     <div class="col-md-9 p-3">
@@ -68,12 +68,13 @@
                                                         </div>
                                                     </div>
                                                     @php
-                                                        $position=  DB::table('service_abouts')->where(['page'=>'service','is_active'=>1,'service_id'=>base64_decode($id)])->count();
+                                                        $serviceIdForPosition = isset($about) && $about ? $about->service_id : base64_decode($id ?? '');
+                                                        $position=  DB::table('service_abouts')->where(['page'=>'service','is_active'=>1,'service_id'=>$serviceIdForPosition])->count();
                                                     @endphp
                                                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12">
                                                         <div class="form-group mb-2">
-                                                            <label for="category_image">Positon Div Indexing</label><br>
-                                                            <input  type="text" name="position" value="{{$position+1}}" id="position" class="form-control"  class="form-control">
+                                                            <label for="category_image">Position Div Indexing</label><br>
+                                                            <input  type="text" name="position" value="{{ old('position', isset($about) && $about->position ? $about->position : $position+1) }}" id="position" class="form-control">
                                                         </div>
                                                     </div>
 
@@ -85,10 +86,10 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12">
-                                                        <label>Select Academy Page </label>
+                                                        <label>Select Page </label>
                                                         <div class="form-group mb-2">
                                                             <select class="form-control" name="page">
-                                                                <option value="service" {{ old('page', $about->page ?? '') == 'service' ? "selected" : '' }} selected>Service Page </option>
+                                                                <option value="service" {{ old('page', $about->page ?? 'service') == 'service' ? "selected" : '' }}>Service Page </option>
                                                                 <option value="sub_service" {{ old('page', $about->page ?? '') == 'sub_service' ? "selected" : '' }} disabled>Sub Service Page</option>
                                                             </select>
                                                         </div>
@@ -137,7 +138,10 @@
     <script>
 
         // Replace all textareas with CKEditor
-        CKEDITOR.replace('ckeditor');
+        var editorElements = document.querySelectorAll('.ckeditor');
+        editorElements.forEach(function(element) {
+            CKEDITOR.replace(element);
+        });
     </script>
     <script>
         function previewImage(event, previewId) {

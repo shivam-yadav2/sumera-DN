@@ -12,7 +12,7 @@ const SalonAppointment = () => {
     ];
 
     return (
-        <div className="bg-[#3c4c24] py-20 px-4 relative overflow-hidden">
+        <div className="bg-[#3c4c24] py-10 lg:py-20 px-4 relative overflow-hidden">
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Main Appointment Card */}
                 <div className="relative mb-20">
@@ -27,7 +27,7 @@ const SalonAppointment = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-5 shadow-2xl rounded-lg overflow-hidden">
                         {/* Left Side - Light Background with Content */}
                         <div
-                            className="bg-white p-12 col-span-3 lg:p-16 relative overflow-hidden"
+                            className="bg-white p-6 col-span-3 lg:p-16 relative overflow-hidden"
                             style={{
                                 backgroundImage:
                                     "url('/assets/images/nake.png')",
@@ -65,21 +65,16 @@ const SalonAppointment = () => {
                                     <span className="text-[#004d3a] head font-semibold">
                                         Certified Pro
                                     </span>{" "}
-                                    at the SUMIERA Academy.
+                                    at the Sumeera Academy in Lucknow.
                                 </h2>
 
                                 <p className="text-gray-700 text-base leading-8 font-medium max-w-md">
-                                    Join our specialized courses taught by
-                                    industry veterans. Learn techniques for
-                                    flawless **glowing skin**, intricate bridal
-                                    looks, and high-fashion editorial styles.
-                                    Your career starts here! Lorem ipsum dolor
-                                    sit amet consectetur adipisicing elit.
-                                    Expedita unde cupiditate eveniet aliquid!
-                                    Distinctio, suscipit quo iusto sed quaerat,
-                                    debitis earum officia, doloribus ipsum
-                                    corrupti dolorum nihil aperiam cumque
-                                    molestiae.
+                                    Join our specialized courses at Sumeera Academy in Lucknow, taught by
+                                    industry veterans. Learn techniques for flawless glowing skin, intricate bridal
+                                    looks, and high-fashion editorial styles. Master the art of beauty and makeup
+                                    with hands-on training from experts. Your career in the beauty industry starts here
+                                    at one of Lucknow's premier beauty academies. Get certified and become a
+                                    professional makeup artist, hairstylist, or beauty expert.
                                 </p>
 
                                 <Button className="bg-black rounded-none hover:bg-[#3c4c24] text-white px-8 py-6 text-base font-medium transition-all duration-300">

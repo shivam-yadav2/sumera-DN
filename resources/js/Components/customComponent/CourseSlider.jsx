@@ -49,7 +49,7 @@ const CourseSlider = ({ courses = [] }) => {
   const displayCourses = transformedCourses.length > 0 ? transformedCourses : fallbackCourses;
 
   return (
-    <div className="bg-white py-20 px-4 md:px-8 ">
+    <div className="bg-white lg:py-20 py-10 px-4 md:px-8 ">
       <div className="container mx-auto overflow-hidden">
         {/* Header */}
         <div className="text-center mb-16">

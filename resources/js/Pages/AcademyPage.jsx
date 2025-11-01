@@ -62,7 +62,7 @@ const handleSubmit = () => {
             <AcademyWhyChoose />
             <AcademyFacilities />
             <AcademyTestimonials />
-            <div className="bg-white py-20 px-4 md:px-8">
+            <div className="bg-white lg:py-20 py-10 px-4 md:px-8">
                 <div className="max-w-7xl mx-auto">
                     {/* Services Grid */}
                     <div className="grid md:grid-cols-3 gap-8 mb-16">
@@ -143,7 +143,7 @@ const handleSubmit = () => {
                     className="w-full h-full object-cover object-center"
                 /> */}
                 {/* <div className="absolute inset-0 bg-black/50"></div> */}
-                <div className=" max-w-7xl mx-auto py-20  w-full h-full grid grid-cols-6">
+                <div className=" max-w-7xl mx-auto lg:py-20 py-10  w-full h-full grid grid-cols-6">
                     <div className="col-span-2"></div>
                     <div className="col-span-4">
                         <div className="space-y-8 rounded-2xl bg-gradient-to-br from-[#3c4c24]/30 via-orange-50 to-[#3c4c24]/80 shadow-2xl bg-white px-12 py-6">

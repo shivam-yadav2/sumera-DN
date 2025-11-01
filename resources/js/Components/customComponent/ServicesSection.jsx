@@ -37,11 +37,13 @@ const ServicesSection = () => {
         },
     ];
 
-    // Use services from backend if available, otherwise use fallback
-    const displayServices = services.length > 0 ? services : fallbackServices;
+    // Filter services that have images (services from backend should have images)
+    // Use services from backend if available and have images, otherwise use fallback
+    const servicesWithImages = services.filter(service => service.image);
+    const displayServices = servicesWithImages.length > 0 ? servicesWithImages : fallbackServices;
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-pink-50 via-[#3c4c24]/10 to-[#3c4c24]/40 py-20 px-4 relative overflow-hidden">
+        <div className="min-h-screen bg-gradient-to-br from-pink-50 via-[#3c4c24]/10 to-[#3c4c24]/40 py-10 lg:py-20 px-4 relative overflow-hidden">
             {/* Decorative background elements */}
             <div className="absolute top-32 right-20 w-72 h-72 bg-pink-200 rounded-full opacity-30 blur-3xl"></div>
             <div className="absolute bottom-32 left-20 w-96 h-96 bg-purple-200 rounded-full opacity-25 blur-3xl"></div>
@@ -55,7 +57,7 @@ const ServicesSection = () => {
 
             <div className="relative z-10 max-w-7xl mx-auto">
                 {/* Header Section */}
-                <div className="text-center mb-20 relative">
+                <div className="text-center mb-10 lg:mb-20 relative">
                     <h2 className="text-5xl lg:text-6xl font-bold text-[#3c4c24] relative z-10 head">
                         Our Services
                     </h2>
@@ -94,13 +96,16 @@ const ServicesSection = () => {
                                     href={service.slug_url ? `/services/${service.slug_url}` : '#'}
                                     className="block h-full"
                                 >
-                                    <Card className="group rounded-none relative overflow-hidden border-[12px] border-[#D4B5A0] shadow-lg hover:shadow-2xl transition-all duration-300 bg-white h-full">
+                                    <Card className="group rounded-none relative overflow-hidden border-[12px] border-[#3c4c24] shadow-lg hover:shadow-2xl transition-all duration-300 bg-white h-full">
                                         <CardContent className="p-0 h-full flex flex-col">
                                             <div className="relative overflow-hidden flex-shrink-0">
                                                 <img
                                                     src={service.image || "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=400&h=500&fit=crop"}
-                                                    alt={service.title}
+                                                    alt={service.title || "Service"}
                                                     className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-300"
+                                                    onError={(e) => {
+                                                        e.target.src = "https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=400&h=500&fit=crop";
+                                                    }}
                                                 />
                                             </div>
 

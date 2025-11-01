@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { Button } from "../ui/button";
 import { usePage } from "@inertiajs/react";
-import BookingPopup from "./BookingPopup";
+import { usePopup } from "../../contexts/PopupContext";
 
 const Navbar = () => {
     const { services = [] } = usePage().props;
+    const { openBookingPopup } = usePopup();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState(null);
-    const [isBookingPopupOpen, setIsBookingPopupOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -40,7 +40,7 @@ const Navbar = () => {
                                 <img
                                     src="/assets/logo/black.png"
                                     alt=""
-                                    className="w-24"
+                                    className="w-20"
                                 />
                             </div>
                         </a>
@@ -54,7 +54,7 @@ const Navbar = () => {
                         >
                             Home
                         </a>
-
+    
                         <a
                             href="/about"
                             className="text-gray-700 hover:text-[#3c4c24]  text-[16px] transition-colors"
@@ -138,7 +138,7 @@ const Navbar = () => {
                             +41 43 542 65 91
                             </a> */}
                         <Button 
-                            onClick={() => setIsBookingPopupOpen(true)}
+                            onClick={openBookingPopup}
                             className="bg-black rounded-none hover:bg-[#3c4c24] text-white px-8 py-6 text-base font-medium transition-all duration-300"
                         >
                             <Phone className="w-5 h-5 text-[#fff]" />
@@ -263,7 +263,7 @@ const Navbar = () => {
 
                             <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
                                 <Button 
-                                    onClick={() => setIsBookingPopupOpen(true)}
+                                    onClick={openBookingPopup}
                                     className="bg-black rounded-none hover:bg-[#3c4c24] text-white px-8 py-6 text-base font-medium transition-all duration-300"
                                 >
                                     <Phone className="w-5 h-5 text-[#fff]" />
@@ -274,13 +274,6 @@ const Navbar = () => {
                     </div>
                 )}
             </div>
-
-            {/* Booking Popup */}
-            <BookingPopup
-                isOpen={isBookingPopupOpen}
-                onClose={() => setIsBookingPopupOpen(false)}
-                services={services}
-            />
         </nav>
     );
 };

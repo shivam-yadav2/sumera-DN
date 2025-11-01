@@ -16,9 +16,20 @@ use Illuminate\Support\Facades\Validator;
 
 class ServiceAboutController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $about = ServiceAbout::get();
+        $query = ServiceAbout::with('service');
+        
+        // Filter by service_id if provided
+        if ($request->has('service_id') && $request->service_id) {
+            $query->where('service_id', $request->service_id);
+        }
+        
+        $about = $query->orderBy('service_id', 'asc')
+                       ->orderBy('position', 'asc')
+                       ->orderBy('id', 'asc')
+                       ->get();
+        
         return view('service.service-about-list', compact('about'));
     }
 
@@ -92,8 +103,8 @@ class ServiceAboutController extends Controller
         $service = [
             'title' => $data['title'],
             'service_id' => $data['service_id'],
-            'page' => $data['page'],
-            'position' => $data['position'],
+            'page' => $data['page'] ?? 'service',
+            'position' => $data['position'] ?? 1,
             'description' => $data['description'],
             'is_active' => 1,
         ] ;
@@ -113,7 +124,15 @@ class ServiceAboutController extends Controller
     public function update(Request $request, $id)
     {
         $title =  "Update Service About";
-        $about = ServiceAbout::find($id) ;
+        $about = ServiceAbout::find($id);
+        
+        if (!$about) {
+            return redirect()->back()->with('error', 'Service About not found');
+        }
+        
+        // Get service_id from the about record for the form
+        $serviceId = base64_encode($about->service_id);
+        
         $message = "Service About updated successfully";
 
         if ($request->isMethod('post')) {
@@ -121,7 +140,7 @@ class ServiceAboutController extends Controller
 
             // Dynamic validation for uniqueness
             $rules = [
-                'title' => 'required|string|max:255|unique:academies,title' . ($id ? ",$id" : ''),
+                'title' => 'required|string|max:255',
 //                'page' => 'required|in:academy,course',
                 'description' => 'required',
             ];
@@ -175,8 +194,8 @@ class ServiceAboutController extends Controller
             // Save or update the `About` model
             $about->title           = $data['title'];
             $about->service_id      = $data['service_id'];
-//            $about->page          = $data['page'];
-            $about->position        = $data['position'];
+            $about->page            = $data['page'] ?? 'service';
+            $about->position        = $data['position'] ?? 1;
             $about->description     = $data['description'];
             if (isset($data['file'])) {
                 $about->image       = $data['file'];
@@ -187,7 +206,7 @@ class ServiceAboutController extends Controller
             return redirect()->back()->with('success', $message);
         }
 
-        return view('service.service-about', compact('title', 'about'));
+        return view('service.service-about', compact('title', 'about', 'id'))->with('id', $serviceId);
     }
 
     /**

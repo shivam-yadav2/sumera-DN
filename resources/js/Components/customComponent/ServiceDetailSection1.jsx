@@ -1,9 +1,11 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { usePopup } from "../../contexts/PopupContext";
 
 const ServiceDetailSection1 = () => {
+    const { openBookingPopup } = usePopup();
     return (
-        <div className=" bg-gradient-to-br from-pink-50 via-white to-purple-50 py-20 px-4 relative overflow-hidden">
+        <div className=" bg-gradient-to-br from-pink-50 via-white to-purple-50 lg:py-20 py-10 px-4 relative overflow-hidden">
             {/* Decorative background elements */}
             <div className="absolute top-20 right-10 w-64 h-64 bg-purple-100 rounded-full opacity-40 blur-3xl"></div>
             <div className="absolute bottom-20 left-10 w-80 h-80 bg-pink-100 rounded-full opacity-30 blur-3xl"></div>
@@ -133,7 +135,10 @@ const ServiceDetailSection1 = () => {
                             </div>
                         </div>
 
-                        <Button className="bg-black hover:bg-gray-800 text-white px-8 py-6 text-base font-medium mt-6">
+                        <Button 
+                            onClick={openBookingPopup}
+                            className="bg-black hover:bg-gray-800 text-white px-8 py-6 text-base font-medium mt-6"
+                        >
                             Book Your Appointment
                         </Button>
                     </div>

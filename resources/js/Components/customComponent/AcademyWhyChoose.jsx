@@ -41,7 +41,7 @@ const AcademyWhyChoose = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-white via-pink-50 to-purple-50 py-20 px-4 relative overflow-hidden">
+        <div className="min-h-screen bg-gradient-to-br from-white via-pink-50 to-purple-50 lg:py-20 py-10 px-4 relative overflow-hidden">
             {/* Background decorative elements */}
             <div className="absolute top-10 right-20 w-72 h-72 bg-pink-200 rounded-full opacity-20 blur-3xl"></div>
             <div className="absolute bottom-10 left-20 w-80 h-80 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>

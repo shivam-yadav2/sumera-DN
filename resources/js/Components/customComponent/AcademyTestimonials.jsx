@@ -44,7 +44,7 @@ const AcademyTestimonials = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50 py-20 px-4 relative overflow-hidden">
+        <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50 lg:py-20 py-10 px-4 relative overflow-hidden">
             {/* Decorative background elements */}
             <div className="absolute top-20 left-10 w-72 h-72 bg-pink-200 rounded-full opacity-20 blur-3xl"></div>
             <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>

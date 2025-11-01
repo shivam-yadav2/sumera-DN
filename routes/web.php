@@ -50,7 +50,24 @@ Route::get('/academy', function () {
 })->name('academy');
 
 Route::get('/about', function () {
-    return Inertia::render('About');
+    // Get active services (same as Home page)
+    $services = \App\Models\Service::where('is_active', '1')
+        ->where('is_front', 'yes')
+        ->orderBy('id', 'asc')
+        ->get()
+        ->map(function($service) {
+            return [
+                'id' => $service->id,
+                'title' => $service->title,
+                'image' => $service->image ? asset($service->image) : null,
+                'slug_url' => $service->slug_url,
+                'description' => $service->description,
+            ];
+        });
+    
+    return Inertia::render('About', [
+        'services' => $services,
+    ]);
 })->name('about');
 
 Route::get('/services/{service}', function ($service) {
@@ -73,6 +90,22 @@ Route::get('/services/{service}', function ($service) {
             ];
         });
     
+    // Get ServiceAbout data for this service
+    $serviceAbout = \App\Models\ServiceAbout::where('service_id', $serviceData->id)
+        ->where('is_active', '1')
+        ->orderBy('position', 'asc')
+        ->orderBy('id', 'asc')
+        ->get()
+        ->map(function ($item) {
+            return [
+                'id' => $item->id,
+                'title' => $item->title,
+                'description' => $item->description,
+                'image' => $item->image ? asset($item->image) : null,
+                'position' => $item->position,
+            ];
+        });
+    
     return Inertia::render('Service', [
         'service' => [
             'id' => $serviceData->id,
@@ -84,6 +117,7 @@ Route::get('/services/{service}', function ($service) {
             'mobile_banner' => $serviceData->mobile_banner ? asset($serviceData->mobile_banner) : null,
         ],
         'galleryImages' => $galleryImages,
+        'serviceAbout' => $serviceAbout,
     ]);
 })->name('services.show');
 
@@ -178,6 +212,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
     // Offer Management
     Route::match(['get', 'post'], '/offers', [App\Http\Controllers\OfferController::class, 'index'])->name('offers.index');
+    Route::match(['get', 'post'], '/offers/create', [App\Http\Controllers\OfferController::class, 'index'])->name('offers.create');
     Route::get('/offers/{id}/update', [App\Http\Controllers\OfferController::class, 'update'])->name('offers.update');
     Route::get('/offers/{id}/delete', [App\Http\Controllers\OfferController::class, 'destroy'])->name('offers.destroy');
 
@@ -220,8 +255,10 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/academy/{id}/delete', [App\Http\Controllers\AcademyController::class, 'destroy'])->name('academy.destroy');
 
     // Service About Management
+    Route::get('/service-about', [App\Http\Controllers\ServiceAboutController::class, 'index'])->name('service-about.index');
     Route::get('/service-about/{id}', [App\Http\Controllers\ServiceAboutController::class, 'create'])->name('service-about.create');
     Route::post('/service-about', [App\Http\Controllers\ServiceAboutController::class, 'store'])->name('service-about.store');
+    Route::match(['get', 'post'], '/service-about/{id}/update', [App\Http\Controllers\ServiceAboutController::class, 'update'])->name('service-about.update');
     Route::get('/service-about/{id}/delete', [App\Http\Controllers\ServiceAboutController::class, 'destroy'])->name('service-about.destroy');
 });
 

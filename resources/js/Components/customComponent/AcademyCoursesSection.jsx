@@ -3,16 +3,15 @@ import { usePage } from "@inertiajs/react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import BookingPopup from "./BookingPopup";
+import { usePopup } from "../../contexts/PopupContext";
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const AcademyCoursesSection = () => {
-    const { courses = [], services = [] } = usePage().props;
-    const [isBookingPopupOpen, setIsBookingPopupOpen] = useState(false);
-    const [selectedServices, setSelectedServices] = useState(services);
+    const { courses = [] } = usePage().props;
+    const { openBookingPopup } = usePopup();
     const [swiperInstance, setSwiperInstance] = useState(null);
 
     // Filter active courses
@@ -24,7 +23,7 @@ const AcademyCoursesSection = () => {
 
     return (
         <>
-            <div className="bg-gradient-to-br from-pink-50 via-[#3c4c24]/10 to-[#3c4c24]/40 py-20 px-4 relative overflow-hidden">
+            <div className="bg-gradient-to-br from-pink-50 via-[#3c4c24]/10 to-[#3c4c24]/40 lg:py-20 py-10 px-4 relative overflow-hidden">
                 {/* Decorative elements */}
                 <div className="absolute top-20 right-10 w-64 h-64 bg-pink-200 rounded-full opacity-20 blur-3xl"></div>
                 <div className="absolute bottom-20 left-10 w-80 h-80 bg-purple-200 rounded-full opacity-15 blur-3xl"></div>
@@ -113,10 +112,7 @@ const AcademyCoursesSection = () => {
 
                                             {/* Individual Book Now Button */}
                                             <button
-                                                onClick={() => {
-                                                    setSelectedServices(services);
-                                                    setIsBookingPopupOpen(true);
-                                                }}
+                                                onClick={openBookingPopup}
                                                 className="w-full py-3 bg-gradient-to-r from-[#3c4c24] to-[#2d3820] text-white font-semibold rounded-lg hover:from-[#2d3820] hover:to-[#1a2415] transition-all duration-300 transform hover:scale-[1.02] shadow-md hover:shadow-lg"
                                             >
                                                 Book Now
@@ -160,13 +156,6 @@ const AcademyCoursesSection = () => {
                     `}</style>
                 </div>
             </div>
-
-            {/* Booking Popup */}
-            <BookingPopup
-                isOpen={isBookingPopupOpen}
-                onClose={() => setIsBookingPopupOpen(false)}
-                services={selectedServices}
-            />
         </>
     );
 };

@@ -82,7 +82,7 @@ const SalonGallery = ({ gallery = [] }) => {
                         <button
                             key={category.id}
                             onClick={() => setSelectedCategory(category.id)}
-                            className={`px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 ${
+                            className={`px-3 text-xs lg:text-base lg:px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 ${
                                 selectedCategory === category.id
                                     ? "bg-gradient-to-r from-[#3c4c24] to-[#0c1f1a] text-white shadow-lg"
                                     : "bg-white text-[#3c4c24] hover:bg-gray-50 shadow-md"
@@ -94,7 +94,7 @@ const SalonGallery = ({ gallery = [] }) => {
                 </div>
 
                 {/* Gallery Grid */}
-                <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
+                <div className="columns-2 lg:columns-3 gap-4 space-y-4">
                     {filteredImages.map((image, index) => (
                         <div
                             key={image.id}
