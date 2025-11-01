@@ -38,41 +38,17 @@ const AboutSection = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-center relative z-10">
                         {/* Left Content */}
                         <div className="space-y-6">
-                            <div className="flex items-center gap-3">
-                                <p className="text-lg italic text-gray-700 head">
-                                    Welcome to
-                                </p>
-                                <svg
-                                    width="50"
-                                    height="30"
-                                    viewBox="0 0 50 30"
-                                    className="text-pink-400"
-                                >
-                                    <path
-                                        d="M 5 15 Q 15 5, 25 15 T 45 15"
-                                        stroke="currentColor"
-                                        fill="none"
-                                        strokeWidth="2"
-                                    />
-                                    <polygon
-                                        points="45,15 40,12 40,18"
-                                        fill="currentColor"
-                                    />
-                                </svg>
-                            </div>
+                            
 
                             <h2 className="text-3xl lg:text-4xl font-bold text-[#3c4c24] leading-tight head">
-                                Sumeera Salon -  Clean and Recommended
-                                Beauty Destination in Lucknow
+                            Where Beauty Meets Perfection – The Sumeera Salon Story
                             </h2>
 
                             <p className="text-gray-600 leading-relaxed text-base">
-                                At Sumeera Salon in Lucknow, we have a passion for promoting healthy,
-                                balanced and beautiful living. Offering premium hair styling, beauty treatments,
-                                makeup services, skincare, and more, we emphasize personalized care and attention
-                                to detail. Experience a spa-like, relaxing and pampering experience at one of
-                                Lucknow's most trusted salons. Our expert team is dedicated to making you look
-                                and feel your absolute best.
+                            At Sumeera Salon in Lucknow, we believe that beauty begins with care and confidence. Our passion lies in enhancing your natural charm through expert hair styling, makeup artistry, nail care, skincare, and body treatments. With a focus on personalized attention and premium-quality services, we ensure every client enjoys a truly satisfying and rejuvenating salon experience.
+                            <br />
+                            <br />
+                            Our skilled professionals are dedicated to helping you look flawless and feel empowered, whether it’s a quick refresh or a complete transformation. Discover why Sumeera Salon is one of Lucknow’s most trusted destinations for beauty and self-care.
                             </p>
 
                             <Button className="bg-black hover:bg-gray-800 text-white px-8 py-6 text-base font-medium">
