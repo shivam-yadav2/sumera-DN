@@ -11,6 +11,10 @@ const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState(null);
 
+    // Find a makeup service (if present) and filter it out from the services list
+    const makeupService = services.find((s) => /makeup/i.test(s.title));
+    const filteredServices = services.filter((s) => !/makeup/i.test(s.title));
+
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
@@ -50,31 +54,31 @@ const Navbar = () => {
                     <div className="hidden text-[14px]  lg:flex items-center space-x-8">
                         <a
                             href="/"
-                            className="text-gray-700 hover:text-[#3c4c24]  text-[16px] transition-colors"
+                            className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
                         >
                             Home
                         </a>
     
                         <a
                             href="/about"
-                            className="text-gray-700 hover:text-[#3c4c24]  text-[16px] transition-colors"
+                            className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
                         >
                             About
                         </a>
 
                         {/* Services Dropdown */}
                         <div className="relative group">
-                            <button className="flex items-center gap-1 text-gray-700 hover:text-[#3c4c24]  text-[16px] transition-colors">
+                            <button className="flex items-center gap-1 text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors">
                                 Services
                                 <ChevronDown className="w-4 h-4" />
                             </button>
-                            {services && services.length > 0 ? (
-                                <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2">
-                                    {services.map((service) => (
+                            {filteredServices && filteredServices.length > 0 ? (
+                                <div className="absolute top-full left-0 mt-2 w-44 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2">
+                                    {filteredServices.map((service) => (
                                         <a
                                             key={service.id}
                                             href={`/services/${service.slug_url}`}
-                                            className="block px-6 py-3 text-gray-700 hover:bg-[#3c4c24]/10 hover:text-[#3c4c24] transition-colors"
+                                            className="block px-3 py-1 text-gray-900 font-[600] hover:bg-[#3c4c24]/10 hover:text-[#3c4c24] transition-colors"
                                         >
                                             {service.title}
                                         </a>
@@ -92,38 +96,52 @@ const Navbar = () => {
                             )}
                         </div>
 
+                        {/* Makeup Service - separate nav item (if available) */}
+                        <a
+                            href={makeupService ? `/services/${makeupService.slug_url}` : '/services/makeup'}
+                            className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
+                        >
+                            Makeup Service
+                        </a>
+
                         <a
                             href="/academy"
-                            className="text-gray-700 hover:text-[#3c4c24]  text-[16px] transition-colors"
+                            className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
                         >
                             Academy
                         </a>
 
                         {/* Gallery Dropdown */}
                         <div className="relative group">
-                            <button className="flex items-center gap-1 text-gray-700 hover:text-[#3c4c24]  text-[16px] transition-colors">
+                            <button className="flex items-center gap-1 text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors">
                                 Gallery
                                 <ChevronDown className="w-4 h-4" />
                             </button>
                             <div className="absolute top-full left-0 mt-2 w-56 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2">
                                 <a
-                                    href="/gallery/photos"
-                                    className="block px-6 py-3 text-gray-700 hover:bg-[#3c4c24]/10 hover:text-[#3c4c24] transition-colors"
+                                    href="/gallery/makeup"
+                                    className="block px-3 py-1 font-[600] text-gray-900 hover:bg-[#3c4c24]/10 hover:text-[#3c4c24] transition-colors"
                                 >
-                                    Photo Gallery
+                                    Makeup Gallery
                                 </a>
                                 <a
-                                    href="/gallery/videos"
-                                    className="block px-6 py-3 text-gray-700 hover:bg-[#3c4c24]/10 hover:text-[#3c4c24] transition-colors"
+                                    href="/gallery/interior"
+                                    className="block px-3 py-1 font-[600] text-gray-900 hover:bg-[#3c4c24]/10 hover:text-[#3c4c24] transition-colors"
                                 >
-                                    Video Gallery
+                                    Interior Gallery
+                                </a>
+                                <a
+                                    href="/gallery/salon-services"
+                                    className="block px-3 py-1 font-[600] text-gray-900 hover:bg-[#3c4c24]/10 hover:text-[#3c4c24] transition-colors"
+                                >
+                                    Salon Services Images
                                 </a>
                             </div>
                         </div>
 
                         <a
                             href="/contact"
-                            className="text-gray-700 hover:text-[#3c4c24]  text-[16px] transition-colors"
+                            className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
                         >
                             Contact
                         </a>
@@ -165,13 +183,13 @@ const Navbar = () => {
                         <div className="flex flex-col space-y-4 mt-4">
                             <a
                                 href="/"
-                                className="text-gray-700 hover:text-[#3c4c24]  text-[16px] transition-colors"
+                                className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
                             >
                                 Home
                             </a>
                             <a
                                 href="/about"
-                                className="text-gray-700 hover:text-[#3c4c24]  text-[16px] transition-colors"
+                                className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
                             >
                                 About
                             </a>
@@ -180,7 +198,7 @@ const Navbar = () => {
                             <div>
                                 <button
                                     onClick={() => toggleDropdown("services")}
-                                    className="flex items-center justify-between w-full text-gray-700 hover:text-[#3c4c24]  text-[16px] transition-colors"
+                                    className="flex items-center justify-between w-full text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
                                 >
                                     Services
                                     <ChevronDown
@@ -193,8 +211,8 @@ const Navbar = () => {
                                 </button>
                                 {openDropdown === "services" && (
                                     <div className="ml-4 mt-2 space-y-2">
-                                        {services && services.length > 0 ? (
-                                            services.map((service) => (
+                                        {filteredServices && filteredServices.length > 0 ? (
+                                            filteredServices.map((service) => (
                                                 <a
                                                     key={service.id}
                                                     href={`/services/${service.slug_url}`}
@@ -212,11 +230,17 @@ const Navbar = () => {
                                 )}
                             </div>
 
-                            {/* Makeup Mobile Dropdown */}
+                            {/* Makeup (mobile) - separate link */}
+                            <a
+                                href={makeupService ? `/services/${makeupService.slug_url}` : '/services/makeup'}
+                                className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
+                            >
+                                Makeup Service
+                            </a>
 
                             <a
                                 href="/academy"
-                                className="text-gray-700 hover:text-[#3c4c24]  text-[16px] transition-colors"
+                                className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
                             >
                                 Academy
                             </a>
@@ -225,7 +249,7 @@ const Navbar = () => {
                             <div>
                                 <button
                                     onClick={() => toggleDropdown("gallery")}
-                                    className="flex items-center justify-between w-full text-gray-700 hover:text-[#3c4c24]  text-[16px] transition-colors"
+                                    className="flex items-center justify-between w-full text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
                                 >
                                     Gallery
                                     <ChevronDown
@@ -239,16 +263,22 @@ const Navbar = () => {
                                 {openDropdown === "gallery" && (
                                     <div className="ml-4 mt-2 space-y-2">
                                         <a
-                                            href="/gallery/photos"
+                                            href="/gallery/makeup"
                                             className="block text-gray-600 hover:text-[#3c4c24]"
                                         >
-                                            Photo Gallery
+                                            Makeup Gallery
                                         </a>
                                         <a
-                                            href="/gallery/videos"
+                                            href="/gallery/interior"
                                             className="block text-gray-600 hover:text-[#3c4c24]"
                                         >
-                                            Video Gallery
+                                            Interior Gallery
+                                        </a>
+                                        <a
+                                            href="/gallery/salon-services"
+                                            className="block text-gray-600 hover:text-[#3c4c24]"
+                                        >
+                                            Salon Services Images
                                         </a>
                                     </div>
                                 )}
@@ -256,7 +286,7 @@ const Navbar = () => {
 
                             <a
                                 href="/contact"
-                                className="text-gray-700 hover:text-[#3c4c24]  text-[16px] transition-colors"
+                                className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
                             >
                                 Contact
                             </a>

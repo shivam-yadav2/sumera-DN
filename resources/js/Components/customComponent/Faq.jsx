@@ -102,29 +102,7 @@ export default function Faq() {
           ))}
         </div>
 
-        {/* CTA Section */}
-        <div className="mt-16 p-12 rounded-2xl text-center" style={{ backgroundColor: '#f8f9f7' }}>
-          <h3 className="text-3xl head font-semibold mb-4 text-gray-900">Still have questions?</h3>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Contact us directly and our team will be happy to help you find the perfect course for your beauty career goals.
-          </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <button
-              onClick={openBookingPopup}
-              className="px-8 py-4 rounded-lg head font-semibold text-white transition-all duration-300 hover:shadow-lg"
-              style={{ backgroundColor: '#5c7650' }}
-            >
-              Get In Touch
-            </button>
-            <button
-              onClick={openBookingPopup}
-              className="px-8 py-4 rounded-lg head font-semibold transition-all duration-300 border-2"
-              style={{ borderColor: '#5c7650', color: '#5c7650' }}
-            >
-              Call Us Now
-            </button>
-          </div>
-        </div>
+      
       </div>
     </div>
   );

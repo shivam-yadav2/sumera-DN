@@ -39,16 +39,15 @@ const AboutSection = () => {
                         {/* Left Content */}
                         <div className="space-y-6">
                             
-
                             <h2 className="text-3xl lg:text-4xl font-bold text-[#3c4c24] leading-tight head">
-                            Where Beauty Meets Perfection – The Sumeera Salon Story
+                            Where Beauty Meets Perfection – The Sumeera Salon And Academy Story
                             </h2>
 
                             <p className="text-gray-600 leading-relaxed text-base">
-                            At Sumeera Salon in Lucknow, we believe that beauty begins with care and confidence. Our passion lies in enhancing your natural charm through expert hair styling, makeup artistry, nail care, skincare, and body treatments. With a focus on personalized attention and premium-quality services, we ensure every client enjoys a truly satisfying and rejuvenating salon experience.
+                            At Sumeera Salon And Academy in Lucknow, we believe that beauty begins with care and confidence. Our passion lies in enhancing your natural charm through expert hair styling, makeup artistry, nail care, skincare, and body treatments. With a focus on personalized attention and premium-quality services, we ensure every client enjoys a truly satisfying and rejuvenating salon experience.
                             <br />
                             <br />
-                            Our skilled professionals are dedicated to helping you look flawless and feel empowered, whether it’s a quick refresh or a complete transformation. Discover why Sumeera Salon is one of Lucknow’s most trusted destinations for beauty and self-care.
+                            Our skilled professionals are dedicated to helping you look flawless and feel empowered, whether it’s a quick refresh or a complete transformation. Discover why Sumeera Salon And Academy is one of Lucknow’s most trusted destinations for beauty and self-care.
                             </p>
 
                             <Button className="bg-black hover:bg-gray-800 text-white px-8 py-6 text-base font-medium">

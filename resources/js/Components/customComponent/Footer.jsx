@@ -122,6 +122,14 @@ const Footer = () => {
                                     Contact Us
                                 </a>
                             </li>
+                            <li>
+                                <a
+                                    href="/franchise"
+                                    className="text-gray-400 hover:text-[#3c4c24] transition-colors text-sm block"
+                                >
+                                    Sumeera Salon Franchise
+                                </a>
+                            </li>
                         </ul>
                     </div>
 

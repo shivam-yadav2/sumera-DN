@@ -175,7 +175,7 @@ const AcademyTestimonials = () => {
                 </div>
 
                 {/* Gallery Section */}
-                <div className="mt-20">
+                {/* <div className="mt-20">
                     <h3 className="text-3xl lg:text-4xl font-bold text-[#3c4c24] mb-8 text-center head">
                         Student Achievements
                     </h3>
@@ -210,7 +210,7 @@ const AcademyTestimonials = () => {
                             />
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 {/* CTA */}
                 <div className="mt-16 text-center">

@@ -96,7 +96,7 @@ const ServicesSection = () => {
                                     href={service.slug_url ? `/services/${service.slug_url}` : '#'}
                                     className="block h-full"
                                 >
-                                    <Card className="group rounded-none relative overflow-hidden border-[12px] border-[#3c4c24] shadow-lg hover:shadow-2xl transition-all duration-300 bg-white h-full">
+                                    <Card className="group rounded-none relative overflow-hidden border-[12px] border-[#D4B5A0] shadow-lg hover:shadow-2xl transition-all duration-300 bg-white h-full">
                                         <CardContent className="p-0 h-full flex flex-col">
                                             <div className="relative overflow-hidden flex-shrink-0">
                                                 <img

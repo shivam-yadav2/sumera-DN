@@ -18,7 +18,7 @@ const Service = () => {
 
             {/* ServiceAbout Section */}
             {serviceAbout && serviceAbout.length > 0 && (
-                <section className="bg-gradient-to-br from-pink-50 via-white to-purple-50 py-20 px-4 relative overflow-hidden">
+                <section className="bg-gradient-to-br from-pink-50 via-white to-purple-50  px-4 relative overflow-hidden">
                     <div className="max-w-7xl mx-auto relative z-10">
                         {serviceAbout.map((about, index) => (
                             <div 
@@ -29,7 +29,7 @@ const Service = () => {
                             >
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                                     {/* Image Side */}
-                                    <div className={`${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
+                                    <div className={`${index % 2 === 0 ? 'lg:order-1  p-12 xl:p-20' : 'lg:order-2 p-12 xl:p-20'}`}>
                                         {about.image ? (
                                             <div className="relative">
                                                 <div className="absolute inset-0 border-[12px] border-[#3c4c24] transform translate-x-4 translate-y-4 pointer-events-none"></div>
@@ -37,7 +37,7 @@ const Service = () => {
                                                     <img
                                                         src={about.image}
                                                         alt={about.title || "Service About"}
-                                                        className="w-full h-full object-cover object-center"
+                                                        className="w-full aspect-square h-full object-cover object-center"
                                                     />
                                                 </div>
                                             </div>
@@ -49,7 +49,7 @@ const Service = () => {
                                     </div>
 
                                     {/* Content Side */}
-                                    <div className={`${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
+                                    <div className={`${index % 2 === 0 ? 'lg:order-2 py-6 xl:py-10' : 'lg:order-1 py-6 xl:py-10'}`}>
                                         <div className="space-y-6">
                                             {/* <div className="flex items-center gap-3">
                                                 <p className="text-lg italic text-gray-700 head">
@@ -104,21 +104,31 @@ const Service = () => {
                         </p>
                     </div>
                     {galleryImages && galleryImages.length > 0 ? (
-                        <div className="grid grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="columns-2 lg:columns-3 gap-4 space-y-4">
                             {galleryImages.map((image, index) => (
-                                <div key={image.id || index}>
+                                <div 
+                                    key={image.id || index}
+                                    className="break-inside-avoid group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:scale-[1.02]"
+                                >
                                     <img 
                                         loading="lazy" 
                                         src={image.image} 
                                         alt={image.title || `Gallery image ${index + 1}`}
-                                        className="w-full h-auto object-cover"
+                                        className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                                            <h3 className="font-semibold text-xl mb-2">
+                                                {image.title || `Gallery image ${index + 1}`}
+                                            </h3>
+                                        </div>
+                                    </div>
                                 </div>
                             ))}
                         </div>
                     ) : (
-                        <div className="grid lg:grid-cols-3 gap-8">
-                            <div className="col-span-3 text-center py-12 text-gray-500">
+                        <div className="columns-2 lg:columns-3 gap-4">
+                            <div className="break-inside-avoid col-span-3 text-center py-12 text-gray-500">
                                 <p>No gallery images available for this service.</p>
                             </div>
                         </div>
@@ -127,6 +137,82 @@ const Service = () => {
             </section>
 
             <ServiceDetailSection2 />
+   
+            {/* Partners Section */}
+            <section className="bg-gradient-to-br from-gray-50 via-white to-gray-50 py-9 lg:py-12 px-4 overflow-hidden">
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-12 lg:mb-16">
+                        <h2 className="text-3xl lg:text-5xl font-bold text-[#3c4c24] mb-4 head">
+                            Our Partners
+                        </h2>
+                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                            Trusted by leading brands and organizations
+                        </p>
+                    </div>
+                    
+                    {/* Marquee Container */}
+                    <div className="relative">
+                        <div className="overflow-hidden">
+                            {/* Marquee Track */}
+                            <div 
+                                className="flex gap-6 lg:gap-8 marquee-track"
+                                style={{
+                                    animation: 'marquee 30s linear infinite'
+                                }}
+                            >
+                                {/* First Set of Logos */}
+                                {Array.from({ length: 22 }, (_, i) => i + 1).map((num) => (
+                                    <div
+                                        key={`first-${num}`}
+                                        className="group relative bg-white rounded-xl p-3 lg:p-5 shadow-sm hover:shadow-lg transition-all duration-300 flex items-center justify-center  border border-gray-100 hover:border-gray-200 flex-shrink-0"
+                                    >
+                                        <img
+                                            src={`/assets/images/new/logos/${num}.png`}
+                                            alt={`Partner ${num}`}
+                                            className="max-w-full max-h-16 lg:max-h-28 object-contain filter group-hover:opacity-80 transition-opacity duration-300"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                ))}
+                                {/* Duplicate Set for Seamless Loop */}
+                                {Array.from({ length: 16 }, (_, i) => i + 1).map((num) => (
+                                    <div
+                                        key={`second-${num}`}
+                                        className="group relative bg-white rounded-xl p-6 lg:p-8 shadow-sm hover:shadow-lg transition-all duration-300 flex items-center justify-center min-h-[120px] lg:min-h-[160px] min-w-[200px] lg:min-w-[250px] border border-gray-100 hover:border-gray-200 flex-shrink-0"
+                                    >
+                                        <img
+                                            src={`/assets/images/new/logos/${num}.png`}
+                                            alt={`Partner ${num}`}
+                                            className="max-w-full max-h-16 lg:max-h-28 object-contain filter group-hover:opacity-80 transition-opacity duration-300"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Marquee Animation Styles */}
+                <style>{`
+                    @keyframes marquee {
+                        0% {
+                            transform: translateX(0);
+                        }
+                        100% {
+                            transform: translateX(-50%);
+                        }
+                    }
+                    
+                    .marquee-track {
+                        will-change: transform;
+                    }
+                    
+                    .marquee-track:hover {
+                        animation-play-state: paused;
+                    }
+                `}</style>
+            </section>
 
             {/* <SalonPricing /> */}
 

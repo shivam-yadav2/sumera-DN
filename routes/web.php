@@ -18,7 +18,17 @@ Route::get('/', [HomeController::class, 'index2'])->name('home');
 // Booking API endpoint
 Route::post('/api/booking', [App\Http\Controllers\ContactController::class, 'storeBooking'])->name('booking.store');
 Route::get('/gallery/photos', function () {
+    return redirect()->route('gallery.salon-services');
+})->name('gallery.photos');
+
+Route::get('/gallery/salon-services', function () {
     $gallery = Gallery::where('is_active', '1')
+        ->where(function ($query) {
+            $query->whereNull('service_id')
+                ->orWhereHas('service', function ($q) {
+                    $q->whereRaw('LOWER(title) NOT LIKE ?', ['%makeup%']);
+                });
+        })
         ->orderBy('id', 'desc')
         ->get()
         ->map(function ($item) {
@@ -30,15 +40,69 @@ Route::get('/gallery/photos', function () {
                 'service' => $item->service ? $item->service->title : null,
             ];
         });
-    
+
     return Inertia::render('Gallery', [
         'gallery' => $gallery,
+        'pageTitle' => 'Salon Services Images',
+        'pageType' => 'salon-services',
     ]);
-})->name('gallery.photos');
+})->name('gallery.salon-services');
+
+Route::get('/gallery/makeup', function () {
+    $gallery = Gallery::where('is_active', '1')
+        ->whereHas('service', function ($query) {
+            $query->whereRaw('LOWER(title) LIKE ?', ['%makeup%']);
+        })
+        ->orderBy('id', 'desc')
+        ->get()
+        ->map(function ($item) {
+            return [
+                'id' => $item->id,
+                'title' => $item->title,
+                'image' => asset($item->image),
+                'service_id' => $item->service_id,
+                'service' => $item->service ? $item->service->title : null,
+            ];
+        });
+
+    return Inertia::render('Gallery', [
+        'gallery' => $gallery,
+        'pageTitle' => 'Makeup Gallery',
+        'pageType' => 'makeup',
+    ]);
+})->name('gallery.makeup');
+
+Route::get('/gallery/interior', function () {
+    $gallery = Gallery::where('is_active', '1')
+        ->whereHas('service', function ($query) {
+            $query->whereRaw('LOWER(title) LIKE ?', ['%interior%']);
+        })
+        ->orderBy('id', 'desc')
+        ->get()
+        ->map(function ($item) {
+            return [
+                'id' => $item->id,
+                'title' => $item->title,
+                'image' => asset($item->image),
+                'service_id' => $item->service_id,
+                'service' => $item->service ? $item->service->title : null,
+            ];
+        });
+
+    return Inertia::render('Gallery', [
+        'gallery' => $gallery,
+        'pageTitle' => 'Interior Gallery',
+        'pageType' => 'interior',
+    ]);
+})->name('gallery.interior');
 
 Route::get('/gallery/videos', function () {
     return Inertia::render('SalonVideoGallery');
 })->name('gallery.videos');
+
+Route::get('/franchise', function () {
+    return Inertia::render('Franchise');
+})->name('franchise');
 
 Route::get('/contact', function () {
     return Inertia::render('ContactPage');

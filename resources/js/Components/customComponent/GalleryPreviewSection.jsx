@@ -1,27 +1,84 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 
-const SalonGallery = ({ gallery = [] }) => {
+const SalonGallery = ({
+    gallery = [],
+    pageType = "default",
+    heading = "Our Gallery",
+    description,
+}) => {
     const [selectedImage, setSelectedImage] = useState(null);
     const [selectedCategory, setSelectedCategory] = useState("all");
 
+    const filteredGalleryData = useMemo(() => {
+        if (!Array.isArray(gallery)) {
+            return [];
+        }
+
+        if (pageType === "makeup") {
+            return gallery.filter(
+                (item) => item?.service && /makeup/i.test(item.service)
+            );
+        }
+
+        if (pageType === "salon-services") {
+            return gallery.filter(
+                (item) => !item?.service || !/makeup/i.test(item.service)
+            );
+        }
+
+        if (pageType === "interior") {
+            return gallery.filter(
+                (item) => item?.service && /interior/i.test(item.service)
+            );
+        }
+
+        return gallery;
+    }, [gallery, pageType]);
+
     // Get unique services/categories from gallery data
     const categories = useMemo(() => {
-        const uniqueServices = [...new Set(gallery.map(item => item.service).filter(Boolean))];
-        const cats = [{ id: "all", name: "All Work" }];
+        const uniqueServices = [
+            ...new Set(
+                filteredGalleryData
+                    .map((item) => item?.service)
+                    .filter(Boolean)
+            ),
+        ];
+
+        const primaryAllLabel = (() => {
+            if (pageType === "makeup") {
+                return "All Makeup Looks";
+            }
+
+            if (pageType === "interior") {
+                return "All Interiors";
+            }
+
+            return "All Work";
+        })();
+
+        const cats = [{ id: "all", name: primaryAllLabel }];
         uniqueServices.forEach((service, index) => {
+            if (pageType !== "makeup" && /makeup/i.test(service)) {
+                return;
+            }
+
+            if (pageType === "interior" && !/interior/i.test(service)) {
+                return;
+            }
             cats.push({ id: `service-${index}`, name: service });
         });
         return cats;
-    }, [gallery]);
+    }, [filteredGalleryData, pageType]);
 
     // Transform gallery data to match component structure
     const galleryImages = useMemo(() => {
-        return gallery.map((item, index) => {
-            const categoryId = item.service 
-                ? categories.find(c => c.name === item.service)?.id || 'all'
-                : 'all';
-            
+        return filteredGalleryData.map((item, index) => {
+            const categoryId = item?.service
+                ? categories.find((c) => c.name === item.service)?.id || "all"
+                : "all";
+
             return {
                 id: item.id || index,
                 url: item.image,
@@ -30,7 +87,11 @@ const SalonGallery = ({ gallery = [] }) => {
                 service: item.service,
             };
         });
-    }, [gallery, categories]);
+    }, [filteredGalleryData, categories]);
+
+    useEffect(() => {
+        setSelectedCategory("all");
+    }, [pageType, categories.length]);
 
     const filteredImages =
         selectedCategory === "all"
@@ -68,11 +129,11 @@ const SalonGallery = ({ gallery = [] }) => {
                 {/* Header */}
                 <div className="text-center mb-16">
                     <h1 className="text-5xl md:text-6xl head font-semibold text-white mb-4">
-                        Our Gallery
+                        {heading}
                     </h1>
                     <p className="text-gray-100 text-lg max-w-2xl mx-auto">
-                        Explore our stunning collection of transformations and
-                        creative artistry
+                        {description ||
+                            "Explore our stunning collection of transformations and creative artistry"}
                     </p>
                 </div>
 

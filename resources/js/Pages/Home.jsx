@@ -108,7 +108,7 @@ const Home = () => {
     };
     return (
         <Layout>
-            <Head title="Sumeera Salon - Premium Beauty Destination in Lucknow" />
+            <Head title="Sumeera Salon And Academy - Premium Beauty Destination in Lucknow" />
             <Hero />
             <AboutSection />
             <ServicesSection />

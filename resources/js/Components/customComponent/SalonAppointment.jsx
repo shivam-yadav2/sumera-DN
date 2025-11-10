@@ -2,15 +2,6 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 
 const SalonAppointment = () => {
-    const partners = [
-        { name: "PENNY W.", subtitle: "TEXTILES", style: "elegant" },
-        { name: "Caroline", subtitle: "BOUTIQUE STORE", style: "script" },
-        { name: "J. SMITH", subtitle: "HANDCRAFT", style: "minimal" },
-        { name: "B", subtitle: "CAFE & RESTAURANT", style: "circle" },
-        { name: "PINKVILLE", subtitle: "HOTEL", style: "modern" },
-        { name: "Cheryl", subtitle: "CLOTHING", style: "script" },
-    ];
-
     return (
         <div className="bg-[#3c4c24] py-10 lg:py-20 px-4 relative overflow-hidden">
             <div className="max-w-7xl mx-auto relative z-10">
@@ -95,66 +86,67 @@ const SalonAppointment = () => {
                 </div>
 
                 {/* Partners Section */}
-                <div className="space-y-12">
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
-                        {partners.map((partner, index) => (
-                            <div
-                                key={index}
-                                className="text-center group cursor-pointer transition-all duration-300 hover:scale-110"
+                <div className="bg-white py-9 lg:py-12 overflow-hidden rounded-2xl">
+                    <div className="relative">
+                        <div className="overflow-hidden">
+                            {/* Marquee Track */}
+                            <div 
+                                className="flex gap-6 lg:gap-8 marquee-track"
+                                style={{
+                                    animation: 'marquee 30s linear infinite'
+                                }}
                             >
-                                {partner.style === "circle" ? (
-                                    <div className="flex flex-col items-center">
-                                        <div className="w-20 h-20 rounded-full border-2 border-white flex items-center justify-center mb-2">
-                                            <span className="text-3xl font-bold text-white head">
-                                                {partner.name}
-                                            </span>
-                                        </div>
-                                        <p className="text-xs text-white tracking-widest">
-                                            {partner.subtitle}
-                                        </p>
+                                {/* First Set of Logos */}
+                                {Array.from({ length: 22 }, (_, i) => i + 1).map((num) => (
+                                    <div
+                                        key={`first-${num}`}
+                                        className="group relative bg-white rounded-xl p-3 lg:p-5 shadow-sm hover:shadow-lg transition-all duration-300 flex items-center justify-center border border-gray-100 hover:border-gray-200 flex-shrink-0"
+                                    >
+                                        <img
+                                            src={`/assets/images/new/logos/${num}.png`}
+                                            alt={`Partner ${num}`}
+                                            className="max-w-full max-h-16 lg:max-h-28 object-contain filter group-hover:opacity-80 transition-opacity duration-300"
+                                            loading="lazy"
+                                        />
                                     </div>
-                                ) : partner.style === "script" ? (
-                                    <div className="flex flex-col items-center">
-                                        <h3 className="text-3xl italic text-white mb-1 head">
-                                            {partner.name}
-                                        </h3>
-                                        <p className="text-xs text-white tracking-widest uppercase">
-                                            {partner.subtitle}
-                                        </p>
+                                ))}
+                                {/* Duplicate Set for Seamless Loop */}
+                                {Array.from({ length: 16 }, (_, i) => i + 1).map((num) => (
+                                    <div
+                                        key={`second-${num}`}
+                                        className="group relative bg-white rounded-xl p-3 lg:p-5 shadow-sm hover:shadow-lg transition-all duration-300 flex items-center justify-center border border-gray-100 hover:border-gray-200 flex-shrink-0"
+                                    >
+                                        <img
+                                            src={`/assets/images/new/logos/${num}.png`}
+                                            alt={`Partner ${num}`}
+                                            className="max-w-full max-h-16 lg:max-h-28 object-contain filter group-hover:opacity-80 transition-opacity duration-300"
+                                            loading="lazy"
+                                        />
                                     </div>
-                                ) : partner.style === "minimal" ? (
-                                    <div className="flex flex-col items-center border-2 border-white px-4 py-3">
-                                        <h3 className="text-2xl font-bold text-white mb-1 head">
-                                            {partner.name}
-                                        </h3>
-                                        <div className="w-8 h-8">
-                                            <svg
-                                                viewBox="0 0 40 40"
-                                                className="text-white"
-                                            >
-                                                <polygon
-                                                    points="20,5 25,15 35,15 27,22 30,32 20,26 10,32 13,22 5,15 15,15"
-                                                    fill="currentColor"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <p className="text-xs text-white tracking-widest mt-1">
-                                            {partner.subtitle}
-                                        </p>
-                                    </div>
-                                ) : (
-                                    <div className="flex flex-col items-center">
-                                        <h3 className="text-xl font-bold text-white mb-1 tracking-wide head">
-                                            {partner.name}
-                                        </h3>
-                                        <p className="text-xs text-white tracking-widest">
-                                            {partner.subtitle}
-                                        </p>
-                                    </div>
-                                )}
+                                ))}
                             </div>
-                        ))}
+                        </div>
                     </div>
+
+                    {/* Marquee Animation Styles */}
+                    <style>{`
+                        @keyframes marquee {
+                            0% {
+                                transform: translateX(0);
+                            }
+                            100% {
+                                transform: translateX(-50%);
+                            }
+                        }
+                        
+                        .marquee-track {
+                            will-change: transform;
+                        }
+                        
+                        .marquee-track:hover {
+                            animation-play-state: paused;
+                        }
+                    `}</style>
                 </div>
             </div>
         </div>

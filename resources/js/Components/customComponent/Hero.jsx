@@ -12,23 +12,23 @@ const Hero = () => {
     const defaultSlides = [
         {
             subtitle: "Premium Beauty",
-            title: "SUMEERA SALON",
+            title: "Sumeera Salon And Academy",
             description:
-                "Your dream of sleek, healthy looking hair that looks picture perfect, ready to rock on any occasion? Visit Sumeera Salon in Lucknow!",
+                "Your dream of sleek, healthy looking hair that looks picture perfect, ready to rock on any occasion? Visit Sumeera Salon And Academy in Lucknow!",
             image: "/assets/images/1.JPG",
         },
         {
             subtitle: "Luxury Experience",
-            title: "SUMEERA SALON",
+            title: "Sumeera Salon And Academy",
             description:
                 "Experience the ultimate in hair care and styling with our professional team of experts. Located in the heart of Lucknow.",
             image: "/assets/images/2.JPG",
         },
         {
             subtitle: "Expert Artistry",
-            title: "SUMEERA SALON",
+            title: "Sumeera Salon And Academy",
             description:
-                "Transform your look with our cutting-edge techniques and premium products at Sumeera Salon, your trusted beauty destination in Lucknow.",
+                "Transform your look with our cutting-edge techniques and premium products at Sumeera Salon And Academy, your trusted beauty destination in Lucknow.",
             image: "/assets/images/3.JPG",
         },
     ];
