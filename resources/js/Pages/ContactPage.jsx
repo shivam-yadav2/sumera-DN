@@ -64,37 +64,34 @@ export default function ContactPage() {
 
         setIsSubmitting(true);
 
-        router.post(
-            "/api/booking",
-            formData,
-            {
-                onSuccess: () => {
-                    // Reset form
-                    setFormData({
-                        name: "",
-                        email: "",
-                        mobile: "",
-                        service: "",
-                        message: "",
-                    });
-                    setErrors({});
-                    // Show success toast
-                    toast.success("Message sent successfully!", {
-                        description: "Thank you for contacting us! We will get back to you soon.",
-                        duration: 5000,
-                    });
-                },
-                onError: (errors) => {
-                    setErrors(errors);
-                    toast.error("Failed to send message", {
-                        description: "Please check the form and try again.",
-                    });
-                },
-                onFinish: () => {
-                    setIsSubmitting(false);
-                },
-            }
-        );
+        router.post("/api/booking", formData, {
+            onSuccess: () => {
+                // Reset form
+                setFormData({
+                    name: "",
+                    email: "",
+                    mobile: "",
+                    service: "",
+                    message: "",
+                });
+                setErrors({});
+                // Show success toast
+                toast.success("Message sent successfully!", {
+                    description:
+                        "Thank you for contacting us! We will get back to you soon.",
+                    duration: 5000,
+                });
+            },
+            onError: (errors) => {
+                setErrors(errors);
+                toast.error("Failed to send message", {
+                    description: "Please check the form and try again.",
+                });
+            },
+            onFinish: () => {
+                setIsSubmitting(false);
+            },
+        });
     };
 
     return (
@@ -120,10 +117,7 @@ export default function ContactPage() {
                                             Phone
                                         </h3>
                                         <p className="text-gray-600">
-                                            +41 43 542 65 91
-                                        </p>
-                                        <p className="text-gray-600">
-                                            +291 0987 654 123
+                                            +91 7355417843
                                         </p>
                                     </div>
                                 </div>
@@ -137,10 +131,7 @@ export default function ContactPage() {
                                             Email
                                         </h3>
                                         <p className="text-gray-600">
-                                            thewebmax@gmail.com
-                                        </p>
-                                        <p className="text-gray-600">
-                                            thewebmaxhelp@gmail.com
+                                            infosumeerasalon@gmail.com
                                         </p>
                                     </div>
                                 </div>
@@ -154,30 +145,10 @@ export default function ContactPage() {
                                             Address
                                         </h3>
                                         <p className="text-gray-600">
-                                            1963-1385 Sunset Blvd
+                                            Shop N-1,Sector-C,Mahanagar
                                         </p>
                                         <p className="text-gray-600">
-                                            Los Angeles, CA 90026, USA
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-start gap-4">
-                                    <div className="bg-[#3c4c24] p-3 rounded">
-                                        <Clock className="w-5 h-5 text-white" />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-semibold text-gray-900 mb-1">
-                                            Opening Hours
-                                        </h3>
-                                        <p className="text-gray-600">
-                                            Mon-Friday: 9 am - 6 pm
-                                        </p>
-                                        <p className="text-gray-600">
-                                            Saturday: 9 am - 4 pm
-                                        </p>
-                                        <p className="text-gray-600">
-                                            Sunday: Closed
+                                            Lucknow, Uttar Pradesh 226006
                                         </p>
                                     </div>
                                 </div>
@@ -199,11 +170,13 @@ export default function ContactPage() {
                                         value={formData.name}
                                         onChange={handleChange}
                                         className={`h-12 ${
-                                            errors.name ? 'border-red-500' : ''
+                                            errors.name ? "border-red-500" : ""
                                         }`}
                                     />
                                     {errors.name && (
-                                        <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                                        <p className="text-red-500 text-sm mt-1">
+                                            {errors.name}
+                                        </p>
                                     )}
                                 </div>
 
@@ -217,7 +190,9 @@ export default function ContactPage() {
                                         className="h-12"
                                     />
                                     {errors.email && (
-                                        <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                                        <p className="text-red-500 text-sm mt-1">
+                                            {errors.email}
+                                        </p>
                                     )}
                                 </div>
 
@@ -229,11 +204,15 @@ export default function ContactPage() {
                                         value={formData.mobile}
                                         onChange={handleChange}
                                         className={`h-12 ${
-                                            errors.mobile ? 'border-red-500' : ''
+                                            errors.mobile
+                                                ? "border-red-500"
+                                                : ""
                                         }`}
                                     />
                                     {errors.mobile && (
-                                        <p className="text-red-500 text-sm mt-1">{errors.mobile}</p>
+                                        <p className="text-red-500 text-sm mt-1">
+                                            {errors.mobile}
+                                        </p>
                                     )}
                                 </div>
 
@@ -243,18 +222,31 @@ export default function ContactPage() {
                                         value={formData.service}
                                         onChange={handleChange}
                                         className={`w-full h-12 px-3 border rounded-md focus:ring-2 focus:ring-[#3c4c24] focus:border-transparent ${
-                                            errors.service ? 'border-red-500' : 'border-gray-300'
-                                        } ${!formData.service ? 'text-gray-500' : 'text-gray-900'}`}
+                                            errors.service
+                                                ? "border-red-500"
+                                                : "border-gray-300"
+                                        } ${
+                                            !formData.service
+                                                ? "text-gray-500"
+                                                : "text-gray-900"
+                                        }`}
                                     >
-                                        <option value="">Select Service *</option>
+                                        <option value="">
+                                            Select Service *
+                                        </option>
                                         {services.map((service) => (
-                                            <option key={service.id} value={service.title}>
+                                            <option
+                                                key={service.id}
+                                                value={service.title}
+                                            >
                                                 {service.title}
                                             </option>
                                         ))}
                                     </select>
                                     {errors.service && (
-                                        <p className="text-red-500 text-sm mt-1">{errors.service}</p>
+                                        <p className="text-red-500 text-sm mt-1">
+                                            {errors.service}
+                                        </p>
                                     )}
                                 </div>
 
@@ -267,7 +259,9 @@ export default function ContactPage() {
                                         className="min-h-32 resize-none"
                                     />
                                     {errors.message && (
-                                        <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                                        <p className="text-red-500 text-sm mt-1">
+                                            {errors.message}
+                                        </p>
                                     )}
                                 </div>
 
@@ -276,7 +270,9 @@ export default function ContactPage() {
                                     disabled={isSubmitting}
                                     className="w-full h-12 bg-[#3c4c24] hover:bg-[#005840] text-white"
                                 >
-                                    {isSubmitting ? "Submitting..." : "Submit Now"}
+                                    {isSubmitting
+                                        ? "Submitting..."
+                                        : "Submit Now"}
                                 </Button>
                             </div>
                         </div>

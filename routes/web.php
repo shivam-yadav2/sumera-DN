@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\BlogPageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Gallery;
@@ -113,6 +115,9 @@ Route::get('/academy', function () {
     return Inertia::render('AcademyPage', ['courses' => $courses]);
 })->name('academy');
 
+Route::get('/blogs', [BlogPageController::class, 'index'])->name('blogs.index');
+Route::get('/blogs/{slug}', [BlogPageController::class, 'show'])->name('blogs.show');
+
 Route::get('/about', function () {
     // Get active services (same as Home page)
     $services = \App\Models\Service::where('is_active', '1')
@@ -210,6 +215,12 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    // Blog Management
+    Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
+    Route::match(['get', 'post'], '/blogs/create/{id?}', [BlogController::class, 'create'])->name('blogs.create');
+    Route::get('/blogs/{id}/status', [BlogController::class, 'update'])->name('blogs.status');
+    Route::get('/blogs/{id}/delete', [BlogController::class, 'destroy'])->name('blogs.destroy');
 
     // Service Management
     Route::get('/services', [App\Http\Controllers\ServiceController::class, 'index'])->name('services.index');

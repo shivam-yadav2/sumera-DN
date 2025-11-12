@@ -32,19 +32,19 @@ const About = () => {
                     style={{ backgroundImage: "url('/assets/images/1.JPG')" }}
                 ></div>
                 <div className="relative z-10 space-y-5">
-                    <p className="text-xl head">Lucknow since 2012</p>
+                    {/* <p className="text-xl head">Lucknow since 2012</p> */}
                     <h1 className="text-5xl font-bold my-4 head">
-                        About Our Story
+                         Our Story
                     </h1>
                     <p className="max-w-xl mx-auto mb-6 text-lg font-semibold">
-                        Praesent id odio quis massa aliquet dictum ut eget erat.
-                        Aliquam erat volutpat. Pellentesque sit amet congue
-                        tellus.
+                    Beauty is more than a service — it’s an experience.
+Since 2012, we’ve been helping clients and students express their best selves with style and skill.
+Our goal is simple: to blend expertise with a personal touch, so every visit feels special.
                     </p>
                     <AppointmentButton />
                 </div>
             </section>
-            <Faq />
+            {/* <Faq /> */}
             
         </Layout>
     );

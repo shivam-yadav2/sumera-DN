@@ -56,6 +56,8 @@
                     </div>
                 </li>
 
+                
+
                 <!-- Gallery -->
                 <li class="nav-item">
                     <a class="nav-link menu-link {{ request()->routeIs('admin.gallery.*') ? 'active' : '' }}" href="#sidebarGallery" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarGallery">
@@ -99,6 +101,22 @@
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
                                 <a href="{{ route('admin.courses.create') }}" class="nav-link {{ request()->routeIs('admin.courses.create') ? 'active' : '' }}">Add Course</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <!-- Blogs -->
+                <li class="nav-item">
+                    <a class="nav-link menu-link {{ request()->routeIs('admin.blogs.*') ? 'active' : '' }}" href="#sidebarBlogs" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarBlogs">
+                        <i class="mdi mdi-note-text"></i> <span data-key="t-blogs">Blogs</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarBlogs">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.blogs.index') }}" class="nav-link {{ request()->routeIs('admin.blogs.index') ? 'active' : '' }}">All Blogs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.blogs.create') }}" class="nav-link {{ request()->routeIs('admin.blogs.create') ? 'active' : '' }}">Add Blog</a>
                             </li>
                         </ul>
                     </div>

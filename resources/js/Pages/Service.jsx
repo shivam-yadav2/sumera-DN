@@ -136,7 +136,7 @@ const Service = () => {
                 </div>
             </section>
 
-            <ServiceDetailSection2 />
+            {/* <ServiceDetailSection2 /> */}
    
             {/* Partners Section */}
             <section className="bg-gradient-to-br from-gray-50 via-white to-gray-50 py-9 lg:py-12 px-4 overflow-hidden">

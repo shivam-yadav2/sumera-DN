@@ -58,7 +58,7 @@ const Navbar = () => {
                         >
                             Home
                         </a>
-    
+
                         <a
                             href="/about"
                             className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
@@ -98,10 +98,14 @@ const Navbar = () => {
 
                         {/* Makeup Service - separate nav item (if available) */}
                         <a
-                            href={makeupService ? `/services/${makeupService.slug_url}` : '/services/makeup'}
+                            href={
+                                makeupService
+                                    ? `/services/${makeupService.slug_url}`
+                                    : "/services/makeup"
+                            }
                             className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
                         >
-                            Makeup Service
+                            Makeup
                         </a>
 
                         <a
@@ -122,22 +126,29 @@ const Navbar = () => {
                                     href="/gallery/makeup"
                                     className="block px-3 py-1 font-[600] text-gray-900 hover:bg-[#3c4c24]/10 hover:text-[#3c4c24] transition-colors"
                                 >
-                                    Makeup Gallery
+                                    Makeup
                                 </a>
                                 <a
                                     href="/gallery/interior"
                                     className="block px-3 py-1 font-[600] text-gray-900 hover:bg-[#3c4c24]/10 hover:text-[#3c4c24] transition-colors"
                                 >
-                                    Interior Gallery
+                                    Interior
                                 </a>
                                 <a
                                     href="/gallery/salon-services"
                                     className="block px-3 py-1 font-[600] text-gray-900 hover:bg-[#3c4c24]/10 hover:text-[#3c4c24] transition-colors"
                                 >
-                                    Salon Services Images
+                                    Salon Services
                                 </a>
                             </div>
                         </div>
+
+                        <a
+                            href="/blogs"
+                            className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
+                        >
+                            Blog
+                        </a>
 
                         <a
                             href="/contact"
@@ -155,7 +166,7 @@ const Navbar = () => {
                             >
                             +41 43 542 65 91
                             </a> */}
-                        <Button 
+                        <Button
                             onClick={openBookingPopup}
                             className="bg-black rounded-none hover:bg-[#3c4c24] text-white px-8 py-6 text-base font-medium transition-all duration-300"
                         >
@@ -211,7 +222,8 @@ const Navbar = () => {
                                 </button>
                                 {openDropdown === "services" && (
                                     <div className="ml-4 mt-2 space-y-2">
-                                        {filteredServices && filteredServices.length > 0 ? (
+                                        {filteredServices &&
+                                        filteredServices.length > 0 ? (
                                             filteredServices.map((service) => (
                                                 <a
                                                     key={service.id}
@@ -232,7 +244,11 @@ const Navbar = () => {
 
                             {/* Makeup (mobile) - separate link */}
                             <a
-                                href={makeupService ? `/services/${makeupService.slug_url}` : '/services/makeup'}
+                                href={
+                                    makeupService
+                                        ? `/services/${makeupService.slug_url}`
+                                        : "/services/makeup"
+                                }
                                 className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
                             >
                                 Makeup Service
@@ -285,6 +301,13 @@ const Navbar = () => {
                             </div>
 
                             <a
+                                href="/blogs"
+                                className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
+                            >
+                                Blog
+                            </a>
+
+                            <a
                                 href="/contact"
                                 className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
                             >
@@ -292,7 +315,7 @@ const Navbar = () => {
                             </a>
 
                             <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
-                                <Button 
+                                <Button
                                     onClick={openBookingPopup}
                                     className="bg-black rounded-none hover:bg-[#3c4c24] text-white px-8 py-6 text-base font-medium transition-all duration-300"
                                 >

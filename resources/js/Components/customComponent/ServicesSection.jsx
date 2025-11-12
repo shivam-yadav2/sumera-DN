@@ -43,17 +43,17 @@ const ServicesSection = () => {
     const displayServices = servicesWithImages.length > 0 ? servicesWithImages : fallbackServices;
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-pink-50 via-[#3c4c24]/10 to-[#3c4c24]/40 py-10 lg:py-20 px-4 relative overflow-hidden">
+        <div className=" bg-gradient-to-br from-pink-50 via-[#3c4c24]/10 to-[#3c4c24]/40 py-10 lg:py-20 px-4 relative overflow-hidden">
             {/* Decorative background elements */}
             <div className="absolute top-32 right-20 w-72 h-72 bg-pink-200 rounded-full opacity-30 blur-3xl"></div>
             <div className="absolute bottom-32 left-20 w-96 h-96 bg-purple-200 rounded-full opacity-25 blur-3xl"></div>
 
             {/* Large background text "Services" */}
-            <div className="absolute bottom-5 left-0 right-0 flex items-center justify-center pointer-events-none overflow-hidden">
+            {/* <div className="absolute bottom-5 left-0 right-0 flex items-center justify-center pointer-events-none overflow-hidden">
                 <h1 className="text-[6rem] lg:text-[12rem] font-bold text-[#3c4c24] head  opacity-10 select-none tracking-wider">
                     Services
                 </h1>
-            </div>
+            </div> */}
 
             <div className="relative z-10 max-w-7xl mx-auto">
                 {/* Header Section */}

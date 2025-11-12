@@ -50,16 +50,14 @@ const AboutSection = () => {
                             Our skilled professionals are dedicated to helping you look flawless and feel empowered, whether it’s a quick refresh or a complete transformation. Discover why Sumeera Salon And Academy is one of Lucknow’s most trusted destinations for beauty and self-care.
                             </p>
 
-                            <Button className="bg-black hover:bg-gray-800 text-white px-8 py-6 text-base font-medium">
-                                More About
-                            </Button>
+                          
 
                             {/* Signature */}
-                            <div className=" flex items-center justify-center pointer-events-none overflow-hidden">
+                            {/* <div className=" flex items-center justify-center pointer-events-none overflow-hidden">
                                     <h1 className="text-[4rem] lg:text-[8rem] head font-semibold text-[#3c4c24] opacity-15 select-none tracking-wider">
                                         Welcome
                                     </h1>
-                                </div>
+                                </div> */}
                         </div>
 
                         {/* Right Image Collage */}

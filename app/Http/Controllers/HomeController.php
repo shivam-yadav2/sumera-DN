@@ -100,9 +100,12 @@ class HomeController extends Controller
                 ];
             });
         
-        // Get active gallery items
+        // Get active gallery items (only makeup)
         $gallery = \App\Models\Gallery::where('is_active', '1')
             ->with('service')
+            ->whereHas('service', function ($query) {
+                $query->whereRaw('LOWER(title) LIKE ?', ['%makeup%']);
+            })
             ->orderBy('id', 'desc')
             ->get()
             ->map(function ($item) {

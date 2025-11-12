@@ -72,6 +72,8 @@ const SalonGallery = ({
         return cats;
     }, [filteredGalleryData, pageType]);
 
+    const showCategoryFilter = pageType === "salon-services";
+
     // Transform gallery data to match component structure
     const galleryImages = useMemo(() => {
         return filteredGalleryData.map((item, index) => {
@@ -124,35 +126,37 @@ const SalonGallery = ({
     };
 
     return (
-        <div className="min-h-screen bg-[#3c4c24] py-16 px-4">
+        <div className="min-h-screen bg-[#fff] py-16 px-4">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h1 className="text-5xl md:text-6xl head font-semibold text-white mb-4">
+                    <h1 className="text-5xl md:text-6xl head font-semibold text-[#3c4c24] mb-4">
                         {heading}
                     </h1>
-                    <p className="text-gray-100 text-lg max-w-2xl mx-auto">
+                    <p className="text-[#3c4c24] text-lg max-w-2xl mx-auto">
                         {description ||
                             "Explore our stunning collection of transformations and creative artistry"}
                     </p>
                 </div>
 
                 {/* Category Filter */}
-                <div className="flex flex-wrap justify-center gap-4 mb-12">
-                    {categories.map((category) => (
-                        <button
-                            key={category.id}
-                            onClick={() => setSelectedCategory(category.id)}
-                            className={`px-3 text-xs lg:text-base lg:px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 ${
-                                selectedCategory === category.id
-                                    ? "bg-gradient-to-r from-[#3c4c24] to-[#0c1f1a] text-white shadow-lg"
-                                    : "bg-white text-[#3c4c24] hover:bg-gray-50 shadow-md"
-                            }`}
-                        >
-                            {category.name}
-                        </button>
-                    ))}
-                </div>
+                {showCategoryFilter && categories.length > 1 && (
+                    <div className="flex flex-wrap justify-center gap-4 mb-12">
+                        {categories.map((category) => (
+                            <button
+                                key={category.id}
+                                onClick={() => setSelectedCategory(category.id)}
+                                className={`px-3 text-xs lg:text-base lg:px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 ${
+                                    selectedCategory === category.id
+                                        ? "bg-gradient-to-r from-[#3c4c24] to-[#0c1f1a] text-white shadow-lg"
+                                        : "bg-white text-[#3c4c24] hover:bg-gray-50 shadow-md"
+                                }`}
+                            >
+                                {category.name}
+                            </button>
+                        ))}
+                    </div>
+                )}
 
                 {/* Gallery Grid */}
                 <div className="columns-2 lg:columns-3 gap-4 space-y-4">

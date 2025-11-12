@@ -14,7 +14,8 @@ const Gallery = () => {
 
   return (
     <Layout>
-        <BannerSection title={pageTitle}/>
+        {/* <BannerSection title={pageTitle}/> */}
+        <div className="mt-12"/>
         <SalonGallery
           gallery={gallery || []}
           pageType={pageType}
@@ -26,3 +27,4 @@ const Gallery = () => {
 };
 
 export default Gallery;
+

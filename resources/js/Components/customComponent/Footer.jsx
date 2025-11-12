@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { MapPin, Phone, Mail, Facebook, Instagram, Youtube } from "lucide-react";
+import {
+    MapPin,
+    Phone,
+    Mail,
+    Facebook,
+    Instagram,
+    Youtube,
+    Linkedin,
+} from "lucide-react";
 import { usePage } from "@inertiajs/react";
 
 const Footer = () => {
@@ -23,7 +31,10 @@ const Footer = () => {
                     {/* About Section */}
                     <div className="space-y-6">
                         <div className="flex items-center gap-2 mb-6">
-                            <a href="/" className="flex items-center justify-center">
+                            <a
+                                href="/"
+                                className="flex items-center justify-center"
+                            >
                                 <img
                                     src="/assets/logo/white.png"
                                     alt="Logo"
@@ -32,9 +43,10 @@ const Footer = () => {
                             </a>
                         </div>
                         <p className="text-gray-400 text-sm leading-relaxed">
-                            Your trusted beauty destination offering premium salon services, 
-                            professional beauty treatments, and expert training through our 
-                            academy. Experience excellence in beauty and wellness.
+                            Your trusted beauty destination offering premium
+                            salon services, professional beauty treatments, and
+                            expert training through our academy. Experience
+                            excellence in beauty and wellness.
                         </p>
                         {/* Social Media Links */}
                         <div className="flex items-center gap-4 pt-4">
@@ -42,28 +54,37 @@ const Footer = () => {
                                 href="https://www.facebook.com/darpanbypooja"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-10 h-10 bg-gray-800 hover:bg-[#3c4c24] rounded-full flex items-center justify-center transition-all duration-300 group"
+                                className="w-10 h-10 bg-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-105"
                                 aria-label="Facebook"
                             >
-                                <Facebook className="w-5 h-5 text-gray-400 group-hover:text-white" />
+                                <Facebook className="w-5 h-5 text-[#1877F2]" />
                             </a>
                             <a
                                 href="https://www.instagram.com/darpan_by_pooja/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-10 h-10 bg-gray-800 hover:bg-[#3c4c24] rounded-full flex items-center justify-center transition-all duration-300 group"
+                                className="w-10 h-10 bg-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-105"
                                 aria-label="Instagram"
                             >
-                                <Instagram className="w-5 h-5 text-gray-400 group-hover:text-white" />
+                                <Instagram className="w-5 h-5 text-[#E4405F]" />
                             </a>
                             <a
                                 href="#"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-10 h-10 bg-gray-800 hover:bg-[#3c4c24] rounded-full flex items-center justify-center transition-all duration-300 group"
+                                className="w-10 h-10 bg-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-105"
                                 aria-label="YouTube"
                             >
-                                <Youtube className="w-5 h-5 text-gray-400 group-hover:text-white" />
+                                <Youtube className="w-5 h-5 text-[#FF0000]" />
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-10 h-10 bg-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-105"
+                                aria-label="LinkedIn"
+                            >
+                                <Linkedin className="w-5 h-5 text-[#0a66c2]" />
                             </a>
                         </div>
                     </div>
@@ -152,7 +173,9 @@ const Footer = () => {
                                 ))}
                             </ul>
                         ) : (
-                            <p className="text-gray-500 text-sm">Services coming soon</p>
+                            <p className="text-gray-500 text-sm">
+                                Services coming soon
+                            </p>
                         )}
                     </div>
 
@@ -188,9 +211,8 @@ const Footer = () => {
                                 </a>
                             </li>
                         </ul>
-                        
+
                         {/* Newsletter Subscription */}
-                        
                     </div>
                 </div>
             </div>
@@ -200,7 +222,8 @@ const Footer = () => {
                 <div className="max-w-7xl mx-auto px-4 py-6">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                         <p className="text-gray-400 text-sm text-center md:text-left">
-                            Copyright © {new Date().getFullYear()} All Rights Reserved
+                            Copyright © {new Date().getFullYear()} All Rights
+                            Reserved
                         </p>
                         <div className="flex flex-wrap items-center justify-center gap-4">
                             <a
@@ -209,14 +232,18 @@ const Footer = () => {
                             >
                                 Contact Us
                             </a>
-                            <span className="text-gray-600 hidden md:inline">|</span>
+                            <span className="text-gray-600 hidden md:inline">
+                                |
+                            </span>
                             <a
                                 href="#"
                                 className="text-gray-400 hover:text-[#3c4c24] text-sm transition-colors"
                             >
                                 Privacy Policy
                             </a>
-                            <span className="text-gray-600 hidden md:inline">|</span>
+                            <span className="text-gray-600 hidden md:inline">
+                                |
+                            </span>
                             <a
                                 href="#"
                                 className="text-gray-400 hover:text-[#3c4c24] text-sm transition-colors"
