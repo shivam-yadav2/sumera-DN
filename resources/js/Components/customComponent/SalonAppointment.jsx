@@ -19,10 +19,7 @@ const SalonAppointment = () => {
                         {/* Left Side - Light Background with Content */}
                         <div
                             className="bg-white p-6 col-span-3 lg:p-10 relative overflow-hidden"
-                            style={{
-                                backgroundImage:
-                                    "url('/assets/images/nake.png')",
-                            }}
+                            
                         >
                             {/* Subtle pattern overlay */}
 
@@ -64,7 +61,7 @@ const SalonAppointment = () => {
                                     meets purpose, success naturally follows.
                                 </p>
                                 <p className="text-gray-700 text-base leading-6 font-medium ">
-                                    ✨ From UPSC books to makeup brushes — her
+                                     From UPSC books to makeup brushes — her
                                     journey is a testament to courage,
                                     creativity, and self-belief.
                                 </p>

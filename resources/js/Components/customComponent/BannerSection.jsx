@@ -32,5 +32,5 @@ export function BannerSection({ title }) {
         
       </div>
     </section>
-  );
+  ); 
 }
