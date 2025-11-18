@@ -9,8 +9,11 @@ import {
     Linkedin,
 } from "lucide-react";
 import { usePage } from "@inertiajs/react";
+import { usePopup } from "../../contexts/PopupContext";
 
 const Footer = () => {
+        const { openBookingPopup } = usePopup();
+    
     const { services = [] } = usePage().props;
     const [email, setEmail] = useState("");
 
@@ -278,8 +281,9 @@ const Footer = () => {
 
                     {/* Book Now */}
                     <a
-                        href="/contact"
+                        href="#"
                         className="flex flex-col items-center text-[#3c4c24]"
+                        onClick={openBookingPopup}
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"

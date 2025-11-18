@@ -70,7 +70,7 @@ const AboutSection = () => {
                                 </div> */}
                         </div>
 
-                        <div className="relative ">
+                        <div className="relative lg:block hidden">
                                 {/* Top Left - Small horizontal image */}
 
                                 <div className="relative px-12 xl:px-20">

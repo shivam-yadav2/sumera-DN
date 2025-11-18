@@ -17,6 +17,7 @@ import SalonAppointment from "../Components/customComponent/SalonAppointment";
 import SalonPricing from "../Components/customComponent/SalonPricing";
 import AcademyCoursesSection from "../Components/customComponent/AcademyCoursesSection";
 import OffersDealsSection from "../Components/customComponent/OffersDealsSection";
+import TestimonialSection from "../Components/customComponent/TestimonialSection";
 
 const Home = () => {
     const { gallery = [], services = [] } = usePage().props;
@@ -146,9 +147,9 @@ const Home = () => {
 
                                 <Button
                                     onClick={() => router.visit("/about")}
-                                    className="bg-black hover:bg-gray-800 text-white px-8 py-6 text-base font-medium"
+                                    className="bg-black rounded-none hover:bg-gray-800 text-white px-6 py-4 text-base font-medium"
                                 >
-                                    Read More ...
+                                    Read More 
                                 </Button>
 
                                 {/* Signature */}
@@ -160,7 +161,7 @@ const Home = () => {
                             </div>
 
                             {/* Right Image Collage */}
-                            <div className="relative ">
+                            <div className="relative lg:block hidden">
                                 {/* Top Left - Small horizontal image */}
 
                                 <div className="relative px-12 xl:px-20">
@@ -195,6 +196,7 @@ const Home = () => {
             </div>
             <ServicesSection />
             <OffersDealsSection />
+            {/* <TestimonialSection /> */}
             <SalonAppointment />
             {/* <AcademyCoursesSection /> */}
 

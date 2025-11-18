@@ -96,7 +96,7 @@ const ServicesSection = () => {
                                     href={service.slug_url ? `/services/${service.slug_url}` : '#'}
                                     className="block h-full"
                                 >
-                                    <Card className="group rounded-none relative overflow-hidden border-[12px] border-[#D4B5A0] shadow-lg hover:shadow-2xl transition-all duration-300 bg-white h-full">
+                                    <Card className="group rounded-none relative overflow-hidden border-[12px] border-[#D4B5A0] shadow-lg hover:shadow-2xl transition-all duration-300 bg-white h-full" >
                                         <CardContent className="p-0 h-full flex flex-col">
                                             <div className="relative overflow-hidden flex-shrink-0">
                                                 <img
@@ -109,10 +109,13 @@ const ServicesSection = () => {
                                                 />
                                             </div>
 
-                                            <div className="bg-white p-6 text-center flex-grow flex items-center justify-center">
-                                                <h3 className="text-xl font-[500] text-gray-800">
+                                            <div className="bg-white p-4 text-center flex-grow flex items-left justify-center flex-col space-y-2">
+                                                <h3 className="text-xl head text-left font-[500] text-gray-800">
                                                     {service.title}
                                                 </h3>
+                                                <p className="text-gray-600 text-sm text-left">
+                                                    {service.description}
+                                                </p>
                                             </div>
                                         </CardContent>
                                     </Card>

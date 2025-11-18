@@ -27,9 +27,9 @@ const Service = () => {
                                     index % 2 === 0 ? '' : 'lg:flex-row-reverse'
                                 }`}
                             >
-                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-center">
                                     {/* Image Side */}
-                                    <div className={`${index % 2 === 0 ? 'lg:order-1  p-12 xl:p-20' : 'lg:order-2 p-12 xl:p-20'}`}>
+                                    <div className={`${index % 2 === 0 ? 'lg:order-1  p-6 xl:p-20' : 'lg:order-2 p-6 xl:p-20'}`}>
                                         {about.image ? (
                                             <div className="relative">
                                                 <div className="absolute inset-0 border-[12px] border-[#3c4c24] transform translate-x-4 translate-y-4 pointer-events-none"></div>
@@ -95,14 +95,14 @@ const Service = () => {
 
             <section className="max-w-7xl mx-auto lg:py-20 py-10 md:py-32">
                 <div className="px-4">
-                    <div className="flex flex-col gap-6 mb-12 items-start justify-between">
+                    {/* <div className="flex flex-col gap-6 mb-12 items-start justify-between">
                         <h2 className="text-4xl lg:text-6xl text-[#3c4c24] font-[500] head">
                             {service?.title || "Service"}
                         </h2>
                         <p className="text-lg p-m text-gray-600 text-start">
                             {service?.description || "Service description will appear here."}
                         </p>
-                    </div>
+                    </div> */}
                     {galleryImages && galleryImages.length > 0 ? (
                         <div className="columns-2 lg:columns-3 gap-4 space-y-4">
                             {galleryImages.map((image, index) => (
