@@ -12,7 +12,7 @@ export function BannerSection({ title }) {
 
       <div className="relative z-20 flex flex-col items-center justify-end lg:justify-center h-full text-center px-4 pb-10 lg:pb-0">
         {/* Title */}
-        <h1 className="text-3xl head md:text-5xl font-bold text-olive-green-200 lg:mb-2">
+        <h1 className="text-3xl head md:text-5xl font-[500] text-olive-green-200 lg:mb-2">
           {title}
         </h1>
 

@@ -13,7 +13,7 @@ const ServiceDetailSection1 = () => {
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Large background text */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none overflow-hidden">
-                    <h1 className="text-[8rem] lg:text-[12rem] font-bold text-gray-200 opacity-10 select-none whitespace-nowrap head">
+                    <h1 className="text-[8rem] lg:text-[12rem] font-[500] text-gray-200 opacity-10 select-none whitespace-nowrap head">
                         Services
                     </h1>
                 </div>
@@ -44,7 +44,7 @@ const ServiceDetailSection1 = () => {
                             </svg>
                         </div>
 
-                        <h2 className="text-4xl lg:text-5xl font-bold text-[#3c4c24] leading-tight head">
+                        <h2 className="text-4xl lg:text-5xl font-[500] text-[#3c4c24] leading-tight head">
                             Experience the Art of Professional Hair Care
                         </h2>
 
@@ -72,7 +72,7 @@ const ServiceDetailSection1 = () => {
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 className="font-semibold text-[#3c4c24] mb-1">
+                                    <h3 className="font-[500] text-[#3c4c24] mb-1">
                                         Expert Consultation
                                     </h3>
                                     <p className="text-gray-600 text-sm">
@@ -98,7 +98,7 @@ const ServiceDetailSection1 = () => {
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 className="font-semibold text-[#3c4c24] mb-1">
+                                    <h3 className="font-[500] text-[#3c4c24] mb-1">
                                         Premium Products
                                     </h3>
                                     <p className="text-gray-600 text-sm">
@@ -124,7 +124,7 @@ const ServiceDetailSection1 = () => {
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 className="font-semibold text-[#3c4c24] mb-1">
+                                    <h3 className="font-[500] text-[#3c4c24] mb-1">
                                         Relaxing Experience
                                     </h3>
                                     <p className="text-gray-600 text-sm">

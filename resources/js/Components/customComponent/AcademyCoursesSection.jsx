@@ -31,7 +31,7 @@ const AcademyCoursesSection = () => {
                 <div className="max-w-7xl mx-auto relative z-10">
                     {/* Header */}
                     <div className="text-center mb-16">
-                        <h2 className="text-5xl lg:text-6xl font-bold text-[#3c4c24] head mb-4">
+                        <h2 className="text-5xl lg:text-6xl font-[500] text-[#3c4c24] head mb-4">
                             Academy Courses
                         </h2>
                         <p className="text-gray-700 text-lg max-w-2xl mx-auto">
@@ -91,7 +91,7 @@ const AcademyCoursesSection = () => {
 
                                         {/* Content Section */}
                                         <div className="p-6 flex-grow flex flex-col bg-white">
-                                            <h3 className="font-bold text-xl text-[#3c4c24] mb-3 head group-hover:text-[#D4B5A0] transition-colors">
+                                            <h3 className="font-[500] text-xl text-[#3c4c24] mb-3 head group-hover:text-[#D4B5A0] transition-colors">
                                                 {course.title || 'Course Title'}
                                             </h3>
                                             
@@ -105,7 +105,7 @@ const AcademyCoursesSection = () => {
                                                 {course.fees && (
                                                     <div className="flex items-center gap-2 text-gray-600">
                                                         <span className="text-sm font-medium">Fees:</span>
-                                                        <span className="text-sm font-semibold text-[#3c4c24]">{course.fees}</span>
+                                                        <span className="text-sm font-[500] text-[#3c4c24]">{course.fees}</span>
                                                     </div>
                                                 )}
                                             </div>
@@ -113,7 +113,7 @@ const AcademyCoursesSection = () => {
                                             {/* Individual Book Now Button */}
                                             <button
                                                 onClick={openBookingPopup}
-                                                className="w-full py-3 bg-gradient-to-r from-[#3c4c24] to-[#2d3820] text-white font-semibold rounded-lg hover:from-[#2d3820] hover:to-[#1a2415] transition-all duration-300 transform hover:scale-[1.02] shadow-md hover:shadow-lg"
+                                                className="w-full py-3 bg-gradient-to-r from-[#3c4c24] to-[#2d3820] text-white font-[500] rounded-lg hover:from-[#2d3820] hover:to-[#1a2415] transition-all duration-300 transform hover:scale-[1.02] shadow-md hover:shadow-lg"
                                             >
                                                 Book Now
                                             </button>

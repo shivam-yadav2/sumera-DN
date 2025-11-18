@@ -182,7 +182,7 @@ const SalonVideoGallery = () => {
                             Watch Our Work
                         </p>
                         <h1
-                            className="text-5xl md:text-6xl font-bold mb-4"
+                            className="text-5xl md:text-6xl font-[500] mb-4"
                             style={{ color: "#5c7650" }}
                         >
                             Video Gallery
@@ -239,7 +239,7 @@ const SalonVideoGallery = () => {
                                     {/* Overlay */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                         <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                                            <h3 className="font-semibold text-lg mb-2">
+                                            <h3 className="font-[500] text-lg mb-2">
                                                 {video.alt}
                                             </h3>
                                             <p className="text-sm text-gray-300">
@@ -260,7 +260,7 @@ const SalonVideoGallery = () => {
 
                                     {/* Duration Badge */}
                                     <div
-                                        className="absolute top-4 right-4 px-3 py-1 rounded-full text-white text-xs font-semibold backdrop-blur-sm"
+                                        className="absolute top-4 right-4 px-3 py-1 rounded-full text-white text-xs font-[500] backdrop-blur-sm"
                                         style={{
                                             backgroundColor:
                                                 "rgba(92, 118, 80, 0.8)",
@@ -321,7 +321,7 @@ const SalonVideoGallery = () => {
                                 </div>
 
                                 <div className="text-white">
-                                    <h2 className="text-2xl font-bold mb-2">
+                                    <h2 className="text-2xl font-[500] mb-2">
                                         {selectedVideo.alt}
                                     </h2>
                                     <div className="flex items-center justify-between">

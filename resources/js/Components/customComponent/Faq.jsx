@@ -53,10 +53,10 @@ export default function Faq() {
           <p className="text-lg italic mb-2" style={{ color: '#5c7650' }}>
             Common Questions
           </p>
-          <h2 className="lg:text-5xl text-3xl head font-semibold " style={{ color: '#5c7650' }}>
+          <h2 className="lg:text-5xl text-3xl head font-[500] " style={{ color: '#5c7650' }}>
             Frequently Asked
           </h2>
-          <h3 className="lg:text-5xl text-3xl head font-semibold" style={{ color: '#5c7650' }}>
+          <h3 className="lg:text-5xl text-3xl head font-[500]" style={{ color: '#5c7650' }}>
             Questions
           </h3>
           <p className="text-gray-600 mt-4 lg:mt-6 max-w-2xl mx-auto lg:text-lg text-sm">
@@ -79,7 +79,7 @@ export default function Faq() {
                 onClick={() => toggleAccordion(index)}
                 className="w-full flex items-start justify-between p-6 hover:bg-gray-50 transition-colors"
               >
-                <h3 className="text-left  font-semibold text-gray-900 text-lg pr-4">
+                <h3 className="text-left  font-[500] text-gray-900 text-lg pr-4">
                   {faq.question}
                 </h3>
                 <ChevronDown

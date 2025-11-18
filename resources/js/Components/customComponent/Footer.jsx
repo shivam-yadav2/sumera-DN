@@ -51,7 +51,7 @@ const Footer = () => {
                         {/* Social Media Links */}
                         <div className="flex items-center gap-4 pt-4">
                             <a
-                                href="https://www.facebook.com/darpanbypooja"
+                                href="https://www.facebook.com/sumeerasalonandacademy"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="w-10 h-10 bg-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-105"
@@ -60,7 +60,7 @@ const Footer = () => {
                                 <Facebook className="w-5 h-5 text-[#1877F2]" />
                             </a>
                             <a
-                                href="https://www.instagram.com/darpan_by_pooja/"
+                                href="https://www.instagram.com/sumeera_salon/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="w-10 h-10 bg-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-105"
@@ -91,7 +91,7 @@ const Footer = () => {
 
                     {/* Quick Links */}
                     <div className="space-y-6">
-                        <h3 className="text-xl font-bold text-white head mb-6">
+                        <h3 className="text-xl font-[500] text-white head mb-6">
                             Quick Links
                         </h3>
                         <ul className="space-y-3">
@@ -145,10 +145,10 @@ const Footer = () => {
                             </li>
                             <li>
                                 <a
-                                    href="/franchise"
+                                    href="/blogs"
                                     className="text-gray-400 hover:text-[#3c4c24] transition-colors text-sm block"
                                 >
-                                    Sumeera Salon Franchise
+                                    Blogs
                                 </a>
                             </li>
                         </ul>
@@ -156,7 +156,7 @@ const Footer = () => {
 
                     {/* Services */}
                     <div className="space-y-6">
-                        <h3 className="text-xl font-bold text-white head mb-6">
+                        <h3 className="text-xl font-[500] text-white head mb-6">
                             Our Services
                         </h3>
                         {services && services.length > 0 ? (
@@ -181,7 +181,7 @@ const Footer = () => {
 
                     {/* Contact & Newsletter */}
                     <div className="space-y-6">
-                        <h3 className="text-xl font-bold text-white head mb-6">
+                        <h3 className="text-xl font-[500] text-white head mb-6">
                             Contact Information
                         </h3>
                         <ul className="space-y-4 mb-6">
@@ -252,6 +252,98 @@ const Footer = () => {
                             </a>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div className="fixed bottom-0 left-0 w-full bg-white shadow-lg md:hidden z-50 border-t">
+                <div className="flex items-center justify-between px-6 py-3">
+                    {/* Chat (WhatsApp) */}
+                    <a
+                        href="https://wa.me/917355417843"
+                        target="_blank"
+                        className="flex flex-col items-center text-green-600"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6"
+                            viewBox="0 0 32 32"
+                            fill="currentColor"
+                        >
+                            <path d="M16.002 3C9.38 3 4 8.37 4 15a11.9 11.9 0 0 0 1.63 5.98L4 29l8.27-2.16A12.1 12.1 0 0 0 16 27c6.62 0 12-5.37 12-12S22.62 3 16.002 3zm6.41 16.15c-.27.77-1.6 1.51-2.2 1.61-.56.1-1.27.14-2.06-.13-.47-.15-1.07-.34-1.84-.67-3.23-1.4-5.33-4.67-5.5-4.89-.16-.22-1.31-1.75-1.31-3.34 0-1.58.83-2.36 1.12-2.68.29-.32.64-.4.85-.4.22 0 .42.01.6.01.19 0 .45-.07.71.54.27.63.92 2.22 1 2.38.08.16.13.35.02.57-.11.22-.17.36-.34.56-.17.2-.36.44-.52.59-.17.15-.34.32-.15.63.19.31.84 1.38 1.8 2.24 1.24 1.11 2.28 1.46 2.6 1.62.33.16.52.14.72-.08.2-.22.83-.97 1.06-1.3.22-.33.45-.28.76-.17.31.1 1.97.93 2.31 1.09.34.17.56.25.64.39.08.14.08.81-.19 1.58z" />
+                        </svg>
+                        <span className="text-xs text-gray-700 mt-1">
+                            WhatsApp
+                        </span>
+                    </a>
+
+                    {/* Book Now */}
+                    <a
+                        href="/contact"
+                        className="flex flex-col items-center text-[#3c4c24]"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M5 3a2 2 0 012-2h10a2 2 0 012 2v18l-7-4-7 4V3z"
+                            />
+                        </svg>
+                        <span className="text-xs text-gray-700 mt-1">
+                            Book Now
+                        </span>
+                    </a>
+
+                    {/* Email Icon */}
+                    <a
+                        href="https://www.instagram.com/sumeera_salon/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex flex-col items-center text-red-600"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                            className="h-6 w-6"
+                        >
+                            <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.75a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0z" />
+                        </svg>
+
+                        <span className="text-xs text-gray-700 mt-1">
+                            Instagram
+                        </span>
+                    </a>
+
+                    {/* Call Us */}
+                    <a
+                        href="tel:7355417843"
+                        className="flex flex-col items-center text-[#0a66c2]"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M3 5a2 2 0 012-2h1.28a2 2 0 011.94 1.515l.62 2.485a2 2 0 01-.58 1.955l-1.07 1.07a16 16 0 007.07 7.07l1.07-1.07a2 2 0 011.955-.58l2.485.62A2 2 0 0121 17.72V19a2 2 0 01-2 2h-1C9.82 21 3 14.18 3 6V5z"
+                            />
+                        </svg>
+                        <span className="text-xs text-gray-700 mt-1">
+                            Call Us
+                        </span>
+                    </a>
                 </div>
             </div>
         </footer>

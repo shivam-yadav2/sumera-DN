@@ -103,7 +103,7 @@ export default function ContactPage() {
                     <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
                         {/* Contact Information */}
                         <div>
-                            <h2 className="text-3xl font-bold text-gray-900 mb-8">
+                            <h2 className="text-3xl font-[500] text-gray-900 mb-8">
                                 Get In Touch
                             </h2>
 
@@ -113,7 +113,7 @@ export default function ContactPage() {
                                         <Phone className="w-5 h-5 text-white" />
                                     </div>
                                     <div>
-                                        <h3 className="font-semibold text-gray-900 mb-1">
+                                        <h3 className="font-[500] text-gray-900 mb-1">
                                             Phone
                                         </h3>
                                         <p className="text-gray-600">
@@ -127,7 +127,7 @@ export default function ContactPage() {
                                         <Mail className="w-5 h-5 text-white" />
                                     </div>
                                     <div>
-                                        <h3 className="font-semibold text-gray-900 mb-1">
+                                        <h3 className="font-[500] text-gray-900 mb-1">
                                             Email
                                         </h3>
                                         <p className="text-gray-600">
@@ -141,7 +141,7 @@ export default function ContactPage() {
                                         <MapPin className="w-5 h-5 text-white" />
                                     </div>
                                     <div>
-                                        <h3 className="font-semibold text-gray-900 mb-1">
+                                        <h3 className="font-[500] text-gray-900 mb-1">
                                             Address
                                         </h3>
                                         <p className="text-gray-600">
@@ -157,7 +157,7 @@ export default function ContactPage() {
 
                         {/* Contact Form */}
                         <div>
-                            <h2 className="text-3xl font-bold text-gray-900 mb-8">
+                            <h2 className="text-3xl font-[500] text-gray-900 mb-8">
                                 Send Message
                             </h2>
 

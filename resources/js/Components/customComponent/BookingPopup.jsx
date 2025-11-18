@@ -111,7 +111,7 @@ const BookingPopup = ({ isOpen, onClose, services = [] }) => {
 
                 {/* Header */}
                 <div className="p-6 border-b border-gray-200">
-                    <h2 className="text-2xl font-bold text-[#3c4c24]">
+                    <h2 className="text-2xl font-[500] text-[#3c4c24]">
                         Book an Appointment
                     </h2>
                     <p className="text-gray-600 mt-2">

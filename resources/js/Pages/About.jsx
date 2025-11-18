@@ -33,10 +33,10 @@ const About = () => {
                 ></div>
                 <div className="relative z-10 space-y-5">
                     {/* <p className="text-xl head">Lucknow since 2012</p> */}
-                    <h1 className="text-5xl font-bold my-4 head">
+                    <h1 className="text-5xl font-[500] my-4 head">
                          Our Story
                     </h1>
-                    <p className="max-w-xl mx-auto mb-6 text-lg font-semibold">
+                    <p className="max-w-xl mx-auto mb-6 text-lg font-[500]">
                     Beauty is more than a service — it’s an experience.
 Since 2012, we’ve been helping clients and students express their best selves with style and skill.
 Our goal is simple: to blend expertise with a personal touch, so every visit feels special.

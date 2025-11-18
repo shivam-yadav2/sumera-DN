@@ -72,7 +72,7 @@ const SalonPricing = () => {
             <div className="relative col-span-4 lg:col-span-3 bg-gradient-to-br from-pink-50 via-white to-pink-50 lg:py-20 py-10 px-4 ">
                 {/* Large background text "Pricing" */}
                 <div className="absolute top-20 left-1/2 transform -translate-x-1/2 pointer-events-none overflow-hidden">
-                    <h1 className="text-[10rem] lg:text-[14rem] font-bold text-gray-200 opacity-15 select-none whitespace-nowrap">
+                    <h1 className="text-[10rem] lg:text-[14rem] font-[500] text-gray-200 opacity-15 select-none whitespace-nowrap">
                         Pricing
                     </h1>
                 </div>
@@ -120,7 +120,7 @@ const SalonPricing = () => {
                             </svg>
                         </div>
 
-                        <h2 className="text-5xl lg:text-6xl font-bold text-[#3c4c24] head">
+                        <h2 className="text-5xl lg:text-6xl font-[500] text-[#3c4c24] head">
                             Our Pricing
                         </h2>
                     </div>
@@ -162,10 +162,10 @@ const SalonPricing = () => {
                                     className="border-b border-dotted border-gray-300 pb-6 last:border-0"
                                 >
                                     <div className="flex justify-between items-start mb-2">
-                                        <h3 className="text-3xl font-bold text-[#3c4c24] head flex-1">
+                                        <h3 className="text-3xl font-[500] text-[#3c4c24] head flex-1">
                                             {item.title}
                                         </h3>
-                                        <span className="text-2xl font-bold text-gray-800 ml-4">
+                                        <span className="text-2xl font-[500] text-gray-800 ml-4">
                                             {/* {item.price} */}
                                         </span>
                                     </div>
@@ -211,10 +211,10 @@ const SalonPricing = () => {
                                     className="border-b border-dotted border-gray-300 pb-6 last:border-0"
                                 >
                                     <div className="flex justify-between items-start mb-2">
-                                        <h3 className="text-3xl font-bold text-[#3c4c24] head flex-1">
+                                        <h3 className="text-3xl font-[500] text-[#3c4c24] head flex-1">
                                             {item.title}
                                         </h3>
-                                        <span className="text-2xl font-bold text-gray-800 ml-4">
+                                        <span className="text-2xl font-[500] text-gray-800 ml-4">
                                             {/* {item.price} */}
                                         </span>
                                     </div>

@@ -123,7 +123,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
                     <div className="p-5 lg:p-6 overflow-y-auto flex flex-col justify-center">
                         {/* Header */}
                         <div className="mb-6">
-                            <h2 className="text-2xl font-bold text-[#3c4c24] head mb-2">
+                            <h2 className="text-2xl font-[500] text-[#3c4c24] head mb-2">
                                 Get In Touch!
                             </h2>
                             <p className="text-sm text-gray-600">
@@ -234,7 +234,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
                                 <Button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full bg-[#3c4c24] hover:bg-[#2d3a1b] text-white px-6 py-3 text-sm font-semibold transition-all duration-300 rounded-lg shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                                    className="w-full bg-[#3c4c24] hover:bg-[#2d3a1b] text-white px-6 py-3 text-sm font-[500] transition-all duration-300 rounded-lg shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                                 >
                                     {isSubmitting ? (
                                         <>

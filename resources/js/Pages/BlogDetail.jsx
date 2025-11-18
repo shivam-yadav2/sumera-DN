@@ -82,7 +82,7 @@ const BlogDetail = () => {
                     <div className="flex flex-wrap items-center justify-between gap-4 mb-8 text-sm text-[#7a705e]">
                         <Link
                             href="/blogs"
-                            className="inline-flex items-center gap-2 font-semibold text-[#3c4c24] hover:text-[#a0815c] transition"
+                            className="inline-flex items-center gap-2 font-[500] text-[#3c4c24] hover:text-[#a0815c] transition"
                         >
                             <ArrowLeft className="h-4 w-4" />
                             Back to all articles
@@ -97,10 +97,10 @@ const BlogDetail = () => {
                     </div>
 
                     <header className="text-center mb-12">
-                        <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#3c4c24]/10 text-[#3c4c24] font-semibold uppercase tracking-wide text-xs mb-5">
+                        <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-[#3c4c24]/10 text-[#3c4c24] font-[500] uppercase tracking-wide text-xs mb-5">
                             Sumeera Salon &amp; Academy Insights
                         </div>
-                        <h1 className="text-4xl md:text-5xl font-bold text-[#2f3720] leading-tight mb-6">
+                        <h1 className="text-4xl md:text-5xl font-[500] text-[#2f3720] leading-tight mb-6">
                             {blog.title}
                         </h1>
                         {blog.excerpt && (
@@ -116,13 +116,13 @@ const BlogDetail = () => {
                                     className="w-8 h-8 object-contain"
                                 />
                                 <div className="text-left">
-                                    <p className="text-sm font-semibold text-[#2f3720]">Sumeera Editorial Team</p>
+                                    <p className="text-sm font-[500] text-[#2f3720]">Sumeera Editorial Team</p>
                                     <p className="text-xs text-gray-500">Beauty & Wellness Specialists</p>
                                 </div>
                             </div>
                             <button
                                 onClick={handleShare}
-                                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#3c4c24] text-[#3c4c24] font-semibold hover:bg-[#3c4c24] hover:text-white transition"
+                                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#3c4c24] text-[#3c4c24] font-[500] hover:bg-[#3c4c24] hover:text-white transition"
                             >
                                 <Share2 className="h-4 w-4" />
                                 Share article
@@ -165,7 +165,7 @@ const BlogDetail = () => {
 
                         <aside className="space-y-8 col-span-2">
                             <div className="bg-white rounded-3xl shadow-md border border-[#e4ded2] p-6">
-                                <h2 className="text-xl font-semibold text-[#2f3720] mb-4">Why this matters</h2>
+                                <h2 className="text-xl font-[500] text-[#2f3720] mb-4">Why this matters</h2>
                                 <p className="text-gray-600 text-sm">
                                     At Sumeera Salon &amp; Academy, we blend artistry and technique to deliver experiences
                                     that elevate your confidence. Here&apos;s what this article helps you uncover:
@@ -174,7 +174,7 @@ const BlogDetail = () => {
                             </div>
 
                             <div className="bg-gradient-to-br from-[#3c4c24] to-[#a0815c] text-white rounded-3xl shadow-lg p-6 space-y-4">
-                                <h3 className="text-xl font-semibold">Book a personalised consultation</h3>
+                                <h3 className="text-xl font-[500]">Book a personalised consultation</h3>
                                 <p className="text-sm text-white/80">
                                     Inspired by this article? Let our experts tailor a look that reflects your style.
                                     Choose in-salon experiences or academy sessions crafted for passionate learners.
@@ -182,14 +182,14 @@ const BlogDetail = () => {
                                 <div className="grid gap-3">
                                     <Link
                                         href="/contact"
-                                        className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-white text-[#3c4c24] font-semibold hover:bg-[#f8f6f2] transition"
+                                        className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-white text-[#3c4c24] font-[500] hover:bg-[#f8f6f2] transition"
                                     >
                                         <ExternalLink className="h-4 w-4" />
                                         Contact Sumeera Team
                                     </Link>
                                     <Link
                                         href="/academy"
-                                        className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-[#3c4c24]/40 text-white font-semibold hover:bg-[#3c4c24]/60 transition"
+                                        className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-[#3c4c24]/40 text-white font-[500] hover:bg-[#3c4c24]/60 transition"
                                     >
                                         Explore Academy Programs
                                     </Link>
@@ -199,7 +199,7 @@ const BlogDetail = () => {
                     </div>
 
                     <div className="bg-[#f5f1ea] border border-[#e4ded2] rounded-3xl p-8 md:p-12 mb-20 text-center">
-                        <h2 className="text-2xl font-semibold text-[#2f3720] mb-4">Stay polished with our beauty dispatch</h2>
+                        <h2 className="text-2xl font-[500] text-[#2f3720] mb-4">Stay polished with our beauty dispatch</h2>
                         <p className="text-gray-600 max-w-2xl mx-auto mb-6">
                             Receive curated looks, backstage stories, and academy masterclasses straight to your inbox.
                             We respect your time—only thoughtful updates designed to inspire.
@@ -219,7 +219,7 @@ const BlogDetail = () => {
                             />
                             <button
                                 type="submit"
-                                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#3c4c24] text-white font-semibold hover:bg-[#2f3720] transition"
+                                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#3c4c24] text-white font-[500] hover:bg-[#2f3720] transition"
                             >
                                 Keep me inspired
                             </button>
@@ -234,13 +234,13 @@ const BlogDetail = () => {
                         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12">
                             <div>
                                 <p className="uppercase tracking-[0.3em] text-xs text-[#a0815c] mb-3">More stories</p>
-                                <h2 className="text-3xl md:text-4xl font-semibold text-white">
+                                <h2 className="text-3xl md:text-4xl font-[500] text-white">
                                     Continue your beauty journey
                                 </h2>
                             </div>
                             <Link
                                 href="/blogs"
-                                className="inline-flex items-center gap-2 text-sm font-semibold text-[#a0815c] hover:text-white transition"
+                                className="inline-flex items-center gap-2 text-sm font-[500] text-[#a0815c] hover:text-white transition"
                             >
                                 View all
                                 <ArrowLeft className="rotate-180 h-4 w-4" />
@@ -260,14 +260,14 @@ const BlogDetail = () => {
                                             loading="lazy"
                                         />
                                     ) : (
-                                        <div className="w-full h-40 rounded-lg bg-[#2f2a24] flex items-center justify-center text-[#a0815c] font-semibold mb-4">
+                                        <div className="w-full h-40 rounded-lg bg-[#2f2a24] flex items-center justify-center text-[#a0815c] font-[500] mb-4">
                                             Sumeera Salon &amp; Academy
                                         </div>
                                     )}
-                                    <p className="text-xs uppercase tracking-wider text-[#a0815c] font-semibold mb-2">
+                                    <p className="text-xs uppercase tracking-wider text-[#a0815c] font-[500] mb-2">
                                         {formatDate(item.published_at)}
                                     </p>
-                                    <h3 className="text-xl font-semibold text-white mb-3">
+                                    <h3 className="text-xl font-[500] text-white mb-3">
                                         {item.title}
                                     </h3>
                                     <p className="text-gray-400 mb-4 text-sm line-clamp-3">
@@ -275,7 +275,7 @@ const BlogDetail = () => {
                                     </p>
                                     <Link
                                         href={`/blogs/${item.slug}`}
-                                        className="text-[#a0815c] font-semibold hover:text-white transition inline-flex items-center gap-2"
+                                        className="text-[#a0815c] font-[500] hover:text-white transition inline-flex items-center gap-2"
                                     >
                                         Read More
                                         <ExternalLink className="h-4 w-4" />

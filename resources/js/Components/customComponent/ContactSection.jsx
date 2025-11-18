@@ -144,7 +144,7 @@ const SalonContact = () => {
                                 </svg>
                             </div>
 
-                            <h2 className="text-4xl lg:text-5xl font-bold text-[#3c4c24] leading-tight head">
+                            <h2 className="text-4xl lg:text-5xl font-[500] text-[#3c4c24] leading-tight head">
                                 Feel free to get in touch!
                                 <br />
                                 contact now

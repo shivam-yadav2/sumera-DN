@@ -34,12 +34,10 @@ const OffersDealsSection = () => {
                 <div className="max-w-7xl mx-auto relative z-10">
                     {/* Header */}
                     <div className="text-center mb-10 lg:mb-16">
-                        <h2 className="text-5xl lg:text-6xl font-bold text-[#3c4c24] head mb-4">
-                            Offers & Deals
+                        <h2 className="text-5xl lg:text-6xl font-[500] text-[#3c4c24] head mb-4">
+                            Deals & Offers
                         </h2>
-                        <p className="text-gray-700 text-lg max-w-2xl mx-auto">
-                            Exclusive deals and special offers just for you
-                        </p>
+                        
                     </div>
 
                     {/* Offers Slider */}
@@ -99,7 +97,7 @@ const OffersDealsSection = () => {
                                             {/* Individual Book Now Button */}
                                             <button
                                                 onClick={openBookingPopup}
-                                                className="w-full py-3 bg-gradient-to-r from-[#3c4c24] to-[#2d3820] text-white font-semibold  hover:from-[#2d3820] hover:to-[#1a2415] transition-all duration-300 transform hover:scale-[1.02] shadow-md hover:shadow-lg mt-auto"
+                                                className="w-full py-3 bg-gradient-to-r from-[#3c4c24] to-[#2d3820] text-white font-[500]  hover:from-[#2d3820] hover:to-[#1a2415] transition-all duration-300 transform hover:scale-[1.02] shadow-md hover:shadow-lg mt-auto"
                                             >
                                                 Book Now
                                             </button>

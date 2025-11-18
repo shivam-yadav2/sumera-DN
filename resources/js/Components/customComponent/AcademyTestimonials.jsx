@@ -75,7 +75,7 @@ const AcademyTestimonials = () => {
                         </svg>
                     </div>
 
-                    <h2 className="text-4xl lg:text-6xl font-bold text-[#3c4c24] mb-6 head">
+                    <h2 className="text-4xl lg:text-6xl font-[500] text-[#3c4c24] mb-6 head">
                         What Our Students Say
                     </h2>
 
@@ -126,7 +126,7 @@ const AcademyTestimonials = () => {
 
                                 {/* Student Info */}
                                 <div className="border-t pt-4">
-                                    <h4 className="font-bold text-[#3c4c24] text-lg">
+                                    <h4 className="font-[500] text-[#3c4c24] text-lg">
                                         {testimonial.name}
                                     </h4>
                                     <p className="text-sm text-gray-500">
@@ -145,7 +145,7 @@ const AcademyTestimonials = () => {
                     <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-400 rounded-full opacity-10 blur-3xl"></div>
 
                     <div className="relative z-10">
-                        <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4 text-center head">
+                        <h3 className="text-3xl lg:text-4xl font-[500] text-white mb-4 text-center head">
                             Success by Numbers
                         </h3>
                         <p className="text-white/80 text-center mb-12 max-w-2xl mx-auto">
@@ -159,10 +159,10 @@ const AcademyTestimonials = () => {
                                     key={index}
                                     className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20 transition-all duration-300"
                                 >
-                                    <div className="text-5xl lg:text-6xl font-bold text-white mb-2 head">
+                                    <div className="text-5xl lg:text-6xl font-[500] text-white mb-2 head">
                                         {story.number}
                                     </div>
-                                    <h4 className="text-xl font-semibold text-white mb-2">
+                                    <h4 className="text-xl font-[500] text-white mb-2">
                                         {story.title}
                                     </h4>
                                     <p className="text-white/70 text-sm">
@@ -176,7 +176,7 @@ const AcademyTestimonials = () => {
 
                 {/* Gallery Section */}
                 {/* <div className="mt-20">
-                    <h3 className="text-3xl lg:text-4xl font-bold text-[#3c4c24] mb-8 text-center head">
+                    <h3 className="text-3xl lg:text-4xl font-[500] text-[#3c4c24] mb-8 text-center head">
                         Student Achievements
                     </h3>
                     
@@ -214,10 +214,10 @@ const AcademyTestimonials = () => {
 
                 {/* CTA */}
                 <div className="mt-16 text-center">
-                    <p className="text-[#3c4c24] text-lg mb-6 font-semibold">
+                    <p className="text-[#3c4c24] text-lg mb-6 font-[500]">
                         Ready to start your success story?
                     </p>
-                    <button className="bg-[#3c4c24] text-white px-10 py-4 text-lg font-semibold rounded-lg hover:bg-[#2c3c14] transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                    <button className="bg-[#3c4c24] text-white px-10 py-4 text-lg font-[500] rounded-lg hover:bg-[#2c3c14] transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
                         Join Our Academy Today
                     </button>
                 </div>

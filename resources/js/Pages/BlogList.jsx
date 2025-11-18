@@ -81,7 +81,7 @@ const BlogList = () => {
                         <div className="relative z-10 grid gap-8 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-center">
                             <div>
                                 <p className="uppercase tracking-[0.4em] text-xs text-[#e7d3ba] mb-4">Sumeera Journal</p>
-                                <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-5">
+                                <h1 className="text-4xl md:text-5xl font-[500] leading-tight mb-5">
                                     Stories, rituals, and beauty wisdom from our studio &amp; academy
                                 </h1>
                                 <p className="text-white/70 text-sm md:text-base max-w-2xl">
@@ -95,7 +95,7 @@ const BlogList = () => {
                                     </span>
                                     <Link
                                         href="#latest-articles"
-                                        className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white text-[#3c4c24] font-semibold hover:bg-[#f5efe3] transition"
+                                        className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white text-[#3c4c24] font-[500] hover:bg-[#f5efe3] transition"
                                     >
                                         Read the latest
                                         <ArrowRight className="h-4 w-4" />
@@ -103,7 +103,7 @@ const BlogList = () => {
                                 </div>
                             </div>
                             <div className="bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8 backdrop-blur space-y-4">
-                                <h2 className="text-lg font-semibold text-white">Trending topics</h2>
+                                <h2 className="text-lg font-[500] text-white">Trending topics</h2>
                                 <p className="text-white/60 text-sm">
                                     Browse themes that our community can&apos;t stop talking about.
                                 </p>
@@ -166,7 +166,7 @@ const BlogList = () => {
                             </div>
                         </div>
                         <div className="flex flex-wrap items-center gap-3 text-xs text-[#7a705e]">
-                            <span className="font-semibold text-[#3c4c24]">
+                            <span className="font-[500] text-[#3c4c24]">
                                 {filteredBlogs.length} {filteredBlogs.length === 1 ? "story" : "stories"} curated
                             </span>
                             {searchTerm && (
@@ -189,14 +189,14 @@ const BlogList = () => {
                     <div id="latest-articles" className="space-y-16">
                         {blogs.length === 0 ? (
                             <div className="bg-white shadow-md rounded-3xl p-12 text-center border border-[#e4ded2]">
-                                <h2 className="text-2xl font-semibold text-[#2f3720] mb-3">
+                                <h2 className="text-2xl font-[500] text-[#2f3720] mb-3">
                                     No beauty stories just yet
                                 </h2>
                                 <p className="text-gray-600 max-w-xl mx-auto">
                                     Our artists are crafting something special. In the meantime, explore our salon and academy
                                     offerings tailor-made for you.
                                 </p>
-                                <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-sm font-semibold">
+                                <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-sm font-[500]">
                                     <Link
                                         href="/services/bridal-makeup"
                                         className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#3c4c24] text-white hover:bg-[#2f3720] transition"
@@ -214,7 +214,7 @@ const BlogList = () => {
                             </div>
                         ) : filteredBlogs.length === 0 ? (
                             <div className="bg-white border border-[#f0e5d7] rounded-3xl p-12 text-center shadow-sm">
-                                <h2 className="text-2xl font-semibold text-[#2f3720] mb-3">
+                                <h2 className="text-2xl font-[500] text-[#2f3720] mb-3">
                                     We couldn&apos;t find a match
                                 </h2>
                                 <p className="text-gray-600 max-w-lg mx-auto mb-6">
@@ -226,7 +226,7 @@ const BlogList = () => {
                                         setSelectedMonth("all");
                                         setSearchTerm("");
                                     }}
-                                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#3c4c24] text-white text-sm font-semibold hover:bg-[#2f3720] transition"
+                                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#3c4c24] text-white text-sm font-[500] hover:bg-[#2f3720] transition"
                                 >
                                     Reset view
                                     <RefreshCw className="h-4 w-4" />
@@ -245,22 +245,22 @@ const BlogList = () => {
                                                     loading="lazy"
                                                 />
                                             ) : (
-                                                <div className="w-full h-full min-h-[320px] bg-[#ede3d4] flex items-center justify-center text-[#7a705e] font-semibold">
+                                                <div className="w-full h-full min-h-[320px] bg-[#ede3d4] flex items-center justify-center text-[#7a705e] font-[500]">
                                                     Sumeera Salon &amp; Academy
                                                 </div>
                                             )}
-                                            <div className="absolute top-4 left-4 bg-white/80 backdrop-blur px-4 py-1 rounded-full text-xs font-semibold text-[#3c4c24]">
+                                            <div className="absolute top-4 left-4 bg-white/80 backdrop-blur px-4 py-1 rounded-full text-xs font-[500] text-[#3c4c24]">
                                                 Editor&apos;s pick
                                             </div>
                                         </div>
                                         <div className="p-6 md:p-10 flex flex-col gap-6">
-                                            <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#a0815c]">
+                                            <div className="flex flex-wrap items-center gap-3 text-xs font-[500] uppercase tracking-[0.3em] text-[#a0815c]">
                                                 <span>{formatDate(featuredBlog.published_at)}</span>
                                                 <span className="w-8 border-t border-[#e4ded2]" />
                                                 <span>Signature insight</span>
                                             </div>
                                             <div>
-                                                <h2 className="text-3xl font-semibold text-[#2f3720] leading-tight mb-3">
+                                                <h2 className="text-3xl font-[500] text-[#2f3720] leading-tight mb-3">
                                                     {featuredBlog.title}
                                                 </h2>
                                                 <p className="text-gray-600 text-base">
@@ -273,7 +273,7 @@ const BlogList = () => {
                                                 </span>
                                                 <Link
                                                     href={`/blogs/${featuredBlog.slug}`}
-                                                    className="inline-flex items-center gap-2 text-[#3c4c24] font-semibold hover:text-[#a0815c] transition"
+                                                    className="inline-flex items-center gap-2 text-[#3c4c24] font-[500] hover:text-[#a0815c] transition"
                                                 >
                                                     Experience the story
                                                     <ArrowRight className="h-4 w-4" />
@@ -290,7 +290,7 @@ const BlogList = () => {
                                                 <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-2">
                                                     SALON &amp; ACADEMY PERSPECTIVES
                                                 </p>
-                                                <h3 className="text-2xl font-semibold text-[#2f3720]">
+                                                <h3 className="text-2xl font-[500] text-[#2f3720]">
                                                     Fresh drops straight from our stylists
                                                 </h3>
                                             </div>
@@ -313,18 +313,18 @@ const BlogList = () => {
                                                             loading="lazy"
                                                         />
                                                     ) : (
-                                                        <div className="w-full h-48 bg-[#ede3d4] flex items-center justify-center text-[#7a705e] font-semibold">
+                                                        <div className="w-full h-48 bg-[#ede3d4] flex items-center justify-center text-[#7a705e] font-[500]">
                                                             Sumeera Salon &amp; Academy
                                                         </div>
                                                     )}
                                                     <div className="p-6 space-y-4">
-                                                        <div className="flex flex-wrap items-center gap-3 text-xs uppercase font-semibold tracking-[0.3em] text-[#a0815c]">
+                                                        <div className="flex flex-wrap items-center gap-3 text-xs uppercase font-[500] tracking-[0.3em] text-[#a0815c]">
                                                             <span>{formatDate(blog.published_at)}</span>
                                                             <span className="w-6 border-t border-[#e4ded2]" />
                                                             <span>Beauty note</span>
                                                         </div>
                                                         <div>
-                                                            <h4 className="text-xl font-semibold text-[#2f3720] mb-3">
+                                                            <h4 className="text-xl font-[500] text-[#2f3720] mb-3">
                                                                 {blog.title}
                                                             </h4>
                                                             <p className="text-gray-600 text-sm line-clamp-3">
@@ -333,7 +333,7 @@ const BlogList = () => {
                                                         </div>
                                                         <Link
                                                             href={`/blogs/${blog.slug}`}
-                                                            className="inline-flex items-center gap-2 text-sm font-semibold text-[#3c4c24] hover:text-[#a0815c] transition"
+                                                            className="inline-flex items-center gap-2 text-sm font-[500] text-[#3c4c24] hover:text-[#a0815c] transition"
                                                         >
                                                             Read & reflect
                                                             <ArrowRight className="h-4 w-4" />
@@ -352,14 +352,14 @@ const BlogList = () => {
                         <div className="grid gap-6 md:grid-cols-[minmax(0,2.2fr)_minmax(0,1fr)] items-center">
                             <div className="relative p-10 md:p-14">
                                 <div className="absolute inset-0 bg-gradient-to-br from-[#a0815c]/20 via-transparent to-transparent pointer-events-none" />
-                                <h3 className="text-3xl font-semibold mb-4">
+                                <h3 className="text-3xl font-[500] mb-4">
                                     Want to experience these transformations in real life?
                                 </h3>
                                 <p className="text-white/70 leading-relaxed max-w-2xl">
                                     Meet our artists, discover signature treatments, and learn techniques that make every look
                                     feel effortless. Let&apos;s co-create your next celebration moment.
                                 </p>
-                                <div className="mt-8 flex flex-wrap gap-4 text-sm font-semibold">
+                                <div className="mt-8 flex flex-wrap gap-4 text-sm font-[500]">
                                     <Link
                                         href="/contact"
                                         className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white text-[#3c4c24] hover:bg-[#f5efe3] transition"

@@ -49,7 +49,7 @@ const AcademyWhyChoose = () => {
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Large background text */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none overflow-hidden opacity-5">
-                    <h1 className="text-[8rem] lg:text-[12rem] font-bold text-[#3c4c24] select-none whitespace-nowrap head">
+                    <h1 className="text-[8rem] lg:text-[12rem] font-[500] text-[#3c4c24] select-none whitespace-nowrap head">
                         Excellence
                     </h1>
                 </div>
@@ -79,7 +79,7 @@ const AcademyWhyChoose = () => {
                         </svg>
                     </div>
 
-                    <h2 className="text-4xl lg:text-6xl font-bold text-[#3c4c24] mb-6 head">
+                    <h2 className="text-4xl lg:text-6xl font-[500] text-[#3c4c24] mb-6 head">
                         Why Choose Our Academy
                     </h2>
 
@@ -103,7 +103,7 @@ const AcademyWhyChoose = () => {
                             </div>
 
                             {/* Content */}
-                            <h3 className="text-2xl font-bold text-[#3c4c24] mb-4 text-center head">
+                            <h3 className="text-2xl font-[500] text-[#3c4c24] mb-4 text-center head">
                                 {reason.title}
                             </h3>
 
@@ -120,7 +120,7 @@ const AcademyWhyChoose = () => {
                 {/* Bottom Image Section */}
                 <div className="mt-20 grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
                     <div className="space-y-6 col-span-3">
-                        <h3 className="text-3xl lg:text-4xl font-bold text-[#3c4c24] head">
+                        <h3 className="text-3xl lg:text-4xl font-[500] text-[#3c4c24] head">
                             Start Your Journey to Success
                         </h3>
                         <p className="text-gray-600 leading-relaxed text-lg">
@@ -130,7 +130,7 @@ const AcademyWhyChoose = () => {
                             designed to give you the competitive edge you need in
                             today's beauty industry.
                         </p>
-                        <button className="bg-[#3c4c24] text-white px-10 py-4 text-lg font-semibold rounded-lg hover:bg-[#2c3c14] transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                        <button className="bg-[#3c4c24] text-white px-10 py-4 text-lg font-[500] rounded-lg hover:bg-[#2c3c14] transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
                             Enroll Today
                         </button>
                     </div>

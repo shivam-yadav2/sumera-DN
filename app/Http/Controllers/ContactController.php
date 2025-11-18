@@ -62,10 +62,7 @@ class ContactController extends Controller
             $data['is_active'] = 1;
             Contact::create($data);
             return redirect()->back()->with('success_msg', 'Contact created successfully');
-        }
-
-
-    }
+        }}
 
 
 

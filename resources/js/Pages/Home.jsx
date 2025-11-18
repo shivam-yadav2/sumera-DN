@@ -118,7 +118,7 @@ const Home = () => {
                     <div className="bg-white rounded-lg shadow-2xl p-6 lg:p-16 relative overflow-visible">
                         {/* Large background text "Welcome" */}
                         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none overflow-hidden">
-                            <h1 className="text-[10rem] lg:text-[14rem] font-bold text-gray-200 opacity-15 select-none whitespace-nowrap">
+                            <h1 className="text-[10rem] lg:text-[14rem] font-[500] text-gray-200 opacity-15 select-none whitespace-nowrap">
                                 Welcome
                             </h1>
                         </div>
@@ -126,9 +126,8 @@ const Home = () => {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-center relative z-10">
                             {/* Left Content */}
                             <div className="space-y-6">
-                                <h2 className="text-3xl lg:text-4xl font-bold text-[#3c4c24] leading-tight head">
-                                    Where Beauty Meets Perfection – The Sumeera
-                                    Salon And Academy Story
+                                <h2 className="text-3xl lg:text-4xl font-[500] text-[#3c4c24] leading-tight head">
+                                    The Sumeera Salon And Academy
                                 </h2>
 
                                 <p className="text-gray-600 leading-relaxed text-base">
@@ -154,7 +153,7 @@ const Home = () => {
 
                                 {/* Signature */}
                                 {/* <div className=" flex items-center justify-center pointer-events-none overflow-hidden">
-                                    <h1 className="text-[4rem] lg:text-[8rem] head font-semibold text-[#3c4c24] opacity-15 select-none tracking-wider">
+                                    <h1 className="text-[4rem] lg:text-[8rem] head font-[500] text-[#3c4c24] opacity-15 select-none tracking-wider">
                                         Welcome
                                     </h1>
                                 </div> */}
@@ -202,10 +201,10 @@ const Home = () => {
             {/* <SalonPricing/> */}
             <SalonGallery gallery={gallery} />
             {/* Partners Section */}
-            <section className="bg-gradient-to-br from-gray-50 via-white to-gray-50 py-9 lg:py-12 px-4 overflow-hidden">
+            <section className="bg-gradient-to-br from-gray-50 via-white to-gray-50 py-8 lg:py-12 px-4 overflow-hidden">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12 lg:mb-16">
-                        <h2 className="text-3xl lg:text-5xl font-bold text-[#3c4c24] mb-4 head">
+                        <h2 className="text-3xl lg:text-5xl font-[500] text-[#3c4c24] mb-4 head">
                             Our Partners
                         </h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">

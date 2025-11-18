@@ -74,7 +74,7 @@ const ServiceDetailSection2 = () => {
                         </svg>
                     </div>
 
-                    <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6 head">
+                    <h2 className="text-4xl lg:text-6xl font-[500] text-white mb-6 head">
                         What Makes Us Special
                     </h2>
 
@@ -109,7 +109,7 @@ const ServiceDetailSection2 = () => {
 
                             {/* Content Section */}
                             <div className="p-8 space-y-4">
-                                <h3 className="text-2xl font-bold text-[#3c4c24] head">
+                                <h3 className="text-2xl font-[500] text-[#3c4c24] head">
                                     {feature.title}
                                 </h3>
                                 <p className="text-gray-600 leading-relaxed">
@@ -124,7 +124,7 @@ const ServiceDetailSection2 = () => {
                 <div className="mt-20 bg-white/10 backdrop-blur-sm rounded-3xl p-12">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div className="text-center">
-                            <div className="text-5xl lg:text-6xl font-bold text-white mb-2 head">
+                            <div className="text-5xl lg:text-6xl font-[500] text-white mb-2 head">
                                 15+
                             </div>
                             <p className="text-white/80 text-lg">
@@ -132,7 +132,7 @@ const ServiceDetailSection2 = () => {
                             </p>
                         </div>
                         <div className="text-center border-l-0 md:border-l border-white/20">
-                            <div className="text-5xl lg:text-6xl font-bold text-white mb-2 head">
+                            <div className="text-5xl lg:text-6xl font-[500] text-white mb-2 head">
                                 10K+
                             </div>
                             <p className="text-white/80 text-lg">
@@ -140,7 +140,7 @@ const ServiceDetailSection2 = () => {
                             </p>
                         </div>
                         <div className="text-center border-l-0 md:border-l border-white/20">
-                            <div className="text-5xl lg:text-6xl font-bold text-white mb-2 head">
+                            <div className="text-5xl lg:text-6xl font-[500] text-white mb-2 head">
                                 50+
                             </div>
                             <p className="text-white/80 text-lg">
@@ -155,7 +155,7 @@ const ServiceDetailSection2 = () => {
                     <p className="text-white/90 text-lg mb-6">
                         Ready to transform your look?
                     </p>
-                    <button className="bg-white text-[#3c4c24] px-10 py-4 text-lg font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                    <button className="bg-white text-[#3c4c24] px-10 py-4 text-lg font-[500] rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
                         Schedule a Consultation
                     </button>
                 </div>

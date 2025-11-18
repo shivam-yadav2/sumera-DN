@@ -70,7 +70,7 @@ const AcademyPage = ({ courses = [] }) => {
 
                 <div className="relative z-20 flex flex-col items-center justify-end lg:justify-center h-full text-center px-4 pb-10 lg:pb-0">
                     {/* Title */}
-                    <h1 className="text-3xl head md:text-5xl font-bold text-olive-green-200 lg:mb-2">
+                    <h1 className="text-3xl head md:text-5xl font-[500] text-olive-green-200 lg:mb-2">
                         Academy Courses
                     </h1>
 
@@ -122,13 +122,13 @@ const AcademyPage = ({ courses = [] }) => {
                                                 >
                                                     {service.pretitle}
                                                 </p>
-                                                <h2 className="text-5xl head font-semibold mb-6 text-center">
+                                                <h2 className="text-5xl head font-[500] mb-6 text-center">
                                                     {service.title}
                                                 </h2>
                                                 <p className="text-center text-gray-200 max-w-xs mb-8 leading-relaxed">
                                                     {service.description}
                                                 </p>
-                                                <button className="px-8 py-3 bg-black text-white font-semibold hover:bg-gray-900 transition-colors">
+                                                <button className="px-8 py-3 bg-black text-white font-[500] hover:bg-gray-900 transition-colors">
                                                     Read More
                                                 </button>
                                             </div>
@@ -152,7 +152,7 @@ const AcademyPage = ({ courses = [] }) => {
                                             {service.pretitle}
                                         </p>
                                         <h3
-                                            className="text-4xl head font-semibold text-center mb-4"
+                                            className="text-4xl head font-[500] text-center mb-4"
                                             style={{ color: "#5c7650" }}
                                         >
                                             {service.title}
@@ -160,7 +160,7 @@ const AcademyPage = ({ courses = [] }) => {
                                         <p className="text-center text-gray-700 mb-6 leading-relaxed max-w-xs">
                                             {service.description}
                                         </p>
-                                        <button className="px-8 py-3 bg-black text-white font-semibold hover:bg-gray-900 transition-colors">
+                                        <button className="px-8 py-3 bg-black text-white font-[500] hover:bg-gray-900 transition-colors">
                                             Read More
                                         </button>
                                     </>

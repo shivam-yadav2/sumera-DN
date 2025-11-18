@@ -209,7 +209,7 @@ const Hero = () => {
                                 <p className="text-xl italic text-gray-700 head">
                                     {slide.subtitle}
                                 </p>
-                                <h1 className="text-5xl lg:text-7xl font-bold text-[#3c4c24] leading-tight head">
+                                <h1 className="text-5xl lg:text-7xl font-[500] text-[#3c4c24] leading-tight head">
                                     {slide.title}
                                 </h1>
                                 <p className="text-lg text-gray-700 text-center max-w-xl">

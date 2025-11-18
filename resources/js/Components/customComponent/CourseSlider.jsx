@@ -56,7 +56,7 @@ const CourseSlider = ({ courses = [] }) => {
           <p className="text-lg italic mb-2" style={{ color: '#5c7650' }}>
             Explore Our Courses
           </p>
-          <h2 className="text-5xl head font-semibold mb-4" style={{ color: '#5c7650' }}>
+          <h2 className="text-5xl head font-[500] mb-4" style={{ color: '#5c7650' }}>
             Academy Courses
           </h2>
           <p className="text-gray-600 mt-6 max-w-2xl mx-auto text-lg">
@@ -137,7 +137,7 @@ const CourseSlider = ({ courses = [] }) => {
                       className="w-full h-full object-cover"
                     />
                     <div
-                      className="absolute top-4 right-4 px-4 py-2 rounded-full text-white text-sm font-semibold"
+                      className="absolute top-4 right-4 px-4 py-2 rounded-full text-white text-sm font-[500]"
                       style={{ backgroundColor: '#5c7650' }}
                     >
                       {course.level}
@@ -148,7 +148,7 @@ const CourseSlider = ({ courses = [] }) => {
                   <div className="flex-1 p-6 flex flex-col justify-between">
                     <div>
                       <h3
-                        className="text-2xl font-bold head mb-2"
+                        className="text-2xl font-[500] head mb-2"
                         style={{ color: '#5c7650' }}
                       >
                         {course.title}
@@ -168,13 +168,13 @@ const CourseSlider = ({ courses = [] }) => {
                     {/* Footer Section */}
                     <div className="border-t pt-4" style={{ borderColor: '#5c7650' }}>
                       <p
-                        className="text-2xl font-bold head mb-4"
+                        className="text-2xl font-[500] head mb-4"
                         style={{ color: '#5c7650' }}
                       >
                         {course.price}
                       </p>
                       <button
-                        className="w-full py-3 rounded-lg font-semibold text-white transition-all duration-300 hover:opacity-90"
+                        className="w-full py-3 rounded-lg font-[500] text-white transition-all duration-300 hover:opacity-90"
                         style={{ backgroundColor: '#5c7650' }}
                       >
                         Enroll Now
@@ -220,22 +220,22 @@ const CourseSlider = ({ courses = [] }) => {
         {/* Info Section */}
         <div className="mt-16 grid md:grid-cols-3 gap-8">
           <div className="text-center p-6 rounded-lg" style={{ backgroundColor: '#f8f9f7' }}>
-            <p className="text-4xl font-bold mb-2" style={{ color: '#5c7650' }}>
+            <p className="text-4xl font-[500] mb-2" style={{ color: '#5c7650' }}>
               50+
             </p>
-            <p className="text-gray-700 font-semibold">Expert Instructors</p>
+            <p className="text-gray-700 font-[500]">Expert Instructors</p>
           </div>
           <div className="text-center p-6 rounded-lg" style={{ backgroundColor: '#f8f9f7' }}>
-            <p className="text-4xl font-bold mb-2" style={{ color: '#5c7650' }}>
+            <p className="text-4xl font-[500] mb-2" style={{ color: '#5c7650' }}>
               1000+
             </p>
-            <p className="text-gray-700 font-semibold">Happy Graduates</p>
+            <p className="text-gray-700 font-[500]">Happy Graduates</p>
           </div>
           <div className="text-center p-6 rounded-lg" style={{ backgroundColor: '#f8f9f7' }}>
-            <p className="text-4xl font-bold mb-2" style={{ color: '#5c7650' }}>
+            <p className="text-4xl font-[500] mb-2" style={{ color: '#5c7650' }}>
               98%
             </p>
-            <p className="text-gray-700 font-semibold">Success Rate</p>
+            <p className="text-gray-700 font-[500]">Success Rate</p>
           </div>
         </div>
       </div>

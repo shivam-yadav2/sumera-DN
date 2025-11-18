@@ -6,10 +6,10 @@ const SalonAppointment = () => {
         <div className="bg-[#3c4c24] py-10 lg:py-20 px-4 relative overflow-hidden">
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Main Appointment Card */}
-                <div className="relative mb-20">
+                <div className="relative mb-10">
                     {/* Vertical Text on Left */}
                     <div className="absolute left-[-12rem] top-1/2 -translate-y-1/2 -translate-x-12 hidden lg:block">
-                        <h3 className="text-8xl font-bold text-gray-200 transform -rotate-90 origin-center whitespace-nowrap head">
+                        <h3 className="text-8xl font-[500] text-gray-200 transform -rotate-90 origin-center whitespace-nowrap head">
                             Founder
                         </h3>
                     </div>
@@ -17,16 +17,11 @@ const SalonAppointment = () => {
                     {/* Card with half background */}
                     <div className="grid grid-cols-1 lg:grid-cols-5 shadow-2xl rounded-lg overflow-hidden">
                         {/* Left Side - Light Background with Content */}
-                        <div
-                            className="bg-white p-6 col-span-3 lg:p-10 relative overflow-hidden"
-                            
-                        >
+                        <div className="bg-white p-6 col-span-3 lg:p-10 relative overflow-hidden">
                             {/* Subtle pattern overlay */}
 
                             <div className="relative z-10 space-y-4">
-                                
-
-                                <h2 className="text-2xl lg:text-3xl font-semibold text-[#3c4c24] leading-tight head">
+                                <h2 className="text-2xl lg:text-3xl font-[500] text-[#3c4c24] leading-tight head">
                                     Shikha Chauhan is a renowned Makeup Artist,
                                     Educator, and Entrepreneur, and the proud
                                     Founder of Sumeera Salon & Academy in
@@ -45,7 +40,7 @@ const SalonAppointment = () => {
                                 </p>
                                 <p className="text-gray-700 text-base leading-6 font-medium ">
                                     With dedication, vision, and artistry, she
-                                    founded Sumeera Salon & Academy, a space
+                                    founded Sumeera Salon And Academy, a space
                                     where beauty meets education and
                                     empowerment. Her work and contribution to
                                     the beauty industry have been widely
@@ -61,7 +56,7 @@ const SalonAppointment = () => {
                                     meets purpose, success naturally follows.
                                 </p>
                                 <p className="text-gray-700 text-base leading-6 font-medium ">
-                                     From UPSC books to makeup brushes — her
+                                    From UPSC books to makeup brushes — her
                                     journey is a testament to courage,
                                     creativity, and self-belief.
                                 </p>
@@ -82,8 +77,6 @@ const SalonAppointment = () => {
                         </div>
                     </div>
                 </div>
-
-              
             </div>
         </div>
     );

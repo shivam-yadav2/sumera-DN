@@ -68,11 +68,11 @@ const Franchise = () => {
                 <div className="absolute -left-1/3 top-[-20%] w-[55%] aspect-square bg-gradient-to-br from-[#fde1e9] via-[#fff5f8] to-transparent blur-3xl opacity-60 pointer-events-none" />
 
                 <div className="max-w-6xl mx-auto text-center space-y-8 relative z-10">
-                    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 text-[#3c4c24] text-xs md:text-sm font-semibold tracking-[0.2em] uppercase shadow-lg">
+                    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 text-[#3c4c24] text-xs md:text-sm font-[500] tracking-[0.2em] uppercase shadow-lg">
                         <Building2 className="w-4 h-4 text-[#3c4c24]" />
                         Franchise Opportunities
                     </span>
-                    <h2 className="text-4xl md:text-5xl font-bold text-[#3c4c24] head">
+                    <h2 className="text-4xl md:text-5xl font-[500] text-[#3c4c24] head">
                         Build A Beautiful Business With Us
                     </h2>
                     <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
@@ -92,7 +92,7 @@ const Franchise = () => {
                             <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-[#3c4c24] to-[#0c1f1a] text-white shadow-lg">
                                 <Icon className="w-6 h-6" />
                             </div>
-                            <h3 className="text-2xl font-semibold text-[#3c4c24] head">
+                            <h3 className="text-2xl font-[500] text-[#3c4c24] head">
                                 {title}
                             </h3>
                             <p className="text-gray-600 text-sm leading-relaxed">
@@ -109,7 +109,7 @@ const Franchise = () => {
                         { label: 'Academy Graduates', value: '1,500+' },
                     ].map((stat) => (
                         <div key={stat.label} className="bg-white/80 border border-white/60 rounded-2xl px-6 py-8 shadow-lg">
-                            <p className="text-3xl font-bold text-[#3c4c24] head">{stat.value}</p>
+                            <p className="text-3xl font-[500] text-[#3c4c24] head">{stat.value}</p>
                             <p className="text-sm uppercase tracking-[0.3em] text-gray-500 mt-2">
                                 {stat.label}
                             </p>
@@ -129,7 +129,7 @@ const Franchise = () => {
                                 <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs uppercase tracking-[0.4em]">
                                     Why Partner
                                 </span>
-                                <h3 className="text-3xl font-bold text-white head leading-tight">
+                                <h3 className="text-3xl font-[500] text-white head leading-tight">
                                     The Sumeera Advantage
                                 </h3>
                                 <p className="text-white/70 text-sm leading-relaxed">
@@ -146,7 +146,7 @@ const Franchise = () => {
                                             <Icon className="w-5 h-5" />
                                         </div>
                                         <div className="space-y-1">
-                                            <h4 className="text-white font-semibold head">
+                                            <h4 className="text-white font-[500] head">
                                                 {title}
                                             </h4>
                                             <p className="text-white/60 text-sm leading-relaxed">
@@ -158,7 +158,7 @@ const Franchise = () => {
                             </div>
 
                             <div className="rounded-2xl bg-white/10 border border-white/10 p-6 space-y-4">
-                                <h5 className="text-white font-semibold head">
+                                <h5 className="text-white font-[500] head">
                                     Ready To Explore?
                                 </h5>
                                 <p className="text-white/70 text-sm leading-relaxed">
@@ -177,10 +177,10 @@ const Franchise = () => {
                             <div className="absolute inset-0 bg-gradient-to-br from-[#f8f7f2] via-white to-[#f3ede2] opacity-90 pointer-events-none" />
 
                             <div className="relative space-y-3">
-                                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#3c4c24]/10 text-[#3c4c24] text-xs font-semibold tracking-[0.3em] uppercase">
+                                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#3c4c24]/10 text-[#3c4c24] text-xs font-[500] tracking-[0.3em] uppercase">
                                     Apply Now
                                 </span>
-                                <h2 className="text-3xl md:text-4xl font-bold text-[#3c4c24] head">
+                                <h2 className="text-3xl md:text-4xl font-[500] text-[#3c4c24] head">
                                     Franchise Enquiry Form
                                 </h2>
                                 <p className="text-gray-600 text-sm leading-relaxed">
@@ -192,7 +192,7 @@ const Franchise = () => {
                             <div className="relative space-y-8">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="flex flex-col gap-2">
-                                        <label htmlFor="name" className="text-sm font-semibold text-[#3c4c24]">
+                                        <label htmlFor="name" className="text-sm font-[500] text-[#3c4c24]">
                                             Your Name *
                                         </label>
                                         <input
@@ -206,7 +206,7 @@ const Franchise = () => {
                                     </div>
 
                                     <div className="flex flex-col gap-2">
-                                        <label htmlFor="contactNumber" className="text-sm font-semibold text-[#3c4c24]">
+                                        <label htmlFor="contactNumber" className="text-sm font-[500] text-[#3c4c24]">
                                             Contact Number *
                                         </label>
                                         <input
@@ -220,7 +220,7 @@ const Franchise = () => {
                                     </div>
 
                                     <div className="flex flex-col gap-2">
-                                        <label htmlFor="permanentAddress" className="text-sm font-semibold text-[#3c4c24]">
+                                        <label htmlFor="permanentAddress" className="text-sm font-[500] text-[#3c4c24]">
                                             Permanent Address *
                                         </label>
                                         <textarea
@@ -233,7 +233,7 @@ const Franchise = () => {
                                     </div>
 
                                     <div className="flex flex-col gap-2">
-                                        <label htmlFor="officeAddress" className="text-sm font-semibold text-[#3c4c24]">
+                                        <label htmlFor="officeAddress" className="text-sm font-[500] text-[#3c4c24]">
                                             Office Address
                                         </label>
                                         <textarea
@@ -247,7 +247,7 @@ const Franchise = () => {
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="flex flex-col gap-2">
-                                        <label htmlFor="email" className="text-sm font-semibold text-[#3c4c24]">
+                                        <label htmlFor="email" className="text-sm font-[500] text-[#3c4c24]">
                                             Your Email
                                         </label>
                                         <input
@@ -260,7 +260,7 @@ const Franchise = () => {
                                     </div>
 
                                     <div className="flex flex-col gap-2">
-                                        <label htmlFor="profession" className="text-sm font-semibold text-[#3c4c24]">
+                                        <label htmlFor="profession" className="text-sm font-[500] text-[#3c4c24]">
                                             Profession *
                                         </label>
                                         <input
@@ -275,7 +275,7 @@ const Franchise = () => {
                                 </div>
 
                                 <div className="flex flex-col gap-4">
-                                    <span className="text-sm font-semibold text-[#3c4c24]">
+                                    <span className="text-sm font-[500] text-[#3c4c24]">
                                         Any Knowledge of Beauty Industry?
                                     </span>
                                     <div className="flex items-center gap-6">
@@ -302,7 +302,7 @@ const Franchise = () => {
                                 </div>
 
                                 <div className="flex flex-col gap-2">
-                                    <label htmlFor="inspiration" className="text-sm font-semibold text-[#3c4c24]">
+                                    <label htmlFor="inspiration" className="text-sm font-[500] text-[#3c4c24]">
                                     What Inspired You to Take Sumeera Salon And Academy Awadh Franchise?
 
                                     </label>
@@ -316,7 +316,7 @@ const Franchise = () => {
 
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                     <div className="flex flex-col gap-2">
-                                        <label htmlFor="city" className="text-sm font-semibold text-[#3c4c24]">
+                                        <label htmlFor="city" className="text-sm font-[500] text-[#3c4c24]">
                                             City *
                                         </label>
                                         <input
@@ -329,7 +329,7 @@ const Franchise = () => {
                                         />
                                     </div>
                                     <div className="flex flex-col gap-2">
-                                        <label htmlFor="state" className="text-sm font-semibold text-[#3c4c24]">
+                                        <label htmlFor="state" className="text-sm font-[500] text-[#3c4c24]">
                                             State *
                                         </label>
                                         <input
@@ -342,7 +342,7 @@ const Franchise = () => {
                                         />
                                     </div>
                                     <div className="flex flex-col gap-2">
-                                        <label htmlFor="pinCode" className="text-sm font-semibold text-[#3c4c24]">
+                                        <label htmlFor="pinCode" className="text-sm font-[500] text-[#3c4c24]">
                                             Pin Code *
                                         </label>
                                         <input
@@ -358,7 +358,7 @@ const Franchise = () => {
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="flex flex-col gap-2">
-                                        <label htmlFor="aadhaarCard" className="text-sm font-semibold text-[#3c4c24]">
+                                        <label htmlFor="aadhaarCard" className="text-sm font-[500] text-[#3c4c24]">
                                             Upload Aadhar Card (PDF, max 200kb) *
                                         </label>
                                         <input
@@ -367,11 +367,11 @@ const Franchise = () => {
                                             type="file"
                                             accept=".pdf"
                                             required
-                                            className="block w-full text-sm text-gray-600 file:mr-4 file:rounded-lg file:border-0 file:bg-[#3c4c24] file:px-5 file:py-2 file:text-sm file:font-semibold file:text-white hover:file:bg-[#2a3814]"
+                                            className="block w-full text-sm text-gray-600 file:mr-4 file:rounded-lg file:border-0 file:bg-[#3c4c24] file:px-5 file:py-2 file:text-sm file:font-[500] file:text-white hover:file:bg-[#2a3814]"
                                         />
                                     </div>
                                     <div className="flex flex-col gap-2">
-                                        <label htmlFor="panCard" className="text-sm font-semibold text-[#3c4c24]">
+                                        <label htmlFor="panCard" className="text-sm font-[500] text-[#3c4c24]">
                                             Upload PAN Card (PDF, max 200kb) *
                                         </label>
                                         <input
@@ -380,7 +380,7 @@ const Franchise = () => {
                                             type="file"
                                             accept=".pdf"
                                             required
-                                            className="block w-full text-sm text-gray-600 file:mr-4 file:rounded-lg file:border-0 file:bg-[#3c4c24] file:px-5 file:py-2 file:text-sm file:font-semibold file:text-white hover:file:bg-[#2a3814]"
+                                            className="block w-full text-sm text-gray-600 file:mr-4 file:rounded-lg file:border-0 file:bg-[#3c4c24] file:px-5 file:py-2 file:text-sm file:font-[500] file:text-white hover:file:bg-[#2a3814]"
                                         />
                                     </div>
                                 </div>
@@ -388,7 +388,7 @@ const Franchise = () => {
                                 <div className="flex justify-center">
                                     <button
                                         type="submit"
-                                        className="px-10 py-3 rounded-full bg-[#3c4c24] text-white font-semibold shadow-lg hover:bg-[#2a3814] transition-all duration-300"
+                                        className="px-10 py-3 rounded-full bg-[#3c4c24] text-white font-[500] shadow-lg hover:bg-[#2a3814] transition-all duration-300"
                                     >
                                         Submit Interest
                                     </button>

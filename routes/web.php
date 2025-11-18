@@ -16,6 +16,20 @@ use Inertia\Inertia;
 
 // Public frontend routes
 Route::get('/', [HomeController::class, 'index2'])->name('home');
+Route::get('offers', function () {
+    $offers = \App\Models\Offer::where('is_active', 1)->get();
+    $services = \App\Models\Service::where('is_active', '1')
+        ->where('is_front', 'yes')
+        ->orderBy('id', 'asc')
+        ->get()
+        ->map(function($service) {
+            return [
+                'id' => $service->id,
+                'title' => $service->title,
+            ];
+        });
+    return Inertia::render('Offers', ['offers' => $offers, 'services' => $services]);
+})->name('offers');
 
 // Booking API endpoint
 Route::post('/api/booking', [App\Http\Controllers\ContactController::class, 'storeBooking'])->name('booking.store');
@@ -138,6 +152,8 @@ Route::get('/about', function () {
         'services' => $services,
     ]);
 })->name('about');
+
+
 
 Route::get('/services/{service}', function ($service) {
     // Find service by slug_url

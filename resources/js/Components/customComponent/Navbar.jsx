@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { Button } from "../ui/button";
-import { usePage } from "@inertiajs/react";
+import { usePage, Link } from "@inertiajs/react";
 import { usePopup } from "../../contexts/PopupContext";
 
 const Navbar = () => {
@@ -39,32 +39,32 @@ const Navbar = () => {
                 <div className="flex items-center justify-between">
                     {/* Logo */}
                     <div className="flex items-center">
-                        <a href="/" className="flex items-center">
-                            <div className="text-3xl font-bold text-[#3c4c24] head">
+                        <Link href="/" className="flex items-center">
+                            <div className="text-3xl font-[500] text-[#3c4c24] head">
                                 <img
                                     src="/assets/logo/black.png"
                                     alt=""
                                     className="w-20"
                                 />
                             </div>
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Desktop Menu */}
-                    <div className="hidden text-[14px]  lg:flex items-center space-x-8">
-                        <a
+                    <div className="hidden text-[14px]  lg:flex items-center space-x-6">
+                        <Link
                             href="/"
                             className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
                         >
                             Home
-                        </a>
+                        </Link>
 
-                        <a
+                        <Link
                             href="/about"
                             className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
                         >
                             About
-                        </a>
+                        </Link>
 
                         {/* Services Dropdown */}
                         <div className="relative group">
@@ -75,46 +75,49 @@ const Navbar = () => {
                             {filteredServices && filteredServices.length > 0 ? (
                                 <div className="absolute top-full left-0 mt-2 w-44 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2">
                                     {filteredServices.map((service) => (
-                                        <a
+                                        <Link
                                             key={service.id}
                                             href={`/services/${service.slug_url}`}
                                             className="block px-3 py-1 text-gray-900 font-[600] hover:bg-[#3c4c24]/10 hover:text-[#3c4c24] transition-colors"
                                         >
                                             {service.title}
-                                        </a>
+                                        </Link>
                                     ))}
                                 </div>
                             ) : (
                                 <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2">
-                                    <a
-                                        href="#"
-                                        className="block px-6 py-3 text-gray-500"
-                                    >
+                                    <span className="block px-6 py-3 text-gray-500">
                                         No services available
-                                    </a>
+                                    </span>
                                 </div>
                             )}
                         </div>
 
+                        <Link
+                                href={
+                                    makeupService
+                                        ? `/services/${makeupService.slug_url}`
+                                        : "/services/makeup"
+                                }
+                                className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
+                            >
+                                Makeup 
+                            </Link>
+
                         {/* Makeup Service - separate nav item (if available) */}
-                        <a
-                            href={
-                                makeupService
-                                    ? `/services/${makeupService.slug_url}`
-                                    : "/services/makeup"
-                            }
+                        <Link
+                            href="/franchise"
                             className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
                         >
-                            Makeup
-                        </a>
+                            Franchise
+                        </Link>
 
-                        <a
+                        <Link
                             href="/academy"
                             className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
                         >
                             Academy
-                        </a>
-
+                        </Link>
                         {/* Gallery Dropdown */}
                         <div className="relative group">
                             <button className="flex items-center gap-1 text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors">
@@ -122,40 +125,45 @@ const Navbar = () => {
                                 <ChevronDown className="w-4 h-4" />
                             </button>
                             <div className="absolute top-full left-0 mt-2 w-56 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2">
-                                <a
+                                <Link
                                     href="/gallery/makeup"
                                     className="block px-3 py-1 font-[600] text-gray-900 hover:bg-[#3c4c24]/10 hover:text-[#3c4c24] transition-colors"
                                 >
                                     Makeup
-                                </a>
-                                <a
+                                </Link>
+                                <Link
                                     href="/gallery/interior"
                                     className="block px-3 py-1 font-[600] text-gray-900 hover:bg-[#3c4c24]/10 hover:text-[#3c4c24] transition-colors"
                                 >
                                     Interior
-                                </a>
-                                <a
+                                </Link>
+                                <Link
                                     href="/gallery/salon-services"
                                     className="block px-3 py-1 font-[600] text-gray-900 hover:bg-[#3c4c24]/10 hover:text-[#3c4c24] transition-colors"
                                 >
                                     Salon Services
-                                </a>
+                                </Link>
                             </div>
                         </div>
-
-                        <a
+                        <Link
+                            href="/offers"
+                            className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
+                        >
+                         Offers
+                        </Link>
+                        {/* <a
                             href="/blogs"
                             className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
                         >
                             Blog
-                        </a>
+                        </a> */}
 
-                        <a
+                        <Link
                             href="/contact"
                             className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
                         >
                             Contact
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Phone Number */}
@@ -192,18 +200,18 @@ const Navbar = () => {
                 {isMobileMenuOpen && (
                     <div className="lg:hidden mt-4 pb-4 border-t border-gray-200">
                         <div className="flex flex-col space-y-4 mt-4">
-                            <a
+                            <Link
                                 href="/"
                                 className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
                             >
                                 Home
-                            </a>
-                            <a
+                            </Link>
+                            <Link
                                 href="/about"
                                 className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
                             >
                                 About
-                            </a>
+                            </Link>
 
                             {/* Services Mobile Dropdown */}
                             <div>
@@ -225,13 +233,13 @@ const Navbar = () => {
                                         {filteredServices &&
                                         filteredServices.length > 0 ? (
                                             filteredServices.map((service) => (
-                                                <a
+                                                <Link
                                                     key={service.id}
                                                     href={`/services/${service.slug_url}`}
                                                     className="block text-gray-600 hover:text-[#3c4c24]"
                                                 >
                                                     {service.title}
-                                                </a>
+                                                </Link>
                                             ))
                                         ) : (
                                             <span className="block text-gray-500">
@@ -243,7 +251,7 @@ const Navbar = () => {
                             </div>
 
                             {/* Makeup (mobile) - separate link */}
-                            <a
+                            <Link
                                 href={
                                     makeupService
                                         ? `/services/${makeupService.slug_url}`
@@ -252,14 +260,14 @@ const Navbar = () => {
                                 className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
                             >
                                 Makeup Service
-                            </a>
+                            </Link>
 
-                            <a
+                            <Link
                                 href="/academy"
                                 className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
                             >
                                 Academy
-                            </a>
+                            </Link>
 
                             {/* Gallery Mobile Dropdown */}
                             <div>
@@ -278,41 +286,41 @@ const Navbar = () => {
                                 </button>
                                 {openDropdown === "gallery" && (
                                     <div className="ml-4 mt-2 space-y-2">
-                                        <a
+                                        <Link
                                             href="/gallery/makeup"
                                             className="block text-gray-600 hover:text-[#3c4c24]"
                                         >
                                             Makeup Gallery
-                                        </a>
-                                        <a
+                                        </Link>
+                                        <Link
                                             href="/gallery/interior"
                                             className="block text-gray-600 hover:text-[#3c4c24]"
                                         >
                                             Interior Gallery
-                                        </a>
-                                        <a
+                                        </Link>
+                                        <Link
                                             href="/gallery/salon-services"
                                             className="block text-gray-600 hover:text-[#3c4c24]"
                                         >
                                             Salon Services Images
-                                        </a>
+                                        </Link>
                                     </div>
                                 )}
                             </div>
 
-                            <a
+                            <Link
                                 href="/blogs"
                                 className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
                             >
                                 Blog
-                            </a>
+                            </Link>
 
-                            <a
+                            <Link
                                 href="/contact"
                                 className="text-gray-700 hover:text-[#3c4c24]  text-[16px] font-[600] transition-colors"
                             >
                                 Contact
-                            </a>
+                            </Link>
 
                             <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
                                 <Button

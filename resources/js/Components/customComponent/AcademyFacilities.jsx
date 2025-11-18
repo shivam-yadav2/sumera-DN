@@ -77,7 +77,7 @@ const AcademyFacilities = () => {
                         </svg>
                     </div>
 
-                    <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6 head">
+                    <h2 className="text-4xl lg:text-6xl font-[500] text-white mb-6 head">
                         Our Facilities & Features
                     </h2>
 
@@ -107,7 +107,7 @@ const AcademyFacilities = () => {
 
                             {/* Content Section */}
                             <div className="md:w-1/2 p-8 flex flex-col justify-center">
-                                <h3 className="text-2xl lg:text-3xl font-bold text-[#3c4c24] mb-4 head">
+                                <h3 className="text-2xl lg:text-3xl font-[500] text-[#3c4c24] mb-4 head">
                                     {facility.title}
                                 </h3>
                                 <p className="text-gray-600 leading-relaxed text-base">
@@ -120,17 +120,17 @@ const AcademyFacilities = () => {
 
                 {/* Features List */}
                 <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 lg:p-12">
-                    <h3 className="text-3xl lg:text-4xl font-bold text-white mb-8 text-center head">
+                    <h3 className="text-3xl lg:text-4xl font-[500] text-white mb-8 text-center head">
                         Additional Amenities
                     </h3>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <div className="flex items-start gap-4">
-                            <div className="flex-shrink-0 w-12 h-12 bg-pink-400 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                            <div className="flex-shrink-0 w-12 h-12 bg-pink-400 rounded-full flex items-center justify-center text-white text-xl font-[500]">
                                 ✓
                             </div>
                             <div>
-                                <h4 className="text-white font-semibold text-lg mb-1">
+                                <h4 className="text-white font-[500] text-lg mb-1">
                                     Free Wi-Fi
                                 </h4>
                                 <p className="text-white/70 text-sm">
@@ -140,11 +140,11 @@ const AcademyFacilities = () => {
                         </div>
 
                         <div className="flex items-start gap-4">
-                            <div className="flex-shrink-0 w-12 h-12 bg-pink-400 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                            <div className="flex-shrink-0 w-12 h-12 bg-pink-400 rounded-full flex items-center justify-center text-white text-xl font-[500]">
                                 ✓
                             </div>
                             <div>
-                                <h4 className="text-white font-semibold text-lg mb-1">
+                                <h4 className="text-white font-[500] text-lg mb-1">
                                     Library Access
                                 </h4>
                                 <p className="text-white/70 text-sm">
@@ -154,11 +154,11 @@ const AcademyFacilities = () => {
                         </div>
 
                         <div className="flex items-start gap-4">
-                            <div className="flex-shrink-0 w-12 h-12 bg-pink-400 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                            <div className="flex-shrink-0 w-12 h-12 bg-pink-400 rounded-full flex items-center justify-center text-white text-xl font-[500]">
                                 ✓
                             </div>
                             <div>
-                                <h4 className="text-white font-semibold text-lg mb-1">
+                                <h4 className="text-white font-[500] text-lg mb-1">
                                     Student Lounge
                                 </h4>
                                 <p className="text-white/70 text-sm">
@@ -168,11 +168,11 @@ const AcademyFacilities = () => {
                         </div>
 
                         <div className="flex items-start gap-4">
-                            <div className="flex-shrink-0 w-12 h-12 bg-pink-400 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                            <div className="flex-shrink-0 w-12 h-12 bg-pink-400 rounded-full flex items-center justify-center text-white text-xl font-[500]">
                                 ✓
                             </div>
                             <div>
-                                <h4 className="text-white font-semibold text-lg mb-1">
+                                <h4 className="text-white font-[500] text-lg mb-1">
                                     Refreshments
                                 </h4>
                                 <p className="text-white/70 text-sm">
@@ -182,11 +182,11 @@ const AcademyFacilities = () => {
                         </div>
 
                         <div className="flex items-start gap-4">
-                            <div className="flex-shrink-0 w-12 h-12 bg-pink-400 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                            <div className="flex-shrink-0 w-12 h-12 bg-pink-400 rounded-full flex items-center justify-center text-white text-xl font-[500]">
                                 ✓
                             </div>
                             <div>
-                                <h4 className="text-white font-semibold text-lg mb-1">
+                                <h4 className="text-white font-[500] text-lg mb-1">
                                     Parking Facility
                                 </h4>
                                 <p className="text-white/70 text-sm">
@@ -196,11 +196,11 @@ const AcademyFacilities = () => {
                         </div>
 
                         <div className="flex items-start gap-4">
-                            <div className="flex-shrink-0 w-12 h-12 bg-pink-400 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                            <div className="flex-shrink-0 w-12 h-12 bg-pink-400 rounded-full flex items-center justify-center text-white text-xl font-[500]">
                                 ✓
                             </div>
                             <div>
-                                <h4 className="text-white font-semibold text-lg mb-1">
+                                <h4 className="text-white font-[500] text-lg mb-1">
                                     Flexible Timings
                                 </h4>
                                 <p className="text-white/70 text-sm">
@@ -216,7 +216,7 @@ const AcademyFacilities = () => {
                     <p className="text-white/90 text-lg mb-6">
                         Want to see our facilities in person?
                     </p>
-                    <button className="bg-white text-[#3c4c24] px-10 py-4 text-lg font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                    <button className="bg-white text-[#3c4c24] px-10 py-4 text-lg font-[500] rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
                         Schedule a Campus Tour
                     </button>
                 </div>

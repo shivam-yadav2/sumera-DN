@@ -126,17 +126,14 @@ const SalonGallery = ({
     };
 
     return (
-        <div className="min-h-screen bg-[#fff] py-16 px-4">
+        <div className="min-h-screen bg-[#fff] py-8 lg:py-12 px-4">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
-                <div className="text-center mb-16">
-                    <h1 className="text-5xl md:text-6xl head font-semibold text-[#3c4c24] mb-4">
+                <div className="text-center mb-12">
+                    <h1 className="text-3xl md:text-5xl head font-[500] text-[#3c4c24] mb-4">
                         {heading}
                     </h1>
-                    <p className="text-[#3c4c24] text-lg max-w-2xl mx-auto">
-                        {description ||
-                            "Explore our stunning collection of transformations and creative artistry"}
-                    </p>
+                   
                 </div>
 
                 {/* Category Filter */}
@@ -177,9 +174,9 @@ const SalonGallery = ({
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                                    <h3 className="font-semibold text-xl mb-2">
+                                    {/* <h3 className="font-[500] text-xl mb-2">
                                         {image.alt}
-                                    </h3>
+                                    </h3> */}
                                     <div className="flex items-center gap-2 text-sm text-pink-200">
                                         <ZoomIn size={16} />
                                         <span>Click to view</span>

@@ -75,7 +75,7 @@ const Service = () => {
                                             </div> */}
 
                                             {about.title && (
-                                                <h2 className="text-3xl lg:text-4xl font-bold text-[#3c4c24] leading-tight head">
+                                                <h2 className="text-3xl lg:text-4xl font-[500] text-[#3c4c24] leading-tight head">
                                                     {about.title}
                                                 </h2>
                                             )}
@@ -96,7 +96,7 @@ const Service = () => {
             <section className="max-w-7xl mx-auto lg:py-20 py-10 md:py-32">
                 <div className="px-4">
                     <div className="flex flex-col gap-6 mb-12 items-start justify-between">
-                        <h2 className="text-4xl lg:text-6xl text-[#3c4c24] font-bold head">
+                        <h2 className="text-4xl lg:text-6xl text-[#3c4c24] font-[500] head">
                             {service?.title || "Service"}
                         </h2>
                         <p className="text-lg p-m text-gray-600 text-start">
@@ -118,7 +118,7 @@ const Service = () => {
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                         <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                                            <h3 className="font-semibold text-xl mb-2">
+                                            <h3 className="font-[500] text-xl mb-2">
                                                 {image.title || `Gallery image ${index + 1}`}
                                             </h3>
                                         </div>
@@ -142,7 +142,7 @@ const Service = () => {
             <section className="bg-gradient-to-br from-gray-50 via-white to-gray-50 py-9 lg:py-12 px-4 overflow-hidden">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12 lg:mb-16">
-                        <h2 className="text-3xl lg:text-5xl font-bold text-[#3c4c24] mb-4 head">
+                        <h2 className="text-3xl lg:text-5xl font-[500] text-[#3c4c24] mb-4 head">
                             Our Partners
                         </h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
