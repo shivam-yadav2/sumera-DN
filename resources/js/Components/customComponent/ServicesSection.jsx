@@ -94,7 +94,7 @@ const ServicesSection = () => {
                                 spaceBetween: 24,
                             },
                             1280: {
-                                slidesPerView: 3,
+                                slidesPerView: 4,
                                 spaceBetween: 28,
                             },
                         }}

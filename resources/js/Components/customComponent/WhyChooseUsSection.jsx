@@ -73,20 +73,7 @@ export function WhyChooseUsSection() {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-16 text-center">
-            <div className="inline-block bg-white/90 backdrop-blur-sm rounded-3xl border border-[#e4ded2] p-8 shadow-lg">
-              <p className="text-[#7a705e] text-lg mb-4">
-                Ready to experience the Sumeera difference?
-              </p>
-              <a 
-                href="/contact" 
-                className="inline-flex items-center gap-2 px-8 py-3 bg-[#3c4c24] hover:bg-[#2f3720] text-white rounded-full font-medium transition-all duration-300 shadow-md"
-              >
-                Book Your Appointment
-                <Award className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
+          
         </div>
       </section>
     );

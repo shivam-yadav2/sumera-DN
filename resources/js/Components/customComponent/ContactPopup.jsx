@@ -97,57 +97,67 @@ const ContactPopup = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-            <div className="relative bg-gradient-to-br from-[#3c4c24]/30 via-orange-50 to-[#3c4c24]/80 rounded-2xl shadow-2xl w-full max-w-4xl max-h-[85vh] overflow-hidden">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-md p-4">
+            <div className="relative bg-gradient-to-br from-[#f8f6f2] via-white to-[#f5efe3] rounded-3xl shadow-2xl w-full max-w-4xl max-h-[85vh] overflow-hidden border border-[#e4ded2]">
+                {/* Decorative Background Elements */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-[#a0815c]/10 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#e7d3ba]/20 rounded-full blur-2xl"></div>
+                
                 {/* Close Button */}
                 <button
                     onClick={onClose}
-                    className="absolute top-3 right-3 z-10 text-gray-700 hover:text-gray-900 transition-colors bg-white/90 hover:bg-white rounded-full p-2 shadow-lg"
+                    className="absolute top-5 right-5 z-10 text-[#7a705e] hover:text-[#2f3720] transition-colors bg-white/80 backdrop-blur-sm rounded-full p-2 hover:bg-white shadow-md"
                     type="button"
                 >
                     <X className="w-5 h-5" />
                 </button>
 
                 {/* Two Column Layout */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 h-full min-h-[400px]">
+                <div className="relative grid grid-cols-1 lg:grid-cols-2 h-full min-h-[500px]">
                     {/* Left Side - Image */}
-                    <div className="hidden lg:block aspect-square relative overflow-hidden rounded-l-2xl">
+                    <div className="hidden lg:block relative overflow-hidden rounded-l-3xl">
                         <img
                             src="/assets/images/new/43.webp"
                             alt="Contact Us"
                             className="w-full h-full object-cover object-center"
                         />
+                        {/* Image Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#12110f]/60 via-transparent to-transparent"></div>
                     </div>
 
                     {/* Right Side - Compact Form */}
-                    <div className="p-5 lg:p-6 overflow-y-auto flex flex-col justify-center">
+                    <div className="relative p-8 lg:p-10 overflow-y-auto flex flex-col justify-center">
                         {/* Header */}
-                        <div className="mb-6">
-                            <h2 className="text-2xl font-[500] text-[#3c4c24] head mb-2">
+                        <div className="mb-8">
+                            <div className="w-12 h-0.5 bg-[#a0815c] mb-4"></div>
+                            <p className="uppercase tracking-[0.3em] text-[10px] text-[#a0815c] font-medium mb-2">
+                                CONTACT US
+                            </p>
+                            <h2 className="text-3xl font-[600] text-[#2f3720] head mb-2">
                                 Get In Touch!
                             </h2>
-                            <p className="text-sm text-gray-600">
+                            <p className="text-sm text-[#7a705e] leading-relaxed">
                                 Fill out the form and we'll get back to you soon
                             </p>
                         </div>
 
                         {/* Compact Form */}
-                        <form onSubmit={handleSubmit} className="space-y-4">
+                        <form onSubmit={handleSubmit} className="space-y-5">
                             {/* Name and Email Row */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
                                     <Input
                                         type="text"
                                         name="name"
-                                        placeholder="Name *"
+                                        placeholder="Your Name *"
                                         value={formData.name}
                                         onChange={handleChange}
-                                        className={`w-full px-4 py-3 bg-white border-0 shadow-sm text-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-[#3c4c24] rounded-lg transition-all text-sm ${
-                                            errors.name ? 'ring-2 ring-red-500' : ''
+                                        className={`w-full px-4 py-3 bg-white/80 backdrop-blur-sm border rounded-2xl text-[#2f3720] placeholder:text-[#7a705e]/60 focus:ring-2 focus:ring-[#a0815c] focus:border-[#a0815c] outline-none transition-all text-sm ${
+                                            errors.name ? 'border-red-500' : 'border-[#e4ded2]'
                                         }`}
                                     />
                                     {errors.name && (
-                                        <p className="text-red-500 text-xs mt-1">
+                                        <p className="text-red-500 text-xs mt-1.5 ml-1">
                                             {errors.name}
                                         </p>
                                     )}
@@ -156,13 +166,13 @@ const ContactPopup = ({ isOpen, onClose }) => {
                                     <Input
                                         type="email"
                                         name="email"
-                                        placeholder="Email"
+                                        placeholder="Email (Optional)"
                                         value={formData.email}
                                         onChange={handleChange}
-                                        className="w-full px-4 py-3 bg-white border-0 shadow-sm text-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-[#3c4c24] rounded-lg transition-all text-sm"
+                                        className="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border border-[#e4ded2] rounded-2xl text-[#2f3720] placeholder:text-[#7a705e]/60 focus:ring-2 focus:ring-[#a0815c] focus:border-[#a0815c] outline-none transition-all text-sm"
                                     />
                                     {errors.email && (
-                                        <p className="text-red-500 text-xs mt-1">
+                                        <p className="text-red-500 text-xs mt-1.5 ml-1">
                                             {errors.email}
                                         </p>
                                     )}
@@ -178,12 +188,12 @@ const ContactPopup = ({ isOpen, onClose }) => {
                                         placeholder="Phone Number *"
                                         value={formData.mobile}
                                         onChange={handleChange}
-                                        className={`w-full px-4 py-3 bg-white border-0 shadow-sm text-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-[#3c4c24] rounded-lg transition-all text-sm ${
-                                            errors.mobile ? 'ring-2 ring-red-500' : ''
+                                        className={`w-full px-4 py-3 bg-white/80 backdrop-blur-sm border rounded-2xl text-[#2f3720] placeholder:text-[#7a705e]/60 focus:ring-2 focus:ring-[#a0815c] focus:border-[#a0815c] outline-none transition-all text-sm ${
+                                            errors.mobile ? 'border-red-500' : 'border-[#e4ded2]'
                                         }`}
                                     />
                                     {errors.mobile && (
-                                        <p className="text-red-500 text-xs mt-1">
+                                        <p className="text-red-500 text-xs mt-1.5 ml-1">
                                             {errors.mobile}
                                         </p>
                                     )}
@@ -193,9 +203,9 @@ const ContactPopup = ({ isOpen, onClose }) => {
                                         name="service"
                                         value={formData.service}
                                         onChange={handleChange}
-                                        className={`w-full px-4 py-3 bg-white border-0 shadow-sm text-gray-700 focus:ring-2 focus:ring-[#3c4c24] rounded-lg transition-all text-sm ${
-                                            errors.service ? 'ring-2 ring-red-500' : ''
-                                        } ${!formData.service ? 'text-gray-400' : 'text-gray-700'}`}
+                                        className={`w-full px-4 py-2 bg-white/80 backdrop-blur-sm border rounded-2xl focus:ring-2 focus:ring-[#a0815c] focus:border-[#a0815c] outline-none transition-all text-sm ${
+                                            errors.service ? 'border-red-500' : 'border-[#e4ded2]'
+                                        } ${!formData.service ? 'text-[#7a705e]/60' : 'text-[#2f3720]'}`}
                                     >
                                         <option value="">Select Service *</option>
                                         {services.map((service) => (
@@ -205,7 +215,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
                                         ))}
                                     </select>
                                     {errors.service && (
-                                        <p className="text-red-500 text-xs mt-1">
+                                        <p className="text-red-500 text-xs mt-1.5 ml-1">
                                             {errors.service}
                                         </p>
                                     )}
@@ -216,25 +226,25 @@ const ContactPopup = ({ isOpen, onClose }) => {
                             <div>
                                 <Textarea
                                     name="message"
-                                    placeholder="Message"
+                                    placeholder="Your Message (Optional)"
                                     value={formData.message}
                                     onChange={handleChange}
                                     rows={3}
-                                    className="w-full px-4 py-3 bg-white border-0 shadow-sm text-gray-700 placeholder:text-gray-400 focus:ring-2 focus:ring-[#3c4c24] rounded-lg resize-none transition-all text-sm"
+                                    className="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border border-[#e4ded2] rounded-2xl text-[#2f3720] placeholder:text-[#7a705e]/60 focus:ring-2 focus:ring-[#a0815c] focus:border-[#a0815c] outline-none resize-none transition-all text-sm"
                                 />
                                 {errors.message && (
-                                    <p className="text-red-500 text-xs mt-1">
+                                    <p className="text-red-500 text-xs mt-1.5 ml-1">
                                         {errors.message}
                                     </p>
                                 )}
                             </div>
 
                             {/* Submit Button */}
-                            <div className="pt-2">
+                            <div className="pt-4">
                                 <Button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full bg-[#3c4c24] hover:bg-[#2d3a1b] text-white px-6 py-3 text-sm font-[500] transition-all duration-300 rounded-lg shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                                    className="w-full bg-[#3c4c24] hover:bg-[#2f3720] text-white px-6 py-4 text-base font-[500] transition-all duration-300 rounded-full shadow-lg hover:shadow-xl disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                                 >
                                     {isSubmitting ? (
                                         <>
@@ -246,6 +256,9 @@ const ContactPopup = ({ isOpen, onClose }) => {
                                         </>
                                     )}
                                 </Button>
+                                <p className="text-center text-xs text-[#7a705e] mt-4">
+                                    We'll respond within 24 hours
+                                </p>
                             </div>
                         </form>
                     </div>

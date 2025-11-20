@@ -105,12 +105,12 @@ const Navbar = () => {
                             </Link>
 
                         {/* Makeup Service - separate nav item (if available) */}
-                        <Link
+                        {/* <Link
                             href="/franchise"
                             className="text-white hover:text-[#e7d3ba] text-[16px] font-[600] transition-colors"
                         >
                             Franchise
-                        </Link>
+                        </Link> */}
 
                         <Link
                             href="/academy"

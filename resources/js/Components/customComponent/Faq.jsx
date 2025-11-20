@@ -98,19 +98,7 @@ export default function Faq() {
         </div>
 
         {/* CTA */}
-        <div className="mt-12 text-center">
-          <div className="inline-block bg-white/90 backdrop-blur-sm rounded-3xl border border-[#e4ded2] p-6 shadow-lg">
-            <p className="text-[#7a705e] mb-4">
-              Still have questions? We're here to help!
-            </p>
-            <a 
-              href="/contact" 
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#3c4c24] hover:bg-[#2f3720] text-white rounded-full font-medium transition-all duration-300"
-            >
-              Contact Us
-            </a>
-          </div>
-        </div>
+        
       </div>
     </div>
   );
