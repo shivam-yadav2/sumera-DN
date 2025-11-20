@@ -240,15 +240,15 @@ const Hero = () => {
             </button> */}
 
             {/* Dots Navigation */}
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex gap-3">
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex gap-3 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
                 {slides.map((_, index) => (
                     <button
                         key={index}
                         onClick={() => goToSlide(index)}
-                        className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                        className={`h-3 rounded-full transition-all duration-300 ${
                             index === currentSlide
-                                ? "bg-[#3c4c24] w-8"
-                                : "bg-gray-400 hover:bg-gray-600"
+                                ? "bg-[#a0815c] w-8"
+                                : "bg-white/60 hover:bg-white w-3"
                         }`}
                     />
                 ))}

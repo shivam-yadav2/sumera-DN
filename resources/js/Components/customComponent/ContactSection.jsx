@@ -92,10 +92,10 @@ const SalonContact = () => {
     };
 
     return (
-        <div className=" bg-gradient-to-br from-[#3c4c24]/30 via-orange-50 to-[#3c4c24]/80  px-4 relative overflow-hidden">
+        <div className="bg-gradient-to-b from-[#f5efe3] via-[#f8f6f2] to-[#ffffff] px-4 relative overflow-hidden py-10 lg:py-20">
             {/* Decorative background elements */}
-            <div className="absolute top-20 left-10 w-72 h-72 bg-pink-200 rounded-full opacity-20 blur-3xl"></div>
-            <div className="absolute bottom-20 right-10 w-80 h-80 bg-orange-200 rounded-full opacity-25 blur-3xl"></div>
+            <div className="absolute top-20  left-10 w-72 h-72 bg-[#e7d3ba]/20 rounded-full opacity-40 blur-3xl"></div>
+            <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#a0815c]/10 rounded-full opacity-30 blur-3xl"></div>
 
             <div className="max-w-7xl mx-auto relative z-10 mb-5">
                 <div className="grid grid-cols-1 lg:grid-cols-2  gap-16 items-center">
@@ -104,16 +104,16 @@ const SalonContact = () => {
                     {/* Right Side - Image with Border */}
                     <div className="relative p-12 xl:p-20">
                         <div className="relative">
-                            {/* Purple border frame */}
-                            <div className="absolute inset-0 border-[12px] border-[#3c4c24]  pointer-events-none transform -translate-x-8 translate-y-8"></div>
+                            {/* Border frame */}
+                            <div className="absolute inset-0 border-[12px] border-[#a0815c] pointer-events-none transform -translate-x-8 translate-y-8 rounded-3xl"></div>
 
                             {/* Image */}
-                            <div className="relative aspect-square bg-white shadow-2xl overflow-hidden">
+                            <div className="relative aspect-square bg-[#f8f6f2] shadow-2xl overflow-hidden rounded-3xl border border-[#e4ded2]">
                                 <img
                                     loading="lazy"
                                     src="/assets/images/new/47.webp"
                                     alt="Salon service"
-                                    className=" object-cover object-top"
+                                    className="object-cover object-top w-full h-full"
                                 />
                             </div>
                         </div>
@@ -121,30 +121,11 @@ const SalonContact = () => {
                     <div className="space-y-4">
                         {/* Header */}
                         <div className="space-y-4">
-                            <div className="flex items-center gap-3">
-                                <p className="text-lg italic text-gray-700 poppins-regular-italic">
-                                    Have Questions?
-                                </p>
-                                <svg
-                                    width="50"
-                                    height="30"
-                                    viewBox="0 0 50 30"
-                                    className="text-[#3c4c24]"
-                                >
-                                    <path
-                                        d="M 5 15 Q 15 5, 25 15 T 45 15"
-                                        stroke="currentColor"
-                                        fill="none"
-                                        strokeWidth="2"
-                                    />
-                                    <polygon
-                                        points="45,15 40,12 40,18"
-                                        fill="currentColor"
-                                    />
-                                </svg>
-                            </div>
+                            <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-3">
+                                GET IN TOUCH
+                            </p>
 
-                            <h2 className="text-4xl lg:text-5xl font-[500] text-[#3c4c24] leading-tight head">
+                            <h2 className="text-4xl lg:text-5xl font-[500] text-[#2f3720] leading-tight head">
                                 Feel free to get in touch!
                                 <br />
                                 contact now
@@ -162,7 +143,7 @@ const SalonContact = () => {
                                         placeholder="Name *"
                                         value={formData.name}
                                         onChange={handleChange}
-                                        className={`w-full px-6 py-6 bg-white border-0 shadow-md text-gray-700 placeholder:text-gray-500 focus:ring-2 focus:ring-purple-300 rounded-none ${
+                                        className={`w-full px-6 py-6 bg-white/90 backdrop-blur-sm border border-[#e4ded2] shadow-sm text-[#2f3720] placeholder:text-[#7a705e] focus:ring-2 focus:ring-[#a0815c]/40 focus:border-[#a0815c] rounded-2xl transition-all ${
                                             errors.name
                                                 ? "ring-2 ring-red-500"
                                                 : ""
@@ -181,7 +162,7 @@ const SalonContact = () => {
                                         placeholder="Email"
                                         value={formData.email}
                                         onChange={handleChange}
-                                        className="w-full px-6 py-6 bg-white border-0 shadow-md text-gray-700 placeholder:text-gray-500 focus:ring-2 focus:ring-purple-300 rounded-none"
+                                        className="w-full px-6 py-6 bg-white/90 backdrop-blur-sm border border-[#e4ded2] shadow-sm text-[#2f3720] placeholder:text-[#7a705e] focus:ring-2 focus:ring-[#a0815c]/40 focus:border-[#a0815c] rounded-2xl transition-all"
                                     />
                                     {errors.email && (
                                         <p className="text-red-500 text-sm mt-1">
@@ -200,7 +181,7 @@ const SalonContact = () => {
                                         placeholder="Phone Number *"
                                         value={formData.mobile}
                                         onChange={handleChange}
-                                        className={`w-full px-6 py-6 bg-white border-0 shadow-md text-gray-700 placeholder:text-gray-500 focus:ring-2 focus:ring-purple-300 rounded-none ${
+                                        className={`w-full px-6 py-6 bg-white/90 backdrop-blur-sm border border-[#e4ded2] shadow-sm text-[#2f3720] placeholder:text-[#7a705e] focus:ring-2 focus:ring-[#a0815c]/40 focus:border-[#a0815c] rounded-2xl transition-all ${
                                             errors.mobile
                                                 ? "ring-2 ring-red-500"
                                                 : ""
@@ -217,14 +198,14 @@ const SalonContact = () => {
                                         name="service"
                                         value={formData.service}
                                         onChange={handleChange}
-                                        className={`w-full px-6 h-full bg-white border-0 shadow-md text-gray-700 focus:ring-2 focus:ring-purple-300 rounded-none ${
+                                        className={`w-full px-6 h-full bg-white/90 backdrop-blur-sm border border-[#e4ded2] shadow-sm focus:ring-2 focus:ring-[#a0815c]/40 focus:border-[#a0815c] rounded-2xl transition-all ${
                                             errors.service
                                                 ? "ring-2 ring-red-500"
                                                 : ""
                                         } ${
                                             !formData.service
-                                                ? "text-gray-500"
-                                                : "text-gray-700"
+                                                ? "text-[#7a705e]"
+                                                : "text-[#2f3720]"
                                         }`}
                                     >
                                         <option value="">
@@ -255,7 +236,7 @@ const SalonContact = () => {
                                     value={formData.message}
                                     onChange={handleChange}
                                     rows={3}
-                                    className="w-full px-6 py-6 bg-white border-0 shadow-md text-gray-700 placeholder:text-gray-500 focus:ring-2 focus:ring-purple-300 rounded-none resize-none"
+                                    className="w-full px-6 py-6 bg-white/90 backdrop-blur-sm border border-[#e4ded2] shadow-sm text-[#2f3720] placeholder:text-[#7a705e] focus:ring-2 focus:ring-[#a0815c]/40 focus:border-[#a0815c] rounded-2xl resize-none transition-all"
                                 />
                                 {errors.message && (
                                     <p className="text-red-500 text-sm mt-1">
@@ -268,7 +249,7 @@ const SalonContact = () => {
                             <Button
                                 onClick={handleSubmit}
                                 disabled={isSubmitting}
-                                className="bg-black hover:bg-gray-800 text-white px-10 py-6 text-base font-medium transition-all duration-300 rounded-none"
+                                className="bg-[#3c4c24] hover:bg-[#2f3720] text-white px-10 py-6 text-base font-medium transition-all duration-300 rounded-full shadow-md"
                             >
                                 {isSubmitting
                                     ? "Sending..."

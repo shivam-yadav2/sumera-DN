@@ -46,20 +46,17 @@ export default function Faq() {
   };
 
   return (
-    <div className="bg-white lg:py-20 py-10 px-4 md:px-8">
+    <div className="lg:py-20 py-10 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-lg italic mb-2" style={{ color: '#5c7650' }}>
-            Common Questions
+          <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-3">
+            COMMON QUESTIONS
           </p>
-          <h2 className="lg:text-5xl text-3xl head font-[500] " style={{ color: '#5c7650' }}>
-            Frequently Asked
+          <h2 className="lg:text-5xl text-3xl head font-[500] text-[#2f3720] mb-4">
+            Frequently Asked Questions
           </h2>
-          <h3 className="lg:text-5xl text-3xl head font-[500]" style={{ color: '#5c7650' }}>
-            Questions
-          </h3>
-          <p className="text-gray-600 mt-4 lg:mt-6 max-w-2xl mx-auto lg:text-lg text-sm">
+          <p className="text-[#7a705e] mt-4 lg:mt-6 max-w-2xl mx-auto lg:text-lg text-base">
             Find answers to the most common questions about our academy programs, courses, and training opportunities.
           </p>
         </div>
@@ -69,31 +66,29 @@ export default function Faq() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="border-2 rounded-lg overflow-hidden transition-all duration-300"
-              style={{
-                borderColor: activeIndex === index ? '#5c7650' : '#e5e7eb',
-                backgroundColor: activeIndex === index ? '#f8f9f7' : '#ffffff',
-              }}
+              className={`bg-white/90 backdrop-blur-sm rounded-3xl border-2 overflow-hidden transition-all duration-300 shadow-md ${
+                activeIndex === index 
+                  ? 'border-[#a0815c] shadow-lg' 
+                  : 'border-[#e4ded2] hover:border-[#a0815c]/50'
+              }`}
             >
               <button
                 onClick={() => toggleAccordion(index)}
-                className="w-full flex items-start justify-between p-6 hover:bg-gray-50 transition-colors"
+                className="w-full flex items-start justify-between p-6 hover:bg-[#f8f6f2] transition-colors"
               >
-                <h3 className="text-left  font-[500] text-gray-900 text-lg pr-4">
+                <h3 className="text-left font-[600] text-[#2f3720] text-lg pr-4">
                   {faq.question}
                 </h3>
                 <ChevronDown
-                  className="w-6 h-6 flex-shrink-0 transition-transform duration-300"
-                  style={{
-                    color: '#5c7650',
-                    transform: activeIndex === index ? 'rotate(180deg)' : 'rotate(0deg)',
-                  }}
+                  className={`w-6 h-6 flex-shrink-0 text-[#a0815c] transition-transform duration-300 ${
+                    activeIndex === index ? 'rotate-180' : 'rotate-0'
+                  }`}
                 />
               </button>
 
               {activeIndex === index && (
-                <div className="px-6 pb-6 border-t" style={{ borderColor: '#5c7650' }}>
-                  <p className="text-gray-700 leading-relaxed">
+                <div className="px-6 pb-6 pt-2 border-t border-[#e4ded2]">
+                  <p className="text-[#7a705e] leading-relaxed pt-4">
                     {faq.answer}
                   </p>
                 </div>
@@ -102,7 +97,20 @@ export default function Faq() {
           ))}
         </div>
 
-      
+        {/* CTA */}
+        <div className="mt-12 text-center">
+          <div className="inline-block bg-white/90 backdrop-blur-sm rounded-3xl border border-[#e4ded2] p-6 shadow-lg">
+            <p className="text-[#7a705e] mb-4">
+              Still have questions? We're here to help!
+            </p>
+            <a 
+              href="/contact" 
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#3c4c24] hover:bg-[#2f3720] text-white rounded-full font-medium transition-all duration-300"
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );

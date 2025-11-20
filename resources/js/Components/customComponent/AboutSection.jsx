@@ -20,17 +20,17 @@ const AboutSection = () => {
     }, [direction]);
 
     return (
-        <div className=" bg-[#3c4c24] py-10 px-4 relative overflow-hidden">
+        <div className="py-10 lg:py-16 px-4 relative overflow-hidden">
             {/* Decorative background elements */}
-            <div className="absolute top-20 left-10 w-64 h-64 bg-pink-100 rounded-full opacity-40 blur-3xl"></div>
-            <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-100 rounded-full opacity-30 blur-3xl"></div>
+            <div className="absolute top-20 left-10 w-64 h-64 bg-[#e7d3ba]/20 rounded-full opacity-40 blur-3xl"></div>
+            <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#a0815c]/10 rounded-full opacity-30 blur-3xl"></div>
 
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Main Content Card with Shadow */}
-                <div className="bg-white rounded-lg shadow-2xl p-6 lg:p-16 relative overflow-visible">
+                <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-lg border border-[#e4ded2] p-6 lg:p-16 relative overflow-visible">
                     {/* Large background text "Welcome" */}
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none overflow-hidden">
-                        <h1 className="text-[10rem] lg:text-[14rem] font-[500] text-gray-200 opacity-15 select-none whitespace-nowrap">
+                        <h1 className="text-[10rem] lg:text-[14rem] font-[500] text-[#f5efe3] opacity-30 select-none whitespace-nowrap">
                             Welcome
                         </h1>
                     </div>
@@ -38,11 +38,14 @@ const AboutSection = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-center relative z-10">
                         {/* Left Content */}
                         <div className="space-y-6">
-                            <h2 className="text-3xl lg:text-4xl font-[500] text-[#3c4c24] leading-tight head">
-                                The Sumeera Salon And Academy
+                            <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-3">
+                                WELCOME TO
+                            </p>
+                            <h2 className="text-3xl lg:text-4xl font-[500] text-[#2f3720] leading-tight head">
+                                Sumeera Salon And Academy
                             </h2>
 
-                            <p className="text-gray-600 leading-relaxed text-base">
+                            <p className="text-[#7a705e] leading-relaxed text-base">
                                 At Sumeera Salon And Academy in Lucknow, we
                                 believe that beauty begins with care and
                                 confidence. Our passion lies in enhancing your
@@ -75,16 +78,16 @@ const AboutSection = () => {
 
                                 <div className="relative px-12 xl:px-20">
                                     <div className="relative">
-                                        {/* Purple border frame */}
-                                        <div className="absolute inset-0 border-[12px] border-[#3c4c24]  pointer-events-none transform -translate-x-8 translate-y-8"></div>
+                                        {/* Border frame */}
+                                        <div className="absolute inset-0 border-[12px] border-[#a0815c] pointer-events-none transform -translate-x-8 translate-y-8 rounded-3xl"></div>
 
                                         {/* Image */}
-                                        <div className="relative aspect-square bg-white shadow-2xl overflow-hidden">
+                                        <div className="relative aspect-square bg-[#f8f6f2] shadow-2xl overflow-hidden rounded-3xl border border-[#e4ded2]">
                                             <img
                                                 loading="lazy"
                                                 src="/assets/images/new/homeAbout.jpg"
                                                 alt="Salon service"
-                                                className=" object-cover object-top"
+                                                className="object-cover object-top w-full h-full"
                                             />
                                         </div>
                                     </div>

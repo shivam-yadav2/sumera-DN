@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -96,58 +96,67 @@ export default function ContactPage() {
 
     return (
         <Layout>
-            <BannerSection title="Contact Us" />
-            <div className=" bg-white">
+            <div className="bg-gradient-to-b from-[#f5efe3] via-[#f8f6f2] to-[#ffffff]">
+                <BannerSection 
+                    title="Get In Touch"
+                    subtitle="We'd Love to Hear From You"
+                    description="Have questions about our services or academy? Want to book an appointment or discuss your beauty needs? Our team is here to help you every step of the way."
+                    label="CONTACT US"
+                />
+
                 {/* Main Content */}
-                <div className="container mx-auto px-4 lg:py-20 py-10">
+                <div className="container mx-auto px-4 lg:py-12 py-10">
                     <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
                         {/* Contact Information */}
                         <div>
-                            <h2 className="text-3xl font-[500] text-gray-900 mb-8">
-                                Get In Touch
+                            <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-3">
+                                GET IN TOUCH
+                            </p>
+                            <h2 className="text-3xl font-[500] text-[#2f3720] mb-8">
+                                Contact Information
                             </h2>
 
                             <div className="space-y-6">
-                                <div className="flex items-start gap-4">
-                                    <div className="bg-[#3c4c24] p-3 rounded">
+                                <div className="flex items-start gap-4 p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-[#e4ded2] hover:shadow-md transition-shadow">
+                                    <div className="bg-[#3c4c24] p-3 rounded-full">
                                         <Phone className="w-5 h-5 text-white" />
                                     </div>
                                     <div>
-                                        <h3 className="font-[500] text-gray-900 mb-1">
+                                        <h3 className="font-[500] text-[#2f3720] mb-1">
                                             Phone
                                         </h3>
-                                        <p className="text-gray-600">
+                                        <p className="text-[#7a705e]">
                                             +91 7355417843
                                         </p>
                                     </div>
                                 </div>
 
-                                <div className="flex items-start gap-4">
-                                    <div className="bg-[#3c4c24] p-3 rounded">
+                                <div className="flex items-start gap-4 p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-[#e4ded2] hover:shadow-md transition-shadow">
+                                    <div className="bg-[#3c4c24] p-3 rounded-full">
                                         <Mail className="w-5 h-5 text-white" />
                                     </div>
                                     <div>
-                                        <h3 className="font-[500] text-gray-900 mb-1">
+                                        <h3 className="font-[500] text-[#2f3720] mb-1">
                                             Email
                                         </h3>
-                                        <p className="text-gray-600">
+                                        <p className="text-[#7a705e]">
                                             infosumeerasalon@gmail.com
                                         </p>
                                     </div>
                                 </div>
 
-                                <div className="flex items-start gap-4">
-                                    <div className="bg-[#3c4c24] p-3 rounded">
+                                <div className="flex items-start gap-4 p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-[#e4ded2] hover:shadow-md transition-shadow">
+                                    <div className="bg-[#3c4c24] p-3 rounded-full">
                                         <MapPin className="w-5 h-5 text-white" />
                                     </div>
                                     <div>
-                                        <h3 className="font-[500] text-gray-900 mb-1">
+                                        <h3 className="font-[500] text-[#2f3720] mb-1">
                                             Address
                                         </h3>
-                                        <p className="text-gray-600">
+                                        <p className="text-[#7a705e]">
                                             Shop N-1,Sector-C,Mahanagar
                                         </p>
-                                        <p className="text-gray-600">
+                                        <p className="text-[#7a705e]">
                                             Lucknow, Uttar Pradesh 226006
                                         </p>
                                     </div>
@@ -157,8 +166,11 @@ export default function ContactPage() {
 
                         {/* Contact Form */}
                         <div>
-                            <h2 className="text-3xl font-[500] text-gray-900 mb-8">
-                                Send Message
+                            <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-3">
+                                SEND US A MESSAGE
+                            </p>
+                            <h2 className="text-3xl font-[500] text-[#2f3720] mb-8">
+                                We'd Love to Hear From You
                             </h2>
 
                             <div className="space-y-6">
@@ -268,7 +280,7 @@ export default function ContactPage() {
                                 <Button
                                     onClick={handleSubmit}
                                     disabled={isSubmitting}
-                                    className="w-full h-12 bg-[#3c4c24] hover:bg-[#005840] text-white"
+                                    className="w-full h-12 bg-[#3c4c24] hover:bg-[#2f3720] text-white rounded-full shadow-md transition-all duration-300"
                                 >
                                     {isSubmitting
                                         ? "Submitting..."
@@ -278,6 +290,43 @@ export default function ContactPage() {
                         </div>
                     </div>
                 </div>
+
+                {/* Dark CTA Section */}
+                <div className="container mx-auto px-4 py-16">
+                    <div className="bg-[#12110f] rounded-3xl overflow-hidden text-white">
+                        <div className="grid gap-6 md:grid-cols-[minmax(0,2.2fr)_minmax(0,1fr)] items-center">
+                            <div className="relative p-10 md:p-14">
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#a0815c]/20 via-transparent to-transparent pointer-events-none" />
+                                <h3 className="text-3xl font-[500] mb-4 head">
+                                    Visit Our Salon in Lucknow
+                                </h3>
+                                <p className="text-white/70 leading-relaxed max-w-2xl mb-6">
+                                    Experience our premium beauty services in person. Our expert team is ready to transform your look and boost your confidence. Book your appointment today!
+                                </p>
+                                <div className="flex flex-wrap gap-4 text-sm font-[500]">
+                                    <a
+                                        href="https://www.google.com/maps/place/Sumeera+makeover+and+salon/@26.8785218,80.9522524,17z/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white text-[#3c4c24] hover:bg-[#f5efe3] transition"
+                                    >
+                                        <MapPin className="h-4 w-4" />
+                                        Get Directions
+                                    </a>
+                                    <a
+                                        href="tel:7355417843"
+                                        className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition"
+                                    >
+                                        <Phone className="h-4 w-4" />
+                                        Call Now
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="h-full bg-[url('/assets/images/new/47.webp')] bg-cover bg-center min-h-[260px]" />
+                        </div>
+                    </div>
+                </div>
+
                 <div className="h-[50vh] w-full">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.78655432164!2d80.95225237612095!3d26.8785217615577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399957a2322b6657%3A0xc0b6064cb1de699b!2sSumeera%20makeover%20and%20salon!5e0!3m2!1sen!2sin!4v1761290724496!5m2!1sen!2sin"

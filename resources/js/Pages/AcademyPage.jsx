@@ -58,42 +58,14 @@ const AcademyPage = ({ courses = [] }) => {
     };
     return (
         <Layout>
-            {/* <BannerSection title="Academy Courses" /> */}
-            <section
-                className="relative w-full h-[200px] mt-[70px] lg:h-80 2xl:h-96 bg-cover bg-center text-[#3c4c24] "
-                style={{
-                    backgroundImage: "url('/assets/images/new/ban1.jpg')",
-                }}
-            >
-                {/* Overlay for text readability */}
-                {/* <div className="absolute w-full h-full top-0 left-0  bg-olive-green-900  z-50"></div> */}
-
-                <div className="relative z-20 flex flex-col items-center justify-end lg:justify-center h-full text-center px-4 pb-10 lg:pb-0">
-                    {/* Title */}
-                    <h1 className="text-3xl head md:text-5xl font-[500] text-olive-green-200 lg:mb-2">
-                        Academy Courses
-                    </h1>
-
-                    {/* Breadcrumb Navigation */}
-                    <nav className="text-xs lg:text-sm text-olive-green-100">
-                        <Link href="/" className="hover:text-olive-green-300">
-                            Home
-                        </Link>{" "}
-                        <span className="mx-1">›</span>{" "}
-                        {location.pathname === "/gallery" ? (
-                            <span>Gallery Grid</span>
-                        ) : (
-                            <span>
-                                {location.pathname
-                                    .replace("/", "")
-                                    .charAt(0)
-                                    .toUpperCase() + location.pathname.slice(2)}
-                            </span>
-                        )}
-                    </nav>
-                </div>
-            </section>
-            <CourseSlider courses={courses} />
+            <div className="bg-gradient-to-b from-[#f5efe3] via-[#f8f6f2] to-[#ffffff]">
+                <BannerSection 
+                    title="Academy Courses"
+                    subtitle="Transform Your Passion Into Profession"
+                    description="Join India's leading beauty academy and learn from certified professionals. Industry-recognized courses, hands-on training, and lifetime support."
+                    label="SUMEERA ACADEMY"
+                />
+                <CourseSlider courses={courses} />
             <AcademyWhyChoose />
             {/* <AcademyFacilities /> */}
             <AcademyTestimonials />
@@ -173,6 +145,7 @@ const AcademyPage = ({ courses = [] }) => {
 
             <Faq />
             <SalonContact />
+            </div>
         </Layout>
     );
 };

@@ -14,14 +14,20 @@ const Gallery = () => {
 
   return (
     <Layout>
-        {/* <BannerSection title={pageTitle}/> */}
-        <div className="mt-12"/>
-        <SalonGallery
-          gallery={gallery || []}
-          pageType={pageType}
-          heading={pageTitle}
-          description={pageDescription}
-        />
+        <div className="bg-gradient-to-b from-[#f5efe3] via-[#f8f6f2] to-[#ffffff]">
+          <BannerSection 
+            title={pageTitle}
+            description={pageDescription || "Explore our stunning collection of transformations, styling, and beauty moments. Get inspired by our portfolio of exceptional work."}
+            label="OUR PORTFOLIO"
+            showCTA={false}
+          />
+          <SalonGallery
+            gallery={gallery || []}
+            pageType={pageType}
+            heading={pageTitle}
+            description={pageDescription}
+          />
+        </div>
     </Layout>
   );
 };

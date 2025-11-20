@@ -109,17 +109,17 @@ const Home = () => {
             <Head title="Sumeera Salon And Academy - Premium Beauty Destination in Lucknow" />
             <Hero />
             {/* <AboutSection /> */}
-            <div className=" bg-[#3c4c24] py-10 px-4 relative overflow-hidden">
+            <div className="bg-gradient-to-b from-[#f5efe3] via-[#f8f6f2] to-[#ffffff] py-16 px-4 relative overflow-hidden">
                 {/* Decorative background elements */}
-                <div className="absolute top-20 left-10 w-64 h-64 bg-pink-100 rounded-full opacity-40 blur-3xl"></div>
-                <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-100 rounded-full opacity-30 blur-3xl"></div>
+                <div className="absolute top-20 left-10 w-64 h-64 bg-[#e7d3ba]/20 rounded-full opacity-40 blur-3xl"></div>
+                <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#a0815c]/10 rounded-full opacity-30 blur-3xl"></div>
 
                 <div className="max-w-7xl mx-auto relative z-10">
                     {/* Main Content Card with Shadow */}
-                    <div className="bg-white rounded-lg shadow-2xl p-6 lg:p-16 relative overflow-visible">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-lg border border-[#e4ded2] p-6 lg:p-16 relative overflow-visible">
                         {/* Large background text "Welcome" */}
                         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none overflow-hidden">
-                            <h1 className="text-[10rem] lg:text-[14rem] font-[500] text-gray-200 opacity-15 select-none whitespace-nowrap">
+                            <h1 className="text-[10rem] lg:text-[14rem] font-[500] text-[#f5efe3] opacity-30 select-none whitespace-nowrap">
                                 Welcome
                             </h1>
                         </div>
@@ -127,11 +127,11 @@ const Home = () => {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-center relative z-10">
                             {/* Left Content */}
                             <div className="space-y-6">
-                                <h2 className="text-3xl lg:text-4xl font-[500] text-[#3c4c24] leading-tight head">
+                                <h2 className="text-3xl lg:text-4xl font-[500] text-[#2f3720] leading-tight head">
                                     The Sumeera Salon And Academy
                                 </h2>
 
-                                <p className="text-gray-600 leading-relaxed text-base">
+                                <p className="text-[#7a705e] leading-relaxed text-base">
                                     At Sumeera Salon And Academy in Lucknow, we
                                     believe that beauty begins with care and
                                     confidence. Our passion lies in enhancing
@@ -147,7 +147,7 @@ const Home = () => {
 
                                 <Button
                                     onClick={() => router.visit("/about")}
-                                    className="bg-black rounded-none hover:bg-gray-800 text-white px-6 py-4 text-base font-medium"
+                                    className="bg-[#3c4c24] rounded-full hover:bg-[#2f3720] text-white px-8 py-4 text-base font-medium shadow-md transition-all duration-300"
                                 >
                                     Read More 
                                 </Button>
@@ -166,16 +166,16 @@ const Home = () => {
 
                                 <div className="relative px-12 xl:px-20">
                                     <div className="relative">
-                                        {/* Purple border frame */}
-                                        <div className="absolute inset-0 border-[12px] border-[#3c4c24]  pointer-events-none transform -translate-x-8 translate-y-8"></div>
+                                        {/* Border frame */}
+                                        <div className="absolute inset-0 border-[12px] border-[#a0815c]  pointer-events-none transform -translate-x-8 translate-y-8 rounded-3xl"></div>
 
                                         {/* Image */}
-                                        <div className="relative aspect-square bg-white shadow-2xl overflow-hidden">
+                                        <div className="relative aspect-square bg-[#f8f6f2] shadow-2xl overflow-hidden rounded-3xl border border-[#e4ded2]">
                                             <img
                                                 loading="lazy"
                                                 src="/assets/images/new/homeAbout.jpg"
                                                 alt="Salon service"
-                                                className=" object-cover object-top"
+                                                className="object-cover object-top w-full h-full"
                                             />
                                         </div>
                                     </div>
@@ -203,13 +203,16 @@ const Home = () => {
             {/* <SalonPricing/> */}
             <SalonGallery gallery={gallery} />
             {/* Partners Section */}
-            <section className="bg-gradient-to-br from-gray-50 via-white to-gray-50 py-8 lg:py-12 px-4 overflow-hidden">
+            <section className="bg-gradient-to-b from-[#f8f6f2] via-[#f5efe3] to-[#f8f6f2] py-12 lg:py-16 px-4 overflow-hidden">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12 lg:mb-16">
-                        <h2 className="text-3xl lg:text-5xl font-[500] text-[#3c4c24] mb-4 head">
+                        <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-3">
+                            TRUSTED PARTNERSHIPS
+                        </p>
+                        <h2 className="text-3xl lg:text-5xl font-[500] text-[#2f3720] mb-4 head">
                             Our Partners
                         </h2>
-                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                        <p className="text-lg text-[#7a705e] max-w-2xl mx-auto">
                             Trusted by leading brands and organizations
                         </p>
                     </div>
@@ -231,7 +234,7 @@ const Home = () => {
                                 ).map((num) => (
                                     <div
                                         key={`first-${num}`}
-                                        className="group relative bg-white rounded-xl p-3 lg:p-5 shadow-sm hover:shadow-lg transition-all duration-300 flex items-center justify-center  border border-gray-100 hover:border-gray-200 flex-shrink-0"
+                                        className="group relative bg-white/90 backdrop-blur-sm rounded-2xl p-3 lg:p-5 shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center border border-[#e4ded2] hover:border-[#a0815c] flex-shrink-0"
                                     >
                                         <img
                                             src={`/assets/images/new/logos/${num}.png`}
@@ -248,7 +251,7 @@ const Home = () => {
                                 ).map((num) => (
                                     <div
                                         key={`second-${num}`}
-                                        className="group relative bg-white rounded-xl p-6 lg:p-8 shadow-sm hover:shadow-lg transition-all duration-300 flex items-center justify-center min-h-[120px] lg:min-h-[160px] min-w-[200px] lg:min-w-[250px] border border-gray-100 hover:border-gray-200 flex-shrink-0"
+                                        className="group relative bg-white/90 backdrop-blur-sm rounded-2xl p-6 lg:p-8 shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center min-h-[120px] lg:min-h-[160px] min-w-[200px] lg:min-w-[250px] border border-[#e4ded2] hover:border-[#a0815c] flex-shrink-0"
                                     >
                                         <img
                                             src={`/assets/images/new/logos/${num}.png`}
