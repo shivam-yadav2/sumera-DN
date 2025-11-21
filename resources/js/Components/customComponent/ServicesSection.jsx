@@ -45,7 +45,7 @@ const ServicesSection = () => {
     const displayServices = servicesWithImages.length > 0 ? servicesWithImages : fallbackServices;
 
     return (
-        <div className="bg-gradient-to-b from-[#f5efe3] via-[#f8f6f2] to-[#ffffff] py-16 lg:py-24 px-4 relative overflow-hidden">
+        <div className="bg-gradient-to-b from-[#f5efe3] via-[#f8f6f2] to-[#ffffff] py-10 lg:py-16 px-4 relative overflow-hidden">
             {/* Decorative background elements */}
             <div className="absolute top-40 right-10 w-96 h-96 bg-[#e7d3ba]/20 rounded-full opacity-50 blur-3xl"></div>
             <div className="absolute bottom-20 left-10 w-80 h-80 bg-[#a0815c]/15 rounded-full opacity-40 blur-3xl"></div>

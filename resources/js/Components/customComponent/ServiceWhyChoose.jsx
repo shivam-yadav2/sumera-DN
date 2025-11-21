@@ -45,19 +45,20 @@ const ServiceWhyChoose = () => {
     ];
 
     return (
-        <section className="py-16 lg:py-24 px-4">
+        <section className="py-10 lg:py-16 px-4">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-3">
+                    {/* <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-3">
                         WHY CHOOSE US
-                    </p>
+                    </p> */}
                     <h2 className="text-4xl lg:text-5xl font-[500] text-[#2f3720] mb-4 head">
-                        Experience the Sumeera Difference
+                    WHY CHOOSE US
+
                     </h2>
-                    <p className="text-[#7a705e] text-lg max-w-3xl mx-auto">
+                    {/* <p className="text-[#7a705e] text-lg max-w-3xl mx-auto">
                         We don't just provide services—we create experiences that transform and inspire confidence.
-                    </p>
+                    </p> */}
                 </div>
 
                 {/* Features Grid */}

@@ -24,7 +24,7 @@ const AppointmentButton = () => {
 // Founder Section Component
 const FounderSection = () => {
     return (
-        <section className="py-16 lg:py-24 px-4">
+        <section className="py-10 lg:py-16 px-4">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-12">
                     <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-3">
@@ -169,7 +169,7 @@ const About = () => {
                                     </a>
                                 </div>
                             </div>
-                            <div className="h-full bg-[url('/assets/images/new/47.webp')] bg-cover bg-center min-h-[260px]" />
+                            <div className="h-full bg-[url('/assets/images/new/CTA3.jpg')] bg-cover bg-center min-h-[260px]" />
                         </div>
                     </div>
                 </div>
