@@ -123,6 +123,12 @@
                                                                 </a>
                                                             </div>
                                                             <div class="edit">
+                                                                <a href="{{ route('admin.service-why-choose-us.index', base64_encode($row->id)) }}"
+                                                                    class="btn btn-sm btn-info edit-item-btn">
+                                                                    Why Choose Us
+                                                                </a>
+                                                            </div>
+                                                            <div class="edit">
                                                                 <a href="{{ route('admin.service-brands.create', base64_encode($row->id)) }}"
                                                                    class="btn btn-sm btn-secondary edit-item-btn">
                                                                     Service Brands

@@ -47,9 +47,7 @@ export function WhyChooseUsSection() {
             <h2 className="text-4xl lg:text-5xl font-[500] text-[#2f3720] mb-4 head">
               Why Choose Sumeera?
             </h2>
-            <p className="text-[#7a705e] text-lg max-w-3xl mx-auto">
-              Experience the perfect blend of expertise, artistry, and personalized care that sets us apart.
-            </p>
+            
           </div>
 
           {/* Features Grid */}

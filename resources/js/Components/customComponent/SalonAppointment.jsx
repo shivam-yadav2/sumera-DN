@@ -22,10 +22,7 @@ const SalonAppointment = () => {
 
                             <div className="relative z-10 space-y-4">
                                 <h2 className="text-2xl lg:text-3xl font-[500] text-[#3c4c24] leading-tight head">
-                                    Shikha Chauhan is a renowned Makeup Artist,
-                                    Educator, and Entrepreneur, and the proud
-                                    Founder of Sumeera Salon & Academy in
-                                    Lucknow.
+                                    Founder of Sumeera Salon & Academy
                                 </h2>
 
                                 <p className="text-gray-700 text-base leading-6 font-medium ">

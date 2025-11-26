@@ -29,7 +29,7 @@ class SubServicesController extends Controller
             $rules = [
                 'service_id'    =>  'required|string|max:255',
                 'title'         =>  'required|string|max:255',
-                'image'         =>  'required|image|mimes:jpeg,jpg,png,webp|max:200',
+                'image'         =>  'required|image|mimes:jpeg,jpg,png,webp|max:2048',
                 'description'   =>  'nullable|string',
             ];
 
@@ -40,7 +40,7 @@ class SubServicesController extends Controller
                 'image.required'    => 'The Service image is required.',
                 'image.image'       => 'The file must be an image.',
                 'image.mimes'       => 'The image must be a file of type: jpeg, jpg, png, webp.',
-                'image.max'         => 'The image size must not exceed 200kb.',
+                'image.max'         => 'The image size must not exceed 2MB.',
                 'description.max'   => 'The Sub Service Details description may not exceed 255 characters.',
             ];
 
@@ -163,6 +163,6 @@ class SubServicesController extends Controller
         // Save the updated package
         $meta->save();
 
-        return response()->json(['message' => 'Sub Service Detail Status updated successfully']);
+        return redirect()->back()->with('success_msg', 'Sub Service details deleted successfully.');
     }
 }

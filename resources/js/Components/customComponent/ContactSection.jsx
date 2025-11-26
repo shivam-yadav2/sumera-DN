@@ -126,9 +126,8 @@ const SalonContact = () => {
                             </p>
 
                             <h2 className="text-4xl lg:text-5xl font-[500] text-[#2f3720] leading-tight head">
-                                Feel free to get in touch!
-                                <br />
-                                contact now
+                                Feel free to Contact Us!
+                                
                             </h2>
                         </div>
 

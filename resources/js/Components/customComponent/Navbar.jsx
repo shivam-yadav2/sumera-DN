@@ -104,6 +104,13 @@ const Navbar = () => {
                                 Makeup 
                             </Link>
 
+                        {/* <Link
+                            href="/mens-grooming"
+                            className="text-white hover:text-[#e7d3ba] text-[16px] font-[600] transition-colors"
+                        >
+                            Men's Grooming
+                        </Link> */}
+
                         {/* Makeup Service - separate nav item (if available) */}
                         {/* <Link
                             href="/franchise"
@@ -261,6 +268,13 @@ const Navbar = () => {
                             >
                                 Makeup Service
                             </Link>
+
+                            {/* <Link
+                                href="/mens-grooming"
+                                className="text-white hover:text-[#e7d3ba] text-[16px] font-[600] transition-colors"
+                            >
+                                Men's Grooming
+                            </Link> */}
 
                             <Link
                                 href="/academy"

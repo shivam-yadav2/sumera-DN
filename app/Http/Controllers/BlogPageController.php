@@ -32,10 +32,7 @@ class BlogPageController extends Controller
 
         return Inertia::render('BlogList', [
             'blogs' => $blogs,
-            'pageMeta' => [
-                'title' => 'Blog',
-                'description' => 'Latest updates and stories from Sumeera Salon and Academy.',
-            ],
+            'seo' => get_seo('blogs'),
         ]);
     }
 
@@ -73,11 +70,10 @@ class BlogPageController extends Controller
                 'excerpt' => $blog->excerpt,
                 'content' => $blog->content,
                 'featured_image' => $blog->featured_image ? asset($blog->featured_image) : null,
-                'meta_title' => $blog->meta_title ?: $blog->title,
-                'meta_description' => $blog->meta_description ?: Str::limit(strip_tags($blog->content), 160),
                 'published_at' => optional($blog->published_at)->toIso8601String(),
             ],
             'relatedBlogs' => $relatedBlogs,
+            'seo' => get_blog_seo($blog),
         ]);
     }
 }

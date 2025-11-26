@@ -1,10 +1,13 @@
 import Layout from "@/Layouts/Layout";
 import React from "react";
 import { BannerSection } from "@/Components/customComponent/BannerSection";
+import SEOHead from "@/Components/SEOHead";
+import { usePage } from "@inertiajs/react";
 import { AboutSection } from "@/Components/customComponent/AboutSection";
 import { ServicesSection } from "@/Components/customComponent/ServicesSection";
 import Faq from "@/Components/customComponent/Faq";
 import { WhyChooseUsSection } from "@/Components/customComponent/WhyChooseUsSection";
+import { AchievementsSection } from "@/Components/customComponent/AchievementsSection";
 import { usePopup } from "../contexts/PopupContext";
 import { Award, Target, Heart, Users, ArrowRight } from "lucide-react";
 
@@ -94,8 +97,11 @@ const FounderSection = () => {
 };
 
 const About = () => {
+    const { seo } = usePage().props;
+    
     return (
         <Layout>
+            <SEOHead seo={seo} />
             {/* Main content with Blog-style background */}
             <div className="bg-gradient-to-b from-[#f5efe3] via-[#f8f6f2] to-[#ffffff]">
                 <BannerSection 
@@ -133,13 +139,16 @@ const About = () => {
                 {/* About the Founder Section */}
                 <FounderSection />
                 
+                {/* Achievements Section */}
+                <AchievementsSection />
+                
                 {/* Why Choose Us Section */}
                 <WhyChooseUsSection />
                 
                 <ServicesSection />
                 
                 {/* FAQ Section */}
-                <Faq />
+                {/* <Faq /> */}
 
                 {/* Dark CTA Section */}
                 <div className="container mx-auto px-4 py-16">

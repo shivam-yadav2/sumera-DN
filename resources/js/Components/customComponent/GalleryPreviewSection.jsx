@@ -1,11 +1,13 @@
 import React, { useState, useMemo, useEffect } from "react";
-import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, ZoomIn, ArrowRight } from "lucide-react";
+import { Link } from "@inertiajs/react";
 
 const SalonGallery = ({
     gallery = [],
     pageType = "default",
     heading = "Our Gallery",
     description,
+    isHomePage = false,
 }) => {
     const [selectedImage, setSelectedImage] = useState(null);
     const [selectedCategory, setSelectedCategory] = useState("all");
@@ -100,6 +102,9 @@ const SalonGallery = ({
             ? galleryImages
             : galleryImages.filter((img) => img.category === selectedCategory);
 
+    // Limit to 3 images if on home page
+    const displayImages = isHomePage ? filteredImages.slice(0, 3) : filteredImages;
+
     const openLightbox = (image) => {
         setSelectedImage(image);
     };
@@ -157,7 +162,7 @@ const SalonGallery = ({
 
                 {/* Gallery Grid */}
                 <div className="columns-2 lg:columns-3 gap-4 space-y-4">
-                    {filteredImages.map((image, index) => (
+                    {displayImages.map((image, index) => (
                         <div
                             key={image.id}
                             className="break-inside-avoid group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:scale-[1.02]"
@@ -186,6 +191,20 @@ const SalonGallery = ({
                         </div>
                     ))}
                 </div>
+
+                {/* View Full Gallery Button - Only on Home Page */}
+                {isHomePage && filteredImages.length > 3 && (
+                    <div className="mt-12 text-center">
+                        <Link
+                            href="/gallery/makeup"
+                            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#3c4c24] to-[#2f3720] hover:from-[#2f3720] hover:to-[#3c4c24] text-white text-base font-[500] rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 head"
+                        >
+                            View Full Makeup Gallery
+                            <ArrowRight className="w-5 h-5" />
+                        </Link>
+                       
+                    </div>
+                )}
 
                 {/* Lightbox */}
                 {selectedImage && (

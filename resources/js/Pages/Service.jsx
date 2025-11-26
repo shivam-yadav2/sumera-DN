@@ -7,14 +7,17 @@ import SalonContact from "@/Components/customComponent/ContactSection";
 import ServiceDetailSection1 from "@/Components/customComponent/ServiceDetailSection1";
 import ServiceDetailSection2 from "@/Components/customComponent/ServiceDetailSection2";
 import ServiceWhyChoose from "@/Components/customComponent/ServiceWhyChoose";
+import SubServicesSection from "@/Components/customComponent/SubServicesSection";
+import SEOHead from "@/Components/SEOHead";
 import { usePage } from "@inertiajs/react";
 import { Phone } from "lucide-react";
 
 const Service = () => {
-    const { service, galleryImages, serviceAbout = [] } = usePage().props;
+    const { service, galleryImages, serviceAbout = [], subServices = [], seo } = usePage().props;
     
     return (
         <Layout>
+            <SEOHead seo={seo} />
             <div className="bg-gradient-to-b from-[#f5efe3] via-[#f8f6f2] to-[#ffffff]">
                 <BannerSection 
                     title={service?.title || "Our Services"}
@@ -100,6 +103,9 @@ const Service = () => {
                 </section>
             )}
 
+            {/* Sub Services Section */}
+            <SubServicesSection subServices={subServices} />
+
             <section className="max-w-7xl mx-auto lg:py-20 py-10 md:py-32">
                 <div className="px-4">
                     {/* <div className="flex flex-col gap-6 mb-12 items-start justify-between">
@@ -123,13 +129,13 @@ const Service = () => {
                                         alt={image.title || `Gallery image ${index + 1}`}
                                         className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#3c4c24]/90 via-[#3c4c24]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    {/* <div className="absolute inset-0 bg-gradient-to-t from-[#3c4c24]/90 via-[#3c4c24]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                         <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                                             <h3 className="font-[500] text-xl mb-2">
                                                 {image.title || `Gallery image ${index + 1}`}
                                             </h3>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                             ))}
                         </div>
@@ -142,21 +148,18 @@ const Service = () => {
                     )}
                 </div>
             </section>
-
             {/* <ServiceDetailSection2 /> */}
-
             {/* Why Choose Us Section */}
             <ServiceWhyChoose />
-   
             {/* Partners Section */}
             <section className="bg-gradient-to-b from-[#f8f6f2] via-[#f5efe3] to-[#f8f6f2] py-12 lg:py-16 px-4 overflow-hidden">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12 lg:mb-16">
-                        <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-3">
+                        {/* <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-3">
                             TRUSTED PARTNERSHIPS
-                        </p>
+                        </p> */}
                         <h2 className="text-3xl lg:text-5xl font-[500] text-[#2f3720] mb-4 head">
-                        Partner Brands
+                        Makeup Product Used
                         </h2>
                         
                     </div>
@@ -224,10 +227,6 @@ const Service = () => {
                     }
                 `}</style>
             </section>
-
-            {/* <SalonPricing /> */}
-
-            {/* <ServicesSection /> */}
 
             {/* Dark CTA Section */}
             <div className="bg-gradient-to-b from-[#f8f6f2] to-[#ffffff]">

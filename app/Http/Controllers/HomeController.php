@@ -141,7 +141,8 @@ class HomeController extends Controller
             'sliders' => $sliders,
             'services' => $services,
             'gallery' => $gallery,
-            'offers' => $offers
+            'offers' => $offers,
+            'seo' => get_seo('home')
         ]);
     }
 

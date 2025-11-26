@@ -7,6 +7,7 @@ import { ArrowRight } from "lucide-react";
 import { Head, usePage, router } from "@inertiajs/react";
 import { toast } from "sonner";
 import Layout from "../Layouts/Layout";
+import SEOHead from "@/Components/SEOHead";
 import Hero from "../Components/customComponent/Hero";
 import { AboutSection } from "../Components/customComponent/AboutSection";
 import { ServicesSection } from "../Components/customComponent/ServicesSection";
@@ -18,9 +19,10 @@ import SalonPricing from "../Components/customComponent/SalonPricing";
 import AcademyCoursesSection from "../Components/customComponent/AcademyCoursesSection";
 import OffersDealsSection from "../Components/customComponent/OffersDealsSection";
 import TestimonialSection from "../Components/customComponent/TestimonialSection";
+import { AchievementsSection } from "../Components/customComponent/AchievementsSection";
 
 const Home = () => {
-    const { gallery = [], services = [] } = usePage().props;
+    const { gallery = [], services = [], seo } = usePage().props;
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -106,7 +108,7 @@ const Home = () => {
     };
     return (
         <Layout>
-            <Head title="Sumeera Salon And Academy - Premium Beauty Destination in Lucknow" />
+            <SEOHead seo={seo} />
             <Hero />
             {/* <AboutSection /> */}
             <div className="bg-gradient-to-b from-[#f5efe3] via-[#f8f6f2] to-[#ffffff] py-16 px-4 relative overflow-hidden">
@@ -196,25 +198,21 @@ const Home = () => {
             </div>
             <ServicesSection />
             <OffersDealsSection />
+            <AchievementsSection />
             {/* <TestimonialSection /> */}
             <SalonAppointment />
             {/* <AcademyCoursesSection /> */}
 
             {/* <SalonPricing/> */}
-            <SalonGallery gallery={gallery} />
+            <SalonGallery gallery={gallery} isHomePage={true} />
             {/* Partners Section */}
             <section className="bg-gradient-to-b from-[#f8f6f2] via-[#f5efe3] to-[#f8f6f2] py-12 lg:py-16 px-4 overflow-hidden">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12 lg:mb-16">
-                        <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-3">
-                            TRUSTED PARTNERSHIPS
-                        </p>
+                        
                         <h2 className="text-3xl lg:text-5xl font-[500] text-[#2f3720] mb-4 head">
-                            Our Partners
+                        Makeup Product Used
                         </h2>
-                        <p className="text-lg text-[#7a705e] max-w-2xl mx-auto">
-                            Trusted by leading brands and organizations
-                        </p>
                     </div>
 
                     {/* Marquee Container */}
@@ -224,7 +222,7 @@ const Home = () => {
                             <div
                                 className="flex gap-6 lg:gap-8 marquee-track"
                                 style={{
-                                    animation: "marquee 30s linear infinite",
+                                    animation: "marquee 10s linear infinite",
                                 }}
                             >
                                 {/* First Set of Logos */}

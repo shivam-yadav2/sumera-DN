@@ -67,10 +67,10 @@ const ServicesSection = () => {
                     <h2 className="text-4xl lg:text-6xl font-[500] text-[#2f3720] relative z-10 head mb-4">
                         Our Signature Services
                     </h2>
-                    <p className="text-[#7a705e] text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
+                    {/* <p className="text-[#7a705e] text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
                         Experience beauty redefined with our curated collection of premium services, 
                         crafted by expert artists using world-class techniques.
-                    </p>
+                    </p> */}
                 </div>
 
                 {/* Services Slider */}
@@ -79,6 +79,11 @@ const ServicesSection = () => {
                         onSwiper={setSwiperInstance}
                         modules={[Navigation]}
                         spaceBetween={24}
+                        loop={true}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
                         slidesPerView={1}
                         breakpoints={{
                             640: {
@@ -193,7 +198,7 @@ const ServicesSection = () => {
                 </div>
 
                 {/* View All Services Button */}
-                <div className="mt-12 text-center">
+                {/* <div className="mt-12 text-center">
                     <Link
                         href="/services"
                         className="inline-flex items-center gap-2 px-8 py-3 bg-[#3c4c24] hover:bg-[#2f3720] text-white text-base font-medium rounded-full transition-all duration-300 shadow-md hover:shadow-xl"
@@ -201,7 +206,7 @@ const ServicesSection = () => {
                         View All Services
                         <ArrowRight className="w-5 h-5" />
                     </Link>
-                </div>
+                </div> */}
             </div>
         </div>
     );

@@ -1,8 +1,25 @@
 import React from "react";
-import { Award, Clock, Heart, Shield, Sparkles, Users, CheckCircle, Star } from "lucide-react";
+import { Award, Clock, Heart, Shield, Sparkles, Users, CheckCircle, Star, Trophy } from "lucide-react";
+import { usePage } from "@inertiajs/react";
+
+// Icon mapping object
+const iconMap = {
+    Award,
+    Clock,
+    Heart,
+    Shield,
+    Sparkles,
+    Users,
+    Star,
+    Trophy,
+    CheckCircle
+};
 
 const ServiceWhyChoose = () => {
-    const features = [
+    const { whyChooseUs = [] } = usePage().props;
+    
+    // Default fallback features if no dynamic data
+    const defaultFeatures = [
         {
             icon: Award,
             title: "Expert Professionals",
@@ -34,6 +51,20 @@ const ServiceWhyChoose = () => {
             description: "5000+ happy clients trust us for their beauty needs and transformations."
         }
     ];
+    
+    // Use dynamic data if available, otherwise use default
+    const features = whyChooseUs && whyChooseUs.length > 0 
+        ? whyChooseUs.map(item => ({
+            icon: iconMap[item.icon] || Award, // Use mapped icon or default to Award
+            title: item.title,
+            description: item.description
+        }))
+        : defaultFeatures;
+    
+    // Hide section if no features at all
+    if (!features || features.length === 0) {
+        return null;
+    }
 
     const benefits = [
         "Experienced and certified professionals",

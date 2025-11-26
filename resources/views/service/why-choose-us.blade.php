@@ -8,12 +8,12 @@
             <div class="row gutters">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0">{{ $title }}</h4>
+                        <h4 class="mb-sm-0">{{ $title }} - {{ $service->title }}</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Home</a></li>
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('admin.services.index') }}">Services</a></li>
                                 <li class="breadcrumb-item active">{{ $title }}</li>
                             </ol>
                         </div>
@@ -29,10 +29,11 @@
                             <thead class="table-dark">
                             <tr class="table-primary">
                                 <th>#</th>
-                                <th>Action</th>
-                                <th>Heading</th>
-
+                                <th>Icon</th>
+                                <th>Title</th>
                                 <th>Description</th>
+                                <th>Order</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody class="list form-check-all">
@@ -40,30 +41,22 @@
                                 <tr>
                                     <td>{!! $key+1 !!}</td>
                                     <td>
+                                        <i class="lucide-{{ strtolower($row->icon) }}"></i> {{ $row->icon }}
+                                    </td>
+                                    <td>{{ $row->title }}</td>
+                                    <td>{{ Str::limit($row->description, 50) }}</td>
+                                    <td>{{ $row->order }}</td>
+                                    <td>
                                         <button class="btn btn-sm btn-primary edit-btn"
-                                                data-id="{{ base64_encode($row->id) }}" data-title="{{ $row->title }}"
-                                                data-image="{{ $row->image }}"
-                                                data-description="{{ $row->description }}">Edit / Update
+                                                data-id="{{ base64_encode($row->id) }}" 
+                                                data-icon="{{ $row->icon }}"
+                                                data-title="{{ $row->title }}"
+                                                data-description="{{ $row->description }}"
+                                                data-order="{{ $row->order }}">Edit
                                         </button>
                                         <a class="confirmDelete btn btn-sm btn-danger remove-item-btn mr-2"
                                            data-id="{{ $row->id }}">Delete</a>
                                     </td>
-                                    <td>
-
-                                        <img loading="lazy" width="80px" src="{!! asset($row->image) !!}" alt="{!! $row->title !!}">
-                                    </td>
-
-                                    <td>
-                                        @if($row->title != null || $row->title != '')
-                                            <h5 class="mb-0">{!! $row->title !!}</h5>
-                                        @endif
-
-                                        @if($row->description != null || $row->description != '')
-                                           {!! $row->description !!}
-                                        @endif
-                                    </td>
-
-
                                 </tr>
                             @endforeach
                             </tbody>
@@ -74,8 +67,7 @@
                                            colors="primary:#121331,secondary:#08a88a"
                                            style="width:75px;height:75px"></lord-icon>
                                 <h5 class="mt-2">Sorry! No Result Found</h5>
-                                <p class="text-muted mb-0">We've searched more than 150+ Orders We did not find
-                                    any orders for you search.</p>
+                                <p class="text-muted mb-0">We did not find any features for this service.</p>
                             </div>
                         </div>
                     </div>
@@ -105,7 +97,7 @@
                                     </div>
                                 @endif
                             </div>
-                            <form method="post" action="{{ route('admin.sub-services.create', $id) }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ url('/admin/service-why-choose-us/'.$id) }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row ">
                                     <div class="col-md-12">
@@ -118,44 +110,47 @@
 
                                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                                         <div class="form-group mb-2">
-                                                            <label for="fullName">Sub Service Title <span
-                                                                    class="text-danger">*</span></label>
-                                                            <input type="text" class="form-control"
-                                                                   value="{!! old('title') !!}" name="title"
-                                                                   placeholder="Sub Service title" required/>
+                                                            <label for="icon">Icon <span class="text-danger">*</span></label>
+                                                            <select class="form-control" name="icon" required>
+                                                                <option value="">Select Icon</option>
+                                                                <option value="Award">Award</option>
+                                                                <option value="Sparkles">Sparkles</option>
+                                                                <option value="Heart">Heart</option>
+                                                                <option value="Shield">Shield</option>
+                                                                <option value="Clock">Clock</option>
+                                                                <option value="Users">Users</option>
+                                                                <option value="Star">Star</option>
+                                                                <option value="Trophy">Trophy</option>
+                                                                <option value="CheckCircle">CheckCircle</option>
+                                                            </select>
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                                         <div class="form-group mb-2">
-                                                            <label for="fullName">Description</label>
+                                                            <label for="title">Title <span class="text-danger">*</span></label>
+                                                            <input type="text" class="form-control"
+                                                                   value="{!! old('title') !!}" name="title"
+                                                                   placeholder="Feature title" required/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                        <div class="form-group mb-2">
+                                                            <label for="description">Description <span class="text-danger">*</span></label>
                                                             <textarea rows="3" class="form-control"
                                                                       name="description"
-                                                                      placeholder="Sub Service Description">{!! old('description') !!}</textarea>
+                                                                      placeholder="Feature Description" required>{!! old('description') !!}</textarea>
                                                         </div>
                                                     </div>
-                                                    <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10">
+                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                                         <div class="form-group mb-2">
-                                                            <label for="fullName">Image (Max 2MB) <span
-                                                                    class="text-danger">*</span></label>
-                                                            <input type="file" accept="image/*"
-                                                                   class="form-control"
-                                                                   onchange="previewImage(event, 'image_preview_add')"
-                                                                   name="image" placeholder="Upload Image" required/>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
-                                                        <div class="form-group mb-2">
-                                                            <label for="fullName">Preview</label>
-                                                            <img loading="lazy" id="image_preview_add"
-                                                                 src=""
-                                                                 alt="Image Preview"
-                                                                 style="max-width: 100%; margin-top: 10px; display: none;"/>
+                                                            <label for="order">Order</label>
+                                                            <input type="number" class="form-control"
+                                                                   value="{!! old('order', 0) !!}" name="order"
+                                                                   placeholder="Display order (0 = first)"/>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12 text-center mt-3">
-                                                        <button type="submit" class="btn btn-md btn-primary">Submit
-                                                            Service
-                                                        </button>
+                                                        <button type="submit" class="btn btn-md btn-primary">Submit Feature</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -174,38 +169,41 @@
                 <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">Update Sub Service</h5>
+                            <h5 class="modal-title" id="staticBackdropLabel">Update Feature</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <form id="editForm" action="{{ route('admin.sub-services.update') }}" method="POST" enctype="multipart/form-data">
+                        <form id="editForm" action="{{ url('/admin/service-why-choose-us/update') }}" method="POST">
                             @csrf
                             <div class="modal-body">
                                 <div class="row">
-                                    <input type="hidden" name="id" id="serviceId">
+                                    <input type="hidden" name="id" id="featureId">
                                     <div class="mb-3 col-lg-12">
-                                        <label for="title" class="form-label">Title <span
-                                                class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" name="title" id="title" required>
+                                        <label for="edit_icon" class="form-label">Icon <span class="text-danger">*</span></label>
+                                        <select class="form-control" name="icon" id="edit_icon" required>
+                                            <option value="">Select Icon</option>
+                                            <option value="Award">Award</option>
+                                            <option value="Sparkles">Sparkles</option>
+                                            <option value="Heart">Heart</option>
+                                            <option value="Shield">Shield</option>
+                                            <option value="Clock">Clock</option>
+                                            <option value="Users">Users</option>
+                                            <option value="Star">Star</option>
+                                            <option value="Trophy">Trophy</option>
+                                            <option value="CheckCircle">CheckCircle</option>
+                                        </select>
                                     </div>
                                     <div class="mb-3 col-lg-12">
-                                        <label for="description" class="form-label">Description</label>
-                                        <textarea class="form-control ckeditor" name="description" id="description"
+                                        <label for="edit_title" class="form-label">Title <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="title" id="edit_title" required>
+                                    </div>
+                                    <div class="mb-3 col-lg-12">
+                                        <label for="edit_description" class="form-label">Description <span class="text-danger">*</span></label>
+                                        <textarea class="form-control" name="description" id="edit_description"
                                                   rows="4" required></textarea>
                                     </div>
-                                    <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10">
-                                        <div class="form-group mb-2">
-                                            <label for="fullName">Image (Max 2MB)</label>
-                                            <input type="file" accept="image/*" class="form-control"
-                                                   onchange="previewImage(event, 'image_preview_edit')" name="image"
-                                                   placeholder="Upload Image"/>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
-                                        <div class="form-group mb-2">
-                                            <label for="fullName">Current</label>
-                                            <img loading="lazy" id="image_preview_edit" src=""
-                                                 alt="Image Preview" style="max-width: 100%; margin-top: 10px;"/>
-                                        </div>
+                                    <div class="mb-3 col-lg-12">
+                                        <label for="edit_order" class="form-label">Order</label>
+                                        <input type="number" class="form-control" name="order" id="edit_order">
                                     </div>
                                 </div>
                             </div>
@@ -226,37 +224,21 @@
                     integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-            <script src="https://cdn.ckeditor.com/4.20.2/standard/ckeditor.js"></script>
-            {{--            <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.25.0/ckeditor.min.js" integrity="sha512-Z85Fu7UNiaY9VJHpFZhXVWfw9dg8NIer0rqoaR52+iyLwQ2qg8qwwL0uUicd4vYJ6q4eOq8loyFG3jGHPLUiow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>--}}
-            <script>
-                // Initialize CKEditor for edit modal only
-                $(document).ready(function () {
-                    // Initialize CKEditor on modal show
-                    $('#editModal').on('shown.bs.modal', function () {
-                        if (!CKEDITOR.instances['description']) {
-                            CKEDITOR.replace('description');
-                        }
-                    });
-                });
-            </script>
             <script>
                 $(document).ready(function () {
                     $('.edit-btn').on('click', function () {
                         const id = $(this).data('id');
+                        const icon = $(this).data('icon');
                         const title = $(this).data('title');
-                        const image = $(this).data('image');
                         const description = $(this).data('description');
-                        // Populate the form in the modal
-                        $('#serviceId').val(id);
-                        $('#title').val(title);
-                        $('#image_preview_edit').attr('src', '/' + image);
-                        $('#description').val(description);
+                        const order = $(this).data('order');
                         
-                        // Update CKEditor instance
-                        const editor = CKEDITOR.instances['description'];
-                        if (editor) {
-                            editor.setData(description);
-                        }
+                        // Populate the form in the modal
+                        $('#featureId').val(id);
+                        $('#edit_icon').val(icon);
+                        $('#edit_title').val(title);
+                        $('#edit_description').val(description);
+                        $('#edit_order').val(order);
                         
                         // Show the modal
                         $('#editModal').modal('show');
@@ -280,25 +262,14 @@
                         if (result.isConfirmed) {
                             Swal.fire({
                                 title: "Deleted!",
-                                text: "Your file has been deleted.",
+                                text: "The feature has been deleted.",
                                 icon: "success"
                             });
-                            window.location.href = "/admin/sub-services/" + id + "/delete";
+                            window.location.href = "/admin/service-why-choose-us/" + id + "/delete";
                         }
                     });
                 });
             </script>
 
-            <script>
-                function previewImage(event, previewId) {
-                    var reader = new FileReader();
-                    reader.onload = function () {
-                        var output = document.getElementById(previewId);
-                        output.src = reader.result;
-                        output.style.display = 'block';
-                    };
-                    reader.readAsDataURL(event.target.files[0]);
-                }
-            </script>
-
 @stop
+

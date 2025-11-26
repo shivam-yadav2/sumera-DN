@@ -41,4 +41,19 @@ class Service extends Model
     {
         return $this->hasMany(Gallery::class, 'service_id', 'id')->where('is_active', 1);
     }
+
+    public function subServices()
+    {
+        return $this->hasMany(SubServices::class, 'service_id', 'id')->where('is_active', 1);
+    }
+
+    public function serviceAbouts()
+    {
+        return $this->hasMany(ServiceAbout::class, 'service_id', 'id')->where('is_active', '1')->orderBy('position', 'asc');
+    }
+
+    public function whyChooseUs()
+    {
+        return $this->hasMany(ServiceWhyChooseUs::class, 'service_id', 'id')->where('is_active', '1')->orderBy('order', 'asc');
+    }
 }

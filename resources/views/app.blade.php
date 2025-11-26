@@ -4,7 +4,29 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title inertia>{{ config('app.name', 'Laravel') }}</title>
+        <title inertia>{{ config('app.name', 'Sumeera Salon And Academy - Premium Beauty Salon in Lucknow') }}</title>
+        
+        <!-- Default Meta Tags (will be overridden by Inertia Head component) -->
+        <meta name="description" content="Experience luxury beauty services at Sumeera Salon And Academy in Lucknow. Expert hair styling, makeup, skincare, and professional beauty training. Book your appointment today!">
+        <meta name="keywords" content="beauty salon lucknow, makeup artist lucknow, hair salon, beauty academy, bridal makeup, professional training">
+        <meta name="author" content="Sumeera Salon And Academy">
+        
+        <!-- Open Graph Meta Tags -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Sumeera Salon And Academy - Premium Beauty Salon in Lucknow">
+        <meta property="og:description" content="Experience luxury beauty services at Sumeera Salon And Academy in Lucknow. Expert hair styling, makeup, skincare, and professional beauty training.">
+        <meta property="og:image" content="{{ asset('/assets/images/og-image.jpg') }}">
+        <meta property="og:url" content="{{ url()->current() }}">
+        
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Sumeera Salon And Academy - Premium Beauty Salon in Lucknow">
+        <meta name="twitter:description" content="Experience luxury beauty services at Sumeera Salon And Academy in Lucknow. Expert hair styling, makeup, skincare, and professional beauty training.">
+        <meta name="twitter:image" content="{{ asset('/assets/images/og-image.jpg') }}">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="{{ asset('/assets/logo/favicon.png') }}">
+        <link rel="apple-touch-icon" href="{{ asset('/assets/logo/favicon.png') }}">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">

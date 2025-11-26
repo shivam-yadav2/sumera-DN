@@ -5,11 +5,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Layout from "@/Layouts/Layout";
 import { BannerSection } from "@/Components/customComponent/BannerSection";
+import SEOHead from "@/Components/SEOHead";
 import { router, usePage } from "@inertiajs/react";
 import { toast } from "sonner";
 
 export default function ContactPage() {
-    const { services = [] } = usePage().props;
+    const { services = [], seo } = usePage().props;
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -96,6 +97,7 @@ export default function ContactPage() {
 
     return (
         <Layout>
+            <SEOHead seo={seo} />
             <div className="bg-gradient-to-b from-[#f5efe3] via-[#f8f6f2] to-[#ffffff]">
                 <BannerSection 
                     title="Get In Touch"

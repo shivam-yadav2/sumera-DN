@@ -28,7 +28,11 @@ Route::get('offers', function () {
                 'title' => $service->title,
             ];
         });
-    return Inertia::render('Offers', ['offers' => $offers, 'services' => $services]);
+    return Inertia::render('Offers', [
+        'offers' => $offers, 
+        'services' => $services,
+        'seo' => get_seo('offers')
+    ]);
 })->name('offers');
 
 // Booking API endpoint
@@ -61,6 +65,7 @@ Route::get('/gallery/salon-services', function () {
         'gallery' => $gallery,
         'pageTitle' => 'Salon Services Images',
         'pageType' => 'salon-services',
+        'seo' => get_seo('gallery.salon-services')
     ]);
 })->name('gallery.salon-services');
 
@@ -85,6 +90,7 @@ Route::get('/gallery/makeup', function () {
         'gallery' => $gallery,
         'pageTitle' => 'Makeup Gallery',
         'pageType' => 'makeup',
+        'seo' => get_seo('gallery.makeup')
     ]);
 })->name('gallery.makeup');
 
@@ -109,25 +115,133 @@ Route::get('/gallery/interior', function () {
         'gallery' => $gallery,
         'pageTitle' => 'Interior Gallery',
         'pageType' => 'interior',
+        'seo' => get_seo('gallery')
     ]);
 })->name('gallery.interior');
 
 Route::get('/gallery/videos', function () {
-    return Inertia::render('SalonVideoGallery');
+    return Inertia::render('SalonVideoGallery', [
+        'seo' => get_seo('gallery.videos')
+    ]);
 })->name('gallery.videos');
 
 Route::get('/franchise', function () {
-    return Inertia::render('Franchise');
+    return Inertia::render('Franchise', [
+        'seo' => get_seo('franchise')
+    ]);
 })->name('franchise');
 
 Route::get('/contact', function () {
-    return Inertia::render('ContactPage');
+    return Inertia::render('ContactPage', [
+        'seo' => get_seo('contact')
+    ]);
 })->name('contact');
 
 Route::get('/academy', function () {
     $courses = \App\Models\Courses::where('is_active', 1)->get();
-    return Inertia::render('AcademyPage', ['courses' => $courses]);
+    return Inertia::render('AcademyPage', [
+        'courses' => $courses,
+        'seo' => get_seo('academy')
+    ]);
 })->name('academy');
+
+Route::get('/mens-grooming', function () {
+    // Try to find a service with slug 'mens-grooming' or title containing 'men'
+    $serviceData = Service::where('is_active', '1')
+        ->where(function($query) {
+            $query->where('slug_url', 'mens-grooming')
+                  ->orWhere('slug_url', 'men-grooming')
+                  ->orWhereRaw('LOWER(title) LIKE ?', ['%men%grooming%'])
+                  ->orWhereRaw('LOWER(title) LIKE ?', ['%men\'s%']);
+        })
+        ->first();
+    
+    // If service found, get related data
+    if ($serviceData) {
+        // Get gallery images
+        $galleryImages = Gallery::where('service_id', $serviceData->id)
+            ->where('is_active', '1')
+            ->orderBy('id', 'desc')
+            ->get()
+            ->map(function ($item) {
+                return [
+                    'id' => $item->id,
+                    'title' => $item->title,
+                    'image' => asset($item->image),
+                ];
+            });
+        
+        // Get ServiceAbout data
+        $serviceAbout = \App\Models\ServiceAbout::where('service_id', $serviceData->id)
+            ->where('is_active', '1')
+            ->orderBy('position', 'asc')
+            ->get()
+            ->map(function ($item) {
+                return [
+                    'id' => $item->id,
+                    'title' => $item->title,
+                    'description' => $item->description,
+                    'image' => $item->image ? asset($item->image) : null,
+                    'position' => $item->position,
+                ];
+            });
+        
+        // Get SubServices
+        $subServices = \App\Models\SubServices::where('service_id', $serviceData->id)
+            ->where('is_active', '1')
+            ->get()
+            ->map(function ($item) {
+                return [
+                    'id' => $item->id,
+                    'title' => $item->title,
+                    'slug_url' => $item->slug_url,
+                    'description' => $item->description,
+                    'image' => $item->image ? asset($item->image) : null,
+                ];
+            });
+        
+        // Get Why Choose Us features
+        $whyChooseUs = \App\Models\ServiceWhyChooseUs::where('service_id', $serviceData->id)
+            ->where('is_active', '1')
+            ->orderBy('order', 'asc')
+            ->get()
+            ->map(function ($item) {
+                return [
+                    'id' => $item->id,
+                    'icon' => $item->icon,
+                    'title' => $item->title,
+                    'description' => $item->description,
+                    'order' => $item->order,
+                ];
+            });
+        
+        return Inertia::render('MensGrooming', [
+            'service' => [
+                'id' => $serviceData->id,
+                'title' => $serviceData->title,
+                'slug_url' => $serviceData->slug_url,
+                'description' => $serviceData->description,
+                'image' => asset($serviceData->image),
+                'banner' => $serviceData->banner ? asset($serviceData->banner) : null,
+            ],
+            'galleryImages' => $galleryImages,
+            'serviceAbout' => $serviceAbout,
+            'subServices' => $subServices,
+            'whyChooseUs' => $whyChooseUs,
+            'seo' => get_service_seo($serviceData)
+        ]);
+    }
+    
+    // If no service found, render with empty data
+    return Inertia::render('MensGrooming', [
+        'service' => null,
+        'galleryImages' => [],
+        'serviceAbout' => [],
+        'subServices' => [],
+        'whyChooseUs' => [],
+        'seo' => get_seo('mens-grooming')
+    ]);
+})->name('mens-grooming');
 
 Route::get('/blogs', [BlogPageController::class, 'index'])->name('blogs.index');
 Route::get('/blogs/{slug}', [BlogPageController::class, 'show'])->name('blogs.show');
@@ -150,6 +264,7 @@ Route::get('/about', function () {
     
     return Inertia::render('About', [
         'services' => $services,
+        'seo' => get_seo('about')
     ]);
 })->name('about');
 
@@ -191,6 +306,35 @@ Route::get('/services/{service}', function ($service) {
             ];
         });
     
+    // Get SubServices data for this service
+    $subServices = \App\Models\SubServices::where('service_id', $serviceData->id)
+        ->where('is_active', '1')
+        ->get()
+        ->map(function ($item) {
+            return [
+                'id' => $item->id,
+                'title' => $item->title,
+                'slug_url' => $item->slug_url,
+                'description' => $item->description,
+                'image' => $item->image ? asset($item->image) : null,
+            ];
+        });
+    
+    // Get Why Choose Us data for this service
+    $whyChooseUs = \App\Models\ServiceWhyChooseUs::where('service_id', $serviceData->id)
+        ->where('is_active', '1')
+        ->orderBy('order', 'asc')
+        ->get()
+        ->map(function ($item) {
+            return [
+                'id' => $item->id,
+                'icon' => $item->icon,
+                'title' => $item->title,
+                'description' => $item->description,
+                'order' => $item->order,
+            ];
+        });
+    
     return Inertia::render('Service', [
         'service' => [
             'id' => $serviceData->id,
@@ -203,6 +347,9 @@ Route::get('/services/{service}', function ($service) {
         ],
         'galleryImages' => $galleryImages,
         'serviceAbout' => $serviceAbout,
+        'subServices' => $subServices,
+        'whyChooseUs' => $whyChooseUs,
+        'seo' => get_service_seo($serviceData)
     ]);
 })->name('services.show');
 
@@ -336,9 +483,14 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/course-details/{id}/delete', [App\Http\Controllers\CoursesDetailController::class, 'destroy'])->name('course-details.destroy');
 
     // Sub Services Management
-    Route::match(['get', 'post'], '/sub-services/{id?}', [App\Http\Controllers\SubServicesController::class, 'index'])->name('sub-services.create');
-    Route::post('/sub-services/{id}/update', [App\Http\Controllers\SubServicesController::class, 'update'])->name('sub-services.update');
+    Route::match(['get', 'post'], '/sub-services/{id}', [App\Http\Controllers\SubServicesController::class, 'index'])->name('sub-services.create');
+    Route::post('/sub-services/update', [App\Http\Controllers\SubServicesController::class, 'update'])->name('sub-services.update');
     Route::get('/sub-services/{id}/delete', [App\Http\Controllers\SubServicesController::class, 'destroy'])->name('sub-services.destroy');
+
+    // Service Why Choose Us Management
+    Route::match(['get', 'post'], '/service-why-choose-us/{id}', [App\Http\Controllers\ServiceWhyChooseUsController::class, 'index'])->name('service-why-choose-us.index');
+    Route::post('/service-why-choose-us/update', [App\Http\Controllers\ServiceWhyChooseUsController::class, 'update'])->name('service-why-choose-us.update');
+    Route::get('/service-why-choose-us/{id}/delete', [App\Http\Controllers\ServiceWhyChooseUsController::class, 'destroy'])->name('service-why-choose-us.destroy');
 
     // Academy Management
     Route::match(['get', 'post'], '/academy/{id?}', [App\Http\Controllers\AcademyController::class, 'create'])->name('academy.create');
