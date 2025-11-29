@@ -109,7 +109,7 @@ const ServicesSection = () => {
                             <SwiperSlide key={service.id || index}>
                                 <div className="group h-full">
                                     {/* Card Container - Fixed Height */}
-                                    <div className="relative rounded-3xl overflow-hidden bg-[#12110f] shadow-xl hover:shadow-2xl transition-all duration-500 flex flex-col">
+                                    <div className="relative rounded-3xl overflow-hidden bg-[#fcfaf5] shadow-xl hover:shadow-2xl transition-all duration-500 flex flex-col">
                                         {/* Image Section */}
                                         <Link 
                                             href={service.slug_url ? `/services/${service.slug_url}` : '#'}
@@ -125,7 +125,7 @@ const ServicesSection = () => {
                                                     }}
                                                 />
                                                 {/* Gradient Overlay */}
-                                                <div className="absolute inset-0 bg-gradient-to-t from-[#12110f] via-transparent to-transparent"></div>
+                                                <div className="absolute inset-0 bg-gradient-to-t from-[#ffffff0c] via-transparent to-transparent"></div>
                                             </div>
                                         </Link>
 
@@ -139,10 +139,10 @@ const ServicesSection = () => {
                                                     href={service.slug_url ? `/services/${service.slug_url}` : '#'}
                                                     className="flex-1"
                                                 >
-                                                    <h3 className="text-xl head font-[600] text-white group-hover:text-[#e7d3ba] transition-colors duration-300 leading-tight mb-3 line-clamp-2">
+                                                    <h3 className="text-xl head font-[600] text-[#2f3720] group-hover:text-[#2f2f2f] transition-colors duration-300 leading-tight mb-3 line-clamp-2">
                                                         {service.title}
                                                     </h3>
-                                                    <p className="text-white/70 text-sm leading-relaxed line-clamp-2 mb-4">
+                                                    <p className="text-[#2f2f2f]/70 text-sm leading-relaxed line-clamp-2 mb-4">
                                                         {service.description || "Experience luxury and transformation with our expertly crafted beauty services."}
                                                     </p>
                                                 </Link>
@@ -158,7 +158,7 @@ const ServicesSection = () => {
                                                     </button>
                                                     <Link
                                                         href={service.slug_url ? `/services/${service.slug_url}` : '#'}
-                                                        className="btn-interactive inline-flex items-center justify-center gap-1 px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white text-sm font-[500] rounded-full border border-white/20 hover:border-white/40 backdrop-blur-sm"
+                                                        className="btn-interactive inline-flex items-center justify-center gap-1 px-4 py-2.5 bg-white/10 hover:bg-white/20 text-[#2f2f2f] text-sm font-[500] rounded-full border border-black/20 hover:border-black/40 backdrop-blur-sm"
                                                     >
                                                         View
                                                         <ArrowRight className="w-4 h-4" />

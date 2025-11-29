@@ -11,6 +11,7 @@ import {
     MessageCircle,
     Instagram,
     Facebook,
+    Calendar,
 } from "lucide-react";
 
 const SocialMediaWidget = () => {
@@ -115,7 +116,7 @@ const SocialMediaWidget = () => {
 };
 
 const LayoutContent = ({ children }) => {
-    const { isBookingPopupOpen, closeBookingPopup } = usePopup();
+    const { isBookingPopupOpen, closeBookingPopup, openBookingPopup } = usePopup();
 
     return (
         <div>
@@ -127,6 +128,23 @@ const LayoutContent = ({ children }) => {
                 isOpen={isBookingPopupOpen}
                 onClose={closeBookingPopup}
             />
+            
+            {/* Fixed Book Appointment Button */}
+            <button
+                onClick={openBookingPopup}
+                className="fixed right-0 top-1/2 -translate-y-1/2 z-40 bg-[#354a2f] hover:bg-[#2a3b25] text-white font-[600] py-4 px-2 rounded-full shadow-2xl transition-all duration-300  group"
+                style={{ 
+                    writingMode: 'vertical-rl',
+                    textOrientation: 'mixed',
+                    transformOrigin: 'center'
+                }}
+            >
+                <span className="flex items-center gap-2 text-sm tracking-wider ">
+                    <Calendar className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                    Book Appointment
+                </span>
+            </button>
+
             <SocialMediaWidget />
         </div>
     );

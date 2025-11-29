@@ -185,7 +185,7 @@ const Navbar = () => {
                             onClick={openBookingPopup}
                             className="btn-interactive bg-[#fff] rounded-full hover:bg-[#fff] hover:text-[#2f3720] text-[#2f3720] px-8 py-6 text-base font-medium shadow-md"
                         >
-                            <Phone className="w-5 h-5" />
+                            {/* <Phone className="w-5 h-5" /> */}
                             Book Now
                         </Button>
                     </div>
