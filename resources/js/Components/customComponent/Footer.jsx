@@ -52,8 +52,8 @@ const Footer = () => {
                             excellence in beauty and wellness.
                         </p>
                         {/* Social Media Links */}
-                        <div className="flex items-center gap-4 pt-4">
-                            <a
+                        {/* <div className="flex items-center gap-4 pt-4"> */}
+                            {/* <a
                                 href="https://www.facebook.com/sumeerasalonandacademy"
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -79,7 +79,7 @@ const Footer = () => {
                                 aria-label="YouTube"
                             >
                                 <Youtube className="w-5 h-5 text-white" />
-                            </a>
+                            </a> */}
                             {/* <a
                                 href="https://www.linkedin.com/"
                                 target="_blank"
@@ -89,7 +89,7 @@ const Footer = () => {
                             >
                                 <Linkedin className="w-5 h-5 text-white" />
                             </a> */}
-                        </div>
+                        {/* </div> */}
                     </div>
 
                     {/* Quick Links */}
@@ -348,7 +348,7 @@ const Footer = () => {
                             Call Us
                         </span>
                     </a> */}
-                    <a
+                    {/* <a
                         href="https://wa.me/917355417843"
                         target="_blank"
                         className="flex justify-center items-center gap-3 text-green-600 bg-green-500 w-full py-2"
@@ -388,7 +388,7 @@ const Footer = () => {
                         <span className="text-md font-medium text-white mt-1">
                             Call Us
                         </span>
-                    </a>
+                    </a> */}
                 </div>
             </div>
         </footer>

@@ -76,7 +76,7 @@ const Home = () => {
         }
 
         setIsSubmitting(true);
-
+  
         router.post("/api/booking", formData, {
             onSuccess: () => {
                 // Reset form
@@ -206,11 +206,11 @@ const Home = () => {
             {/* <SalonPricing/> */}
             <SalonGallery gallery={gallery} isHomePage={true} />
             {/* Partners Section */}
-            <section className="bg-gradient-to-b from-[#f8f6f2] via-[#f5efe3] to-[#f8f6f2] py-12 lg:py-16 px-4 overflow-hidden">
+            <section className="bg-gradient-to-br from-[#1a2419] via-[#354a2f] to-[#0f1a0d] py-12 lg:py-16 px-4 overflow-hidden">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12 lg:mb-16">
                         
-                        <h2 className="text-3xl lg:text-5xl font-[500] text-[#2f3720] mb-4 head">
+                        <h2 className="text-3xl lg:text-5xl font-[500] text-[#e9dfcc] mb-4 head">
                         Makeup Product Used
                         </h2>
                     </div>

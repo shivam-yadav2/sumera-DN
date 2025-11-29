@@ -27,13 +27,13 @@ const AppointmentButton = () => {
 // Founder Section Component
 const FounderSection = () => {
     return (
-        <section className="py-10 lg:py-16 px-4">
+        <section className="py-10 lg:py-16 px-4 bg-gradient-to-br from-[#1a2419] via-[#354a2f] to-[#0f1a0d]">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-12">
                     {/* <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-3">
                         MEET THE VISIONARY
                     </p> */}
-                    <h2 className="text-4xl lg:text-5xl font-[500] text-[#2f3720] head">
+                    <h2 className="text-4xl lg:text-5xl font-[500] text-[#e9dfcc] head">
                         About the Founder
                     </h2>
                 </div>
@@ -41,7 +41,7 @@ const FounderSection = () => {
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     {/* Image Side */}
                     <div className="relative">
-                        <div className="absolute inset-0 border-[12px] border-[#a0815c] transform translate-x-6 translate-y-6 rounded-3xl pointer-events-none"></div>
+                        {/* <div className="absolute inset-0 border-[12px] border-[#fff] transform translate-x-6 translate-y-6 rounded-3xl pointer-events-none"></div> */}
                         <div className="relative bg-white shadow-2xl overflow-hidden rounded-3xl border border-[#e4ded2]">
                             <img
                                 src="/assets/images/new/homeAbout.webp"
@@ -60,7 +60,7 @@ const FounderSection = () => {
                             </h3>
                             <p className="text-[#a0815c] text-lg mb-4">Founder & Lead Artist</p>
                             
-                            <div className="space-y-4 text-[#7a705e] leading-relaxed">
+                            <div className="space-y-4 text-[#2f2f2f] leading-relaxed">
                                 <p>
                                     With over a decade of experience in the beauty industry, Shikha Chauhan founded Sumeera Salon And Academy with a vision to create a space where artistry meets expertise. Her passion for beauty and dedication to excellence has transformed countless lives.
                                 </p>
@@ -113,7 +113,7 @@ const About = () => {
                 <AboutSection />
                 
                 {/* Our Story Section - Dark elegant section */}
-                <section className="bg-[#12110f] text-white text-center lg:py-20 py-10 px-4 relative overflow-hidden">
+                {/* <section className="bg-[#12110f] text-white text-center lg:py-20 py-10 px-4 relative overflow-hidden">
                     <div
                         className="absolute inset-0 bg-cover bg-center opacity-10"
                         style={{ backgroundImage: "url('/assets/images/1.JPG')" }}
@@ -121,9 +121,7 @@ const About = () => {
                     <div className="absolute top-20 left-10 w-64 h-64 bg-[#a0815c]/20 rounded-full opacity-40 blur-3xl"></div>
                     <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#e7d3ba]/10 rounded-full opacity-30 blur-3xl"></div>
                     <div className="relative z-10 space-y-5 max-w-4xl mx-auto">
-                        {/* <p className="uppercase tracking-[0.4em] text-xs text-[#e7d3ba] mb-3">
-                            SINCE 2012
-                        </p> */}
+                        
                         <h1 className="text-4xl lg:text-5xl font-[500] my-4 head text-white">
                              Our Story
                         </h1>
@@ -134,7 +132,7 @@ const About = () => {
                         </p>
                         <AppointmentButton />
                     </div>
-                </section>
+                </section> */}
 
                 {/* About the Founder Section */}
                 <FounderSection />

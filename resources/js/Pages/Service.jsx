@@ -59,7 +59,7 @@ const Service = () => {
                                         >
                                             {about.image ? (
                                                 <div className="relative">
-                                                    <div className="absolute inset-0 border-[12px] border-[#a0815c] transform translate-x-4 translate-y-4 pointer-events-none rounded-3xl"></div>
+                                                    <div className="absolute inset-0 border-[12px] border-[#2f2f2f] transform translate-x-4 translate-y-4 pointer-events-none rounded-3xl"></div>
                                                     <div className="relative bg-white shadow-2xl overflow-hidden rounded-3xl border border-[#e4ded2]">
                                                         <img
                                                             src={about.image}
@@ -193,13 +193,13 @@ const Service = () => {
                     <ServiceWhyChoose />
                 </div>
                 {/* Partners Section */}
-                <section className="bg-gradient-to-b from-[#f8f6f2] via-[#f5efe3] to-[#f8f6f2] py-12 lg:py-16 px-4 overflow-hidden">
+                <section className="bg-gradient-to-br from-[#1a2419] via-[#354a2f] to-[#0f1a0d] py-12 lg:py-16 px-4 overflow-hidden">
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center mb-12 lg:mb-16">
                             {/* <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-3">
                             TRUSTED PARTNERSHIPS
                         </p> */}
-                            <h2 className="text-3xl lg:text-5xl font-[500] text-[#2f3720] mb-4 head">
+                            <h2 className="text-3xl lg:text-5xl font-[500] text-[#f3eade] mb-4 head">
                                 Makeup Product Used
                             </h2>
                         </div>

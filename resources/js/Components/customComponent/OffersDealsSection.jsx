@@ -26,7 +26,7 @@ const OffersDealsSection = () => {
 
     return (
         <>
-            <div className="bg-gradient-to-br from-[#3c4c24]/10 via-pink-50 to-[#3c4c24]/20 lg:py-20 py-10 px-4 relative overflow-hidden">
+            <div className="bg-gradient-to-br from-[#1a2419] via-[#354a2f] to-[#0f1a0d] lg:py-20 py-10 px-4 relative overflow-hidden">
                 {/* Decorative elements */}
                 <div className="absolute top-20 left-10 w-64 h-64 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>
                 <div className="absolute bottom-20 right-10 w-80 h-80 bg-pink-200 rounded-full opacity-15 blur-3xl"></div>
@@ -34,7 +34,7 @@ const OffersDealsSection = () => {
                 <div className="max-w-7xl mx-auto relative z-10">
                     {/* Header */}
                     <div className="text-center mb-10 lg:mb-16">
-                        <h2 className="text-5xl lg:text-6xl font-[500] text-[#3c4c24] head mb-4">
+                        <h2 className="text-5xl lg:text-6xl font-[500] text-[#e9dfcc] head mb-4">
                             Deals & Offers
                         </h2>
                         
@@ -97,7 +97,7 @@ const OffersDealsSection = () => {
                                             {/* Individual Book Now Button */}
                                             <button
                                                 onClick={openBookingPopup}
-                                                className="w-full py-3 bg-gradient-to-r from-[#3c4c24] to-[#2d3820] text-white font-[500]  hover:from-[#2d3820] hover:to-[#1a2415] transition-all duration-300 transform hover:scale-[1.02] shadow-md hover:shadow-lg mt-auto"
+                                                className="w-full py-3 bg-[#e9dfcc]  transition-all duration-300 transform hover:scale-[1.02] shadow-md hover:shadow-lg mt-auto"
                                             >
                                                 Book Now
                                             </button>

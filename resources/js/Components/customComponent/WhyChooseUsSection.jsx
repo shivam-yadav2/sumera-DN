@@ -37,14 +37,14 @@ export function WhyChooseUsSection() {
     ];
 
     return (
-      <section className="py-10 lg:py-16 px-4">
+      <section className="py-10 lg:py-16 px-4 bg-gradient-to-br from-[#1a2419] via-[#354a2f] to-[#0f1a0d]">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
             {/* <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-3">
               OUR EXCELLENCE
             </p> */}
-            <h2 className="text-4xl lg:text-5xl font-[500] text-[#2f3720] mb-4 head">
+            <h2 className="text-4xl lg:text-5xl font-[500] text-[#e9dfcc] mb-4 head">
               Why Choose Sumeera?
             </h2>
             

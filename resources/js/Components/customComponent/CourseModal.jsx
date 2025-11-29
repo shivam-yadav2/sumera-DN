@@ -56,7 +56,7 @@ const CourseModal = ({ isOpen, onClose, course }) => {
 
                                 {/* Course Detail Section - Rich Content */}
                                 {course.course_detail && (
-                                    <div className="mb-6 p-6 bg-[#f8f6f2] rounded-2xl border border-[#e4ded2]">
+                                    <div className="mb-6 p-6 bg-[#f7f9f6] rounded-2xl border border-[#e4ded2]">
                                         <div className="flex items-center gap-2 mb-4">
                                             <BookOpen className="w-5 h-5 text-[#a0815c]" />
                                             <h3 className="text-xl font-[600] text-[#2f3720] head">

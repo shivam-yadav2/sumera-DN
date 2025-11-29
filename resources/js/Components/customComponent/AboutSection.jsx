@@ -79,7 +79,7 @@ const AboutSection = () => {
                                 <div className="relative px-12 xl:px-20">
                                     <div className="relative">
                                         {/* Border frame */}
-                                        <div className="absolute inset-0 border-[12px] border-[#a0815c] pointer-events-none transform -translate-x-8 translate-y-8 rounded-3xl"></div>
+                                        <div className="absolute inset-0 border-[12px] border-[#2f2f2f] pointer-events-none transform -translate-x-8 translate-y-8 rounded-3xl"></div>
 
                                         {/* Image */}
                                         <div className="relative aspect-square bg-[#f8f6f2] shadow-2xl overflow-hidden rounded-3xl border border-[#e4ded2]">

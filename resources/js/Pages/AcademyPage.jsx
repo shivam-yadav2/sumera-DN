@@ -83,8 +83,8 @@ const AcademyContent = ({ courses }) => {
                                             onClick={() => setActiveTab(index)}
                                             className={`btn-interactive w-full text-left px-4 py-3 rounded-xl text-sm font-[500] ${
                                                 activeTab === index
-                                                    ? "bg-[#1f1f1f] text-white shadow-sm"
-                                                    : "bg-transparent text-[#2f2a1f] border border-[#e2dbce] hover:border-[#c1b198]"
+                                                    ? "bg-[#354a2f] text-white shadow-sm"
+                                                    : "bg-transparent text-[#2f2a1f] border border-[#e2dbce] hover:border-[#5d7350]"
                                             }`}
                                         >
                                             <div className="text-xs uppercase tracking-[0.2em] text-current/70 mb-1">
@@ -113,8 +113,8 @@ const AcademyContent = ({ courses }) => {
                                                 {/* Left Column - Course Info */}
                                                 <div className="space-y-8">
                                                     <div>
-                                                        <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#f4efe6] rounded-full text-[#3c3a2f] text-xs font-[600] tracking-[0.08em] mb-4">
-                                                            <div className="w-6 h-6 rounded-full border border-[#d9d1c1] flex items-center justify-center">
+                                                        <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#354a2f] rounded-full text-white text-xs font-[600] tracking-[0.08em] mb-4">
+                                                            <div className="w-6 h-6 rounded-full border border-white/60 flex items-center justify-center">
                                                                 <Award className="w-3.5 h-3.5" />
                                                             </div>
                                                             Certified Program
@@ -138,10 +138,10 @@ const AcademyContent = ({ courses }) => {
                                                         </h4>
                                                         <div className="grid gap-3">
                                                             {course.duration && (
-                                                                <div className="flex items-center justify-between rounded-2xl border border-[#ece8e1] px-4 py-3 bg-[#fcfbf7]">
+                                                                <div className="flex items-center justify-between rounded-2xl border border-[#5d7350]/30 px-4 py-3 bg-[#f7f9f6]">
                                                                     <div className="flex items-center gap-3">
-                                                                        <div className="w-10 h-10 rounded-full bg-white border border-[#ece8e1] flex items-center justify-center">
-                                                                            <Clock className="w-4 h-4 text-[#c4a574]" />
+                                                                        <div className="w-10 h-10 rounded-full bg-white border border-[#354a2f] flex items-center justify-center">
+                                                                            <Clock className="w-4 h-4 text-[#354a2f]" />
                                                                         </div>
                                                                         <div>
                                                                             <p className="text-xs uppercase tracking-[0.2em] text-[#b1a591]">
@@ -160,10 +160,10 @@ const AcademyContent = ({ courses }) => {
                                                                 course.details
                                                                     .length >
                                                                     0 && (
-                                                                    <div className="flex items-center justify-between rounded-2xl border border-[#ece8e1] px-4 py-3 bg-[#fcfbf7]">
+                                                                    <div className="flex items-center justify-between rounded-2xl border border-[#5d7350]/30 px-4 py-3 bg-[#f7f9f6]">
                                                                         <div className="flex items-center gap-3">
-                                                                            <div className="w-10 h-10 rounded-full bg-white border border-[#ece8e1] flex items-center justify-center">
-                                                                                <BookOpen className="w-4 h-4 text-[#c4a574]" />
+                                                                            <div className="w-10 h-10 rounded-full bg-white border border-[#354a2f] flex items-center justify-center">
+                                                                                <BookOpen className="w-4 h-4 text-[#354a2f]" />
                                                                             </div>
                                                                             <div>
                                                                                 <p className="text-xs uppercase tracking-[0.2em] text-[#b1a591]">
@@ -182,10 +182,10 @@ const AcademyContent = ({ courses }) => {
                                                                         </div>
                                                                     </div>
                                                                 )}
-                                                            <div className="flex items-center justify-between rounded-2xl border border-[#ece8e1] px-4 py-3 bg-[#fcfbf7]">
+                                                            <div className="flex items-center justify-between rounded-2xl border border-[#5d7350]/30 px-4 py-3 bg-[#f7f9f6]">
                                                                 <div className="flex items-center gap-3">
-                                                                    <div className="w-10 h-10 rounded-full bg-white border border-[#ece8e1] flex items-center justify-center">
-                                                                        <Award className="w-4 h-4 text-[#c4a574]" />
+                                                                    <div className="w-10 h-10 rounded-full bg-white border border-[#354a2f] flex items-center justify-center">
+                                                                        <Award className="w-4 h-4 text-[#354a2f]" />
                                                                     </div>
                                                                     <div>
                                                                         <p className="text-xs uppercase tracking-[0.2em] text-[#b1a591]">
@@ -208,7 +208,7 @@ const AcademyContent = ({ courses }) => {
                                                                 course
                                                             )
                                                         }
-                                                        className="btn-interactive w-full inline-flex items-center justify-center gap-2 py-4 px-8 bg-[#1f1f1f] text-white font-[500] rounded-full hover:bg-[#353535]"
+                                                        className="btn-interactive w-full inline-flex items-center justify-center gap-2 py-4 px-8 bg-[#354a2f] text-white font-[500] rounded-full hover:bg-[#2a3b25] shadow-md"
                                                     >
                                                         View Full Course Details
                                                         <ArrowRight className="w-5 h-5" />
@@ -242,10 +242,10 @@ const AcademyContent = ({ courses }) => {
                                                                         key={
                                                                             idx
                                                                         }
-                                                                        className="flex items-start gap-3 p-3 rounded-2xl border border-[#ece8e1] bg-white hover:border-[#d6cfc2] transition-colors duration-200"
+                                                                        className="flex items-start gap-3 p-3 rounded-2xl border border-[#5d7350]/30 bg-white hover:border-[#354a2f]/50 transition-colors duration-200"
                                                                     >
-                                                                        <div className="w-9 h-9 rounded-full bg-[#f4efe6] flex items-center justify-center flex-shrink-0 mt-0.5">
-                                                                            <CheckCircle className="w-4 h-4 text-[#c4a574]" />
+                                                                        <div className="w-9 h-9 rounded-full bg-[#f0f5ed] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                                            <CheckCircle className="w-4 h-4 text-[#354a2f]" />
                                                                         </div>
                                                                         <p className="text-[#5c564b] text-sm leading-relaxed">
                                                                             {
@@ -259,10 +259,10 @@ const AcademyContent = ({ courses }) => {
                                                     </div>
 
                                                     {/* Call to Action Box */}
-                                                    <div className="rounded-2xl border border-[#ece8e1] bg-[#fcfbf7] p-6">
+                                                    <div className="rounded-2xl border border-[#5d7350]/30 bg-[#f7f9f6] p-6">
                                                         <div className="flex items-center gap-3 mb-3">
-                                                            <div className="w-10 h-10 rounded-full bg-white border border-[#ece8e1] flex items-center justify-center">
-                                                                <ArrowRight className="w-4 h-4 text-[#c4a574]" />
+                                                            <div className="w-10 h-10 rounded-full bg-white border border-[#354a2f] flex items-center justify-center">
+                                                                <ArrowRight className="w-4 h-4 text-[#354a2f]" />
                                                             </div>
                                                             <h5 className="text-lg font-[600] text-[#2f2a1f] head">
                                                                 Plan Your
@@ -279,7 +279,7 @@ const AcademyContent = ({ courses }) => {
                                                         </p>
                                                         <a
                                                             href="/contact"
-                                                            className="btn-interactive inline-flex items-center gap-2 px-5 py-2.5 border border-[#d6cfc2] rounded-full text-sm font-[500] text-[#2f2a1f] hover:bg-[#f4efe6]"
+                                                            className="btn-interactive inline-flex items-center gap-2 px-5 py-2.5 border-2 border-[#354a2f] rounded-full text-sm font-[500] text-[#354a2f] hover:bg-[#354a2f] hover:text-white transition-colors"
                                                         >
                                                             Enroll Now
                                                             <ArrowRight className="w-4 h-4" />
@@ -296,19 +296,15 @@ const AcademyContent = ({ courses }) => {
                 </section>
 
                 {/* Benefits Section */}
-                <section className="bg-[#fdfaf5] py-12 lg:py-16 px-4">
+                <section className="bg-gradient-to-br from-[#1a2419] via-[#354a2f] to-[#0f1a0d] py-12 lg:py-16 px-4">
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center mb-12">
                             {/* <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-4 font-[500]">
                                 COURSE BENEFITS
                             </p> */}
-                            <h3 className="text-3xl lg:text-4xl font-[500] text-[#2f3720] head mb-4">
+                            <h3 className="text-3xl lg:text-4xl font-[500] text-[#f3eade] head mb-4">
                                 What You'll Get
                             </h3>
-                            <p className="text-[#7a705e] text-base max-w-2xl mx-auto">
-                                Comprehensive training with industry-leading
-                                tools, expert mentorship, and lifetime support
-                            </p>
                         </div>
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {[
@@ -347,8 +343,8 @@ const AcademyContent = ({ courses }) => {
                                     key={idx}
                                     className="rounded-2xl border border-[#ece8e1] bg-white/80 p-5 hover:-translate-y-1 transition-transform duration-200"
                                 >
-                                    <div className="w-11 h-11 rounded-full border border-[#d6cfc2] flex items-center justify-center mb-4">
-                                        <benefit.icon className="w-5 h-5 text-[#c4a574]" />
+                                    <div className="w-11 h-11 rounded-full border border-[#354a2f] flex items-center justify-center mb-4">
+                                        <benefit.icon className="w-5 h-5 text-[#354a2f]" />
                                     </div>
                                     <h5 className="font-[600] text-[#2f2a1f] mb-2 text-base head">
                                         {benefit.title}
@@ -390,14 +386,14 @@ const AcademyContent = ({ courses }) => {
                                     <div className="flex flex-wrap gap-3 text-sm font-[500]">
                                         <a
                                             href="/contact"
-                                            className="btn-interactive inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#1f1f1f] text-white hover:bg-[#353535]"
+                                            className="btn-interactive inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#354a2f] text-white hover:bg-[#2a3b25] shadow-md"
                                         >
                                             Book a Call
                                             <ArrowRight className="h-4 w-4" />
                                         </a>
                                         <a
                                             href="/contact"
-                                            className="btn-interactive inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#d6cfc2] text-[#2f2a1f] hover:bg-white"
+                                            className="btn-interactive inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-[#354a2f] text-[#354a2f] hover:bg-[#354a2f] hover:text-white transition-colors"
                                         >
                                             Download Prospectus
                                         </a>
