@@ -80,7 +80,7 @@ const Footer = () => {
                             >
                                 <Youtube className="w-5 h-5 text-white" />
                             </a>
-                            <a
+                            {/* <a
                                 href="https://www.linkedin.com/"
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -88,7 +88,7 @@ const Footer = () => {
                                 aria-label="LinkedIn"
                             >
                                 <Linkedin className="w-5 h-5 text-white" />
-                            </a>
+                            </a> */}
                         </div>
                     </div>
 
@@ -207,10 +207,10 @@ const Footer = () => {
                             <li className="flex items-center gap-3">
                                 <Mail className="w-5 h-5 text-[#a0815c] flex-shrink-0" />
                                 <a
-                                    href="mailto:contact123@gmail.com"
+                                    href="mailto:infosumeerasalon@gmail.com"
                                     className="text-white/70 hover:text-[#a0815c] transition-colors text-sm"
                                 >
-                                    contact123@gmail.com
+                                    infosumeerasalon@gmail.com
                                 </a>
                             </li>
                         </ul>
@@ -259,8 +259,8 @@ const Footer = () => {
             </div>
 
             <div className="fixed bottom-0 left-0 w-full bg-[#f8f6f2] shadow-lg md:hidden z-50 border-t border-[#e4ded2]">
-                <div className="flex items-center justify-between px-6 py-3">
-                    {/* Chat (WhatsApp) */}
+                <div className="flex items-center justify-center ">
+{/*                    
                     <a
                         href="https://wa.me/917355417843"
                         target="_blank"
@@ -279,7 +279,7 @@ const Footer = () => {
                         </span>
                     </a>
 
-                    {/* Book Now */}
+                   
                     <a
                         href="#"
                         className="flex flex-col items-center text-[#3c4c24]"
@@ -304,7 +304,7 @@ const Footer = () => {
                         </span>
                     </a>
 
-                    {/* Email Icon */}
+                    
                     <a
                         href="https://www.instagram.com/sumeera_salon/"
                         target="_blank"
@@ -325,7 +325,7 @@ const Footer = () => {
                         </span>
                     </a>
 
-                    {/* Call Us */}
+                   
                     <a
                         href="tel:7355417843"
                         className="flex flex-col items-center text-[#0a66c2]"
@@ -345,6 +345,47 @@ const Footer = () => {
                             />
                         </svg>
                         <span className="text-xs text-[#2f3720] mt-1">
+                            Call Us
+                        </span>
+                    </a> */}
+                    <a
+                        href="https://wa.me/917355417843"
+                        target="_blank"
+                        className="flex justify-center items-center gap-3 text-green-600 bg-green-500 w-full py-2"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6"
+                            viewBox="0 0 32 32"
+                            fill="white"
+                        >
+                            <path d="M16.002 3C9.38 3 4 8.37 4 15a11.9 11.9 0 0 0 1.63 5.98L4 29l8.27-2.16A12.1 12.1 0 0 0 16 27c6.62 0 12-5.37 12-12S22.62 3 16.002 3zm6.41 16.15c-.27.77-1.6 1.51-2.2 1.61-.56.1-1.27.14-2.06-.13-.47-.15-1.07-.34-1.84-.67-3.23-1.4-5.33-4.67-5.5-4.89-.16-.22-1.31-1.75-1.31-3.34 0-1.58.83-2.36 1.12-2.68.29-.32.64-.4.85-.4.22 0 .42.01.6.01.19 0 .45-.07.71.54.27.63.92 2.22 1 2.38.08.16.13.35.02.57-.11.22-.17.36-.34.56-.17.2-.36.44-.52.59-.17.15-.34.32-.15.63.19.31.84 1.38 1.8 2.24 1.24 1.11 2.28 1.46 2.6 1.62.33.16.52.14.72-.08.2-.22.83-.97 1.06-1.3.22-.33.45-.28.76-.17.31.1 1.97.93 2.31 1.09.34.17.56.25.64.39.08.14.08.81-.19 1.58z" />
+                        </svg>
+                        <span className="text-md font-medium text-white mt-1">
+                            WhatsApp
+                        </span>
+                    </a>
+
+                   
+                    <a
+                        href="tel:7355417843"
+                        className="flex justify-center items-center gap-3 text-[#0a66c2] bg-[#0a66c2] w-full py-2"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="white"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M3 5a2 2 0 012-2h1.28a2 2 0 011.94 1.515l.62 2.485a2 2 0 01-.58 1.955l-1.07 1.07a16 16 0 007.07 7.07l1.07-1.07a2 2 0 011.955-.58l2.485.62A2 2 0 0121 17.72V19a2 2 0 01-2 2h-1C9.82 21 3 14.18 3 6V5z"
+                            />
+                        </svg>
+                        <span className="text-md font-medium text-white mt-1">
                             Call Us
                         </span>
                     </a>

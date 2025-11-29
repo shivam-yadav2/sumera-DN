@@ -133,7 +133,7 @@ const Home = () => {
                                     The Sumeera Salon And Academy
                                 </h2>
 
-                                <p className="text-[#7a705e] leading-relaxed text-base">
+                                <p className="text-[#2f2f2f] leading-relaxed text-base">
                                     At Sumeera Salon And Academy in Lucknow, we
                                     believe that beauty begins with care and
                                     confidence. Our passion lies in enhancing
@@ -149,7 +149,7 @@ const Home = () => {
 
                                 <Button
                                     onClick={() => router.visit("/about")}
-                                    className="bg-[#3c4c24] rounded-full hover:bg-[#2f3720] text-white px-8 py-4 text-base font-medium shadow-md transition-all duration-300"
+                                    className="btn-interactive bg-[#354a2f]  rounded-full hover:bg-[#2f3720] text-white px-8 py-4 text-base font-medium shadow-md"
                                 >
                                     Read More 
                                 </Button>
@@ -169,13 +169,13 @@ const Home = () => {
                                 <div className="relative px-12 xl:px-20">
                                     <div className="relative">
                                         {/* Border frame */}
-                                        <div className="absolute inset-0 border-[12px] border-[#a0815c]  pointer-events-none transform -translate-x-8 translate-y-8 rounded-3xl"></div>
+                                        <div className="absolute inset-0 border-[12px] border-[#2f2f2f]  pointer-events-none transform -translate-x-8 translate-y-8 rounded-3xl"></div>
 
                                         {/* Image */}
                                         <div className="relative aspect-square bg-[#f8f6f2] shadow-2xl overflow-hidden rounded-3xl border border-[#e4ded2]">
                                             <img
                                                 loading="lazy"
-                                                src="/assets/images/new/homeAbout.jpg"
+                                                src="/assets/images/new/homeAbout.webp"
                                                 alt="Salon service"
                                                 className="object-cover object-top w-full h-full"
                                             />
@@ -235,7 +235,7 @@ const Home = () => {
                                         className="group relative bg-white/90 backdrop-blur-sm rounded-2xl p-3 lg:p-5 shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center border border-[#e4ded2] hover:border-[#a0815c] flex-shrink-0"
                                     >
                                         <img
-                                            src={`/assets/images/new/logos/${num}.png`}
+                                            src={`/assets/images/new/logos/${num}.webp`}
                                             alt={`Partner ${num}`}
                                             className="max-w-full max-h-16 lg:max-h-28 object-contain filter group-hover:opacity-80 transition-opacity duration-300"
                                             loading="lazy"
@@ -252,7 +252,7 @@ const Home = () => {
                                         className="group relative bg-white/90 backdrop-blur-sm rounded-2xl p-6 lg:p-8 shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center min-h-[120px] lg:min-h-[160px] min-w-[200px] lg:min-w-[250px] border border-[#e4ded2] hover:border-[#a0815c] flex-shrink-0"
                                     >
                                         <img
-                                            src={`/assets/images/new/logos/${num}.png`}
+                                            src={`/assets/images/new/logos/${num}.webp`}
                                             alt={`Partner ${num}`}
                                             className="max-w-full max-h-16 lg:max-h-28 object-contain filter group-hover:opacity-80 transition-opacity duration-300"
                                             loading="lazy"

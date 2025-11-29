@@ -85,7 +85,7 @@ const AboutSection = () => {
                                         <div className="relative aspect-square bg-[#f8f6f2] shadow-2xl overflow-hidden rounded-3xl border border-[#e4ded2]">
                                             <img
                                                 loading="lazy"
-                                                src="/assets/images/new/homeAbout.jpg"
+                                                src="/assets/images/new/homeAbout.webp"
                                                 alt="Salon service"
                                                 className="object-cover object-top w-full h-full"
                                             />

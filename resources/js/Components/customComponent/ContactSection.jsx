@@ -105,7 +105,7 @@ const SalonContact = () => {
                     <div className="relative p-12 xl:p-20">
                         <div className="relative">
                             {/* Border frame */}
-                            <div className="absolute inset-0 border-[12px] border-[#a0815c] pointer-events-none transform -translate-x-8 translate-y-8 rounded-3xl"></div>
+                            <div className="absolute inset-0 border-[12px] border-[#2f2f2f] pointer-events-none transform -translate-x-8 translate-y-8 rounded-3xl"></div>
 
                             {/* Image */}
                             <div className="relative aspect-square bg-[#f8f6f2] shadow-2xl overflow-hidden rounded-3xl border border-[#e4ded2]">
@@ -248,7 +248,7 @@ const SalonContact = () => {
                             <Button
                                 onClick={handleSubmit}
                                 disabled={isSubmitting}
-                                className="bg-[#3c4c24] hover:bg-[#2f3720] text-white px-10 py-6 text-base font-medium transition-all duration-300 rounded-full shadow-md"
+                                className="bg-[#354a2f]  hover:bg-[#2f3720] text-white px-10 py-6 text-base font-medium transition-all duration-300 rounded-full shadow-md"
                             >
                                 {isSubmitting
                                     ? "Sending..."

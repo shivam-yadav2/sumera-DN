@@ -48,7 +48,7 @@ const ServiceWhyChoose = () => {
         {
             icon: Users,
             title: "Customer Satisfaction",
-            description: "5000+ happy clients trust us for their beauty needs and transformations."
+            description: "1000+ happy clients trust us for their beauty needs and transformations."
         }
     ];
     
@@ -145,11 +145,11 @@ const ServiceWhyChoose = () => {
                                 <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl border border-white/20 p-8 text-center">
                                     <div className="space-y-6">
                                         <div className="p-6 bg-white/10 rounded-2xl backdrop-blur">
-                                            <div className="text-5xl font-[600] text-white mb-2 head">5000+</div>
+                                            <div className="text-5xl font-[600] text-white mb-2 head">1000+</div>
                                             <div className="text-white/70 text-sm">Happy Clients</div>
                                         </div>
                                         <div className="p-6 bg-white/10 rounded-2xl backdrop-blur">
-                                            <div className="text-5xl font-[600] text-white mb-2 head">12+</div>
+                                            <div className="text-5xl font-[600] text-white mb-2 head">5+</div>
                                             <div className="text-white/70 text-sm">Years Experience</div>
                                         </div>
                                         <div className="p-6 bg-white/10 rounded-2xl backdrop-blur">

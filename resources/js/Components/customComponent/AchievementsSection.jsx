@@ -6,34 +6,48 @@ const AchievementsSection = () => {
     const achievements = [
         {
             id: 11,
+            image: "/assets/images/new/ach7.jpg",
+            title: "Celebrity Collaboration",
+            category: "Celebrity Event",
+        },
+        
+        {
+            id: 11,
             image: "/assets/images/new/ach6.webp",
             title: "Celebrity Collaboration",
             category: "Celebrity Event",
         },
         {
             id: 1,
-            image: "/assets/images/new/ach1.jpeg",
+            image: "/assets/images/new/ach1.webp",
+            title: "Celebrity Collaboration",
+            category: "Celebrity Event",
+        },
+        {
+            id: 11,
+            image: "/assets/images/new/ach8.jpg",
             title: "Celebrity Collaboration",
             category: "Celebrity Event",
         },
         {
             id: 2,
-            image: "/assets/images/new/ach2.jpeg",
+            image: "/assets/images/new/ach2.webp",
             title: "Beauty Excellence Award",
             category: "Award Ceremony",
         },
-        {
-            id: 3,
-            image: "/assets/images/new/ach3.jpeg",
-            title: "Fashion Week Styling",
-            category: "Celebrity Event",
-        },
-        {
-            id: 4,
-            image: "/assets/images/new/ach4.jpeg",
-            title: "Best Salon Recognition",
-            category: "Award Ceremony",
-        },
+       
+        // {
+        //     id: 3,
+        //     image: "/assets/images/new/ach3.webp",
+        //     title: "Fashion Week Styling",
+        //     category: "Celebrity Event",
+        // },
+        // {
+        //     id: 4,
+        //     image: "/assets/images/new/ach4.webp",
+        //     title: "Best Salon Recognition",
+        //     category: "Award Ceremony",
+        // },
         {
             id: 5,
             image: "/assets/images/new/ach5.webp",
@@ -52,9 +66,9 @@ const AchievementsSection = () => {
             <div className="relative z-10 max-w-7xl mx-auto">
                 {/* Header Section */}
                 <div className="text-center mb-12 lg:mb-16 relative">
-                    <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-4 font-medium">
+                    {/* <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-4 font-medium">
                         OUR JOURNEY
-                    </p>
+                    </p> */}
                     <h2 className="text-4xl lg:text-6xl font-[500] text-[#2f3720] relative z-10 head mb-4">
                     Our Achievements
                     </h2>
@@ -67,21 +81,21 @@ const AchievementsSection = () => {
                 <div className="masonry-container">
                     <style>{`
                         .masonry-container {
-                            column-count: 1;
-                            column-gap: 1.5rem;
+                            column-count: 2;
+                            column-gap: 0.5rem;
                         }
-                        
+                             
                         @media (min-width: 768px) {
                             .masonry-container {
                                 column-count: 2;
-                                column-gap: 2rem;
+                                column-gap: 1rem;
                             }
                         }
                         
                         @media (min-width: 1024px) {
                             .masonry-container {
-                                column-count: 3;
-                                column-gap: 2rem;
+                                column-count: 4;
+                                column-gap: 1rem;
                             }
                         }
                         

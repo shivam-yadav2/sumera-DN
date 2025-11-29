@@ -199,14 +199,14 @@ const BlogList = () => {
                                 <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-sm font-[500]">
                                     <Link
                                         href="/services/bridal-makeup"
-                                        className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#3c4c24] text-white hover:bg-[#2f3720] transition"
+                                        className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#354a2f]  text-white hover:bg-[#2f3720] transition"
                                     >
                                         Discover our services
                                         <ArrowRight className="h-4 w-4" />
                                     </Link>
                                     <Link
                                         href="/academy"
-                                        className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[#3c4c24] text-[#3c4c24] hover:bg-[#3c4c24] hover:text-white transition"
+                                        className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[#3c4c24] text-[#3c4c24] hover:bg-[#354a2f]  hover:text-white transition"
                                     >
                                         Explore the academy
                                     </Link>
@@ -226,7 +226,7 @@ const BlogList = () => {
                                         setSelectedMonth("all");
                                         setSearchTerm("");
                                     }}
-                                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#3c4c24] text-white text-sm font-[500] hover:bg-[#2f3720] transition"
+                                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#354a2f]  text-white text-sm font-[500] hover:bg-[#2f3720] transition"
                                 >
                                     Reset view
                                     <RefreshCw className="h-4 w-4" />

@@ -29,7 +29,7 @@ const AcademyFacilities = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-[#3c4c24] lg:py-20 py-10 px-4 relative overflow-hidden">
+        <div className="min-h-screen bg-[#354a2f]  lg:py-20 py-10 px-4 relative overflow-hidden">
             {/* Decorative elements */}
             <div className="absolute top-20 left-10 w-80 h-80 bg-pink-300 rounded-full opacity-10 blur-3xl"></div>
             <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-300 rounded-full opacity-10 blur-3xl"></div>

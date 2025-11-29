@@ -122,7 +122,7 @@ const BlogDetail = () => {
                             </div>
                             <button
                                 onClick={handleShare}
-                                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#3c4c24] text-[#3c4c24] font-[500] hover:bg-[#3c4c24] hover:text-white transition"
+                                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#3c4c24] text-[#3c4c24] font-[500] hover:bg-[#354a2f]  hover:text-white transition"
                             >
                                 <Share2 className="h-4 w-4" />
                                 Share article
@@ -219,7 +219,7 @@ const BlogDetail = () => {
                             />
                             <button
                                 type="submit"
-                                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#3c4c24] text-white font-[500] hover:bg-[#2f3720] transition"
+                                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#354a2f]  text-white font-[500] hover:bg-[#2f3720] transition"
                             >
                                 Keep me inspired
                             </button>

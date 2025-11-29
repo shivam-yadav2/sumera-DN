@@ -31,8 +31,8 @@ const Navbar = () => {
         <nav
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
                 isScrolled
-                    ? "bg-[#3c4c24] shadow-lg py-2 border-b border-[#2f3720]"
-                    : "bg-[#3c4c24]/95 backdrop-blur-sm py-1"
+                    ? "bg-[#354a2f] shadow-lg py-2 border-b border-[#354a2f]"
+                    : "bg-[#354a2f]/95 backdrop-blur-sm py-2"
             }`}
         >
             <div className="max-w-7xl mx-auto px-4">
@@ -44,7 +44,7 @@ const Navbar = () => {
                                 <img
                                     src="/assets/logo/white.png"
                                     alt=""
-                                    className="w-20"
+                                    className="w-40"
                                 />
                             </div>
                         </Link>
@@ -183,7 +183,7 @@ const Navbar = () => {
                             </a> */}
                         <Button
                             onClick={openBookingPopup}
-                            className="bg-[#fff] rounded-full hover:bg-[#fff] hover:text-[#2f3720] text-[#2f3720] px-8 py-6 text-base font-medium transition-all duration-300 shadow-md"
+                            className="btn-interactive bg-[#fff] rounded-full hover:bg-[#fff] hover:text-[#2f3720] text-[#2f3720] px-8 py-6 text-base font-medium shadow-md"
                         >
                             <Phone className="w-5 h-5" />
                             Book Now
@@ -339,7 +339,7 @@ const Navbar = () => {
                             <div className="flex items-center gap-3 pt-4 border-t border-white/20">
                                 <Button
                                     onClick={openBookingPopup}
-                                    className="bg-[#a0815c] rounded-full hover:bg-[#e7d3ba] hover:text-[#2f3720] text-white px-8 py-6 text-base font-medium transition-all duration-300 shadow-md"
+                                    className="btn-interactive bg-[#a0815c] rounded-full hover:bg-[#e7d3ba] hover:text-[#2f3720] text-white px-8 py-6 text-base font-medium shadow-md"
                                 >
                                     <Phone className="w-5 h-5" />
                                     Book Now

@@ -41,9 +41,9 @@ export function WhyChooseUsSection() {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-3">
+            {/* <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-3">
               OUR EXCELLENCE
-            </p>
+            </p> */}
             <h2 className="text-4xl lg:text-5xl font-[500] text-[#2f3720] mb-4 head">
               Why Choose Sumeera?
             </h2>

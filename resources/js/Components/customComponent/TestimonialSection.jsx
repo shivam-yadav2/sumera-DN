@@ -67,7 +67,7 @@ const TestimonialSection = () => {
           {displayServices.map((t) => (
             <SwiperSlide key={t.id}>
               <div style={{
-                    backgroundImage:"url(/assets/images/new/pattern.png)"
+                    backgroundImage:"url(/assets/images/new/pattern.webp)"
                 }} className="p-6 lg:p-8 bg-[#e6f8ca7c] rounded-2xl shadow-lg relative overflow-hidden">
                 <div className=" relative flex justify-center -mt-12 mb-4">
                   <div className="absolute  w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-md">

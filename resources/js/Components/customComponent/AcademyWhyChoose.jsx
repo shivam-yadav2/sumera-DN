@@ -130,7 +130,7 @@ const AcademyWhyChoose = () => {
                             designed to give you the competitive edge you need in
                             today's beauty industry.
                         </p>
-                        <button className="bg-[#3c4c24] text-white px-10 py-4 text-lg font-[500] rounded-lg hover:bg-[#2c3c14] transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                        <button className="bg-[#354a2f]  text-white px-10 py-4 text-lg font-[500] rounded-lg hover:bg-[#2c3c14] transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
                             Enroll Today
                         </button>
                     </div>

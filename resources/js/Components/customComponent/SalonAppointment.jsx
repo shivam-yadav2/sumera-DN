@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const SalonAppointment = () => {
     return (
-        <div className="bg-[#3c4c24] py-10 lg:py-20 px-4 relative overflow-hidden">
+        <div className="bg-[#354a2f]  py-10 lg:py-20 px-4 relative overflow-hidden">
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Main Appointment Card */}
                 <div className="relative mb-10">
@@ -21,7 +21,7 @@ const SalonAppointment = () => {
                             {/* Subtle pattern overlay */}
 
                             <div className="relative z-10 space-y-4">
-                                <h2 className="text-2xl lg:text-3xl font-[500] text-[#3c4c24] leading-tight head">
+                                <h2 className="text-2xl lg:text-4xl font-[500] text-[#3c4c24] leading-tight head">
                                     Founder of Sumeera Salon & Academy
                                 </h2>
 
@@ -58,7 +58,7 @@ const SalonAppointment = () => {
                                     creativity, and self-belief.
                                 </p>
 
-                                <Button className="bg-black rounded-none hover:bg-[#3c4c24] text-white px-8 py-6 text-base font-medium transition-all duration-300">
+                                <Button className="btn-interactive bg-black rounded-none hover:bg-[#354a2f]  text-white px-8 py-6 text-base font-medium">
                                     Explore Academy Courses
                                 </Button>
                             </div>

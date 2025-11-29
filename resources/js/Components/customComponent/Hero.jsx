@@ -173,7 +173,7 @@ const Hero = () => {
 
             {/* Right Appointment Button */}
             {/* <div className="absolute right-0 top-1/2 transform -translate-y-1/2 z-30">
-                <button className="bg-black text-white px-3 lg:px-4 py-4 lg:py-8 text-sm font-medium tracking-widest hover:bg-[#3c4c24] transition-all duration-300 rounded-l-lg shadow-lg writing-mode-vertical">
+                <button className="bg-black text-white px-3 lg:px-4 py-4 lg:py-8 text-sm font-medium tracking-widest hover:bg-[#354a2f]  transition-all duration-300 rounded-l-lg shadow-lg writing-mode-vertical">
                     MAKE AN APPOINTMENT
                 </button>
             </div> */}
@@ -215,7 +215,7 @@ const Hero = () => {
                                 <p className="text-lg text-gray-700 text-center max-w-xl">
                                     {slide.description}
                                 </p>
-                                <Button className="bg-black hover:bg-[#3c4c24] text-white px-8 py-6 text-base font-medium transition-all duration-300">
+                                <Button className="bg-black hover:bg-[#354a2f]  text-white px-8 py-6 text-base font-medium transition-all duration-300">
                                     BOOK NOW
                                 </Button>
                             </div>

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Sign In | Posh and Polished</title>
+    <title>Sign In | Sumeera Salon and Academy</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
@@ -34,7 +34,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center mt-2">
                                     <h5 class="text-primary">Welcome Back !</h5>
-                                    <p class="text-muted">Sign in to continue to Posh and Polished.</p>
+                                    <p class="text-muted">Sign in to continue to Sumeera Salon and Academy.</p>
                                 </div>
                                 <div class="p-2 mt-4">
                                     <form method="POST" action="{{ route('login') }}">

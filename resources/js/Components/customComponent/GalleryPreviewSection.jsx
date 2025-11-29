@@ -42,9 +42,7 @@ const SalonGallery = ({
     const categories = useMemo(() => {
         const uniqueServices = [
             ...new Set(
-                filteredGalleryData
-                    .map((item) => item?.service)
-                    .filter(Boolean)
+                filteredGalleryData.map((item) => item?.service).filter(Boolean)
             ),
         ];
 
@@ -87,7 +85,7 @@ const SalonGallery = ({
                 id: item.id || index,
                 url: item.image,
                 category: categoryId,
-                alt: item.title || 'Gallery Image',
+                alt: item.title || "Gallery Image",
                 service: item.service,
             };
         });
@@ -103,7 +101,9 @@ const SalonGallery = ({
             : galleryImages.filter((img) => img.category === selectedCategory);
 
     // Limit to 3 images if on home page
-    const displayImages = isHomePage ? filteredImages.slice(0, 3) : filteredImages;
+    const displayImages = isHomePage
+        ? filteredImages.slice(0, 3)
+        : filteredImages;
 
     const openLightbox = (image) => {
         setSelectedImage(image);
@@ -131,14 +131,13 @@ const SalonGallery = ({
     };
 
     return (
-        <div className="min-h-screen bg-[#fff] py-8 lg:py-12 px-4">
+        <div className=" bg-[#fff] py-8 lg:py-12 px-4">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-12">
                     <h1 className="text-3xl md:text-5xl head font-[500] text-[#3c4c24] mb-4">
                         {heading}
                     </h1>
-                   
                 </div>
 
                 {/* Category Filter */}
@@ -202,7 +201,6 @@ const SalonGallery = ({
                             View Full Makeup Gallery
                             <ArrowRight className="w-5 h-5" />
                         </Link>
-                       
                     </div>
                 )}
 

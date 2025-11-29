@@ -273,7 +273,7 @@ const BookingPopup = ({ isOpen, onClose, services = [] }) => {
                             <Button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="w-full bg-[#3c4c24] hover:bg-[#2f3720] text-white px-8 py-4 text-base font-[500] transition-all duration-300 rounded-full shadow-lg hover:shadow-xl disabled:opacity-60 disabled:cursor-not-allowed"
+                                className="w-full bg-[#354a2f]  hover:bg-[#2f3720] text-white px-8 py-4 text-base font-[500] transition-all duration-300 rounded-full shadow-lg hover:shadow-xl disabled:opacity-60 disabled:cursor-not-allowed"
                             >
                                 {isSubmitting ? "Submitting..." : "Book Appointment"}
                             </Button>

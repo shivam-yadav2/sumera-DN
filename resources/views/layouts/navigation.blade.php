@@ -502,7 +502,7 @@
                     </button>
                     <div class="dropdown-menu dropdown-menu-end">
                         <!-- item-->
-                        <h6 class="dropdown-header">Welcome Posh & Polished!</h6>
+                        <h6 class="dropdown-header">Welcome Sumeera Salon & Academy!</h6>
                         {{-- <a class="dropdown-item" href="{{ route('profile.edit') }}"><i
                                 class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span
                                 class="align-middle">Profile</span>

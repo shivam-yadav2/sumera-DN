@@ -3,7 +3,7 @@ import { usePage } from "@inertiajs/react";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight, Phone, ArrowRight } from "lucide-react";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 import { Link } from "@inertiajs/react";
 import { usePopup } from "../../contexts/PopupContext";
 
@@ -61,9 +61,9 @@ const ServicesSection = () => {
             <div className="relative z-10 max-w-7xl mx-auto">
                 {/* Header Section */}
                 <div className="text-center mb-12 lg:mb-20 relative">
-                    <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-4 font-medium">
+                    {/* <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-4 font-medium">
                         WHAT WE OFFER
-                    </p>
+                    </p> */}
                     <h2 className="text-4xl lg:text-6xl font-[500] text-[#2f3720] relative z-10 head mb-4">
                         Our Signature Services
                     </h2>
@@ -77,7 +77,7 @@ const ServicesSection = () => {
                 <div className="relative mb-16">
                     <Swiper
                         onSwiper={setSwiperInstance}
-                        modules={[Navigation]}
+                        modules={[Navigation, Autoplay]}
                         spaceBetween={24}
                         loop={true}
                         autoplay={{
@@ -151,14 +151,14 @@ const ServicesSection = () => {
                                                 <div className="flex items-center gap-3 mt-auto pt-4">
                                                     <button
                                                         onClick={openBookingPopup}
-                                                        className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#a0815c] hover:bg-[#8b6d4a] text-white text-sm font-[500] rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
+                                                        className="btn-interactive flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#354a2f] hover:bg-[#507047] text-white text-sm font-[500] rounded-full shadow-md"
                                                     >
                                                         <Phone className="w-4 h-4" />
                                                         Book Now
                                                     </button>
                                                     <Link
                                                         href={service.slug_url ? `/services/${service.slug_url}` : '#'}
-                                                        className="inline-flex items-center justify-center gap-1 px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white text-sm font-[500] rounded-full border border-white/20 hover:border-white/40 transition-all duration-300 backdrop-blur-sm"
+                                                        className="btn-interactive inline-flex items-center justify-center gap-1 px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white text-sm font-[500] rounded-full border border-white/20 hover:border-white/40 backdrop-blur-sm"
                                                     >
                                                         View
                                                         <ArrowRight className="w-4 h-4" />
@@ -180,7 +180,7 @@ const ServicesSection = () => {
                 <div className="flex items-center justify-center gap-4 mt-12">
                     <button 
                         onClick={() => swiperInstance?.slidePrev()}
-                        className="flex items-center gap-2 text-[#2f3720] hover:text-[#a0815c] transition-colors font-[600] text-base px-6 py-3 bg-white/90 backdrop-blur-sm rounded-full border-2 border-[#e4ded2] hover:border-[#a0815c] hover:shadow-md"
+                        className="btn-interactive flex items-center gap-2 text-[#2f3720] hover:text-[#a0815c] font-[600] text-base px-6 py-3 bg-white/90 backdrop-blur-sm rounded-full border-2 border-[#e4ded2] hover:border-[#a0815c]"
                     >
                         <ChevronLeft size={20} />
                         PREV
@@ -190,7 +190,7 @@ const ServicesSection = () => {
                     </div>
                     <button 
                         onClick={() => swiperInstance?.slideNext()}
-                        className="flex items-center gap-2 text-[#2f3720] hover:text-[#a0815c] transition-colors font-[600] text-base px-6 py-3 bg-white/90 backdrop-blur-sm rounded-full border-2 border-[#e4ded2] hover:border-[#a0815c] hover:shadow-md"
+                        className="btn-interactive flex items-center gap-2 text-[#2f3720] hover:text-[#a0815c] font-[600] text-base px-6 py-3 bg-white/90 backdrop-blur-sm rounded-full border-2 border-[#e4ded2] hover:border-[#a0815c]"
                     >
                         NEXT
                         <ChevronRight size={20} />
@@ -201,7 +201,7 @@ const ServicesSection = () => {
                 {/* <div className="mt-12 text-center">
                     <Link
                         href="/services"
-                        className="inline-flex items-center gap-2 px-8 py-3 bg-[#3c4c24] hover:bg-[#2f3720] text-white text-base font-medium rounded-full transition-all duration-300 shadow-md hover:shadow-xl"
+                        className="inline-flex items-center gap-2 px-8 py-3 bg-[#354a2f]  hover:bg-[#2f3720] text-white text-base font-medium rounded-full transition-all duration-300 shadow-md hover:shadow-xl"
                     >
                         View All Services
                         <ArrowRight className="w-5 h-5" />

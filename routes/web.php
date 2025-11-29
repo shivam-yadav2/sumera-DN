@@ -138,7 +138,31 @@ Route::get('/contact', function () {
 })->name('contact');
 
 Route::get('/academy', function () {
-    $courses = \App\Models\Courses::where('is_active', 1)->get();
+    $courses = \App\Models\Courses::where('is_active', 1)
+        ->with(['details' => function($query) {
+            $query->where('is_active', 1)->orderBy('id', 'asc');
+        }])
+        ->get()
+        ->map(function($course) {
+            return [
+                'id' => $course->id,
+                'title' => $course->title,
+                'duration' => $course->duration,
+                'description' => $course->description,
+                'course_detail' => $course->course_detail,
+                'details' => $course->details->map(function($detail) {
+                    return [
+                        'id' => $detail->id,
+                        'heading' => $detail->heading,
+                        'course_price' => $detail->course_price,
+                        'offer_price' => $detail->offer_price,
+                        'duration' => $detail->duration,
+                        'description' => $detail->description,
+                    ];
+                }),
+            ];
+        });
+    
     return Inertia::render('AcademyPage', [
         'courses' => $courses,
         'seo' => get_seo('academy')

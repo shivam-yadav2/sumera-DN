@@ -76,7 +76,7 @@ const MensGrooming = () => {
 
                 {/* Sub Services Section */}
                 {subServices && subServices.length > 0 && (
-                    <SubServicesSection subServices={subServices} />
+                    <SubServicesSection subServices={subServices} serviceTitle={service?.title || "Men's Grooming"} />
                 )}
 
                 {/* Gallery Section */}
@@ -126,7 +126,7 @@ const MensGrooming = () => {
                     <div className="container mx-auto px-4 py-16">
                         <div className="bg-[#12110f] rounded-3xl overflow-hidden text-white">
                             <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,2.2fr)] items-center">
-                                <div className="h-full bg-[url('/assets/images/new/CTA3.jpg')] bg-cover bg-center min-h-[260px]" />
+                                <div className="h-full bg-[url('/assets/images/new/CTA3.webp')] bg-cover bg-center min-h-[260px]" />
                                 <div className="relative p-10 md:p-14">
                                     <div className="absolute inset-0 bg-gradient-to-br from-[#a0815c]/20 via-transparent to-transparent pointer-events-none" />
                                     <h3 className="text-3xl font-[500] mb-4 head">

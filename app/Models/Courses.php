@@ -14,6 +14,7 @@ class Courses extends Model
         'duration',
         'fees',
         'description',
+        'course_detail',
         'is_active',
     ];
 

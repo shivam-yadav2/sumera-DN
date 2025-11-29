@@ -30,9 +30,9 @@ const FounderSection = () => {
         <section className="py-10 lg:py-16 px-4">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-12">
-                    <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-3">
+                    {/* <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-3">
                         MEET THE VISIONARY
-                    </p>
+                    </p> */}
                     <h2 className="text-4xl lg:text-5xl font-[500] text-[#2f3720] head">
                         About the Founder
                     </h2>
@@ -44,7 +44,7 @@ const FounderSection = () => {
                         <div className="absolute inset-0 border-[12px] border-[#a0815c] transform translate-x-6 translate-y-6 rounded-3xl pointer-events-none"></div>
                         <div className="relative bg-white shadow-2xl overflow-hidden rounded-3xl border border-[#e4ded2]">
                             <img
-                                src="/assets/images/new/homeAbout.jpg"
+                                src="/assets/images/new/homeAbout.webp"
                                 alt="Founder"
                                 className="w-full h-[500px] object-cover"
                                 loading="lazy"
@@ -121,15 +121,15 @@ const About = () => {
                     <div className="absolute top-20 left-10 w-64 h-64 bg-[#a0815c]/20 rounded-full opacity-40 blur-3xl"></div>
                     <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#e7d3ba]/10 rounded-full opacity-30 blur-3xl"></div>
                     <div className="relative z-10 space-y-5 max-w-4xl mx-auto">
-                        <p className="uppercase tracking-[0.4em] text-xs text-[#e7d3ba] mb-3">
+                        {/* <p className="uppercase tracking-[0.4em] text-xs text-[#e7d3ba] mb-3">
                             SINCE 2012
-                        </p>
+                        </p> */}
                         <h1 className="text-4xl lg:text-5xl font-[500] my-4 head text-white">
                              Our Story
                         </h1>
                         <p className="max-w-3xl mx-auto mb-6 text-lg text-white/80 leading-relaxed">
                         Beauty is more than a service — it's an experience.
-    Since 2012, we've been helping clients and students express their best selves with style and skill.
+    Since 2020, we've been helping clients and students express their best selves with style and skill.
     Our goal is simple: to blend expertise with a personal touch, so every visit feels special.
                         </p>
                         <AppointmentButton />
@@ -143,7 +143,10 @@ const About = () => {
                 <AchievementsSection />
                 
                 {/* Why Choose Us Section */}
+                <div className="lg:block hidden">   
+
                 <WhyChooseUsSection />
+                </div>
                 
                 <ServicesSection />
                 
@@ -178,7 +181,7 @@ const About = () => {
                                     </a>
                                 </div>
                             </div>
-                            <div className="h-full bg-[url('/assets/images/new/CTA3.jpg')] bg-cover bg-center min-h-[260px]" />
+                            <div className="h-full bg-[url('/assets/images/new/CTA3.webp')] bg-cover bg-center min-h-[260px]" />
                         </div>
                     </div>
                 </div>

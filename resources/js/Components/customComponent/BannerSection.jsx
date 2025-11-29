@@ -13,7 +13,7 @@ export function BannerSection({
     return (
         <div className="">
             <div className="container mx-auto px-4 mt-5 pt-16 pb-5">
-                <div className="relative overflow-hidden rounded-3xl bg-[#12110f] text-white px-8 py-14 md:px-12">
+                <div className="relative overflow-hidden rounded-3xl bg-[#12110f] text-white px-8 py-10 lg:py-14 md:px-12">
                     {/* Background Image Overlay */}
                     <div 
                         className="absolute inset-0 opacity-10 bg-cover bg-center pointer-events-none" 
@@ -45,7 +45,7 @@ export function BannerSection({
                         {/* Description - Support HTML content */}
                         {description && (
                             <div 
-                                className="text-white/70 text-base md:text-lg max-w-3xl mx-auto mb-6"
+                                className="text-white/70 lg:block hidden text-base md:text-lg max-w-3xl mx-auto mb-6"
                                 dangerouslySetInnerHTML={{ __html: description }}
                             />
                         )}

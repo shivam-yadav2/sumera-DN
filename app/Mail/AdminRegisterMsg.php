@@ -17,7 +17,7 @@ class AdminRegisterMsg extends Mailable
     public $appointment;
     public $subject;
 
-    public function __construct($appointment, $subject = 'Welcome to The Poshand Polished')
+    public function __construct($appointment, $subject = 'Welcome to The Sumeera Salon & Academy')
     {
         $this->appointment = $appointment;
         $this->subject = $subject;
@@ -31,7 +31,7 @@ class AdminRegisterMsg extends Mailable
     {
         return new Envelope(
             subject: $this->subject,
-            from: new Address('noreply@theposhandpolished.com', 'theposhandpolished')
+            from: new Address('noreply@theSumeera Salon & Academy.com', 'theSumeera Salon & Academy')
         );
     }
 

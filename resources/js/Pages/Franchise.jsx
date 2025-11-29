@@ -367,7 +367,7 @@ const Franchise = () => {
                                             type="file"
                                             accept=".pdf"
                                             required
-                                            className="block w-full text-sm text-gray-600 file:mr-4 file:rounded-lg file:border-0 file:bg-[#3c4c24] file:px-5 file:py-2 file:text-sm file:font-[500] file:text-white hover:file:bg-[#2a3814]"
+                                            className="block w-full text-sm text-gray-600 file:mr-4 file:rounded-lg file:border-0 file:bg-[#354a2f]  file:px-5 file:py-2 file:text-sm file:font-[500] file:text-white hover:file:bg-[#2a3814]"
                                         />
                                     </div>
                                     <div className="flex flex-col gap-2">
@@ -380,7 +380,7 @@ const Franchise = () => {
                                             type="file"
                                             accept=".pdf"
                                             required
-                                            className="block w-full text-sm text-gray-600 file:mr-4 file:rounded-lg file:border-0 file:bg-[#3c4c24] file:px-5 file:py-2 file:text-sm file:font-[500] file:text-white hover:file:bg-[#2a3814]"
+                                            className="block w-full text-sm text-gray-600 file:mr-4 file:rounded-lg file:border-0 file:bg-[#354a2f]  file:px-5 file:py-2 file:text-sm file:font-[500] file:text-white hover:file:bg-[#2a3814]"
                                         />
                                     </div>
                                 </div>
@@ -388,7 +388,7 @@ const Franchise = () => {
                                 <div className="flex justify-center">
                                     <button
                                         type="submit"
-                                        className="px-10 py-3 rounded-full bg-[#3c4c24] text-white font-[500] shadow-lg hover:bg-[#2a3814] transition-all duration-300"
+                                        className="px-10 py-3 rounded-full bg-[#354a2f]  text-white font-[500] shadow-lg hover:bg-[#2a3814] transition-all duration-300"
                                     >
                                         Submit Interest
                                     </button>

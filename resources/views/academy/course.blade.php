@@ -51,7 +51,6 @@
                             <thead class="table-dark bg-primary">
                                 <tr class="table-primary">
                                     <th class="sort">#</th>
-                                    <th class="sort">Course Image</th>
                                     <th class="sort">Course Details</th>
                                     <th class="sort">Action</th>
                                 </tr>
@@ -60,15 +59,6 @@
                                 @foreach ($data as $key => $row)
                                     <tr>
                                         <td>{!! $key + 1 !!}</td>
-                                        <td>
-                                            @if($row->image)
-                                                <img src="{{ asset($row->image) }}" alt="{{ $row->title }}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px;">
-                                            @else
-                                                <div style="width: 60px; height: 60px; background: #f0f0f0; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                                                    <i class="ri-image-line text-muted"></i>
-                                                </div>
-                                            @endif
-                                        </td>
                                         <td class="email">
                                             <div class="email-container">
                                                 <div class="email-content">
@@ -77,9 +67,6 @@
                                                     @endif
                                                     @if($row->duration)
                                                         <p class="p-0 m-0"><strong>Duration:</strong> {!! $row->duration !!}</p>
-                                                    @endif
-                                                    @if($row->fees)
-                                                        <p class="p-0 m-0"><strong>Fees:</strong> {!! $row->fees !!}</p>
                                                     @endif
                                                     @if($row->description)
                                                         <p class="p-0 m-0"><strong>Description:</strong> {!! Str::limit($row->description, 50) !!}</p>
@@ -90,14 +77,13 @@
                                         <td>
                                             <div class="d-flex gap-2">
                                                 <button class="btn btn-sm btn-primary edit-btn"
-                                                    data-id="{{ base64_encode($row->id) }}" 
-                                                    data-title="{{ $row->title }}"
-                                                    data-duration="{{ $row->duration }}"
-                                                    data-fees="{{ $row->fees }}"
-                                                    data-description="{{ $row->description }}"
-                                                    data-image="{{ $row->image }}">Edit</button>
-                                                <a href="{{ route('admin.course-details.create', base64_encode($row->id)) }}"
-                                                    class="btn btn-sm btn-success">Course Details</a>
+                                    data-id="{{ base64_encode($row->id) }}" 
+                                    data-title="{{ $row->title }}"
+                                    data-duration="{{ $row->duration }}"
+                                    data-description="{{ $row->description }}"
+                                    data-course-detail="{{ $row->course_detail }}">Edit</button>
+                                                {{-- <a href="{{ route('admin.course-details.create', base64_encode($row->id)) }}"
+                                                    class="btn btn-sm btn-success">Course Details</a> --}}
                                                 <a class="confirmDelete btn btn-sm btn-danger"
                                                     data-id="{{ $row->id }}">Delete</a>
                                             </div>
@@ -164,7 +150,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                                         <div class="form-group mb-2">
                                                             <label for="duration">Duration</label>
                                                             <input type="text" class="form-control"
@@ -173,31 +159,17 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                                         <div class="form-group mb-2">
-                                                            <label for="fees">Fees</label>
-                                                            <input type="text" class="form-control"
-                                                                value="{!! old('fees') !!}" name="fees"
-                                                                placeholder="e.g., ₹35,000" />
+                                                            <label for="description">Short Description</label>
+                                                            <textarea rows="3" class="form-control" name="description" placeholder="Short Course Description (Plain text)">{!! old('description') !!}</textarea>
                                                         </div>
                                                     </div>
 
                                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                                         <div class="form-group mb-2">
-                                                            <label for="image">Course Image 800x600px</label>
-                                                            <input type="file" class="form-control" name="image"
-                                                                onchange="previewImage(event, 'course_image_preview')"
-                                                                accept="image/*" />
-                                                            <img loading="lazy" id="course_image_preview" src=""
-                                                                alt="Course Image Preview"
-                                                                style="max-width: 100%; margin-top: 10px; display: none;" />
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                                        <div class="form-group mb-2">
-                                                            <label for="description">Description</label>
-                                                            <textarea rows="3" class="form-control" name="description" placeholder="Course Description">{!! old('description') !!}</textarea>
+                                                            <label for="course_detail">Course Detail (Rich Content)</label>
+                                                            <textarea rows="8" class="form-control ckeditor" name="course_detail" id="course_detail_editor" placeholder="Detailed Course Information with formatting">{!! old('course_detail') !!}</textarea>
                                                         </div>
                                                     </div>
 
@@ -247,19 +219,12 @@
                                     <input type="text" class="form-control" name="duration" id="duration">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="fees" class="form-label">Fees</label>
-                                    <input type="text" class="form-control" name="fees" id="fees">
+                                    <label for="description" class="form-label">Short Description</label>
+                                    <textarea class="form-control" name="description" id="description" rows="3"></textarea>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="edit_image" class="form-label">Course Image</label>
-                                    <input type="file" class="form-control" name="image" id="edit_image"
-                                        accept="image/*">
-                                    <img id="edit_image_preview" src="" alt="Preview"
-                                        style="max-width: 100%; margin-top: 10px; display: none;">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="description" class="form-label">Description</label>
-                                    <textarea class="form-control" name="description" id="description" rows="4"></textarea>
+                                    <label for="course_detail_modal" class="form-label">Course Detail (Rich Content)</label>
+                                    <textarea class="form-control ckeditor" name="course_detail" id="course_detail_modal" rows="8"></textarea>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -278,44 +243,40 @@
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
             crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdn.ckeditor.com/4.20.2/standard/ckeditor.js"></script>
         <script>
             $(document).ready(function() {
+                // Initialize CKEditor for the create form
+                if (document.getElementById('course_detail_editor')) {
+                    CKEDITOR.replace('course_detail_editor');
+                }
+
                 $('.edit-btn').on('click', function() {
                     const id = $(this).data('id');
                     const title = $(this).data('title');
                     const duration = $(this).data('duration');
-                    const fees = $(this).data('fees');
                     const description = $(this).data('description');
-                    const image = $(this).data('image');
+                    const courseDetail = $(this).data('course-detail');
                     
                     // Populate the form in the modal
                     $('#courseId').val(id);
                     $('#title').val(title);
                     $('#duration').val(duration);
-                    $('#fees').val(fees);
                     $('#description').val(description);
-                    
-                    // Show current image if exists
-                    if(image) {
-                        $('#edit_image_preview').attr('src', '/' + image).show();
-                    } else {
-                        $('#edit_image_preview').hide();
-                    }
                     
                     // Show the modal
                     $('#editModal').modal('show');
-                });
-                
-                // Handle image preview in edit modal
-                $('#edit_image').on('change', function() {
-                    const file = this.files[0];
-                    if (file) {
-                        const reader = new FileReader();
-                        reader.onload = function(e) {
-                            $('#edit_image_preview').attr('src', e.target.result).show();
-                        };
-                        reader.readAsDataURL(file);
-                    }
+
+                    // Initialize CKEditor for the modal if not already initialized
+                    setTimeout(function() {
+                        if (!CKEDITOR.instances['course_detail_modal']) {
+                            CKEDITOR.replace('course_detail_modal');
+                        }
+                        // Set the course detail content
+                        if (CKEDITOR.instances['course_detail_modal']) {
+                            CKEDITOR.instances['course_detail_modal'].setData(courseDetail || '');
+                        }
+                    }, 300);
                 });
             });
         </script>

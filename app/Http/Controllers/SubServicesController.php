@@ -15,6 +15,18 @@ use Illuminate\Support\Facades\Validator;
 class SubServicesController extends Controller
 {
     /**
+     * Normalize potentially malformed UTF-8 strings.
+     */
+    private function sanitizeUtf8(?string $value): ?string
+    {
+        if ($value === null) {
+            return null;
+        }
+
+        $clean = iconv('UTF-8', 'UTF-8//IGNORE', $value);
+        return $clean === false ? $value : $clean;
+    }
+    /**
      * Display a listing of the resource.
      */
     public function index(Request $request, $id)
@@ -24,13 +36,15 @@ class SubServicesController extends Controller
         if ($request->isMethod('POST')) {
             $data = $request->all();
             $data['service_id'] = $sericeId;
+            $data['title'] = $this->sanitizeUtf8($data['title']);
+            $data['description'] = $this->sanitizeUtf8($data['description'] ?? null);
 
             // Validation rules
             $rules = [
                 'service_id'    =>  'required|string|max:255',
                 'title'         =>  'required|string|max:255',
                 'image'         =>  'required|image|mimes:jpeg,jpg,png,webp|max:2048',
-                'description'   =>  'nullable|string',
+            'description'   =>  'nullable|string',
             ];
 
             // Custom error messages
@@ -88,6 +102,8 @@ class SubServicesController extends Controller
         }
 
         $data = $request->all();
+        $data['title'] = $this->sanitizeUtf8($data['title']);
+        $data['description'] = $this->sanitizeUtf8($data['description'] ?? null);
 //echo '<pre>'; print_r($data);exit;
         if (!isset($data['id']) || empty($data['id']) || !is_numeric(base64_decode($data['id']))) {
             return redirect()->back()->with('error_msg', 'Invalid Sub Services.');
@@ -98,15 +114,14 @@ class SubServicesController extends Controller
         // Validation rules
         $rules = [
             'title'         => 'required|string|max:255',
-            'image'         => 'nullable|image|mimes:jpeg,jpg,png,webp|max:204800', // 200KB
+            'image'         => 'nullable|image|mimes:jpeg,jpg,png,webp|max:2048',
             'description'   => 'nullable|string',
         ];
 
         $customMessages = [
             'title.required'  => 'The title is required.',
             'title.max'       => 'The title may not exceed 255 characters.',
-            'image.max'       => 'The image size must not exceed 200KB.',
-            'description.max' => 'The description may not exceed 255 characters.',
+            'image.max'       => 'The image size must not exceed 2MB.',
         ];
 
         // Validate request
@@ -122,6 +137,11 @@ class SubServicesController extends Controller
         }
 
         // Process the image if uploaded
+        $updateData = [
+            'title'       => $data['title'],
+            'description' => $data['description'] ?? null,
+        ];
+
         if ($request->hasFile('image')) {
             $manager = new ImageManager(new Driver());
             $path = 'assets/images/service/';
@@ -135,11 +155,11 @@ class SubServicesController extends Controller
             $image->encode(new WebpEncoder(quality: 65));
             $filename = uniqid() . '.webp';
             $image->save($path . $filename);
-            $data['image'] = $path . $filename;
+            $updateData['image'] = $path . $filename;
         }
 
         // Update the sub-service details
-        $Detail->update($data);
+        $Detail->update($updateData);
 
         return redirect()->back()->with('success_msg', 'Sub Service details updated successfully.');
     }

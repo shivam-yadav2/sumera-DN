@@ -244,7 +244,7 @@ const ContactPopup = ({ isOpen, onClose }) => {
                                 <Button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full bg-[#3c4c24] hover:bg-[#2f3720] text-white px-6 py-4 text-base font-[500] transition-all duration-300 rounded-full shadow-lg hover:shadow-xl disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                                    className="w-full bg-[#354a2f]  hover:bg-[#2f3720] text-white px-6 py-4 text-base font-[500] transition-all duration-300 rounded-full shadow-lg hover:shadow-xl disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                                 >
                                     {isSubmitting ? (
                                         <>

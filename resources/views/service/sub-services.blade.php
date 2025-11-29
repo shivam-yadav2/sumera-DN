@@ -189,8 +189,8 @@
                                     </div>
                                     <div class="mb-3 col-lg-12">
                                         <label for="description" class="form-label">Description</label>
-                                        <textarea class="form-control ckeditor" name="description" id="description"
-                                                  rows="4" required></textarea>
+                                        <textarea class="form-control" name="description" id="description"
+                                                  rows="4"></textarea>
                                     </div>
                                     <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10">
                                         <div class="form-group mb-2">
@@ -226,19 +226,6 @@
                     integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-            <script src="https://cdn.ckeditor.com/4.20.2/standard/ckeditor.js"></script>
-            {{--            <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.25.0/ckeditor.min.js" integrity="sha512-Z85Fu7UNiaY9VJHpFZhXVWfw9dg8NIer0rqoaR52+iyLwQ2qg8qwwL0uUicd4vYJ6q4eOq8loyFG3jGHPLUiow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>--}}
-            <script>
-                // Initialize CKEditor for edit modal only
-                $(document).ready(function () {
-                    // Initialize CKEditor on modal show
-                    $('#editModal').on('shown.bs.modal', function () {
-                        if (!CKEDITOR.instances['description']) {
-                            CKEDITOR.replace('description');
-                        }
-                    });
-                });
-            </script>
             <script>
                 $(document).ready(function () {
                     $('.edit-btn').on('click', function () {
@@ -251,13 +238,7 @@
                         $('#title').val(title);
                         $('#image_preview_edit').attr('src', '/' + image);
                         $('#description').val(description);
-                        
-                        // Update CKEditor instance
-                        const editor = CKEDITOR.instances['description'];
-                        if (editor) {
-                            editor.setData(description);
-                        }
-                        
+
                         // Show the modal
                         $('#editModal').modal('show');
                     });

@@ -120,7 +120,7 @@ export default function ContactPage() {
 
                             <div className="space-y-6">
                                 <div className="flex items-start gap-4 p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-[#e4ded2] hover:shadow-md transition-shadow">
-                                    <div className="bg-[#3c4c24] p-3 rounded-full">
+                                    <div className="bg-[#354a2f]  p-3 rounded-full">
                                         <Phone className="w-5 h-5 text-white" />
                                     </div>
                                     <div>
@@ -134,7 +134,7 @@ export default function ContactPage() {
                                 </div>
 
                                 <div className="flex items-start gap-4 p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-[#e4ded2] hover:shadow-md transition-shadow">
-                                    <div className="bg-[#3c4c24] p-3 rounded-full">
+                                    <div className="bg-[#354a2f]  p-3 rounded-full">
                                         <Mail className="w-5 h-5 text-white" />
                                     </div>
                                     <div>
@@ -148,7 +148,7 @@ export default function ContactPage() {
                                 </div>
 
                                 <div className="flex items-start gap-4 p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-[#e4ded2] hover:shadow-md transition-shadow">
-                                    <div className="bg-[#3c4c24] p-3 rounded-full">
+                                    <div className="bg-[#354a2f]  p-3 rounded-full">
                                         <MapPin className="w-5 h-5 text-white" />
                                     </div>
                                     <div>
@@ -171,122 +171,146 @@ export default function ContactPage() {
                             <p className="uppercase tracking-[0.4em] text-xs text-[#a0815c] mb-3">
                                 SEND US A MESSAGE
                             </p>
-                            <h2 className="text-3xl font-[500] text-[#2f3720] mb-8">
+                            <h2 className="text-3xl font-[500] text-[#2f3720] mb-6">
                                 We'd Love to Hear From You
                             </h2>
+                           
 
-                            <div className="space-y-6">
-                                <div>
-                                    <Input
-                                        type="text"
-                                        name="name"
-                                        placeholder="Your Name *"
-                                        value={formData.name}
-                                        onChange={handleChange}
-                                        className={`h-12 ${
-                                            errors.name ? "border-red-500" : ""
-                                        }`}
-                                    />
-                                    {errors.name && (
-                                        <p className="text-red-500 text-sm mt-1">
-                                            {errors.name}
-                                        </p>
-                                    )}
-                                </div>
+                            <div className="bg-white/90 border border-[#e4ded2] rounded-3xl p-6 lg:p-8 shadow-xl space-y-6">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                    <div>
+                                        <label className="text-xs uppercase tracking-[0.3em] text-[#b1a591] font-[600] block mb-2">
+                                            Full Name *
+                                        </label>
+                                        <Input
+                                            type="text"
+                                            name="name"
+                                            placeholder="Enter your name"
+                                            value={formData.name}
+                                            onChange={handleChange}
+                                            className={`h-12 rounded-2xl bg-[#f8f6f2] border-[#ece8e1] focus:ring-2 focus:ring-[#3c4c24]/40 ${
+                                                errors.name ? "border-red-500 focus:ring-red-200" : ""
+                                            }`}
+                                        />
+                                        {errors.name && (
+                                            <p className="text-red-500 text-xs mt-1">
+                                                {errors.name}
+                                            </p>
+                                        )}
+                                    </div>
 
-                                <div>
-                                    <Input
-                                        type="email"
-                                        name="email"
-                                        placeholder="Email Address"
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                        className="h-12"
-                                    />
-                                    {errors.email && (
-                                        <p className="text-red-500 text-sm mt-1">
-                                            {errors.email}
-                                        </p>
-                                    )}
-                                </div>
+                                    <div>
+                                        <label className="text-xs uppercase tracking-[0.3em] text-[#b1a591] font-[600] block mb-2">
+                                            Email Address
+                                        </label>
+                                        <Input
+                                            type="email"
+                                            name="email"
+                                            placeholder="hello@email.com"
+                                            value={formData.email}
+                                            onChange={handleChange}
+                                            className="h-12 rounded-2xl bg-[#f8f6f2] border-[#ece8e1] focus:ring-2 focus:ring-[#3c4c24]/40"
+                                        />
+                                        {errors.email && (
+                                            <p className="text-red-500 text-xs mt-1">
+                                                {errors.email}
+                                            </p>
+                                        )}
+                                    </div>
 
-                                <div>
-                                    <Input
-                                        type="tel"
-                                        name="mobile"
-                                        placeholder="Phone Number *"
-                                        value={formData.mobile}
-                                        onChange={handleChange}
-                                        className={`h-12 ${
-                                            errors.mobile
-                                                ? "border-red-500"
-                                                : ""
-                                        }`}
-                                    />
-                                    {errors.mobile && (
-                                        <p className="text-red-500 text-sm mt-1">
-                                            {errors.mobile}
-                                        </p>
-                                    )}
-                                </div>
+                                    <div>
+                                        <label className="text-xs uppercase tracking-[0.3em] text-[#b1a591] font-[600] block mb-2">
+                                            Phone Number *
+                                        </label>
+                                        <Input
+                                            type="tel"
+                                            name="mobile"
+                                            placeholder="10-digit mobile number"
+                                            value={formData.mobile}
+                                            onChange={handleChange}
+                                            className={`h-12 rounded-2xl bg-[#f8f6f2] border-[#ece8e1] focus:ring-2 focus:ring-[#3c4c24]/40 ${
+                                                errors.mobile ? "border-red-500 focus:ring-red-200" : ""
+                                            }`}
+                                        />
+                                        {errors.mobile && (
+                                            <p className="text-red-500 text-xs mt-1">
+                                                {errors.mobile}
+                                            </p>
+                                        )}
+                                    </div>
 
-                                <div>
-                                    <select
-                                        name="service"
-                                        value={formData.service}
-                                        onChange={handleChange}
-                                        className={`w-full h-12 px-3 border rounded-md focus:ring-2 focus:ring-[#3c4c24] focus:border-transparent ${
-                                            errors.service
-                                                ? "border-red-500"
-                                                : "border-gray-300"
-                                        } ${
-                                            !formData.service
-                                                ? "text-gray-500"
-                                                : "text-gray-900"
-                                        }`}
-                                    >
-                                        <option value="">
-                                            Select Service *
-                                        </option>
-                                        {services.map((service) => (
-                                            <option
-                                                key={service.id}
-                                                value={service.title}
+                                    <div>
+                                        <label className="text-xs uppercase tracking-[0.3em] text-[#b1a591] font-[600] block mb-2">
+                                            Preferred Service *
+                                        </label>
+                                        <div className="relative">
+                                            <select
+                                                name="service"
+                                                value={formData.service}
+                                                onChange={handleChange}
+                                                className={`w-full h-12 px-4 rounded-2xl bg-[#f8f6f2] border-[#ece8e1] appearance-none focus:ring-2 focus:ring-[#3c4c24]/40 ${
+                                                    errors.service ? "border-red-500 focus:ring-red-200" : ""
+                                                } ${
+                                                    !formData.service
+                                                        ? "text-gray-500"
+                                                        : "text-gray-900"
+                                                }`}
                                             >
-                                                {service.title}
-                                            </option>
-                                        ))}
-                                    </select>
-                                    {errors.service && (
-                                        <p className="text-red-500 text-sm mt-1">
-                                            {errors.service}
-                                        </p>
-                                    )}
+                                                <option value="">
+                                                    Select a service
+                                                </option>
+                                                {services.map((service) => (
+                                                    <option
+                                                        key={service.id}
+                                                        value={service.title}
+                                                    >
+                                                        {service.title}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                            <span className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-[#b1a591]">
+                                                ▼
+                                            </span>
+                                        </div>
+                                        {errors.service && (
+                                            <p className="text-red-500 text-xs mt-1">
+                                                {errors.service}
+                                            </p>
+                                        )}
+                                    </div>
                                 </div>
 
                                 <div>
+                                    <label className="text-xs uppercase tracking-[0.3em] text-[#b1a591] font-[600] block mb-2">
+                                        Tell us more
+                                    </label>
                                     <Textarea
                                         name="message"
-                                        placeholder="Message"
+                                        placeholder="Share your event date, preferred artist, or any specific requirements..."
                                         value={formData.message}
                                         onChange={handleChange}
-                                        className="min-h-32 resize-none"
+                                        className="min-h-32 rounded-3xl bg-[#f8f6f2] border-[#ece8e1] focus:ring-2 focus:ring-[#3c4c24]/40 resize-none"
                                     />
                                     {errors.message && (
-                                        <p className="text-red-500 text-sm mt-1">
+                                        <p className="text-red-500 text-xs mt-1">
                                             {errors.message}
                                         </p>
                                     )}
                                 </div>
 
+                                
+
                                 <Button
                                     onClick={handleSubmit}
                                     disabled={isSubmitting}
-                                    className="w-full h-12 bg-[#3c4c24] hover:bg-[#2f3720] text-white rounded-full shadow-md transition-all duration-300"
+                                    className="w-full h-12 rounded-full bg-gradient-to-r from-[#3c4c24] to-[#2f3720] hover:from-[#2f3720] hover:to-[#3c4c24] text-white font-[600] shadow-xl shadow-[#3c4c24]/20 transition-all duration-300"
                                 >
-                                    {isSubmitting
-                                        ? "Submitting..."
-                                        : "Submit Now"}
+                                    {isSubmitting ? "Submitting..." : (
+                                        <span className="inline-flex items-center gap-2">
+                                            Submit Message
+                                            <ArrowRight className="w-4 h-4" />
+                                        </span>
+                                    )}
                                 </Button>
                             </div>
                         </div>

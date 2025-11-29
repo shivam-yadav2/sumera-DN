@@ -139,7 +139,7 @@ const AcademyTestimonials = () => {
                 </div>
 
                 {/* Success Stats */}
-                <div className="bg-[#3c4c24] rounded-3xl p-12 relative overflow-hidden">
+                <div className="bg-[#354a2f]  rounded-3xl p-12 relative overflow-hidden">
                     {/* Decorative elements */}
                     <div className="absolute top-0 right-0 w-64 h-64 bg-pink-400 rounded-full opacity-10 blur-3xl"></div>
                     <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-400 rounded-full opacity-10 blur-3xl"></div>
@@ -217,7 +217,7 @@ const AcademyTestimonials = () => {
                     <p className="text-[#3c4c24] text-lg mb-6 font-[500]">
                         Ready to start your success story?
                     </p>
-                    <button className="bg-[#3c4c24] text-white px-10 py-4 text-lg font-[500] rounded-lg hover:bg-[#2c3c14] transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                    <button className="bg-[#354a2f]  text-white px-10 py-4 text-lg font-[500] rounded-lg hover:bg-[#2c3c14] transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
                         Join Our Academy Today
                     </button>
                 </div>

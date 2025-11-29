@@ -208,7 +208,7 @@ export default function Offers() {
 
                                         <button
                                             type="submit"
-                                            className="w-full py-3 bg-[#3c4c24] text-white rounded-lg font-[500] hover:bg-[#2d3820] transition"
+                                            className="w-full py-3 bg-[#354a2f]  text-white rounded-lg font-[500] hover:bg-[#2d3820] transition"
                                         >
                                             Send Message →
                                         </button>
